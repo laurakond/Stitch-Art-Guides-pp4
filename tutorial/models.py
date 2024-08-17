@@ -10,9 +10,31 @@ class Tutorial(models.Model):
     tutor_name = models.CharField(max_length=30, unique=True)
     description = models.TextField(blank=False)
     excerpt = models.TextField(blank=False)
-    tutorial_date = models.DateTimeField(default='2024-08-17 00:10:00', null=False, blank=False)
 
     def __str__(self):
         return f"{self.title}"
 
 
+class TutorialDate(models.Model):
+    """
+    A model that sets up the time and date for the tutorials.
+    """
+    tutorial_date = models.DateField()
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+    tutorial = models.ForeignKey(Tutorial, on_delete=models.CASCADE, related_name="selected_tutorial_date")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="tutorial_user")
+
+    def __str__(self):
+        return f"{self.tutorial} booked by {self.user} at {self.start_time}"
+
+
+class Booking(models.Model):
+    """
+    A model that manages the booking.
+    """
+    tutorial_date = models.ForeignKey(TutorialDate, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.user} booked for {self.tutorial_date}"
