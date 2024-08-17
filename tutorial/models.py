@@ -8,10 +8,11 @@ class Tutorial(models.Model):
     """
     title = models.CharField(max_length=150, unique=True, null=False, blank=False)
     tutor_name = models.CharField(max_length=30, unique=True)
-    description = models.TextField(blank=True)
-    excerpt = models.TextField(blank=True)
-    date = models.TextField(blank=True)
-    time = models.TextField(blank=True)
+    description = models.TextField(blank=False)
+    excerpt = models.TextField(blank=False)
+    tutorial_date = models.DateTimeField(default='2024-08-17 00:10:00', null=False, blank=False)
 
     def __str__(self):
         return f"{self.title}"
+
+
