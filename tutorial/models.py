@@ -24,10 +24,10 @@ class TutorialDate(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     tutorial = models.ForeignKey(Tutorial, on_delete=models.CASCADE, related_name="selected_tutorial_date")
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="tutorial_user")
+    #user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="tutorial_user")
 
     def __str__(self):
-        return f"{self.tutorial} booked by {self.user} at {self.start_time} for {self.tutorial_date}"
+        return f"{self.tutorial_date} | {self.start_time} | {self.tutorial}"
 
 
 class Booking(models.Model):
@@ -38,4 +38,4 @@ class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.tutorial_date}"
+        return f"{self.tutorial_date} | {self.user}"
