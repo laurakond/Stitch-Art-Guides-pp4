@@ -7,7 +7,8 @@ class Tutorial(models.Model):
     A model that provides information about tutorial
     """
     title = models.CharField(max_length=150, unique=True, null=False, blank=False)
-    tutor_name = models.CharField(max_length=30, unique=True)
+    slug = models.SlugField(max_length=150, unique=True)
+    tutor_name = models.CharField(max_length=30, unique=False)
     description = models.TextField(blank=False)
     excerpt = models.TextField(blank=False)
 
@@ -26,7 +27,7 @@ class TutorialDate(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="tutorial_user")
 
     def __str__(self):
-        return f"{self.tutorial} booked by {self.user} at {self.start_time}"
+        return f"{self.tutorial} booked by {self.user} at {self.start_time} for {self.tutorial_date}"
 
 
 class Booking(models.Model):
@@ -37,4 +38,4 @@ class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.user} booked for {self.tutorial_date}"
+        return f"{self.tutorial_date}"
