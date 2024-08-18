@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Tutorial, TutorialDate
 
 # Create your views here.
 
-def my_tutorial(request):
-    return HttpResponse("Created new app")
+class TutorialList(generic.ListView):
+    queryset = Tutorial.objects.all()
+    template_name = "tutorial_list.html"

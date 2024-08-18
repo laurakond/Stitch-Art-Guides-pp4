@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial list</title>
+</head>
+<body>
+    <h3>Post list to test:</h3>
+    {% for tutorial in object_list %}
+    <h2>{{ tutorial.title }}</h2>
+    <p>{{ tutorial.description }}</p>
+    <p>{{ tutorial.tutor_name }}</p>   
+    {% endfor %}
+</body>
+</html>
