@@ -13,10 +13,12 @@
     {% block content %}
     <!-- tutorial list starts here -->
     <h3>Post list to test:</h3>
-    {% for tutorial in object_list %}
-    <h2>{{ tutorial.title }}</h2>
-    <p>{{ tutorial.description }}</p>
-    <p>{{ tutorial.tutor_name }}</p>
+    {% for tutorial in tutorial_list %}
+    <a href="{% url 'tutorial_detail' tutorial.slug %}">
+        <h2>{{ tutorial.title }}</h2>
+    </a>
+    <p>Description: {{ tutorial.description }}</p>
+    <p>Tutor: {{ tutorial.tutor_name }}</p>
     {% endfor %}
     <!-- tutorial list ends here -->
     {% endblock %}

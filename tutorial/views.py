@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Tutorial, TutorialDate
 
@@ -10,3 +10,17 @@ class TutorialList(generic.ListView):
 
 def index(request):
     return render(request, "tutorial/index.html")
+
+# the below code was appropriated from Code 
+# Institute's Blog walkthrough
+def tutorial_detail(request, slug):
+    "function that displays individual tutorial's details"
+
+    queryset = Tutorial.objects.all()
+    tutorial = get_object_or_404(queryset, slug=slug)
+
+    return render(
+        request,
+        "tutorial/tutorial_detail.html",
+        {"tutorial": tutorial},
+    )
