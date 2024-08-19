@@ -22,5 +22,6 @@ def tutorial_detail(request, slug):
     return render(
         request,
         "tutorial/tutorial_detail.html",
-        {"tutorial": tutorial},
+        {"tutorial": tutorial,
+         "coach": "Laura K"},
     )
