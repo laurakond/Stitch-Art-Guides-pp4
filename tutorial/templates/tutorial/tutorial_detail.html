@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
-{% load static %}
+<!-- {% load static %} -->
 
 {% block content %}
 <h2>{{ tutorial.title }}</h2>
 <p>{{ tutorial.tutor_name }}</p>
-<img src="{% static 'images/embroidery-pexels.jpg' %}" alt="placeholder">
+<div class="image">
+    <img src="{% static 'images/default.jpg' %}" alt="placeholder">
+</div>
 <p>{{ tutorial.description | safe }}</p>
 {% endblock %}
