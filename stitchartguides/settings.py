@@ -28,8 +28,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1",
-                 '.herokuapp.com'
-                 ]
+                "8000-laurakond-stitchartguid-awekh027x8c.ws.codeinstitute-ide.net",
+                '.herokuapp.com',
+                ]
 
 
 # Application definition
