@@ -16,7 +16,7 @@ def about_me(request):
     return render(request, "home/about.html")
 
 
-def test(request):
+def my_tutorials(request):
     """
     function that displays booked tutorial page.
     """
