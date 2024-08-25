@@ -7,6 +7,23 @@
 <div class="image">
     <img src="{% static 'images/default.jpg' %}" alt="placeholder">
 </div>
+
 <p>{{ tutorial.description | safe }}</p>
 <h3>{{ coach }}</h3>
+
+{{ tutorial_calendar|safe }}
+<br>
+
+{% for date in tutorial_date%}
+    <p>Tutorial Date: <br> {{ date.tutorial_date }} {{ date.start_time }}</p>
+{% endfor %}
+
+{% if user.is_authenticated %}
+<a href="{% url 'tutorial_detail' tutorial.slug %}">Book tutorial</a>
+{% else %}
+
+<a href="{% url 'account_signup'  %}">Register/Login to book</a>
+
+{% endif %}
+
 {% endblock %}
