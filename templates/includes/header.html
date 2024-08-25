@@ -36,6 +36,12 @@
 
                     <!-- Authentication Links -->
                     {% if user.is_authenticated %}
+                    <!-- Booked tutorials link -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == booked_tutorials_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'booked_tutorials' %}">My Tutorials</a>
+                    </li>
+                    
                     <!-- User Information -->
                     <span class="navbar-text text-muted">
                         {{ user }}
