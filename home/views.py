@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from tutorial.models import Booking
 
 # Create your views here.
 def index(request):
@@ -20,4 +21,11 @@ def my_tutorials(request):
     """
     function that displays booked tutorial page.
     """
-    return render(request, 'home/my_tutorials.html')
+    bookings = Booking.objects.filter(user=request.user)
+    #tutorial_date = TutorialDate.objects.all()
+
+    return render(
+        request,
+        'home/my_tutorials.html',
+        {"bookings": bookings,}
+         )
