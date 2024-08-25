@@ -14,3 +14,10 @@ def about_me(request):
     function that displays about page.
     """
     return render(request, "home/about.html")
+
+
+def test(request):
+    """
+    function that displays booked tutorial page.
+    """
+    return render(request, 'home/my_tutorials.html')
