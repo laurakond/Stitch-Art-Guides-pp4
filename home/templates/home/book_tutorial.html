@@ -1,9 +1,30 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <!-- book_tutorial.html code starts here -->
-
-{{ tutorial_calendar|safe }}
-
+<!-- FullCalendar widget -->
+<div id="tutorial-calendar"></div>
 <!-- book_tutorial.html code ends here -->
+{% endblock %}
+
+{% block js %}
+<!-- populates the event calendar -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tutorialCalendar = document.getElementById('tutorial-calendar');
+        var calendar = new FullCalendar.Calendar(tutorialCalendar, {
+            initialView: 'dayGridMonth',
+            validRange: {
+                start: '2024-08-01'
+            },
+            headerToolbar: {
+                left: 'prev',
+                center: 'title',
+                right: 'next'
+            }
+        });
+        calendar.render();
+    });
+</script>
 {% endblock %}
