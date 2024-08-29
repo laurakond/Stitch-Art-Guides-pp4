@@ -1,131 +1,308 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Stitch Art Guides
 
-Welcome Laura Kondrataite,
+![main-image]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+(By Laura Kondrataite)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+Intro to website
 
-## Gitpod Reminders
+Live site can be found [here]().
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Table of Contents
 
-`python3 -m http.server`
+[Design](#design)
+- [Target Audience](#target-audience)
+- [User Stories](#user-stories)
+- [Flowcharts](#flowcharts)
+- [Wireframes](#wireframes)
 
-A blue button should appear to click: _Make Public_,
+[Features](#features)
+- [Existing Features](#existing-features)
+- [Features Left to Implement](#features-left-to-implement)
 
-Another blue button should appear to click: _Open Browser_.
+[Tools and Technologies](#tools-and-technologies)
+- [Languages Used](#languages-used)
+- [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+[Testing](#testing)
 
-A blue button should appear to click: _Make Public_,
+[Deployment](#deployment)
+- [Github](#github)
+    - [How to Fork](#how-to-fork)
+    - [How to Clone](#how-to-clone)
+- [Heroku](#heroku)
 
-Another blue button should appear to click: _Open Browser_.
+[Credits](#credits)
+- [Content](#content)
+- [Refactoring](#refactoring)
+- [General resources](#general-resources)
+- [Acknowledgments](#acknowledgments)
+- [Code inspiration](#code-inspiration)
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## How to play
 
-To log into the Heroku toolbelt CLI:
+- Once the application is loaded, the Welcome screen is displayed. Choose whether to read the instructions or go straight to the gameplay.
+- If chosen to proceed to the game, enter appropriate data (name and gender) to move forward. The data will customise the gameplay.
+- When prompted, select appropriate answers to progress.
+    - These are questions that require to type in either yes/no or '1'/'2' into the provided fields.
+- If the choice is incorrect, the main screen load and the game restarts.
+- If you are successful, choose whether to progress further or finish playing the game. 
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+[Return to Table of Contents](#table-of-contents)
 
-### Connecting your Mongo database
+## Design
+### Target Audience
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+The main target audience for the game is anyone aged 16 and over, who enjoys text-based adventures, and/ or is a fan of the TV Show and Disney fairytales.
 
-------
 
-## Release History
+### User Stories
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+As a first time user:
+- I want to clearly see what the application is about so I have a good understanding of what it is about.
+- I want to be able to read instructions before progressing to the application so that I know how to play the game.
+- I want to be able to exit the game after reading instructions in case I don't want to play it.
 
-**June 18, 2024,** Add Mongo back into template
+<br>
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+As a user:
+- I want to be able to skip the instructions so that I can start playing the game straight away.
+- I want to see my name and gender inputs within the game so that the game feels more customised to me.
+- I want to stop the game once I reach a certain game milestone so that I can exit the game.
+- I want to proceed to the next stage of the game after reaching a certain game milestone so that I can finish the game.
+- I want to return to the main screen after the game has finished so that I can decide whether to play again or not.
 
-**May 28 2024:** Fix Mongo and Links installs
+### Flowcharts
+I used [Lucidchart](https://lucid.app/) for creating the logic and structure of the game. The flowchart of the project has had to be split into two flowcharts (minimum viable product & future feature) due to limited use of blocks per one chart. Chapter 3 is a future feature. 
 
-**April 26 2024:** Update node version to 16
+- MVP flowchart:
 
-**September 20 2023:** Update Python version to 3.9.17.
+![flowchart-mvp]()
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- Future feature flowchart (Chapter 3):
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![flowchart-mvp]()
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Wireframes
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+[Return to Table of Contents](#table-of-contents)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Features
+### Existing Features
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+**Welcome screen**
+- Upon loading the application, a Welcome screen shows the main game logo "Once Upon a Time" and gives a brief introduction to the game.
+    - The user is then prompted to select between two options: proceed to the game or go to the instructions' page.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![welcome-screen]()
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+**Instructions**
+- The instruction page displays another Ascii art logo "How to play" that clearly indicates to the user where they are in the application.
+    - The page lists the steps of how to play the game, and asks the user if they want to play the game or quit the application.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![instructions]()
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+**Game exit**
+- If the user chooses to leave the game after reading the instructions, the screen displays "Thank you for playing! see you next time." 
+    - The user needs to click on the "Run program" button at the top if they wish to reload the program.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![exit-game-1]()
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+**User data input**
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- If the user chooses to proceed to the gameplay, they are prompted to enter their name and gender. 
+- By providing this information the game customises the game play, which makes the game more relatable and interactive.
+    - The username is visible within the introduction of the storyline and at the end of the game if the user wins the game. 
+**To note**: the gender input is not implemented in the current MVP product. 
+    - The gender input is set to customise pronouns that will be adjusted at the next stage of the project development.  
 
-------
+![user-data-input]()
 
-## FAQ about the uptime script
+**Story introduction**
+- Once the user data is captured, the screen clears the previous content, and loads the main logo together with the beginning of the story. 
+    - The user will see that their provided username is generated within the storyline at the end of the first introduction paragraph. 
 
-**Why have you added this script?**
+![story-intro]()
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+**Chapter 1**
+- Chapter 1 section loads straight after the story introduction. 
+- The logo provides a clear indication which area within the game play the user is at. 
+- Here the user is prompted to choose between two possible outcomes to proceed with the gameplay. 
 
-**How will this affect me?**
+![chapter-1]()
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+**Chapter 2**
+- If the user is successful and progresses to Chapter 2, the screen will, like in Chapter 1, load the logo clearly indicating the progression to the next stage.
+- This section of the game provides a few more scenarios, which will take the user to the end of the game, if the user's answers are correct. 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+![chapter-2]()
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+**Winning section**
+- Once the user won, the winning paragraph will appear after a small pause. 
+- The question asking the user if they wish to proceed to Chapter 3 or terminate the game will generate. 
+    - upon selection the terminal will display appropriate message to the user. 
+    <details>
+    <summary>Winning content screenshot</summary>
 
-**So….?**
+    ![winning-text]()
+    </details>
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+    <details>
+    <summary>Goodbye message screenshot</summary>
 
-**Can I opt out?**
+    ![end-game-prompt]()
+    </details>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+    <details>
+    <summary>Chapter 3 message screenshot</summary>
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+    ![chapter-3]()
+    </details>
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+**Game progression**
+- Throughout the gameplay, each stage of the story is indicated by the question prompt. 
+- Alternatively, the story progression, dependent on the user's selection, is clearly indicated by the line breaks that allow the user to follow the content intuitively. 
+    - (the answers were deliberately removed from the below screenshots).
 
----
+![section-indication]()
 
-Happy coding!
+**Incorrect choice**
+- If the user selects incorrect answer at any point during the gameplay, a relevant text prints after a few moments, and indicates that the user's choice was incorrect.
+- After a few seconds, the screen will automatically return to the main Welcome page, where the user will be able to restart the program again. 
+
+![incorrect-answer]()
+
+**Time progression**
+- To ensure better user experience, the game has a time lag installed. This allows the game to load the content in stages, and ensures a better flow and readability. 
+ 
+**Clearing the screen**
+- Similarly to the above point, all the content that proceeds the gameplay is cleared from the screen. This allows better flow of the program in the terminal window.
+    - This feature is only applied to the Welcome and the Instruction sections. 
+    - Once inside the gameplay, the user will be able to scroll back up to previous storyline content.
+
+
+### Features Left to Implement
+
+- The current gameplay set up only covers the first part of the pilot episode. Therefore, the next feature will be implementing the second half of the game-play. The flowchart with a breakdown of steps is shown in the [flowcharts](#flowcharts) section.
+- The next stage will customise the pronouns in the game text based on the gender data provided by the user at the start of the game.
+- Similarly, there is potential to implement the user's age to further customise the story-telling of the game.
+
+These features would allow to make the game more relatable and enjoyable for the user. 
+
+[Return to Table of Contents](#table-of-contents)
+
+## Tools and Technologies
+### Languages Used
+
+- The primary language used for developing this project was Python.
+- Markdown was used for creating the README and TESTING files.
+
+### Frameworks, Libraries and Programs Used
+
+The following resources were used to help implement the website:
+- [Lucidchart](https://lucid.app/) for creating flowchart of the game.
+- [GitHub](https://github.com/) for creating and storing files and folders of the website.
+- **Git** was used for version control.
+- **VScode** editor for writing the code.
+- [CI Python Linter](https://pep8ci.herokuapp.com/#) for validating and checking my code for best code practices.
+- [Heroku](https://www.heroku.com) for accessing and storing my application game.
+- I used the following libraries for the project:
+    - **gspread** allowed to access, edit and manipulate data stored in the Google worksheets.  
+    - **google.oauth2.service_account** allowed to set up the authentication needed to access my GOOGLE cloud project.
+    - **time** module's sleep function allowed to manipulate the timeframe when to display the game content. 
+    - **os** library system method allowed to clear the screen for better user experience when displaying the game.
+
+ [Return to Table of Contents](#table-of-contents)
+
+## Testing
+
+The game application went through extensive testing during the development and deployement stages. 
+- See [testing.md](TESTING.md) file for full testing and validation information.
+
+[Return to Table of Contents](#table-of-contents)
+
+
+## Deployment
+This website was deployed using GitHub pages and Heroku website. To deploy the project, follow the steps below:
+
+### Github
+1. Login to GitHub and navigate to the main repository page.
+2.  Click on the chosen repository [repository-name]().
+3. Once inside the repository, click on the "Settings" tab above the repository title displayed around the middle of the page.
+4. Select "Pages" tab on the left side navigation menu.
+5. In the "Source" section (middle of the screen), select "main" or "master" branch, then "root" folder and click "save" button.
+6. The GitHub page site will be deployed.
+
+It might take a few minutes to generate the "live" website link.
+
+The live link to the game can be found [repository name]().
+
+#### How to Fork
+To fork the repository in Github:
+1. Follow steps 1 & 2 as above. 
+2. Once inside the chosen repository, click the "fork" button in the top right corner above the "About section".
+
+#### How to Clone
+To clone the repository in Github:
+1.  Follow steps 1 & 2 as in the deployment section above.
+2.  Click on the "Code" button (often a bright color that stands out) in the top right corner just above the "commits" history. 
+    - Select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+3.  Open the terminal in your chosen code editor and change the current working directory to the location you want to use for the cloned directory.
+4.  Type 'git clone' into the terminal and then paste the copied link and press enter.
+
+### Heroku
+To deploy to the Heroku website, follow the steps below:
+1. Navigate to https://www.heroku.com platform website.
+2. Create or log in to your account.
+3. Once on your dashboard:
+    1) if you don't have any projects created yet, there should be a "Create a new app" prompt in the middle of the screen.
+    2) if you have some projects already, click on the "New" tab on the top right corner of the screen just below the profile bauble. 
+4.  Enter a unique application name for your project and select the region you are based in. Click "create app".
+5. Once insde the app, select "Settings" button from the menu in the middle. It's important to edit the "Settings" tab before deploying the project: 
+    1. Click on "Reveal Config Vars" and enter the following:
+        
+        1) if you are using any APIs you will need to copy paste your creds.json details:
+            - in the "key" box type "CREDS". 
+            - in the "value" box copy the contents of your creds.json file: 
+            - click "Add".
+
+        2) type in PORT to the "key" box, and 8000 to the "value" box:
+            - click "Add".
+
+    2. Add Buildpacks below Config Vars. Click on "Add buildpack":
+
+        1) First, select Python and click "Add buildpack".
+        2) Second, select node.js and click "Add buildpack".
+        
+        **Note:** Python has to be listed first (at the top) of the two packs.
+6. Once step 5 is done, navigate to the "Deploy" tab a the top of the screen to the left of where the Settings tab is located.
+7. Click on "Github" icon under "Deployment method", and connect Heroku to your Github account. 
+8. Once the accounts are connected you can choose between automatic or manual deployment:
+
+    1) Automatic deplyoment will automatically update your app once you use "git push" command in  your IDE. 
+
+    2) Manual deployment will require you to manually "push" the changes you made in the IDE to the Heroku system.
+
+[Return to Table of Contents](#table-of-contents)
+
+## Credits
+
+### Content
+
+### Refactoring
+
+### General resources:
+
+
+### Acknowledgments
+
+- My thanks goes to my mentor, [Martina Terlevic](https://github.com/SephTheOverwitch), for providing advice on how to improve my code, giving suggestions how to troubleshoot and providing reassurance when my confidence stumbled.
+
+### Code Inspiration
+    - Credit is also noted within the code.
+
+
+[Return to Table of Contents](#table-of-contents)
