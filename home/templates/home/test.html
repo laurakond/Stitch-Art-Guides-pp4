@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h1>Test</h1>
+    <div><img src="#" alt="profile pic"></div>
+    <div>
+        <p>Profile blurb</p>
+        <!-- make the <a> tag button like -->
+        <a href="{% url 'tutorial_list' %}">Discover tutorials</a>
+    </div>
+</div>
+{% endblock %}
