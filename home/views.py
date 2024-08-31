@@ -1,26 +1,26 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from tutorial.models import Booking
+from tutorial.models import Booking, TutorialDate
 
 
 # Create your views here.
 def index(request):
     """
-    function that displays home page.
+    Function that displays the home page.
     """
     return render(request, "home/index.html")
 
 
 def about_me(request):
     """
-    function that displays about page.
+    Function that displays the About page.
     """
     return render(request, "home/about.html")
 
 
 def my_tutorials(request):
     """
-    function that displays booked tutorial page.
+    Function that displays booked tutorial page.
     """
     bookings = Booking.objects.filter(user=request.user)
 
@@ -31,14 +31,31 @@ def my_tutorials(request):
          )
 
 
-# the below code was appropriated from Code 
-# Institute's Blog walkthrough
+def test_me(request):
+    return render(request, "home/test.html")
+
+
+# the below code was appropriated from Code Institute's 
+# July Hackathon United Events team repository:
+# https://github.com/hannahro15/July24Hackathon-United-Events
 def book_a_tutorial(request):
     """
     Function that displays calendar for booking a tutorial.
     """
 
+    tutorials = TutorialDate.objects.all()
+    events = []
+    for tutorial in tutorials:
+        events.append({
+            'title': tutorial.tutorial.title,
+            'start_date': tutorial.tutorial_date.isoformat(),
+            'start_time': tutorial.start_time.strftime('%H:%M'),
+            'end_time': tutorial.end_time.strftime('%H:%M'),
+            'id': tutorial.pk,
+        })
+   
     return render(
         request,
         "home/book_tutorial.html",
+        {"events": events},
     )
