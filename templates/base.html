@@ -1,6 +1,7 @@
 {% load static %}
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
+{% url 'test' as test_url %}
 {% url 'tutorial_list' as tutorial_list_url %}
 {% url 'booked_tutorials' as booked_tutorials_url %}
 {% url 'calendar' as calendar_url %}
@@ -45,11 +46,11 @@
 
     <!-- Bootstrap core JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- fullcalendar -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
     <!-- Core theme JS -->
-    <script src="{% static 'static/js/script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
     {% block js %}
     {% endblock %}
 </body>
