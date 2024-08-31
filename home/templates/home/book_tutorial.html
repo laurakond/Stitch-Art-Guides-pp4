@@ -12,8 +12,8 @@
 <!-- populates the event calendar -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var tutorialCalendar = document.getElementById('tutorial-calendar');
-        var calendar = new FullCalendar.Calendar(tutorialCalendar, {
+        let tutorialCalendar = document.getElementById('tutorial-calendar');
+        let calendar = new FullCalendar.Calendar(tutorialCalendar, {
             initialView: 'dayGridMonth',
             validRange: {
                 start: '2024-08-01'
@@ -22,7 +22,37 @@
                 left: 'prev',
                 center: 'title',
                 right: 'next'
-            }
+            },
+            eventTimeFormat: {
+                hour: 'numeric',
+                minute: '2-digit',
+                meridiem: 'short'
+            },
+            eventClick: function(info){
+                /* Function that enables and disables clickable events
+                 based on the current date. Used resources noted in the Readme.*/
+                let eventStartDate = info.event.start;
+                let today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                if (eventStartDate < today) {
+                    info.jsEvent.preventDefault();
+                    alert("REMINDER put a modal or apply css to signal lapsed");
+                    return;
+                } else {
+                    location.href = "/book-a-tutorial/test/";
+            }},
+            events: [
+                {% for event in events %}
+                {
+                title: '{{ event.title }}',
+                start: '{{ event.start_date }}T{{ event.start_time }}',
+                end: '{{ event.start_date }}T{{ event.end_time }}',
+                id:'{{ event.id }}',
+            },
+            {% endfor %}
+            ],
+
         });
         calendar.render();
     });
