@@ -22,6 +22,7 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 - [Colour palette](#colour-palette)
 - [Fonts styles](#font-styles)
 
+[Agile Methodology](#agile-methodology)
 [Features](#features)
 - [Existing Features](#existing-features)
 - [Features Left to Implement](#features-left-to-implement)
@@ -112,6 +113,12 @@ The following palette was used to ensure the contrast is achieved between main p
 ![font screenshots]()
 
 [Return to Table of Contents](#table-of-contents)
+
+
+## Agile Methodology
+
+[Return to Table of Contents](#table-of-contents)
+
 
 ## Features
 ### Existing Features
