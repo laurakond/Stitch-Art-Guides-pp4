@@ -48,8 +48,12 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 ## Design
 ### Target Audience
 
-The main target audience for the game is anyone aged 16 and over, who enjoys text-based adventures, and/ or is a fan of the TV Show and Disney fairytales.
+The primary target audience for the game is:
+- persons of any gender aged 16+ who enjoy crafts, 
+- first time cross-stitchers,
+- anyone looking for guidance on how to progress in their cross-stitch journey. 
 
+No background, geographical location or income has been specified for the target audience. 
 
 ### User Stories
 
