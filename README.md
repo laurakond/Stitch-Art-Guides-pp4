@@ -77,6 +77,26 @@ I used [Lucidchart](https://lucid.app/) for creating the logic and structure of 
 ![flowchart-mvp]()
 
 ### Wireframes
+The following wireframes show the initial idea of how the website would look on three different devices: mobile, tablet/iPad and laptop/desktops. 
+
+They also convey an idea of how the user  navigate between different pages of the website.
+
+<details>
+    <summary>Mobile view</summary>
+
+    ![mobile view]()
+</details>
+<details>
+    <summary>Tablet view</summary>
+
+    ![tablet view]()
+</details>
+<details>
+    <summary>Desktop/Laptop view</summary>
+
+    ![desktop view]()
+</details>
+
 
 ### Color palette
 
