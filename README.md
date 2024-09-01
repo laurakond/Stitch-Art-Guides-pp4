@@ -4,9 +4,13 @@
 
 (By Laura Kondrataite)
 
-Intro to website
+Are you practicing crafts or simply interested in dipping your toes in the vast world of modern embroidery? Then look no further. Enter the Stitch Art Guides! This website is created with avid stitchers and wondering newbies in mind. 
 
-Live site can be found [here]().
+Art Stich Guides provides a number of various tutorials on how to set up and get started with your first project whether it is a simple cross stitch sampler or a more advanced project. 
+
+All are welcome.
+
+Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokuapp.com/).
 
 ## Table of Contents
 
@@ -38,16 +42,6 @@ Live site can be found [here]().
 - [General resources](#general-resources)
 - [Acknowledgments](#acknowledgments)
 - [Code inspiration](#code-inspiration)
-
-## How to play
-
-- Once the application is loaded, the Welcome screen is displayed. Choose whether to read the instructions or go straight to the gameplay.
-- If chosen to proceed to the game, enter appropriate data (name and gender) to move forward. The data will customise the gameplay.
-- When prompted, select appropriate answers to progress.
-    - These are questions that require to type in either yes/no or '1'/'2' into the provided fields.
-- If the choice is incorrect, the main screen load and the game restarts.
-- If you are successful, choose whether to progress further or finish playing the game. 
-
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -220,7 +214,7 @@ The following resources were used to help implement the website:
 ## Testing
 
 The game application went through extensive testing during the development and deployement stages. 
-- See [testing.md](TESTING.md) file for full testing and validation information.
+- See [TESTING.md](TESTING.md) file for full testing and validation information.
 
 [Return to Table of Contents](#table-of-contents)
 
