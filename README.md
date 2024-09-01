@@ -221,8 +221,8 @@ These features would allow to make the game more relatable and enjoyable for the
 ## Tools and Technologies
 ### Languages Used
 
-- The primary language used for developing this project was Python.
-- Markdown was used for creating the README and TESTING files.
+- This project was created using full stack approach, including Python, Django, HTML, and CSS.
+- Markdown language was used for creating the README and TESTING files.
 
 ### Frameworks, Libraries and Programs Used
 
