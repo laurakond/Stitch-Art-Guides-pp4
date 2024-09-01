@@ -294,10 +294,16 @@ To deploy to the Heroku website, follow the steps below:
 
 ### Acknowledgments
 
-- My thanks goes to my mentor, [Martina Terlevic](https://github.com/SephTheOverwitch), for providing advice on how to improve my code, giving suggestions how to troubleshoot and providing reassurance when my confidence stumbled.
+My thanks go to: 
+- My mentor, [Martina Terlevic](https://github.com/SephTheOverwitch), for providing advice on how to improve my code. Giving suggestions for troubleshooting, and providing reassurance when my confidence stumbled (which has happened many a time).
+- My fellow student, [Vernell Clark]() for troubleshoot and providing a shoulder to cry on when things got really rough.
+- [Tim Nelson](https://github.com/TravelTimN) for the advice on very confusing coding innerworkings and general advice.
+- Another fellow student [Declan](https://github.com/Declan444) for helping in understanding how models work and overall morale boost when it was needed.
+- Tutor support for helping out with project set up and other quirky bits.
 
 ### Code Inspiration
-    - Credit is also noted within the code.
+- The project was inspired and based on some parts of Code Institute's I think therefore I blog walkthrough project. 
+    -  Credit is also noted within the code.
 
 
 [Return to Table of Contents](#table-of-contents)
