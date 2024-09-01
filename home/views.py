@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from tutorial.models import Booking, TutorialDate
+from tutorial.models import Booking, TutorialDate, Tutorial
 
 
 # Create your views here.
@@ -28,11 +28,23 @@ def my_tutorials(request):
         request,
         'home/my_tutorials.html',
         {"bookings": bookings,}
-         )
+        )
 
 
-def test_me(request):
-    return render(request, "home/test.html")
+def test_me(request,pk):
+    """
+    Function that captures the Tutorial Date primary key
+    and loads appropriate view.
+    """
+    # queryset = TutorialDate.objects.all()
+    tutorial_date_pk = get_object_or_404(TutorialDate, pk=pk)
+    tutorial_pk = tutorial_date_pk
+    return render(
+        request, 
+        "home/test.html", 
+        {"tutorial_pk": tutorial_pk,},
+        )
+
 
 
 # the below code was appropriated from Code Institute's 
@@ -51,7 +63,7 @@ def book_a_tutorial(request):
             'start_date': tutorial.tutorial_date.isoformat(),
             'start_time': tutorial.start_time.strftime('%H:%M'),
             'end_time': tutorial.end_time.strftime('%H:%M'),
-            'id': tutorial.pk,
+            'pk': tutorial.pk,
         })
    
     return render(
