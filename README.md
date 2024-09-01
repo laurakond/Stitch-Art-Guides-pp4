@@ -233,11 +233,17 @@ The following resources were used to help implement the website:
 - **VScode** editor for writing the code.
 - [CI Python Linter](https://pep8ci.herokuapp.com/#) for validating and checking my code for best code practices.
 - [Heroku](https://www.heroku.com) for accessing and storing my application game.
+- [Django](https://www.djangoproject.com/) Python framework for the overall project implementation.
+- [Bootstrap](https://getbootstrap.com/) CSS framework that allowed to implement various styled elements, including modals. It was also used for quick and easy styling of the overall website.
+- [Whitenoise](https://whitenoise.readthedocs.io/en/stable/index.html) Python library used for handling static files.
+- [Django allauth](https://allauth.org/) authentication solution for Django framework used for allowing users to register and login.
+- [Django summernote](https://summernote.org/) Javascript library used for providing useful editing tools for Django admin site. 
 - I used the following libraries for the project:
-    - **gspread** allowed to access, edit and manipulate data stored in the Google worksheets.  
-    - **google.oauth2.service_account** allowed to set up the authentication needed to access my GOOGLE cloud project.
-    - **time** module's sleep function allowed to manipulate the timeframe when to display the game content. 
+    - **Full Calendar** JavaScript calendar open source that allowed to display available tutorial bookings in a calendar view.  
     - **os** library system method allowed to clear the screen for better user experience when displaying the game.
+
+Other libraries and dependencies can be seen in the requirements.txt file. 
+
 
  [Return to Table of Contents](#table-of-contents)
 
