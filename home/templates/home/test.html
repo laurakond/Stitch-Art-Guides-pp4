@@ -2,12 +2,33 @@
 
 {% block content %}
 <div>
-    <h1>Test</h1>
-    <div><img src="#" alt="profile pic"></div>
+    <h1>{{tutorial_pk.tutorial.title}}</h1>
     <div>
-        <p>Profile blurb</p>
+        <p>{{tutorial_pk.tutorial.excerpt}}</p>
+        <p>{{tutorial_pk.start_time}} to {{tutorial_pk.end_time}}</p>
         <!-- make the <a> tag button like -->
-        <a href="{% url 'tutorial_list' %}">Discover tutorials</a>
+        <a href="{% url 'tutorial_list' %}">Book this tutorial.</a><br><br>
+        <a href="{% url 'calendar' %}">Go back to the calendar.</a><br><br>
+
     </div>
 </div>
+<!-- Booking prompt Modal starts here -->
+<div class="modal" tabindex="-1" id="bookingModal" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookingModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Book Tutorial</button>                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Booking prompt Modal ends here -->
 {% endblock %}
