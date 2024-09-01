@@ -19,6 +19,8 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 - [User Stories](#user-stories)
 - [Flowcharts](#flowcharts)
 - [Wireframes](#wireframes)
+- [Colour palette](#colour-palette)
+- [Fonts styles](#font-styles)
 
 [Features](#features)
 - [Existing Features](#existing-features)
@@ -58,18 +60,10 @@ No background, geographical location or income has been specified for the target
 ### User Stories
 
 As a first time user:
-- I want to clearly see what the application is about so I have a good understanding of what it is about.
-- I want to be able to read instructions before progressing to the application so that I know how to play the game.
-- I want to be able to exit the game after reading instructions in case I don't want to play it.
 
 <br>
 
 As a user:
-- I want to be able to skip the instructions so that I can start playing the game straight away.
-- I want to see my name and gender inputs within the game so that the game feels more customised to me.
-- I want to stop the game once I reach a certain game milestone so that I can exit the game.
-- I want to proceed to the next stage of the game after reaching a certain game milestone so that I can finish the game.
-- I want to return to the main screen after the game has finished so that I can decide whether to play again or not.
 
 ### Flowcharts
 I used [Lucidchart](https://lucid.app/) for creating the logic and structure of the game. The flowchart of the project has had to be split into two flowcharts (minimum viable product & future feature) due to limited use of blocks per one chart. Chapter 3 is a future feature. 
@@ -84,6 +78,9 @@ I used [Lucidchart](https://lucid.app/) for creating the logic and structure of 
 
 ### Wireframes
 
+### Color palette
+
+### Font styles
 
 [Return to Table of Contents](#table-of-contents)
 
