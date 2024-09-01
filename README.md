@@ -99,8 +99,17 @@ They also convey an idea of how the user  navigate between different pages of th
 
 
 ### Color palette
+The following palette was used to ensure the contrast is achieved between main parts of the website:
+
+![color-palette]()
 
 ### Font styles
+[Google fonts](https://fonts.google.com/) was used to source the fonts for the website. These are:
+
+- font1 - was used as the main content font.
+- font2 - was used for the logo and provide accent pieces to the website.
+
+![font screenshots]()
 
 [Return to Table of Contents](#table-of-contents)
 
