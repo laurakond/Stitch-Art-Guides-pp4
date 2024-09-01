@@ -116,105 +116,96 @@ The following palette was used to ensure the contrast is achieved between main p
 ## Features
 ### Existing Features
 
-**Welcome screen**
-- Upon loading the application, a Welcome screen shows the main game logo "Once Upon a Time" and gives a brief introduction to the game.
-    - The user is then prompted to select between two options: proceed to the game or go to the instructions' page.
+**Landing page**
 
-![welcome-screen]()
 
-**Instructions**
+![landing page]()
+
+**About page**
 - The instruction page displays another Ascii art logo "How to play" that clearly indicates to the user where they are in the application.
     - The page lists the steps of how to play the game, and asks the user if they want to play the game or quit the application.
 
-![instructions]()
+![about page]()
 
-**Game exit**
+**Tutorial list**
 - If the user chooses to leave the game after reading the instructions, the screen displays "Thank you for playing! see you next time." 
     - The user needs to click on the "Run program" button at the top if they wish to reload the program.
 
-![exit-game-1]()
+![tutorial list]()
 
-**User data input**
+**User authentication**
 
-- If the user chooses to proceed to the gameplay, they are prompted to enter their name and gender. 
-- By providing this information the game customises the game play, which makes the game more relatable and interactive.
-    - The username is visible within the introduction of the storyline and at the end of the game if the user wins the game. 
-**To note**: the gender input is not implemented in the current MVP product. 
-    - The gender input is set to customise pronouns that will be adjusted at the next stage of the project development.  
+ <details>
+    **<summary>Register</summary>**
 
-![user-data-input]()
+    ![register]()
+</details>
 
-**Story introduction**
+ <details>
+    **<summary>Login</summary>**
+
+    ![login]()
+</details>
+
+ <details>
+    **<summary>Logout</summary>**
+
+    ![logout]()
+</details>
+
+ <details>
+    **<summary>Admin panel</summary>**
+
+    ![admin panel]()
+</details>
+
+
+**Tutorial Calendar**
 - Once the user data is captured, the screen clears the previous content, and loads the main logo together with the beginning of the story. 
     - The user will see that their provided username is generated within the storyline at the end of the first introduction paragraph. 
 
-![story-intro]()
+![calendar]()
 
-**Chapter 1**
+**My Tutorials page**
 - Chapter 1 section loads straight after the story introduction. 
 - The logo provides a clear indication which area within the game play the user is at. 
 - Here the user is prompted to choose between two possible outcomes to proceed with the gameplay. 
 
-![chapter-1]()
+![my tutorials]()
 
-**Chapter 2**
-- If the user is successful and progresses to Chapter 2, the screen will, like in Chapter 1, load the logo clearly indicating the progression to the next stage.
-- This section of the game provides a few more scenarios, which will take the user to the end of the game, if the user's answers are correct. 
+**Error pages**
 
-![chapter-2]()
+<details>
+    **<summary>400 error page</summary>**
 
-**Winning section**
-- Once the user won, the winning paragraph will appear after a small pause. 
-- The question asking the user if they wish to proceed to Chapter 3 or terminate the game will generate. 
-    - upon selection the terminal will display appropriate message to the user. 
-    <details>
-    <summary>Winning content screenshot</summary>
+    ![400 error page]()
+</details>
 
-    ![winning-text]()
-    </details>
+<details>
+    **<summary>403 error page</summary>**
 
-    <details>
-    <summary>Goodbye message screenshot</summary>
+    ![403 error page]()
+</details>
 
-    ![end-game-prompt]()
-    </details>
+<details>
+    **<summary>404 error page</summary>**
 
-    <details>
-    <summary>Chapter 3 message screenshot</summary>
+    ![404 error page]()
+</details>
 
-    ![chapter-3]()
-    </details>
+<details>
+    **<summary>500 error page</summary>**
 
+    ![500 error page]()
+</details>
 
-**Game progression**
-- Throughout the gameplay, each stage of the story is indicated by the question prompt. 
-- Alternatively, the story progression, dependent on the user's selection, is clearly indicated by the line breaks that allow the user to follow the content intuitively. 
-    - (the answers were deliberately removed from the below screenshots).
-
-![section-indication]()
-
-**Incorrect choice**
-- If the user selects incorrect answer at any point during the gameplay, a relevant text prints after a few moments, and indicates that the user's choice was incorrect.
-- After a few seconds, the screen will automatically return to the main Welcome page, where the user will be able to restart the program again. 
-
-![incorrect-answer]()
-
-**Time progression**
-- To ensure better user experience, the game has a time lag installed. This allows the game to load the content in stages, and ensures a better flow and readability. 
- 
-**Clearing the screen**
-- Similarly to the above point, all the content that proceeds the gameplay is cleared from the screen. This allows better flow of the program in the terminal window.
-    - This feature is only applied to the Welcome and the Instruction sections. 
-    - Once inside the gameplay, the user will be able to scroll back up to previous storyline content.
 
 
 ### Features Left to Implement
 
-- The current gameplay set up only covers the first part of the pilot episode. Therefore, the next feature will be implementing the second half of the game-play. The flowchart with a breakdown of steps is shown in the [flowcharts](#flowcharts) section.
-- The next stage will customise the pronouns in the game text based on the gender data provided by the user at the start of the game.
-- Similarly, there is potential to implement the user's age to further customise the story-telling of the game.
-
-These features would allow to make the game more relatable and enjoyable for the user. 
+- Allow the user to submit a customised tutorial request form. This would allow to address any individual needs of a crafter.  
+- Implement comment and review features for each tutorial.
+- Develop an in depth user participation and use of the website by providing an ability to share or sell their own craft projects. This includes allowing the user to submit their project photos, titles, author’s name, and so on.
 
 [Return to Table of Contents](#table-of-contents)
 
