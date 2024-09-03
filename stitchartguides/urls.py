@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .views import error_400, error_403, error_404, error_500
 
 
 urlpatterns = [
@@ -25,3 +26,10 @@ urlpatterns = [
     path('tutorials/', include("tutorial.urls"), name="tutorial-urls"),
     path('', include("home.urls"), name="home-urls"),
 ]
+
+
+"""Error handlers"""
+handler400 = error_400
+handler403 = error_403
+handler404 = error_404
+handler500 = error_500
