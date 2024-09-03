@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1>&#8203;</h1>
+<h2>Oops..Access is not allowed!</h2>
+<small>ERROR: 403</small>
+<br>
+<p>
+    Seems like you don't have permissions to access this content...
+    <br><br>
+    Try another page.
+    <br><br>
+    If the issue persists, please contact for assistance.
+    <br><br>
+</p>
+<p>
+    <a href="{% url 'home' %}">Home</a>
+</p>
+<p>
+
+    {% endblock %}
