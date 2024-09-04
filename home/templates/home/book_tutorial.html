@@ -5,6 +5,7 @@
 <!-- book_tutorial.html code starts here -->
 <!-- FullCalendar widget -->
 <div id="tutorial-calendar"></div>
+
 <!-- Expired Modal starts here -->
 <div class="modal" tabindex="-1" id="expiredModal" aria-labelledby="expiredModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -23,7 +24,6 @@
     </div>
 </div>
 <!-- Expired Modal ends here -->
-<!-- Booking prompt Modal moved to test.html -->
 <!-- book_tutorial.html code ends here -->
 {% endblock %}
 
@@ -47,26 +47,6 @@
                 minute: '2-digit',
                 meridiem: 'short'
             },
-            eventClick: function (info) {
-                /* Function that enables and disables clickable events
-                 based on the current date. Used resources noted in the Readme.*/
-                let eventStartDate = info.event.start;
-                let today = new Date();
-                today.setHours(0, 0, 0, 0);
-
-                if (eventStartDate < today) {
-                    info.jsEvent.preventDefault();
-                    var myModal = new bootstrap.Modal(document.getElementById('expiredModal'));
-                    myModal.show();
-                    return;
-                } else {
-                    let eventId = info.event.id;
-                    // let myModal = new bootstrap.Modal(document.getElementById('bookingModal'));
-                    // myModal.show();
-                    // let eventTitle = document.getElementById("bookingModalLabel");
-                    location.href = "/book-a-tutorial/test/" + eventId;
-                }
-            },
             events: [
                 {% for event in events %}
                 {
@@ -74,10 +54,31 @@
                 start: '{{ event.start_date }}T{{ event.start_time }}',
                 end: '{{ event.start_date }}T{{ event.end_time }}',
                 id: '{{ event.pk }}',
+                slug: '{{ event.slug }}',
             },
             {% endfor %}
             ],
+        eventClick: function (info) {
+            /* Function that enables and disables clickable events
+             based on the current date. Used resources noted in the Readme.*/
+            let eventStartDate = info.event.start;
+            let today = new Date();
+            today.setHours(0, 0, 0, 0);
 
+            if (eventStartDate < today) {
+                /* Checks if the tutorial date is current and applies 
+                modal or renders appropriate tutorial slot page. */
+                info.jsEvent.preventDefault();
+                var myModal = new bootstrap.Modal(document.getElementById('expiredModal'));
+                myModal.show();
+                return;
+            } else {
+                let eventId = info.event.id;
+                let eventSlug = info.event.extendedProps.slug;
+                let eventUrl = `/book-a-tutorial/${eventSlug}/${eventId}/`;
+                location.href = eventUrl;
+            }
+        },
         });
     calendar.render();
     });
