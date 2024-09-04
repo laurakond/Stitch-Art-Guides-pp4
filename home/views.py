@@ -31,22 +31,6 @@ def my_tutorials(request):
         )
 
 
-def test_me(request,pk):
-    """
-    Function that captures the Tutorial Date primary key
-    and loads appropriate view.
-    """
-    # queryset = TutorialDate.objects.all()
-    tutorial_date_pk = get_object_or_404(TutorialDate, pk=pk)
-    tutorial_pk = tutorial_date_pk
-    return render(
-        request, 
-        "home/test.html", 
-        {"tutorial_pk": tutorial_pk,},
-        )
-
-
-
 # the below code was appropriated from Code Institute's 
 # July Hackathon United Events team repository:
 # https://github.com/hannahro15/July24Hackathon-United-Events
@@ -64,6 +48,7 @@ def book_a_tutorial(request):
             'start_time': tutorial.start_time.strftime('%H:%M'),
             'end_time': tutorial.end_time.strftime('%H:%M'),
             'pk': tutorial.pk,
+            'slug': tutorial.tutorial.slug,
         })
    
     return render(
@@ -71,3 +56,18 @@ def book_a_tutorial(request):
         "home/book_tutorial.html",
         {"events": events},
     )
+
+
+def tutorial_session(request, slug, pk):
+    """
+    Function that captures the Tutorial Date primary key
+    and Tutorial slug and loads appropriate view.
+    """
+    # tutorial__slug captures the slug from the Tutorial Model.
+    #Full reference noted in the README.md.
+    event_slot = get_object_or_404(TutorialDate, pk=pk, tutorial__slug=slug)
+    return render(
+        request, 
+        "home/test.html", 
+        {"event_slot": event_slot,},
+        )
