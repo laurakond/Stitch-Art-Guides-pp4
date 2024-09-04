@@ -7,6 +7,5 @@ urlpatterns = [
     path("about/", views.about_me, name="about"),
     path("book-a-tutorial/", views.book_a_tutorial, name="calendar"),
     path("booked-tutorials/", views.my_tutorials, name="booked_tutorials"),
-    path("book-a-tutorial/test/", views.test_me, name="test"),
-    path("book-a-tutorial/test/<int:pk>", views.test_me, name="tutorial_detail"),
+    path("book-a-tutorial/<slug:slug>/<int:pk>/", views.tutorial_session, name="tutorial_slot"),
 ]
