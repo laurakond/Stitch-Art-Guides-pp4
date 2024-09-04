@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div>
-    <h1>{{tutorial_pk.tutorial.title}}</h1>
+    <h1>{{event_slot.tutorial.title}}</h1>
     <div>
-        <p>{{tutorial_pk.tutorial.excerpt}}</p>
-        <p>{{tutorial_pk.start_time}} to {{tutorial_pk.end_time}}</p>
+        <p>{{event_slot.tutorial.excerpt}}</p>
+        <p>{{event_slot.start_time}} to {{event_slot.end_time}}</p>
         <!-- make the <a> tag button like -->
         <a href="{% url 'tutorial_list' %}">Book this tutorial.</a><br><br>
         <a href="{% url 'calendar' %}">Go back to the calendar.</a><br><br>
