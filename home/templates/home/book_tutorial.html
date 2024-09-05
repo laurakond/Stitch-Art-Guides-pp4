@@ -60,17 +60,17 @@
             ],
         eventClick: function (info) {
             /* Function that enables and disables clickable events
-             based on the current date. Used resources noted in the Readme.*/
+             based on the current date & time. Used resources noted in the Readme.*/
             let eventStartDate = info.event.start;
             let today = new Date();
-            today.setHours(0, 0, 0, 0);
+            // today.setHours(0, 0, 0, 0);
 
             if (eventStartDate < today) {
                 /* Checks if the tutorial date is current and applies 
                 modal or renders appropriate tutorial slot page. */
                 info.jsEvent.preventDefault();
-                var myModal = new bootstrap.Modal(document.getElementById('expiredModal'));
-                myModal.show();
+                let expiredEvent = new bootstrap.Modal(document.getElementById('expiredModal'));
+                expiredEvent.show();
                 return;
             } else {
                 let eventId = info.event.id;
