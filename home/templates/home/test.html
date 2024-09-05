@@ -7,12 +7,8 @@
     <div>
         <p>{{event_slot.tutorial.excerpt}}</p>
         <p>{{event_slot.start_time}} to {{event_slot.end_time}}</p>
-        <!-- make the <a> tag button like -->
         {% if user.is_authenticated %}
-        <!-- <form action="" method="POST"> -->
-        <!-- {% csrf_token %} -->
         <button type="button" id="bookButton">Book this tutorial</button>
-        <!-- </form> -->
         {% endif %}
     </div>
 </div>
