@@ -1,6 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
+from django.contrib import messages
+from django.http import HttpResponseRedirect
 from tutorial.models import Booking, TutorialDate, Tutorial
+
 
 
 # Create your views here.
@@ -66,6 +69,16 @@ def tutorial_session(request, slug, pk):
     # tutorial__slug captures the slug from the Tutorial Model.
     #Full reference noted in the README.md.
     event_slot = get_object_or_404(TutorialDate, pk=pk, tutorial__slug=slug)
+    
+
+    if request.method == "POST":
+        user = request.user
+        Booking.objects.create(user=user, tutorial_date=event_slot)
+        messages.add_message(
+            request, messages.SUCCESS,
+            'Your tutorial is booked. See you then!'
+            )
+
     return render(
         request, 
         "home/test.html", 
