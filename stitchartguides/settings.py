@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1",
-                "8000-laurakond-stitchartguid-awekh027x8c.ws.codeinstitute-ide.net",
+                "8000-laurakond-stitchartguid-bngwpwy8m14.ws.codeinstitute-ide.net",
                 '.herokuapp.com',
                 ]
 
@@ -107,7 +107,7 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
-    "https://*.herokuapp.com"
+    "https://stitch-art-guides-pp4-5a679feed1e1.herokuapp.com/"
 ]
 
 # Password validation
