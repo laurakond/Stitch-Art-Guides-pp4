@@ -8,28 +8,34 @@
         <p>{{event_slot.tutorial.excerpt}}</p>
         <p>{{event_slot.start_time}} to {{event_slot.end_time}}</p>
         <!-- make the <a> tag button like -->
-        <a href="{% url 'tutorial_list' %}">Book this tutorial.</a><br><br>
-        <a href="{% url 'calendar' %}">Go back to the calendar.</a><br><br>
-
+        {% if user.is_authenticated %}
+        <!-- <form action="" method="POST"> -->
+        <!-- {% csrf_token %} -->
+        <button type="button" id="bookButton">Book this tutorial</button>
+        <!-- </form> -->
+        {% endif %}
     </div>
 </div>
 <!-- Booking prompt Modal starts here -->
-<div class="modal" tabindex="-1" id="bookingModal" aria-labelledby="bookingModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="bookingModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Book Tutorial</button>                
+<form action="" method="POST">
+    <div class="modal" tabindex="-1" id="bookingModal" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Book Tutorial</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</form>
 <!-- Booking prompt Modal ends here -->
 {% endblock %}
