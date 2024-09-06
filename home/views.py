@@ -36,17 +36,17 @@ def my_tutorials(request):
         )
 
 
-# the below code was appropriated from Code Institute's 
+# The below code was appropriated from Code Institute's 
 # July Hackathon United Events team repository:
 # https://github.com/hannahro15/July24Hackathon-United-Events
 def book_a_tutorial(request):
     """
     Function that displays calendar for booking a tutorial.
     """
-
     tutorials = TutorialDate.objects.all()
     events = []
     for tutorial in tutorials:
+        is_booked = Booking.objects.filter(tutorial_date=tutorial).exists()
         events.append({
             'title': tutorial.tutorial.title,
             'start_date': tutorial.tutorial_date.isoformat(),
@@ -54,6 +54,7 @@ def book_a_tutorial(request):
             'end_time': tutorial.end_time.strftime('%H:%M'),
             'pk': tutorial.pk,
             'slug': tutorial.tutorial.slug,
+            'is_booked': is_booked,
         })
    
     return render(
@@ -70,7 +71,7 @@ def tutorial_session(request, slug, pk):
     and Tutorial slug and loads appropriate view.
     """
     # tutorial__slug captures the slug from the Tutorial Model.
-    #Full reference noted in the README.md.
+    # Full reference noted in the README.md.
     event_slot = get_object_or_404(TutorialDate, pk=pk, tutorial__slug=slug)
     
 
@@ -87,7 +88,7 @@ def tutorial_session(request, slug, pk):
             messages.error(request, 'This event has now passed and cannot be accessed.')
             return redirect('calendar')
 
-    # requesting a booking of the tutorial slot
+    # requesting a booking for the tutorial slot
     if request.method == "POST":
         user = request.user
         Booking.objects.create(user=user, tutorial_date=event_slot)
