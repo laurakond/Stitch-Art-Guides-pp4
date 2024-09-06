@@ -23,11 +23,12 @@ def about_me(request):
     return render(request, "home/about.html")
 
 
+@login_required
 def my_tutorials(request):
     """
     Function that displays booked tutorial page.
     """
-    bookings = Booking.objects.filter(user=request.user)
+    bookings = Booking.objects.filter(user=request.user.id)
 
     return render(
         request,
