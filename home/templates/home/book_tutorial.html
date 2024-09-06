@@ -12,10 +12,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="expiredModalLabel">Tutorial Date Expired</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>This tutorial is no longer available. Please select any available dates.</p>
+                <p>This tutorial is no longer available. Please select another available date.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -24,6 +23,25 @@
     </div>
 </div>
 <!-- Expired Modal ends here -->
+
+<!-- Already Booked Modal starts here -->
+<div class="modal" tabindex="-1" id="alreadyBookedModal" aria-labelledby="alreadyBookedModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="alreadyBookedModal">Tutorial booking is not available.</h5>
+            </div>
+            <div class="modal-body">
+                <p>This tutorial has already been booked. Please select another available date.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Already Booked ends here -->
+
 <!-- book_tutorial.html code ends here -->
 {% endblock %}
 
@@ -55,6 +73,7 @@
                 end: '{{ event.start_date }}T{{ event.end_time }}',
                 id: '{{ event.pk }}',
                 slug: '{{ event.slug }}',
+                is_booked: {{ event.is_booked|lower}}
             },
             {% endfor %}
             ],
@@ -63,16 +82,20 @@
              based on the current date & time. Used resources noted in the Readme.*/
             let eventStartDate = info.event.start;
             let today = new Date();
-            // today.setHours(0, 0, 0, 0);
-
             if (eventStartDate < today) {
-                /* Checks if the tutorial date is current and applies 
-                modal or renders appropriate tutorial slot page. */
+                /* Checks if the tutorial date & time are in the past and apply appropriate modal. */
                 info.jsEvent.preventDefault();
                 let expiredEvent = new bootstrap.Modal(document.getElementById('expiredModal'));
                 expiredEvent.show();
                 return;
+            } else if (info.event.extendedProps.is_booked) {
+                /*  Checks if the event slot is already booked and applies appropriate modal. */
+                info.jsEvent.preventDefault();
+                let alreadyBookedEvent = new bootstrap.Modal(document.getElementById('alreadyBookedModal'));
+                alreadyBookedEvent.show();
+                return;
             } else {
+                /* Loads each event's slot, ie non booked slots that are currently available, page. */
                 let eventId = info.event.id;
                 let eventSlug = info.event.extendedProps.slug;
                 let eventUrl = `/book-a-tutorial/${eventSlug}/${eventId}/`;
