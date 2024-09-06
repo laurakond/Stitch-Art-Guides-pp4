@@ -99,6 +99,6 @@ def tutorial_session(request, slug, pk):
 
     return render(
         request, 
-        "home/test.html", 
+        "home/tutorial_session.html", 
         {"event_slot": event_slot,},
         )
