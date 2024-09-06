@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.contrib.auth.decorators import login_required
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -61,6 +62,7 @@ def book_a_tutorial(request):
     )
 
 
+@login_required
 def tutorial_session(request, slug, pk):
     """
     Function that captures the Tutorial Date primary key
