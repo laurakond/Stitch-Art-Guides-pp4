@@ -23,13 +23,43 @@ By Laura Kondrataite
 ## Testing
 
 ### W3C Validator Testing
+All files were put through W3C Markup Validation Service & W3C CSS Valisation Service. Images as per below:
+- **W3C Markup**:
+    <details>
+    <summary></summary>
 
+    ![username-validation]()
+    </details>
+
+    <details>
+    <summary></summary>
+
+    ![username-validation]()
+    </details>
+
+    <details>
+    <summary></summary>
+
+    ![username-validation]()
+    </details>
+
+    <details>
+    <summary></summary>
+
+    ![username-validation]()
+    </details>
+
+- **W3C CSS**:
+    <details>
+    <summary></summary>
+
+    ![username-validation]()
+    </details>
+    
 ### JS Hint Testing
 
 ### PEP8 Linter validation
-The code was run past CI Python Linter program throughout the development stage of the application and once the code was finalised. The final results for both, run.py and story.py, were returned without any errors as per images below:
-
-
+The code was run past CI Python Linter program throughout the development stage of the application and once the code was finalised. The final results for all python files returned without any errors as per images below:
 
 [Return to Table of Contents](#contents)
 
