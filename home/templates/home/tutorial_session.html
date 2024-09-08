@@ -9,11 +9,17 @@
         <p>{{event_slot.tutorial_date}}</p>
         <p>{{event_slot.start_time}} to {{event_slot.end_time}}</p>
         {% if user.is_authenticated %}
-        <button type="button" id="bookButton">Book this tutorial</button>
+            {% if is_booked %}
+                <p>This tutorial is already booked. Please see other available times.</p>
+                <a href="{url 'calendar'}">Return to Book Tutorial page.</a>
+            {% else %}
+                <button type="button" id="bookButton">Book this tutorial</button>
+            {% endif %}
         {% endif %}
     </div>
 </div>
 <!-- Booking prompt Modal starts here -->
+{% if not is_booked %}
 <form action="" method="POST">
     <div class="modal" tabindex="-1" id="bookingModal" aria-labelledby="bookingModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -33,5 +39,6 @@
         </div>
     </div>
 </form>
+{% endif %}
 <!-- Booking prompt Modal ends here -->
 {% endblock %}
