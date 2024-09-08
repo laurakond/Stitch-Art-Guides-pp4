@@ -78,19 +78,29 @@ def tutorial_session(request, slug, pk):
                            'This event has now passed and cannot be accessed.')
             return redirect('calendar')
 
+    # checks if a tutorial is already booked, generates
+    # appropriate message & redirects to the calendar view
+    is_booked = Booking.objects.filter(tutorial_date=event_slot).exists()
+    if is_booked:
+        messages.error(request,
+                        'This tutorial is already booked. Choose another date.')
+        return redirect('calendar')
+        
     # requesting a booking for the tutorial slot
-    if request.method == "POST":
+    if request.method == "POST" and not is_booked:
         user = request.user
         Booking.objects.create(user=user, tutorial_date=event_slot)
         messages.add_message(
             request, messages.SUCCESS,
             'Your tutorial is booked. See you then!'
             )
+        return redirect('calendar')
 
     return render(
         request,
         "home/tutorial_session.html",
-        {"event_slot": event_slot, },
+        {"event_slot": event_slot, 
+         "is_booked": is_booked,},
         )
 
 
