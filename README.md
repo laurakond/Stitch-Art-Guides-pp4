@@ -329,10 +329,12 @@ To deploy to the Heroku website, follow the steps below:
 
 My thanks go to: 
 - My mentor, [Martina Terlevic](https://github.com/SephTheOverwitch), for providing advice on how to improve my code. Giving suggestions for troubleshooting, and providing reassurance when my confidence stumbled (which has happened many a time).
-- My fellow student, [Vernell Clark]() for troubleshoot and providing a shoulder to cry on when things got really rough.
-- [Tim Nelson](https://github.com/TravelTimN) for the advice on very confusing coding innerworkings and general advice.
-- Another fellow student [Declan](https://github.com/Declan444) for helping in understanding how models work and overall morale boost when it was needed.
-- Tutor support for helping out with project set up and other quirky bits.
+- My fellow student, [Vernell Clark](https://github.com/VCGithubCode) for troubleshoot and providing a shoulder to cry on when things got really rough.
+- [Tim Nelson](https://github.com/TravelTimN) for the advice on the intricacies of JavaScript Full Calendar & general advice.
+- Another fellow student [Declan](https://github.com/Declan444) for helping to understand models and overall morale boost when it was needed.
+- Tutor support team for helping out with project set up and other quirky bits. A big shout out to:
+    - John for assisting to address big troubleshooting issue. 
+    - Holly for providing guidance and advice on Whitenoise and staticfiles inner workings.
 
 ### Code Inspiration
 - The project was inspired and based on some parts of Code Institute's I think therefore I blog walkthrough project. 
