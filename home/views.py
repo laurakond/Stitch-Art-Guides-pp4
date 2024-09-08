@@ -23,20 +23,6 @@ def about_me(request):
     return render(request, "home/about.html")
 
 
-@login_required
-def my_tutorials(request):
-    """
-    Function that displays booked tutorial page.
-    """
-    bookings = Booking.objects.filter(user=request.user.id)
-
-    return render(
-        request,
-        'home/my_tutorials.html',
-        {"bookings": bookings,}
-        )
-
-
 # The below code was appropriated from Code Institute's 
 # July Hackathon United Events team repository:
 # https://github.com/hannahro15/July24Hackathon-United-Events
@@ -102,4 +88,36 @@ def tutorial_session(request, slug, pk):
         request, 
         "home/tutorial_session.html", 
         {"event_slot": event_slot,},
+        )
+
+
+@login_required
+def my_tutorials(request):
+    """
+    Function that displays past and future tutorial bookings
+    and renders My Bookings page.
+    """
+    bookings = Booking.objects.filter(user=request.user.id)
+    current_datetime = datetime.now()
+    past_sessions = []
+    upcoming_sessions = []
+
+    # loops through each booking and checks if each
+    # booking date is before or after the current date.
+    for booking in bookings:
+        event_datetime = datetime.combine(
+            booking.tutorial_date.tutorial_date, 
+            booking.tutorial_date.start_time
+            )
+        if event_datetime > current_datetime:
+            upcoming_sessions.append(booking)
+        elif event_datetime < current_datetime:
+            past_sessions.append(booking)
+
+    return render(
+        request,
+        'home/my_tutorials.html',
+        {"past_sessions": past_sessions,
+         "upcoming_sessions": upcoming_sessions,
+         }
         )
