@@ -55,7 +55,7 @@ All files were put through W3C Markup Validation Service & W3C CSS Valisation Se
 
     ![username-validation]()
     </details>
-    
+
 ### JS Hint Testing
 
 ### PEP8 Linter validation
@@ -101,7 +101,36 @@ There are several user inputs throughout the application, therefore, validating 
 **To Note**: The below mentioned bugs occured early in the development stage before refactoring was done. Therefore, some of the function names and provided images do not correspond to the final code.
 
 ### Fixed bugs
+**Gunicorn and pyca/cryptography warnings in Github**
+- I received an email from Github warning that I have gunicorn and cryptography vulnerabilities (see image). 
+- After receiving the second warning I managed to get John from Tutor support to help me out. 
+- With his encouragement, I uninstalled and re-installed the two dependencies and ensured that the changes have not affected the functionality of the website in the locally and once deployed.
 
+![add image here]()
+
+**url path <slug:slug>/<int:id> not rendering**
+<details>
+<summary></summary>
+
+![username-validation]()
+</details>
+
+- I received the above error when trying to render a url path for each individual tutorial booking.
+- This part of the code proved tricky as I was not familiar with JavaSript's Full Calendar functionality. 
+    -  I had help from Tim Nelson (mentioned in the acknowledgements) on how to make the code work as majority of the resources that I found were using jQuery syntax.
+    - I managed to make the path work by implementing Full Calendar's extendedProps property. This allowed me to access deeper dependencies within my set models. 
+
+<details>
+<summary>Correct code</summary>
+
+```
+let eventId = info.event.id;
+let eventSlug = info.event.extendedProps.slug;
+let eventUrl = `/book-a-tutorial/${eventSlug}/${eventId}/`;
+location.href = eventUrl;
+```
+
+</details>
 
 ### Unfixed bugs
 
