@@ -7,7 +7,6 @@ from datetime import datetime
 from tutorial.models import Booking, TutorialDate, Tutorial
 
 
-
 # Create your views here.
 def index(request):
     """
@@ -23,7 +22,7 @@ def about_me(request):
     return render(request, "home/about.html")
 
 
-# The below code was appropriated from Code Institute's 
+# The below code was appropriated from Code Institute's
 # July Hackathon United Events team repository:
 # https://github.com/hannahro15/July24Hackathon-United-Events
 def book_a_tutorial(request):
@@ -43,7 +42,7 @@ def book_a_tutorial(request):
             'slug': tutorial.tutorial.slug,
             'is_booked': is_booked,
         })
-   
+
     return render(
         request,
         "home/book_tutorial.html",
@@ -60,19 +59,23 @@ def tutorial_session(request, slug, pk):
     # tutorial__slug captures the slug from the Tutorial Model.
     # Full reference noted in the README.md.
     event_slot = get_object_or_404(TutorialDate, pk=pk, tutorial__slug=slug)
-    
 
-    #verify if the event date is the same as the current date
+    # verify if the event date is the same as the current date
     current_datetime = datetime.now()
-    event_datetime = datetime.combine(event_slot.tutorial_date, event_slot.start_time)
+    event_datetime = datetime.combine(
+        event_slot.tutorial_date,
+        event_slot.start_time)
 
-    # compare the current date to the event date and raise an appropriate message 
+    # compare the current date to the event date and raise
+    # an appropriate message
     if event_datetime < current_datetime:
         if not request.user.is_authenticated:
-            messages.error(request, 'Please log in to access the details.')
+            messages.error(request,
+                           'Please log in to access the details.')
             return redirect('login')
         else:
-            messages.error(request, 'This event has now passed and cannot be accessed.')
+            messages.error(request,
+                           'This event has now passed and cannot be accessed.')
             return redirect('calendar')
 
     # requesting a booking for the tutorial slot
@@ -85,9 +88,9 @@ def tutorial_session(request, slug, pk):
             )
 
     return render(
-        request, 
-        "home/tutorial_session.html", 
-        {"event_slot": event_slot,},
+        request,
+        "home/tutorial_session.html",
+        {"event_slot": event_slot, },
         )
 
 
@@ -106,7 +109,7 @@ def my_tutorials(request):
     # booking date is before or after the current date.
     for booking in bookings:
         event_datetime = datetime.combine(
-            booking.tutorial_date.tutorial_date, 
+            booking.tutorial_date.tutorial_date,
             booking.tutorial_date.start_time
             )
         if event_datetime > current_datetime:
