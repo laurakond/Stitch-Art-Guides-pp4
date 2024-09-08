@@ -132,6 +132,72 @@ location.href = eventUrl;
 
 </details>
 
+**Rendering User specific bookings**
+- Upon initial set up of My bookings page, when trying to render user specific tutorial bookings, I received the following error:
+
+```
+MultipleObjectsReturned at /booked_tutorials/
+get() returned more than one Booking -- it returned 3!
+```
+
+- The code that caused the error was:
+```
+def my_tutorials(request):
+    """
+    function that displays booked tutorial page.
+    """
+    queryset = Booking.objects.all()
+    booking = get_object_or_404(queryset)
+
+    return render(
+        request,
+        'home/my_tutorials.html',
+        {"booking": booking,}
+         )
+```
+
+- Upon reading Django documentation on user, I realised that I needed to target each user information through user authentication. The below code has fixed the issue:
+
+```
+def my_tutorials(request):
+    """
+    function that displays booked tutorial page.
+    """
+    bookings = Booking.objects.filter(user=request.user)
+
+    return render(
+        request,
+        'home/my_tutorials.html',
+        {"bookings": bookings,}
+         )
+```
+
+**Error pages not rendering**
+- In order to render the error pages, I had to adjust the settings.py code from
+
+```
+TEMPLATES = [
+    {'BACKEND': 
+    'django.template.backends.django.DjangoTemplates',
+    'DIRS': [TEMPLATES_DIR],
+    ...
+    }]
+```
+to 
+
+```
+TEMPLATES = [
+    {'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [
+        os.path.join(BASE_DIR, "templates"),
+        os.path.join(BASE_DIR, "templates", "allauth"),
+        ],
+        ...
+        }]
+```
+- I references a couple of Code Institute July 2024 Hackathon projects in order to make the code work. Notably: 
+    - [United Events](https://github.com/hannahro15/July24Hackathon-United-Events/blob/main/united/settings.py) project
+
 ### Unfixed bugs
 
 
