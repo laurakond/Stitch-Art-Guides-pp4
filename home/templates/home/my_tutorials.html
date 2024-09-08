@@ -1,7 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% for booking in bookings %}
-<p>{{booking.tutorial_date}}</p>
+<h1>My Tutorial list</h1>
+<h2>Upcoming Tutorials:</h2>
+{% if upcoming_sessions %}
+{% for session in upcoming_sessions %}
+<p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
+    {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} </p>
 {% endfor %}
+{% else %}
+<p>You have no upcoming tutorials.</p>
+{% endif %}
+
+<h2>Past Tutoials:</h2>
+{% if past_sessions %}
+{% for session in past_sessions %}
+<p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
+    {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} </p>
+{% endfor %}
+{% else %}
+<p>You have no past tutorials.</p>
+{% endif %}
 {% endblock %}
