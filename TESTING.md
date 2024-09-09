@@ -199,7 +199,10 @@ TEMPLATES = [
     - [United Events](https://github.com/hannahro15/July24Hackathon-United-Events/blob/main/united/settings.py) project
 
 ### Unfixed bugs
-
+**Back button in the browser**
+- Upon booking the tutorial slot the user is redirected to another page with a confirmation message showing up confirming the booking has been made.
+- However,if the user clicks the backwards browser button, they are taken back to the tutorial booking page where they can click on the book button again. The functionality is in place to prevent making a repeat booking, but the page information indicating that the tutorial has been booked already only renders after the modal window is closed. 
+    -  This is to be addressed at the next development stage.
 
 
 [Return to Table of Contents](#contents)
