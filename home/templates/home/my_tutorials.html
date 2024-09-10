@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <h1>My Tutorial list</h1>
@@ -7,12 +8,14 @@
 {% for session in upcoming_sessions %}
 <p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
     {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} </p>
+    <button type="button" class="editButton">Edit your booking</button>
+    <button type="button" class="deleteButton">Delete your booking</button>
 {% endfor %}
 {% else %}
 <p>You have no upcoming tutorials.</p>
 {% endif %}
 
-<h2>Past Tutoials:</h2>
+<h2>Past Tutorials:</h2>
 {% if past_sessions %}
 {% for session in past_sessions %}
 <p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
@@ -21,4 +24,27 @@
 {% else %}
 <p>You have no past tutorials.</p>
 {% endif %}
+
+<!-- Delete Booking prompt Modal starts here -->
+<form action="" method="POST">
+    <div class="modal" tabindex="-1" id="deletebookingModal" aria-labelledby="deletebookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deletebookingModalLabel">{{event_slot.tutorial.title}}</h5>
+                </div>
+                <div class="modal-body">
+                    <p>are you sure you want to delete {{event_slot.tutorial.title}}? </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Delete Booking prompt Modal ends here -->
 {% endblock %}
+
