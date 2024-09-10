@@ -198,6 +198,27 @@ TEMPLATES = [
 - I references a couple of Code Institute July 2024 Hackathon projects in order to make the code work. Notably: 
     - [United Events](https://github.com/hannahro15/July24Hackathon-United-Events/blob/main/united/settings.py) project
 
+**Delete booking button not working**
+The delete button of the CRUD part of the website did not submit the user request when the button was being clicked. 
+- I managed to resolve this by removing ```request.method == "POST"``` from the if statement and altering the code to the following:
+    ```
+    @login_required
+    def delete_booking(request, booking_id):
+    """
+    Function that deletes the tutorial booking.
+    """
+    
+    booking = get_object_or_404(Booking, pk=booking_id)
+    if booking.user == request.user: 
+        booking.delete()
+        messages.add_message(request, messages.SUCCESS, 'Booking deleted')
+        return redirect('booked_tutorials')
+    else:
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own bookings.')
+        return redirect('booked_tutorials')
+    ```
+
 ### Unfixed bugs
 **Back button in the browser**
 - Upon booking the tutorial slot the user is redirected to another page with a confirmation message showing up confirming the booking has been made.
