@@ -4,30 +4,32 @@
 {% block content %}
 <h1>My Tutorial list</h1>
 <h2>Upcoming Tutorials:</h2>
-{% if upcoming_sessions %}
-{% for session in upcoming_sessions %}
-<p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
-    {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} </p>
-    <button type="button" class="editButton">Edit your booking</button>
-    <button type="button" class="deleteButton">Delete your booking</button>
-{% endfor %}
-{% else %}
-<p>You have no upcoming tutorials.</p>
-{% endif %}
+{% if user.is_authenticated %}
+    {% if upcoming_sessions %}
+        {% for session in upcoming_sessions %}
+            <p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
+                {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} </p>
+                <button type="button" class="editButton">Edit your booking</button>
+                <button type="button" class="deleteButton">Delete your booking</button>
+        {% endfor %}
+    {% else %}
+        <p>You have no upcoming tutorials.</p>
+    {% endif %}
 
-<h2>Past Tutorials:</h2>
-{% if past_sessions %}
-{% for session in past_sessions %}
-<p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
-    {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} </p>
-{% endfor %}
-{% else %}
-<p>You have no past tutorials.</p>
+    <h2>Past Tutorials:</h2>
+    {% if past_sessions %}
+        {% for session in past_sessions %}
+            <p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
+            {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} </p>
+        {% endfor %}
+    {% else %}
+        <p>You have no past tutorials.</p>
+    {% endif %}
 {% endif %}
 
 <!-- Delete Booking prompt Modal starts here -->
 <form action="" method="POST">
-    <div class="modal" tabindex="-1" id="deletebookingModal" aria-labelledby="deletebookingModalLabel" aria-hidden="true">
+    <div class="modal" tabindex="-1" id="deletebookingModal" aria-labelledby="deletebookingModalLabel" aria-hidden="true" data-bs-target="#deleteModal-{{ session.id }}">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -39,7 +41,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-primary">Yes</button>
+                    <button type="submit" class="btn btn-primary">Delete booking</button>
                 </div>
             </div>
         </div>
