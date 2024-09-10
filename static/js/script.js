@@ -22,8 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let deleteButtons = document.querySelectorAll('.deleteButton');
     console.log("Found", deleteButtons.length, "delete buttons.");
     deleteButtons.forEach(button => {
-        button.addEventListener('click', function () {
+        button.addEventListener('click', (e) => {
             console.log("Delete button clicked");
+            let bookingId = e.target.getAttribute("data-booking_id");
+            deleteConfirm.href = `delete_booking/${bookingId}`;
             showDeleteBookingModal();
         });
     })
