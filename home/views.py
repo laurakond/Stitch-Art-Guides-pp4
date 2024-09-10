@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.views import generic
 from django.contrib import messages
@@ -94,7 +94,7 @@ def tutorial_session(request, slug, pk):
             request, messages.SUCCESS,
             'Your tutorial is booked. See you then!'
             )
-        return redirect('calendar')
+        return redirect('booked_tutorials')
 
     return render(
         request,
@@ -134,3 +134,22 @@ def my_tutorials(request):
          "upcoming_sessions": upcoming_sessions,
          }
         )
+
+# This part of code was appropriated from the Code Institute's 
+# blog walkthrough
+@login_required
+def delete_booking(request, booking_id):
+    """
+    Function that deletes the tutorial booking.
+    """
+    
+    booking = get_object_or_404(Booking, pk=booking_id)
+    if request.method == "POST" and booking.user == request.user: 
+        booking.delete()
+        messages.add_message(request, messages.SUCCESS, 'Booking deleted')
+        return redirect('calendar')
+    else:
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own bookings.')
+        return redirect('calendar')
+    
