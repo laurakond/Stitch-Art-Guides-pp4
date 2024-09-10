@@ -144,12 +144,12 @@ def delete_booking(request, booking_id):
     """
     
     booking = get_object_or_404(Booking, pk=booking_id)
-    if request.method == "POST" and booking.user == request.user: 
+    if booking.user == request.user: 
         booking.delete()
         messages.add_message(request, messages.SUCCESS, 'Booking deleted')
-        return redirect('calendar')
+        return redirect('booked_tutorials')
     else:
         messages.add_message(request, messages.ERROR,
                              'You can only delete your own bookings.')
-        return redirect('calendar')
+        return redirect('booked_tutorials')
     
