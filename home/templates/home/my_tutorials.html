@@ -10,7 +10,7 @@
             <p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
                 {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} </p>
                 <button type="button" class="editButton">Edit your booking</button>
-                <button type="button" class="deleteButton">Delete your booking</button>
+                <button type="button" class="deleteButton" data-booking_id="{{ session.id }}">Delete your booking</button>
         {% endfor %}
     {% else %}
         <p>You have no upcoming tutorials.</p>
@@ -29,7 +29,8 @@
 
 <!-- Delete Booking prompt Modal starts here -->
 <form action="" method="POST">
-    <div class="modal" tabindex="-1" id="deletebookingModal" aria-labelledby="deletebookingModalLabel" aria-hidden="true" data-bs-target="#deleteModal-{{ session.id }}">
+    <div class="modal" tabindex="-1" id="deletebookingModal" aria-labelledby="deletebookingModalLabel"
+        aria-hidden="true" data-bs-target="">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -41,7 +42,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-primary">Delete booking</button>
+                    <a id="deleteConfirm" href="#" class="btn btn-danger">Delete booking</a>
                 </div>
             </div>
         </div>
@@ -49,4 +50,3 @@
 </form>
 <!-- Delete Booking prompt Modal ends here -->
 {% endblock %}
-
