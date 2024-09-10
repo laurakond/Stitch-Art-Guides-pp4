@@ -335,6 +335,7 @@ My thanks go to:
 - Tutor support team for helping out with project set up and other quirky bits. A big shout out to:
     - John for assisting to address big troubleshooting issue. 
     - Holly for providing guidance and advice on Whitenoise and staticfiles inner workings.
+    - Sarah for helping to troubleshoot delete part of CRUD functionality. 
 
 ### Code Inspiration
 - The project was inspired and based on some parts of Code Institute's I think therefore I blog walkthrough project. 
