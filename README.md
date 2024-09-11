@@ -23,6 +23,7 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 - [Fonts styles](#font-styles)
 
 [Agile Methodology](#agile-methodology)
+
 [Features](#features)
 - [Existing Features](#existing-features)
 - [Features Left to Implement](#features-left-to-implement)
@@ -125,14 +126,43 @@ The following palette was used to ensure the contrast is achieved between main p
 
 **Landing page**
 
+**The Header**
+
+![header]()
+
+- Featured across all the pages, the Header is fully responsive and presents the user with main pages that are required. To the left of the header you find:
+    - The Logo
+
+- To the right of the header the remainder of the pages:
+    - Home Page
+    - About Page
+    - Tutorial List Page
+    - Register Page
+    - Login Page
+
+- Upon Registration or Log in, the user's log in name and additional two pages are revealed in the header. This creates a sense of personalisation and indicates additional website functionality for the registered users.
+    - Book Tutorial Page
+    - My Tutorials Page
+
+
+**The Footer**
+
+![footer]()
+
+- The Footer features social media links for that are related to the website and provides a copyright line indicating that this website was created for educational purposes only. 
+
+**The Landing Page**
 
 ![landing page]()
 
+- The Landing page greets the user with a simple design, a brief blurb indicating the purpose of the website, and the main call to action button that leads the user to the Tutorial List page. 
+
 **About page**
-- The instruction page displays another Ascii art logo "How to play" that clearly indicates to the user where they are in the application.
-    - The page lists the steps of how to play the game, and asks the user if they want to play the game or quit the application.
 
 ![about page]()
+
+- The About page displayes a profile picture of the instructor and provides a brief introduction. A further call to action button is used allowing the user to explore different tutorials that are being offered. 
+
 
 **Tutorial list**
 - If the user chooses to leave the game after reading the instructions, the screen displays "Thank you for playing! see you next time." 
