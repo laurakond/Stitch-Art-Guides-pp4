@@ -1,16 +1,21 @@
-// /* Functionality for Booking modal */
-// function showBookingModal() {
-//     let bookingEvent = new bootstrap.Modal(document.getElementById('bookingModal'));
-//     bookingEvent.show();
-// }
-// // Event listener to trigger the modal when button is clicked
-// document.getElementById('bookButton').addEventListener('click', function () {
-//     showBookingModal();
-// });
-
-// This part of the code was adjusted with the help of Tutor support from Code Institute
 document.addEventListener('DOMContentLoaded', function () {
-    // Get all delete buttons on template
+
+    /* Booking modal for booking a tutorial functionality on book_a_tutorial.html */
+    function showBookingModal() {
+        let bookingEvent = new bootstrap.Modal(document.getElementById('bookingModal'));
+        bookingEvent.show();
+    }
+    // Event listener to trigger the modal when button is clicked
+    let bookButton = document.getElementById('bookButton');
+    if (bookButton) {
+        bookButton.addEventListener('click', function () {
+            showBookingModal();
+        });
+    }
+
+    /* This part of the code was adjusted with the help of Tutor support from Code Institute
+     Code for Delete booking Modal functionality in booked_tutorials.html. */
+    // Get all delete buttons on booked_tutorials template
     const deleteButtons = document.getElementsByClassName("deleteButton");
 
     // Iterate through all delete buttons on template
@@ -20,13 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
             let bookingId = e.target.getAttribute("data-booking_id");
             // Get the submit delete button elements
             const deleteConfirm = document.getElementById(`deleteConfirm-${bookingId}`);
-            console.log('bookingId: ', bookingId);
-            console.log("Show Delete Booking Modal triggered.");
 
             // Get associated Delete modal
             let deleteBookingEvent = new bootstrap.Modal(document.getElementById(`deletebookingModal-${bookingId}`));
-            console.log('deletebookingEvent: ', deleteBookingEvent)
-
             deleteConfirm.href = `delete_booking/${bookingId}`;
 
             // Show associated Delete modal
