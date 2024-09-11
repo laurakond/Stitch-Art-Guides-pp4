@@ -238,7 +238,8 @@ The code that was throwing an error was this:
 ```
 - This error was referring to an element that was being used for a differerent button/modal on the book_a_tutorial.html page. 
 
-- I adjusted the code logic by including the if clause as suggested in the Stackoverflow chat thread: [Cannot read property 'addEventListener' of null](https://stackoverflow.com/questions/26107125/cannot-read-property-addeventlistener-of-null):
+- I adjusted the code logic by including the if clause as suggested in the Stackoverflow chat thread: [Cannot read property 'addEventListener' of null](https://stackoverflow.com/questions/26107125/cannot-read-property-addeventlistener-of-null).
+    -  This video has was also helpful to refresh my memory on the how/where to place my code so that it is being rendered properly: https://www.youtube.com/watch?v=yCWMRYCfpfE
 
 ```
  /* Functionality for Booking modal in book_a_tutorial.html */
