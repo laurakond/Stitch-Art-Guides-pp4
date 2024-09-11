@@ -8,54 +8,31 @@
 //     showBookingModal();
 // });
 
-
-// GET ALL DELETE BUTTONS ON TEMPLATE
-const deleteButtons = document.getElementsByClassName("deleteButton");
-
-// GET THE SUBMIT DELETE BUTTON ELEMENTS
-const deleteConfirm = document.getElementById("deleteConfirm");
-
-// ITERATE THROUGH ALL DELETE BUTTONS ON TEMPLATE
-for (let button of deleteButtons) {
-    button.addEventListener("click", (e) => {
-        // GETT ASSOCIATED BOOKING ID
-        let bookingId = e.target.getAttribute("data-booking_id");
-        console.log('bookingId: ', bookingId)
-        console.log("Show Delete Booking Modal triggered.");
-
-        // GET ASSOCIATED MODAL 
-        let deletebookingEvent = new bootstrap.Modal(document.getElementById(`deletebookingModal-${bookingId}`));
-        console.log('deletebookingEvent: ',deletebookingEvent)
-        
-        deleteConfirm.href = `delete_booking/${bookingId}`;
-
-        // SHOW ASSOCIATED MODAL
-        deletebookingEvent.show();
-    });
-}
-
-/* Functionality for delete Booking modal */
+// This part of the code was adjusted with the help of Tutor support from Code Institute
 document.addEventListener('DOMContentLoaded', function () {
-    console.log("DOM fully loaded and parsed.");
-    // function showDeleteBookingModal(e) {
-    //     let bookingId = e.target.getAttribute("data-booking_id");
-    //     console.log('bookingId: ', bookingId)
-    //     console.log("Show Delete Booking Modal triggered.");
-    //     let deletebookingEvent = new bootstrap.Modal(document.getElementById(`deletebookingModal-${bookingId}`));
-    //     console.log('deletebookingEvent: ',deletebookingEvent)
-    //     deletebookingEvent.show();
-    // }
+    // Get all delete buttons on template
+    const deleteButtons = document.getElementsByClassName("deleteButton");
 
-    // Event listener to trigger the modal when button is clicked
-    let deleteButtons = document.querySelectorAll('.deleteButton');
-    console.log("Found", deleteButtons.length, "delete buttons.");
-    deleteButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            console.log("Delete button clicked");
+    // Iterate through all delete buttons on template
+    for (let button of deleteButtons) {
+        button.addEventListener("click", (e) => {
+            // Get associated booking ID
             let bookingId = e.target.getAttribute("data-booking_id");
+            // Get the submit delete button elements
+            const deleteConfirm = document.getElementById(`deleteConfirm-${bookingId}`);
+            console.log('bookingId: ', bookingId);
+            console.log("Show Delete Booking Modal triggered.");
+
+            // Get associated Delete modal
+            let deleteBookingEvent = new bootstrap.Modal(document.getElementById(`deletebookingModal-${bookingId}`));
+            console.log('deletebookingEvent: ', deleteBookingEvent)
+
             deleteConfirm.href = `delete_booking/${bookingId}`;
-            // showDeleteBookingModal();
+
+            // Show associated Delete modal
+            deleteBookingEvent.show();
         });
-    })
+    }
 });
+
 
