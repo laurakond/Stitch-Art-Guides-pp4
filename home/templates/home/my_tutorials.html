@@ -38,6 +38,7 @@
         {% endfor %}
     {% else %}
         <p>You have no upcoming tutorials.</p>
+        <a href="{% url 'tutorial_list' %}">Discover tutorials</a>
     {% endif %}
 
     <h2>Past Tutorials:</h2>
