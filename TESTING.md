@@ -219,6 +219,54 @@ The delete button of the CRUD part of the website did not submit the user reques
         return redirect('booked_tutorials')
     ```
 
+**Uncaught TypeError: cannot read properties of null**
+I was getting the following error when on the My Tutorials page. 
+
+![properties of null]()
+The code that was throwing an error was this:
+```
+    /* Functionality for Booking modal on book_a_tutorial.html */
+    function showBookingModal() {
+        let bookingEvent = new bootstrap.Modal(document.getElementById('bookingModal'));
+        bookingEvent.show();
+    }
+    // Event listener to trigger the modal when button is clicked
+    let bookButton = document.getElementById('bookButton');
+    bookButton.addEventListener('click', function () {
+        showBookingModal();
+    });
+```
+- This error was referring to an element that was being used for a differerent button/modal on the book_a_tutorial.html page. 
+
+- I adjusted the code logic by including the if clause as suggested in the Stackoverflow chat thread: [Cannot read property 'addEventListener' of null](https://stackoverflow.com/questions/26107125/cannot-read-property-addeventlistener-of-null):
+
+```
+ /* Functionality for Booking modal in book_a_tutorial.html */
+    function showBookingModal() {
+        let bookingEvent = new bootstrap.Modal(document.getElementById('bookingModal'));
+        bookingEvent.show();
+    }
+    // Event listener to trigger the modal when button is clicked
+    let bookButton = document.getElementById('bookButton');
+    if (bookButton) {
+        bookButton.addEventListener('click', function () {
+            showBookingModal();
+        });
+    }
+```
+
+**Delete booking id instance not showing properly in the url**
+
+- I noticed that when hovering over each delete button inside the Delete Modal, the instance url was displaying ‘#’ instead of the id number:
+
+![booked_tutorials/#]()
+- I adjusted the anchor tag’s id with a `session.id` in my_tutorials.html:
+    - ``` <a id="deleteConfirm-{{ session.id }}" href="#" class="btn btn-danger">Delete booking</a> ```
+- Inside script.js, I adapted the syntax of the `deleteBookingEvent` element to the `const deleteConfirm = document.getElementById(deleteConfirm-${bookingId});`:
+    - This ensured that the server was showing the individual tutorial booking instance.
+    ![correct booking instance]()
+
+
 ### Unfixed bugs
 **Back button in the browser**
 - Upon booking the tutorial slot the user is redirected to another page with a confirmation message showing up confirming the booking has been made.
