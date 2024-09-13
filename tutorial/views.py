@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.views.generic import CreateView
 from .models import Tutorial, TutorialDate
+from .forms import TutorialForm, TutorialDateForm
 
 
 # Create your views here.
@@ -31,3 +33,30 @@ def tutorial_detail(request, slug):
          "tutorial_date": tutorial_date,
         },
     )
+
+
+class AddTutorial(CreateView):
+    """Add Tutorial view"""
+
+    template_name = "tutorial/add_tutorial.html"
+    model = Tutorial
+    form_class = TutorialForm
+    success_url = "/tutorial/"
+
+    def form_valid(self, form):
+        form.instance.user = self.request.superuser
+        return super(AddTutorial, self).form_valid(form)
+    
+
+class AddTutorialDate(CreateView):
+    """Add Tutorial view"""
+
+    template_name = "tutorial/add_tutorial.html"
+    model = TutorialDate
+    form_class = TutorialDateForm
+    success_url = "/tutorial/"
+
+    def form_valid(self, form):
+        form.instance.user = self.request.superuser
+        return super(AddTutorialDate, self).form_valid(form)
+    
