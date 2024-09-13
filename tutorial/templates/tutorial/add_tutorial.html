@@ -18,18 +18,4 @@
     </form>
 </div>
 
-<h1>Add Tutorial Date</h1>
-
-<div class="container">
-    <form action="" method="POST" enctype="multipart/form-data" class="p-2 form">
-        <h1 class="text-center">Add tutorial Date</h1>
-        {% csrf_token %}
-        {{ form.media }}
-        {{ form|crispy }}
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary mt-2">Create Tutorial Date</button>
-        </div>
-    </form>
-</div>
-
 {% endblock %}
