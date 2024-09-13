@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <h1>Tutorials</h1>
+    <a href="{% url 'tutorial_list' %}" class="btn btn-primary">View</a>
+    <a href="{% url 'add_tutorial' %}" class="btn btn-primary">Add</a>
+</div>
+<div>
+    <h1>Tutorial Dates/Times</h1>
+    <a href="{% url 'add_tutorial' %}" class="btn btn-primary">Add</a>
+    <a href="{% url 'add_tutorial' %}" class="btn btn-danger">Delete</a>
+</div>
+<div>
+    <h1>Bookings</h1>
+    <a href="{% url 'add_tutorial' %}" class="btn btn-danger">Delete</a>
+</div>
+
+{% endblock %}
