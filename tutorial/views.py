@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.views.generic import CreateView
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Tutorial, TutorialDate
 from .forms import TutorialForm, TutorialDateForm
 
@@ -33,6 +35,19 @@ def tutorial_detail(request, slug):
          "tutorial_date": tutorial_date,
         },
     )
+
+@login_required
+def dashboard_page(request):
+    """
+    Function to render the main dashboard page.
+    """
+
+    if request.user.is_superuser:
+        return render(request,
+                    "tutorial/dashboard.html",
+                    )
+    elif not request.user.is_superuser:
+        return redirect('account_login')
 
 
 class AddTutorial(CreateView):
