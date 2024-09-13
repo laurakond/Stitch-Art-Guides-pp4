@@ -135,6 +135,24 @@ def my_tutorials(request):
          }
         )
 
+
+@login_required
+def edit_booking(request, booking_id):
+    """
+    Function that deletes the tutorial booking.
+    """
+    
+    booking = get_object_or_404(Booking, pk=booking_id)
+    if booking.user == request.user: 
+        booking.delete()
+        messages.add_message(request, messages.SUCCESS, 'Your tutorial has been removed. Please select a new date for it.')
+        return redirect('calendar')
+    else:
+        messages.add_message(request, messages.ERROR,
+                             'You can only edit your own bookings.')
+        return redirect('booked_tutorials')
+
+
 # This part of code was appropriated from the Code Institute's 
 # blog walkthrough
 @login_required
