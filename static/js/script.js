@@ -13,8 +13,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* This part of the code was adjusted with the help of Tutor support from Code Institute
+    /* Code for Edit button functionality in booked_tutorials.html */
+    const editButtons = document.getElementsByClassName("editButton");
+
+    for (let button of editButtons) {
+        button.addEventListener("click", (e) => {
+            // Get associated booking ID
+            let bookingId = e.target.getAttribute("data-booking_id");
+            // Get the submit delete button elements
+            this.location.href = `edit_booking/${bookingId}`;
+        });
+    }
+
+    /* This part of the code was adjusted with the help of Tutor support from Code Institute.
      Code for Delete booking Modal functionality in booked_tutorials.html. */
+    
     // Get all delete buttons on booked_tutorials template
     const deleteButtons = document.getElementsByClassName("deleteButton");
 
