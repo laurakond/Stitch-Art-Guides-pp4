@@ -1,5 +1,5 @@
 from django import forms
-from django_summernote.widgets import SummernoteWidget
+# from django_summernote.widgets import SummernoteWidget
 from .models import Tutorial, TutorialDate
 
 class TutorialForm(forms.ModelForm):
@@ -26,9 +26,16 @@ class TutorialDateForm(forms.ModelForm):
     """
     class Meta:
         model = TutorialDate
-        fields = ['tutorial_date','start_time','end_time']
+        fields = ['tutorial', 'tutorial_date','start_time','end_time']
+
+        widgets = {
+            'tutorial_date': forms.DateInput(attrs={'type': 'date'}),
+            'start_time': forms.TimeInput(attrs={'type': 'time'}),
+            'end_time': forms.TimeInput(attrs={'type': 'time'}),
+        }
 
         labels = {
+            'tutorial': 'Select Tutorial', 
             'tutorial_date': 'Tutorial Date', 
             'start_time': 'Tutorial Start Time', 
             'end_time': 'Tutorial End Time', 
