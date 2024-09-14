@@ -3,19 +3,35 @@
 
 
 {% block content %}
-
-<h1>Add Tutorial</h1>
-
+{% if user.is_superuser %}
 <div class="container">
-    <form action="" method="POST" enctype="multipart/form-data" class="p-2 form">
+    <div class="row row-cols-3">
+        {% for tutorial in tutorial_list %}
+        <!-- Individual Tutorial card -->
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ tutorial.title }}</h5>
+                <p class="card-text">{{ tutorial.excerpt }}</p>
+                <p class="card-text">{{ tutorial.description }}</p>
+                <p class="card-text">Tutor: {{ tutorial.tutor_name }}</p>
+                <a href="{% url 'tutorial_detail' tutorial.slug %}" class="btn btn-primary">View</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- Form -->
+<div class="container">
+    <form action="" method="POST" class="p-2 form">
         <h1 class="text-center">Add tutorial</h1>
         {% csrf_token %}
-        {{ form.media }}
-        {{ form|crispy }}
+        {{ tutorial_form|crispy }}
         <div class="text-center">
             <button type="submit" class="btn btn-primary mt-2">Create Tutorial</button>
         </div>
     </form>
 </div>
+{% endif %}
 
 {% endblock %}
