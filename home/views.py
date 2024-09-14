@@ -94,7 +94,7 @@ def tutorial_session(request, slug, pk):
             request, messages.SUCCESS,
             'Your tutorial is booked. See you then!'
             )
-        return redirect('booked_tutorials')
+        return redirect('my_tutorials')
 
     return render(
         request,
@@ -150,7 +150,7 @@ def edit_booking(request, booking_id):
     else:
         messages.add_message(request, messages.ERROR,
                              'You can only edit your own bookings.')
-        return redirect('booked_tutorials')
+        return redirect('my_tutorials')
 
 
 # This part of code was appropriated from the Code Institute's 
@@ -165,9 +165,9 @@ def delete_booking(request, booking_id):
     if booking.user == request.user: 
         booking.delete()
         messages.add_message(request, messages.SUCCESS, 'Booking deleted')
-        return redirect('booked_tutorials')
+        return redirect('my_tutorials')
     else:
         messages.add_message(request, messages.ERROR,
                              'You can only delete your own bookings.')
-        return redirect('booked_tutorials')
+        return redirect('my_tutorials')
     

@@ -37,13 +37,13 @@
                     {% if user.is_authenticated %}
                     <!-- Booking calendar Link -->
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == calendar_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'calendar' %}">Book Tutorial</a>
+                        <a class="nav-link {% if request.path == book_a_tutorial_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'book_a_tutorial' %}">Book Tutorial</a>
                     </li>
-                    <!-- Booked tutorials link -->
+                    <!-- My tutorials link -->
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == booked_tutorials_url %}active{% endif %}"
-                            aria-current="page" href="{% url 'booked_tutorials' %}">My Tutorials</a>
+                        <a class="nav-link {% if request.path == my_tutorials_url %}active{% endif %}"
+                            aria-current="page" href="{% url 'my_tutorials' %}">My Tutorials</a>
                     </li>
                     {% if user.is_superuser %}
                     <!-- Superuser dashboard link -->
