@@ -37,7 +37,7 @@ def tutorial_detail(request, slug):
     )
 
 @login_required
-def dashboard_page(request):
+def dashboard(request):
     """
     Function to render the main dashboard page.
     """
