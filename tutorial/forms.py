@@ -10,19 +10,12 @@ class TutorialForm(forms.ModelForm):
         model = Tutorial
         fields = ['title', 'slug', 'description', 'tutor_name', 'excerpt',]
 
-        widgets = {
-            'description': SummernoteWidget(),
-            'excerpt': SummernoteWidget(),
-        }
-
         labels = {
             'title': 'Tutorial Title',
+            'slug': 'Slug (Tutorial Title with dashes in between "-")',
             'description': 'Tutorial Description',
             'tutor_name': 'Tutor Name', 
             'excerpt': 'Tutorial Excerpt', 
-            # 'tutorial_date': 'Tutorial Date', 
-            # 'tutorial_start_time': 'Tutorial Start Time', 
-            # 'tutorial_end_time': 'Tutorial End Time', 
             # 'image': 'Tutorial Image', 
             # 'image_alt': 'Image Description',
         }
@@ -35,15 +28,8 @@ class TutorialDateForm(forms.ModelForm):
         model = TutorialDate
         fields = ['tutorial_date','start_time','end_time']
 
-        # widgets = {
-        #     'description': SummernoteWidget(),
-        #     'excerpt': SummernoteWidget(),
-        # }
-
         labels = {
             'tutorial_date': 'Tutorial Date', 
             'start_time': 'Tutorial Start Time', 
             'end_time': 'Tutorial End Time', 
-            # 'image': 'Tutorial Image', 
-            # 'image_alt': 'Image Description',
         }
