@@ -63,7 +63,6 @@ def add_tutorial(request):
     # from I blog walkthrough project by Code Institute.
     if request.user.is_superuser:
         if request.method == "POST":
-            print("Received a POST request")
             tutorial_form = TutorialForm(data=request.POST)
             if tutorial_form.is_valid():
                 tutorial_form.author = request.user
@@ -81,7 +80,6 @@ def add_tutorial(request):
                        )
         return redirect('account_login')
 
-    print("About to render template")
     return render(request,
                   "tutorial/add_tutorial.html",
                   {"tutorial_list": tutorial_list,
@@ -90,15 +88,35 @@ def add_tutorial(request):
                   )
     
 
-class AddTutorialDate(CreateView):
-    """Add Tutorial view"""
+def add_tutorial_date(request):
+    """Add Tutorial date view"""
 
-    template_name = "tutorial/add_tutorial.html"
-    model = TutorialDate
-    form_class = TutorialDateForm
-    success_url = "/tutorial/"
+    tutorial_list = TutorialDate.objects.all()
+    tutorial_form = TutorialDateForm()
 
-    def form_valid(self, form):
-        form.instance.user = self.request.superuser
-        return super(AddTutorialDate, self).form_valid(form)
+    if request.user.is_superuser:
+        if request.method == "POST":
+            tutorial_form = TutorialDateForm(data=request.POST)
+            if tutorial_form.is_valid():
+                tutorial_form.author = request.user
+                tutorial_form.save()
+                messages.success(
+                    request,
+                    'New tutorial date & time entry created.'
+                    )
+                return redirect('dashboard')
+            else:
+                tutorial_form = TutorialDateForm()
+    else:
+        messages.error(request,
+                       'You do not have access to this content.'
+                       )
+        return redirect('account_login')
+
+    return render(request,
+                  "tutorial/add_tutorial_date.html",
+                  {"tutorial_list": tutorial_list,
+                   "tutorial_form":tutorial_form,
+                   },
+                  )
     
