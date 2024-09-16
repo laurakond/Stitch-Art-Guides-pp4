@@ -1,10 +1,11 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from datetime import datetime
-from tutorial.models import Booking, TutorialDate, Tutorial
+from tutorial.models import Booking, TutorialDate
+from .forms import TutorialDateForm
 
 
 # Create your views here.
@@ -76,7 +77,7 @@ def tutorial_session(request, slug, pk):
         else:
             messages.error(request,
                            'This event has now passed and cannot be accessed.')
-            return redirect('calendar')
+            return redirect('book_a_tutorial')
 
     # checks if a tutorial is already booked, generates
     # appropriate message & redirects to the calendar view
@@ -139,18 +140,42 @@ def my_tutorials(request):
 @login_required
 def edit_booking(request, booking_id):
     """
-    Function that deletes the tutorial booking.
+    Function that edits the tutorial booking.
     """
-    
-    booking = get_object_or_404(Booking, pk=booking_id)
-    if booking.user == request.user: 
-        booking.delete()
-        messages.add_message(request, messages.SUCCESS, 'Your tutorial has been removed. Please select a new date for it.')
-        return redirect('calendar')
-    else:
-        messages.add_message(request, messages.ERROR,
-                             'You can only edit your own bookings.')
-        return redirect('my_tutorials')
+    # tutorial_date__tutorial__slug=slug allows to access the slug from
+    # the Tutorial model so that the url path can be accessed based on
+    # the booking instance.
+    booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
+    tutorial_list = TutorialDate.objects.all()
+    tutorial_form = TutorialDateForm(instance=booking)
+    #     if request.method == "POST":
+    #         tutorial_form = TutorialDateForm(data=request.POST)
+    #         if tutorial_form.is_valid():
+    #             tutorial_form.author = request.user
+    #             tutorial_form.save()
+    #             messages.success(
+    #                 request,
+    #                 'New tutorial date & time entry created.'
+    #                 )
+    #             return redirect('my_tutorials')
+    #         else:
+    #             tutorial_form = TutorialDateForm()
+    # else:
+    #     messages.error(request,
+    #                    'You can only edit your own bookings.'
+    #                    )
+    #     return redirect('my_tutorials')      
+
+    return render(request,
+                "home/edit_booking.html",
+                {"booking": booking,
+                "tutorial_list": tutorial_list,
+                "tutorial_form":tutorial_form,},
+                #   {"bookings": bookings,
+                #    "tutorial_list": tutorial_list,
+                #    "form": form,
+                #    },
+                )
 
 
 # This part of code was appropriated from the Code Institute's 
