@@ -9,8 +9,9 @@
         {% for session in upcoming_sessions %}
             <p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
                 {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} </p>
-                <button type="button" class="editButton" data-booking_id="{{ session.id }}">Edit your booking</button>
-                <button type="button" class="deleteButton" data-booking_id="{{ session.id }}">Delete your booking</button>
+                <a href="{% url 'edit_booking' session.id %}" class="btn btn-primary" >Edit booking</a>
+
+                <button type="button" class="deleteButton btn btn-danger" data-booking_id="{{ session.id }}">Delete your booking</button>
 
                 <!-- Delete Booking prompt Modal starts here -->
                 <form action="" method="POST">
