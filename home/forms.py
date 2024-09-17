@@ -1,23 +1,19 @@
 from django import forms
-from tutorial.models import TutorialDate
+from tutorial.models import Booking
 
-class TutorialDateForm(forms.ModelForm):
+
+class BookingForm(forms.ModelForm):
     """
-    Form to create a Tutorial Date.
+    Form to create a Booking.
     """
     class Meta:
-        model = TutorialDate
-        fields = ['tutorial', 'tutorial_date','start_time']
+        model = Booking
+        fields = ['tutorial_date']
 
-        widgets = {
-            'tutorial_date': forms.DateInput(attrs={'type': 'date'}),
-            'start_time': forms.TimeInput(attrs={'type': 'time'}),
-            # 'end_time': forms.TimeInput(attrs={'type': 'time'}),
-        }
+        # widgets = {
+        #     'tutorial_date': forms.ModelChoiceField()
+        # }
 
         labels = {
-            'tutorial': 'Select Tutorial', 
             'tutorial_date': 'Tutorial Date', 
-            'start_time': 'Tutorial Start Time', 
-            # 'end_time': 'Tutorial End Time', 
         }
