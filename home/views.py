@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from datetime import datetime
 from tutorial.models import Booking, TutorialDate
-from .forms import TutorialDateForm
+from .forms import BookingForm
 
 
 # Create your views here.
@@ -146,10 +146,10 @@ def edit_booking(request, booking_id):
     # the Tutorial model so that the url path can be accessed based on
     # the booking instance.
     booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
-    tutorial_list = TutorialDate.objects.all()
-    tutorial_form = TutorialDateForm(instance=booking)
-    #     if request.method == "POST":
-    #         tutorial_form = TutorialDateForm(data=request.POST)
+    tutorial_form = BookingForm(instance=booking)
+    tutorial_list = Booking.objects.all()
+    # if request.method == "POST":
+    #     tutorial_form = BookingForm(data=request.POST)
     #         if tutorial_form.is_valid():
     #             tutorial_form.author = request.user
     #             tutorial_form.save()
