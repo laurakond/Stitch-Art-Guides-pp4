@@ -12,16 +12,16 @@ class BookingForm(forms.ModelForm):
         self.user = kwargs.pop('user', None)
         current_date = datetime.now()
 
-        # use reverse relationship to access the user from the views.py booking variable
-        # and assigning it to the user to remove from shown options
+        # filter Tutorial dates/times that do not have a booking created.
         future_tutorials = TutorialDate.objects.filter(
             tutorial_date__gte=current_date
-            ).exclude(booking__user=self.user)
+            ).exclude(booking__isnull=False)
         
-        # Overriding init function to adjust filtering based on the date of the scheduled event.
-        # Code was appropriated from 
-        # https://stackoverflow.com/questions/43001425/django-modelform-with-conditions
+        # Override __init__ function to show results based on
+        # applied conditional filtering above. The code was 
+        # appropriated from 
         # https://forum.djangoproject.com/t/queryset-difference/15716
+        # https://stackoverflow.com/questions/43001425/django-modelform-with-conditions
         super(BookingForm, self).__init__(*args, **kwargs)
 
         self.fields['tutorial_date'].queryset = future_tutorials
