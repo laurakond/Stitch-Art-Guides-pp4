@@ -353,7 +353,17 @@ To deploy to the Heroku website, follow the steps below:
 ### Refactoring
 
 ### General resources:
+Whilst working on this project I relied on Django documentation and other resources to deepen my knowledge and gain a better understanding how to build a full-stack website.
 
+- ERD & flowcharts:
+    - [Lucid flowcharts youtube video](https://www.youtube.com/watch?v=hktyW5Lp0Vo)
+    - [Lucid Software database tutorial for beginners](https://www.youtube.com/watch?v=wR0jg0eQsZA)
+    - [Decomplexify](https://www.youtube.com/watch?v=GFQaEYEc8_8)
+- Models:
+    - [Geeks for Geeks: Django models](https://www.geeksforgeeks.org/django-models/)
+    - [MDN web docs: Using models](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models) 
+    - [W3Schools Django update model](https://www.w3schools.com/django/django_update_model.php)
+ 
 
 ### Acknowledgments
 
