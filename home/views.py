@@ -146,35 +146,33 @@ def edit_booking(request, booking_id):
     # the Tutorial model so that the url path can be accessed based on
     # the booking instance.
     booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
-    tutorial_form = BookingForm(instance=booking)
+    tutorial_form = BookingForm(instance=booking, user=request.user)
     tutorial_list = Booking.objects.all()
-    # if request.method == "POST":
-    #     tutorial_form = BookingForm(data=request.POST)
-    #         if tutorial_form.is_valid():
-    #             tutorial_form.author = request.user
-    #             tutorial_form.save()
-    #             messages.success(
-    #                 request,
-    #                 'New tutorial date & time entry created.'
-    #                 )
-    #             return redirect('my_tutorials')
-    #         else:
-    #             tutorial_form = TutorialDateForm()
-    # else:
-    #     messages.error(request,
-    #                    'You can only edit your own bookings.'
-    #                    )
-    #     return redirect('my_tutorials')      
+    if request.method == "POST":
+        tutorial_form = BookingForm(data=request.POST, instance=booking, user=request.user)
+        if tutorial_form.is_valid():
+            tutorial_form.author = request.user
+            print(f"tutorial form author is: {tutorial_form.author}")
+            print(f"request user is {request.user}")
+            tutorial_form.save()
+            messages.success(
+                request,
+                'New tutorial date & time entry created.'
+                )
+            return redirect('my_tutorials')
+        else:
+            messages.error(request,
+                       'You can only edit your own bookings.'
+                       )
+            return redirect('my_tutorials')
+    else:
+        tutorial_form = BookingForm(instance=booking, user=request.user)      
 
     return render(request,
                 "home/edit_booking.html",
                 {"booking": booking,
                 "tutorial_list": tutorial_list,
                 "tutorial_form":tutorial_form,},
-                #   {"bookings": bookings,
-                #    "tutorial_list": tutorial_list,
-                #    "form": form,
-                #    },
                 )
 
 
