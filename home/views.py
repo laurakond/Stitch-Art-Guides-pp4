@@ -142,22 +142,19 @@ def edit_booking(request, booking_id):
     """
     Function that edits the tutorial booking.
     """
-    # tutorial_date__tutorial__slug=slug allows to access the slug from
-    # the Tutorial model so that the url path can be accessed based on
-    # the booking instance.
+    # fetch each booking instance for the logged in user
     booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
+    # generate a form based on the booking instance
     tutorial_form = BookingForm(instance=booking, user=request.user)
     tutorial_list = Booking.objects.all()
     if request.method == "POST":
         tutorial_form = BookingForm(data=request.POST, instance=booking, user=request.user)
         if tutorial_form.is_valid():
             tutorial_form.author = request.user
-            print(f"tutorial form author is: {tutorial_form.author}")
-            print(f"request user is {request.user}")
             tutorial_form.save()
             messages.success(
                 request,
-                'New tutorial date & time entry created.'
+                'Your booking has been updated.'
                 )
             return redirect('my_tutorials')
         else:
