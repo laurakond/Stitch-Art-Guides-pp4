@@ -8,8 +8,6 @@ class BookingForm(forms.ModelForm):
     """
 
     def __init__(self, *args, **kwargs):
-        # grabbing the user from the arguments and storing in a separate parameter
-        self.user = kwargs.pop('user', None)
         current_date = datetime.now()
 
         # filter Tutorial dates/times that do not have a booking created.
