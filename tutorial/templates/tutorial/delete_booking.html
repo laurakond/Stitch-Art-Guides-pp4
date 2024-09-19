@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+{% if user.is_superuser %}
+<div class="container">
+    <div class="row row-cols-3">
+        
+        <h1>Content comming soon</h1>
+       
+    </div>
+</div>
+<!-- Form -->
+<div class="container">
+    <form action="" method="POST" class="p-2 form">
+        <h1 class="text-center">Delete booking</h1>
+        {% csrf_token %}
+        {{ tutorial_form|crispy }}
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary mt-2">Delete Booking</button>
+        </div>
+    </form>
+</div>
+{% endif %}
+
+{% endblock %}
