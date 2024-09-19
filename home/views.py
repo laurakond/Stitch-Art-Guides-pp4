@@ -145,10 +145,11 @@ def edit_booking(request, booking_id):
     # fetch each booking instance for the logged in user
     booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
     # generate a form based on the booking instance
-    tutorial_form = BookingForm(instance=booking, user=request.user)
+    tutorial_form = BookingForm(instance=booking)
     tutorial_list = Booking.objects.all()
+
     if request.method == "POST":
-        tutorial_form = BookingForm(data=request.POST, instance=booking, user=request.user)
+        tutorial_form = BookingForm(data=request.POST, instance=booking)
         if tutorial_form.is_valid():
             tutorial_form.author = request.user
             tutorial_form.save()
@@ -163,7 +164,7 @@ def edit_booking(request, booking_id):
                        )
             return redirect('my_tutorials')
     else:
-        tutorial_form = BookingForm(instance=booking, user=request.user)      
+        tutorial_form = BookingForm(instance=booking)      
 
     return render(request,
                 "home/edit_booking.html",
