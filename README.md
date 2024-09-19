@@ -368,18 +368,22 @@ Whilst working on this project I relied on Django documentation and other resour
 ### Acknowledgments
 
 My thanks go to: 
-- My mentor, [Martina Terlevic](https://github.com/SephTheOverwitch), for providing advice on how to improve my code. Giving suggestions for troubleshooting, and providing reassurance when my confidence stumbled (which has happened many a time).
+- My mentors: 
+    - [Martina Terlevic](https://github.com/SephTheOverwitch) for helping to come up with initial project idea, giving suggestions for troubleshooting, and providing reassurance when my confidence stumbled (which has happened many a time).
+    - [Iuliia Konovalova](https://github.com/IuliiaKonovalova) for helping to find a solution on how to implement parts of CRUD functionality.
 - My fellow student, [Vernell Clark](https://github.com/VCGithubCode) for troubleshoot and providing a shoulder to cry on when things got really rough.
 - [Tim Nelson](https://github.com/TravelTimN) for the advice on the intricacies of JavaScript Full Calendar & general advice.
 - Another fellow student [Declan](https://github.com/Declan444) for helping to understand models and overall morale boost when it was needed.
-- Tutor support team for helping out with project set up and other quirky bits. A big shout out to:
-    - John for assisting to address big troubleshooting issue. 
+- Tutor support team for helping out with project set up and other quirky bits. A big shout out goes to:
+    - John for assisting to address Gunicorn and pyca/cryptography warnings on Github [more details noted in fixed bugs section in TESTING.md](TESTING.md). 
     - Holly for providing guidance and advice on Whitenoise and staticfiles inner workings.
-    - Sarah for helping to troubleshoot delete part of CRUD functionality. 
+    - Sarah for helping to troubleshoot delete part of CRUD functionality.
+    - Thomas for giving an idea of how to implement CRUD. 
 
 ### Code Inspiration
 - The project was inspired and based on some parts of Code Institute's I think therefore I blog walkthrough project. 
     -  Credit is also noted within the code.
+- The calendar display was inspired by United Events team's [project](https://github.com/hannahro15/July24Hackathon-United-Events) that featured in Code Institute's July hackathon. 
 
 
 [Return to Table of Contents](#table-of-contents)
