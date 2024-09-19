@@ -102,7 +102,7 @@ There are several user inputs throughout the application, therefore, validating 
 
 ### Fixed bugs
 **Gunicorn and pyca/cryptography warnings in Github**
-- I received an email from Github warning that I have gunicorn and cryptography vulnerabilities (see image). 
+- I received a warning from Github that I have Gunicorn and cryptography vulnerabilities (see image). 
 - After receiving the second warning I managed to get John from Tutor support to help me out. 
 - With his encouragement, I uninstalled and re-installed the two dependencies and ensured that the changes have not affected the functionality of the website in the locally and once deployed.
 
