@@ -11,9 +11,9 @@
 <p>{{ tutorial.description | safe }}</p>
 <h3>{{ coach }}</h3>
 
-{% for date in tutorial_date%}
+<!-- {% for date in tutorial_date%}
     <p>Tutorial Date: <br> {{ date.tutorial_date }} {{ date.start_time }}</p>
-{% endfor %}
+{% endfor %} -->
 
 {% if user.is_authenticated %}
 <a href="{% url 'book_a_tutorial' %}">Book tutorial</a>
