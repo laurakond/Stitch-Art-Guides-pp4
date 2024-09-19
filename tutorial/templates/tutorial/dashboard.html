@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container">
     <div class="row row-cols-2">
         <!-- Tutorial card -->
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="{% static 'images/default.jpg' %}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Tutorials</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -16,42 +17,25 @@
         </div>
         <!-- TutorialDate card -->
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="{% static 'images/default.jpg' %}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Tutorial Dates/Times</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 <a href="{% url 'add_tutorial_date' %}" class="btn btn-primary">Add</a>
-                <a href="{% url 'add_tutorial' %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'delete_tutorial_date' %}" class="btn btn-danger">Delete</a>
             </div>
         </div>
         <!-- Bookings card -->
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="{% static 'images/default.jpg' %}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Bookings</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
-                <a href="{% url 'tutorial_list' %}" class="btn btn-primary">View</a>
+                <a href="{% url 'delete_booking' %}" class="btn btn-primary">View</a>
             </div>
         </div>
     </div>
 </div>
-
-
-<!-- <div>
-    <h1>Tutorials</h1>
-    <a href="{% url 'tutorial_list' %}" class="btn btn-primary">View</a>
-    <a href="{% url 'add_tutorial' %}" class="btn btn-primary">Add</a>
-</div>
-<div>
-    <h1>Tutorial Dates/Times</h1>
-    <a href="{% url 'add_tutorial' %}" class="btn btn-primary">Add</a>
-    <a href="{% url 'add_tutorial' %}" class="btn btn-danger">Delete</a>
-</div>
-<div>
-    <h1>Bookings</h1>
-    <a href="{% url 'tutorial_list' %}" class="btn btn-primary">View</a>
-</div> -->
-
 {% endblock %}
