@@ -119,4 +119,25 @@ def add_tutorial_date(request):
                    "tutorial_form":tutorial_form,
                    },
                   )
-    
+
+
+@login_required
+def delete_tutorial_date(request):
+    """
+    Function that deletes the tutorial booking.
+    """
+
+    return render(request,
+                  "tutorial/delete_tutorial_date.html",
+                  )
+
+
+def delete_booking(request):
+    """Add Tutorial date view"""
+
+    return render(request,
+                  "tutorial/delete_booking.html",
+                  )
+
+
+
