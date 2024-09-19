@@ -138,6 +138,3 @@ def delete_booking(request):
     return render(request,
                   "tutorial/delete_booking.html",
                   )
-
-
-
