@@ -9,7 +9,7 @@
     {% if "placeholder" in tutorial.image.url %}
     <img class="" src="{% static 'images/default.jpg' %}" alt="placeholder image">
     {% else %}
-    <img class="" src=" {{ tutorial.image.url }}" alt="{{ tutorial.title }}">
+    <img class="" src="{{ tutorial.image.url }}" alt="{{ tutorial.title }}">
     {% endif %}
 </div>
 
