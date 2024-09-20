@@ -8,7 +8,7 @@ class TutorialForm(forms.ModelForm):
     """
     class Meta:
         model = Tutorial
-        fields = ['title', 'slug', 'description', 'tutor_name', 'excerpt',]
+        fields = ['title', 'slug', 'description', 'tutor_name', 'excerpt','image',]
 
         labels = {
             'title': 'Tutorial Title',
@@ -16,7 +16,7 @@ class TutorialForm(forms.ModelForm):
             'description': 'Tutorial Description',
             'tutor_name': 'Tutor Name', 
             'excerpt': 'Tutorial Excerpt', 
-            # 'image': 'Tutorial Image', 
+            'image': 'Tutorial Image', 
             # 'image_alt': 'Image Description',
         }
 
