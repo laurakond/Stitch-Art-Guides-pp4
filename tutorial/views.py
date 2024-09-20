@@ -63,7 +63,7 @@ def add_tutorial(request):
     # from I blog walkthrough project by Code Institute.
     if request.user.is_superuser:
         if request.method == "POST":
-            tutorial_form = TutorialForm(data=request.POST)
+            tutorial_form = TutorialForm(request.POST, request.FILES)
             if tutorial_form.is_valid():
                 tutorial_form.author = request.user
                 tutorial_form.save()
