@@ -382,7 +382,7 @@ My thanks go to:
 
 ### Code Inspiration
 - The project was inspired and based on some parts of Code Institute's I think therefore I blog walkthrough project. 
-    -  Credit is also noted within the code.
+    -  Credits are also noted within the code.
 - The calendar display was inspired by United Events team's [project](https://github.com/hannahro15/July24Hackathon-United-Events) that featured in Code Institute's July hackathon. 
 
 
