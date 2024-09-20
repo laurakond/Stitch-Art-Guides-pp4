@@ -10,7 +10,16 @@
         {% for tutorial in tutorial_list %}
         <!-- Individual Tutorial card -->
         <div class="card" style="width: 18rem;">
-            <img src="{% static 'images/default.jpg' %}" class="card-img-top" alt="placeholder">
+            <!-- Image section -->
+            <div class="image-container">
+                {% if "placeholder" in tutorial.image.url %}
+                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                {% else %}
+                <img class="card-img-top" src="{{ tutorial.image.url }}" alt="{{ tutorial.title }}">
+                {% endif %}
+            </div>
+            <!-- Image section ends here-->
+            <!-- <img src="{% static 'images/default.jpg' %}" class="card-img-top" alt="placeholder"> -->
             <div class="card-body">
                 <h5 class="card-title">{{ tutorial.title }}</h5>
                 <p class="card-text">{{ tutorial.excerpt }}</p>
@@ -24,7 +33,7 @@
 </div>
 <!-- Form -->
 <div class="container">
-    <form action="" method="POST" class="p-2 form">
+    <form action="" method="POST" class="p-2 form" enctype="multipart/form-data">
         <h1 class="text-center">Add tutorial</h1>
         {% csrf_token %}
         {{ tutorial_form|crispy }}
