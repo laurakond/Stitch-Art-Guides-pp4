@@ -4,11 +4,12 @@
 {% block content %}
 <h2>{{ tutorial.title }}</h2>
 <p>{{ tutorial.tutor_name }}</p>
+<!-- Image container div code has been taken from I think therefore I blog walkthrough -->
 <div class="image-container">
     {% if "placeholder" in tutorial.image.url %}
-    <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+    <img class="" src="{% static 'images/default.jpg' %}" alt="placeholder image">
     {% else %}
-    <img class="card-img-top" src=" {{ tutorial.image.url }}" alt="{{ tutorial.title }}">
+    <img class="" src=" {{ tutorial.image.url }}" alt="{{ tutorial.title }}">
     {% endif %}
 </div>
 
