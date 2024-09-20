@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Tutorial(models.Model):
@@ -11,6 +12,7 @@ class Tutorial(models.Model):
     tutor_name = models.CharField(max_length=30, unique=False)
     description = models.TextField(blank=False)
     excerpt = models.TextField(blank=False)
+    image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return f"{self.title}"
