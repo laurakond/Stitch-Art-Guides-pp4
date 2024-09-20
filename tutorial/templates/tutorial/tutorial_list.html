@@ -15,7 +15,13 @@
     <!-- tutorial list starts here -->
     <h3>Post list to test:</h3>
     {% for tutorial in tutorial_list %}
-    <img src="{% static 'images/default.jpg' %}" alt="placeholder">
+    <div class="image-container">
+        {% if "placeholder" in tutorial.image.url %}
+        <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+        {% else %}
+        <img class="card-img-top" src="{{ tutorial.image.url }}" alt="{{ tutorial.title }}">
+        {% endif %}
+    </div>
     <a href="{% url 'tutorial_detail' tutorial.slug %}">
         <h2>{{ tutorial.title }}</h2>
     </a>

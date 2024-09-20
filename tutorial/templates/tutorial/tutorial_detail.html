@@ -4,8 +4,12 @@
 {% block content %}
 <h2>{{ tutorial.title }}</h2>
 <p>{{ tutorial.tutor_name }}</p>
-<div class="image">
-    <img src="{% static 'images/default.jpg' %}" alt="placeholder">
+<div class="image-container">
+    {% if "placeholder" in tutorial.image.url %}
+    <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+    {% else %}
+    <img class="card-img-top" src=" {{ tutorial.image.url }}" alt="{{ tutorial.title }}">
+    {% endif %}
 </div>
 
 <p>{{ tutorial.description | safe }}</p>
