@@ -4,7 +4,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from datetime import datetime
-from tutorial.models import Booking, TutorialDate
+from tutorial.models import Booking, TutorialDate, Tutorial
 from .forms import BookingForm
 
 
@@ -142,8 +142,31 @@ def edit_booking(request, booking_id):
     """
     Function that edits the tutorial booking.
     """
-    # fetch each booking instance for the logged in user
+    # Fetch each booking instance for the logged in user
     booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
+    
+    # Lines 148-167 and 190-193 have been written with the help of Sarah 
+    # from Code Institute's Tutor support team
+
+    # Fetch the tutorial the user has booked
+    tutorial_date = get_object_or_404(
+        TutorialDate,
+        pk=booking.tutorial_date.id
+        )
+    tutorial = get_object_or_404(
+        Tutorial,
+        pk=tutorial_date.tutorial.id
+        )
+    # Get current date for filtering for the future
+    date_now = datetime.now()
+    # Filter available TutorialDates by this tutorial,
+    # bookings and future dates
+    available_tutorials = TutorialDate.objects.filter(
+        # tutorial=tutorial,
+        booking__isnull=True,
+        tutorial_date__gte=date_now
+        )
+
     # generate a form based on the booking instance
     tutorial_form = BookingForm(instance=booking)
     tutorial_list = Booking.objects.all()
@@ -164,7 +187,14 @@ def edit_booking(request, booking_id):
                        )
             return redirect('my_tutorials')
     else:
-        tutorial_form = BookingForm(instance=booking)      
+        tutorial_form = BookingForm(instance=booking)
+    
+    # If the number of available bookings for this tutorial are 0
+    # show the message
+    if len(available_tutorials) == 0:
+        messages.error(request,
+        "No other available dates for this tutorial."
+        " Feel free to choose another though!")
 
     return render(request,
                 "home/edit_booking.html",
