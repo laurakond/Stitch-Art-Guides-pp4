@@ -159,9 +159,18 @@ def edit_booking(request, booking_id):
         )
     # Get current date for filtering for the future
     date_now = datetime.now()
+    
     # Filter available TutorialDates by this tutorial,
     # bookings and future dates
     available_tutorials = TutorialDate.objects.filter(
+        tutorial=tutorial,
+        booking__isnull=True,
+        tutorial_date__gte=date_now
+        )
+    
+    # Filter available TutorialDates by this tutorial,
+    # bookings and future dates
+    all_tutorials = TutorialDate.objects.filter(
         # tutorial=tutorial,
         booking__isnull=True,
         tutorial_date__gte=date_now
@@ -189,9 +198,11 @@ def edit_booking(request, booking_id):
     else:
         tutorial_form = BookingForm(instance=booking)
     
-    # If the number of available bookings for this tutorial are 0
-    # show the message
-    if len(available_tutorials) == 0:
+    # Based on the number of available bookings for this or other tutorials are 0
+    # show appropriate message
+    if len(available_tutorials) == 0 and len(all_tutorials) == 0:
+        messages.error(request, "No available dates for all tutorials. Come back later to check.")
+    elif len(available_tutorials) == 0:
         messages.error(request,
         "No other available dates for this tutorial."
         " Feel free to choose another though!")
