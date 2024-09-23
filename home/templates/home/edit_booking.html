@@ -3,26 +3,23 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<!-- <div class="container">
-    <div class="row row-cols-3">
-        {% for tutorial in tutorial_list %} -->
-        <!-- Individual Tutorial card -->
-        <!-- <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{ tutorial.tutorial.title }}</h5>
-                <p class="card-text">{{ tutorial.tutorial_date }}</p>
-                <p class="card-text">{{ tutorial.start_time }} - {{ tutorial.end_time }}</p>
 
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</div> -->
+<h1 class="text-center">Change your {{ booking.tutorial_date.tutorial.title }} tutorial date & time</h1>
+
+{% if not available_tutorials and not all_tutorials %}
+    <h2 class="text-center">No available dates for all tutorials. Come back later to check.</h2>
+{% elif not available_tutorials %}
+    <h2 class="text-center">No other available dates for {{ booking.tutorial_date.tutorial.title }} tutorial. Feel free to
+    choose another though!</h2>
+{% else %}
+    <h2 class="text-center">Pick another date for {{ booking.tutorial_date.tutorial.title }} or choose a different tutorial.
+</h2>
+{% endif %}
+
 <!-- Form -->
 <div class="container">
     <form action="" method="POST" class="p-2 form">
-        <h1 class="text-center">Change your tutorial date & time</h1>
+
         {% csrf_token %}
         {{ tutorial_form|crispy }}
         <div class="text-center">
