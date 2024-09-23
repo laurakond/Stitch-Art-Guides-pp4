@@ -22,7 +22,6 @@ from .views import error_400, error_403, error_404, error_500
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
-    path('dashboard/', include("dashboard.urls"), name="dashboard-urls"),
     path('summernote/', include('django_summernote.urls')),
     path('tutorials/', include("tutorial.urls"), name="tutorial-urls"),
     path('', include("home.urls"), name="home-urls"),
