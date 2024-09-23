@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'cloudinary',
     'tutorial',
     'home',
-    'dashboard',
 ]
 
 SITE_ID = 1
