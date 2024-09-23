@@ -243,6 +243,7 @@ The following palette was used to ensure the contrast is achieved between main p
 - Allow the user to submit a customised tutorial request form. This would allow to address any individual needs of a crafter.  
 - Implement comment and review features for each tutorial.
 - Develop an in depth user participation and use of the website by providing an ability to share or sell their own craft projects. This includes allowing the user to submit their project photos, titles, author’s name, and so on.
+- Filter tutorial drop down menu in the edit tutorial page in order to show just that tutorial's future dates for picking from. Currently this feature is being handled by applying different notificaitons to to the user once they enter edit booking page.
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -377,7 +378,7 @@ My thanks go to:
 - Tutor support team for helping out with project set up and other quirky bits. A big shout out goes to:
     - John for assisting to address Gunicorn and pyca/cryptography warnings on Github [more details noted in fixed bugs section in TESTING.md](TESTING.md). 
     - Holly for providing guidance and advice on Whitenoise and staticfiles inner workings.
-    - Sarah for helping to troubleshoot delete part of CRUD functionality.
+    - Sarah for helping to troubleshoot delete part of CRUD functionality and find a way how to navigate tutorial editing.
     - Thomas for giving an idea of how to implement CRUD. 
 
 ### Code Inspiration
