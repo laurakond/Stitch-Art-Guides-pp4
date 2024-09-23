@@ -145,8 +145,9 @@ def edit_booking(request, booking_id):
     # Fetch each booking instance for the logged in user
     booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
     
-    # Lines 148-167 and 190-193 have been written with the help of Sarah 
-    # from Code Institute's Tutor support team
+    # message filtering functionality based on booked tutorials has been
+    # implemented with guidance from Sarah, Code Institute's
+    # Tutor support team (lines 152-178 & 204-212).
 
     # Fetch the tutorial the user has booked
     tutorial_date = get_object_or_404(
@@ -206,12 +207,17 @@ def edit_booking(request, booking_id):
         messages.error(request,
         "No other available dates for this tutorial."
         " Feel free to choose another though!")
+    else:
+        messages.error(request,
+        "Pick another date or choose a different tutorial.")
 
     return render(request,
                 "home/edit_booking.html",
                 {"booking": booking,
                 "tutorial_list": tutorial_list,
-                "tutorial_form":tutorial_form,},
+                "tutorial_form":tutorial_form,
+                "available_tutorials": available_tutorials,
+                "all_tutorials": all_tutorials,},
                 )
 
 
