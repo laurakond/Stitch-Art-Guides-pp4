@@ -6,13 +6,15 @@
 
 <h1 class="text-center">Change your {{ booking.tutorial_date.tutorial.title }} tutorial date & time</h1>
 
-{% if not available_tutorials and not all_tutorials %}
+{% if not available_tutorials and not other_tutorials %}
     <h2 class="text-center">No available dates for all tutorials. Come back later to check.</h2>
 {% elif not available_tutorials %}
     <h2 class="text-center">No other available dates for {{ booking.tutorial_date.tutorial.title }} tutorial. Feel free to
     choose another though!</h2>
-{% else %}
-    <h2 class="text-center">Pick another date for {{ booking.tutorial_date.tutorial.title }} or choose a different tutorial.
+{% elif available_tutorials|length > 0 and not other_tutorials %}
+    <h2 class="text-center">Choose another date for your tutorial.</h2>
+    {% else %}
+    <h2 class="text-center">Pick another date or choose a different tutorial.
 </h2>
 {% endif %}
 
