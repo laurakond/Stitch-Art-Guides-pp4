@@ -1,12 +1,8 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
-# from django.views.generic import CreateView
-# from django.contrib import messages
-# from django.contrib.auth.decorators import login_required
 from .models import Tutorial, TutorialDate
 
 
-# Create your views here.
 class TutorialList(generic.ListView):
     """
     Class that displays all tutorials in one page.
@@ -15,7 +11,7 @@ class TutorialList(generic.ListView):
     template_name = "tutorial/tutorial_list.html"
 
 
-# the below code was appropriated from Code 
+# the below code was appropriated from Code
 # Institute's Blog walkthrough
 def tutorial_detail(request, slug):
     """
@@ -29,8 +25,9 @@ def tutorial_detail(request, slug):
     return render(
         request,
         "tutorial/tutorial_detail.html",
-        {"tutorial": tutorial,
-         "coach": "Laura K",
-         "tutorial_date": tutorial_date,
+        {
+            "tutorial": tutorial,
+            "coach": "Laura K",
+            "tutorial_date": tutorial_date,
         },
     )
