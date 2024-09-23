@@ -267,6 +267,14 @@ The code that was throwing an error was this:
     - This ensured that the server was showing the individual tutorial booking instance.
     ![correct booking instance]()
 
+**Conditional message filtering**
+- When testing different message prompts based on booked tutorials when editing the booking, a wrong message was appearing when only the same tutorial title booking was available. The message that was being prompted was “Pick another date or choose a different tutorial.”
+- This happened because there was an error in filtering other_tutorials query set. I was getting the test tutorial query set inside other_tutorials when I shouldn’t have.
+- To fix it I added exclude() method to other_tutorials queryset:
+    ```other_tutorials = TutorialDate.objects.filter(
+        booking__isnull=True,
+        tutorial_date__gte=date_now
+        ).exclude(tutorial=tutorial)```
 
 ### Unfixed bugs
 **Back button in the browser**
