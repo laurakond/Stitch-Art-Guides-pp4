@@ -2,7 +2,6 @@ from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Tutorial, TutorialDate, Booking
 
-# Register your models here.
 
 @admin.register(Tutorial)
 class TutorialAdmin(SummernoteModelAdmin):
@@ -15,6 +14,7 @@ class TutorialAdmin(SummernoteModelAdmin):
     search_fields = ('title', 'slug', 'tutor_name', 'description', 'excerpt')
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('description',)
+
 
 @admin.register(TutorialDate)
 class TutorialDateAdmin(SummernoteModelAdmin):
