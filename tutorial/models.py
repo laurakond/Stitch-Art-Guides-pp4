@@ -36,6 +36,7 @@ class Tutorial(models.Model):
         unique=False,
         verbose_name='alt text'
     )
+    
     def __str__(self):
         return f"{self.title}"
 
