@@ -2,6 +2,7 @@ from django import forms
 from tutorial.models import Booking, TutorialDate
 from datetime import datetime
 
+
 class BookingForm(forms.ModelForm):
     """
     Form to create a Booking.
@@ -14,10 +15,10 @@ class BookingForm(forms.ModelForm):
         future_tutorials = TutorialDate.objects.filter(
             tutorial_date__gte=current_date
             ).exclude(booking__isnull=False)
-        
+
         # Override __init__ function to show results based on
-        # applied conditional filtering above. The code was 
-        # appropriated from 
+        # applied conditional filtering above. The code was
+        # appropriated from
         # https://forum.djangoproject.com/t/queryset-difference/15716
         # https://stackoverflow.com/questions/43001425/django-modelform-with-conditions
         super(BookingForm, self).__init__(*args, **kwargs)
@@ -29,5 +30,5 @@ class BookingForm(forms.ModelForm):
         fields = ['tutorial_date']
 
         labels = {
-            'tutorial_date': 'Tutorial Date', 
+            'tutorial_date': 'Tutorial Date',
         }
