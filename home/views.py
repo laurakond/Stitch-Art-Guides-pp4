@@ -71,22 +71,27 @@ def tutorial_session(request, slug, pk):
     # an appropriate message
     if event_datetime < current_datetime:
         if not request.user.is_authenticated:
-            messages.error(request,
-                           'Please log in to access the details.')
+            messages.error(
+                request,
+                'Please log in to access the details.'
+            )
             return redirect('login')
         else:
-            messages.error(request,
-                           'This event has now passed and cannot be accessed.')
+            messages.error(
+                request,
+                'This event has now passed and cannot be accessed.')
             return redirect('book_a_tutorial')
 
     # checks if a tutorial is already booked, generates
     # appropriate message & redirects to the calendar view
     is_booked = Booking.objects.filter(tutorial_date=event_slot).exists()
     if is_booked:
-        messages.error(request,
-                        'This tutorial is already booked. Choose another date.')
+        messages.error(
+            request,
+            'This tutorial is already booked. Choose another date.'
+        )
         return redirect('calendar')
-        
+
     # requesting a booking for the tutorial slot
     if request.method == "POST" and not is_booked:
         user = request.user
@@ -100,8 +105,10 @@ def tutorial_session(request, slug, pk):
     return render(
         request,
         "home/tutorial_session.html",
-        {"event_slot": event_slot, 
-         "is_booked": is_booked,},
+        {
+            "event_slot": event_slot,
+            "is_booked": is_booked,
+        },
         )
 
 
@@ -131,9 +138,10 @@ def my_tutorials(request):
     return render(
         request,
         'home/my_tutorials.html',
-        {"past_sessions": past_sessions,
-         "upcoming_sessions": upcoming_sessions,
-         }
+        {
+            "past_sessions": past_sessions,
+            "upcoming_sessions": upcoming_sessions,
+        }
         )
 
 
@@ -144,7 +152,7 @@ def edit_booking(request, booking_id):
     """
     # Fetch each booking instance for the logged in user
     booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
-    
+
     # message filtering functionality based on booked tutorials has been
     # implemented with guidance from Sarah, Code Institute's
     # Tutor support team (lines 152-178 & 204-212).
@@ -160,7 +168,7 @@ def edit_booking(request, booking_id):
         )
     # Get current date for filtering for the future
     date_now = datetime.now()
-    
+
     # Filter available TutorialDates by this tutorial,
     # bookings and future dates
     available_tutorials = TutorialDate.objects.filter(
@@ -168,16 +176,13 @@ def edit_booking(request, booking_id):
         booking__isnull=True,
         tutorial_date__gte=date_now
         )
-    
+
     # Filter available TutorialDates by this tutorial,
     # bookings and future dates
     other_tutorials = TutorialDate.objects.filter(
         booking__isnull=True,
         tutorial_date__gte=date_now
         ).exclude(tutorial=tutorial)
-    
-    print(f"Available tutorials for this tutorial: {available_tutorials}")
-    print(f"All available tutorials: {other_tutorials}")
 
     # generate a form based on the booking instance
     tutorial_form = BookingForm(instance=booking)
@@ -194,53 +199,47 @@ def edit_booking(request, booking_id):
                 )
             return redirect('my_tutorials')
         else:
-            messages.error(request,
-                       'You can only edit your own bookings.'
-                       )
+            messages.error(
+                request,
+                'You can only edit your own bookings.'
+            )
             return redirect('my_tutorials')
     else:
         tutorial_form = BookingForm(instance=booking)
-    
-    # Based on the number of available bookings for this or other tutorials are 0
-    # show appropriate message
-    if len(available_tutorials) == 0 and len(other_tutorials) == 0:
-        messages.error(request, "No available dates for all tutorials. Come back later to check.")
-    elif len(available_tutorials) == 0:
-        messages.error(request,
-        "No other available dates for this tutorial."
-        " Feel free to choose another though!")
-    elif len(available_tutorials) > 0 and len(other_tutorials) == 0:
-        messages.error(request,
-        "Choose another date for your tutorial.")    
-    else:
-        messages.error(request,
-        "Pick another date or choose a different tutorial.")
 
-    return render(request,
-                "home/edit_booking.html",
-                {"booking": booking,
-                "tutorial_list": tutorial_list,
-                "tutorial_form":tutorial_form,
-                "available_tutorials": available_tutorials,
-                "other_tutorials": other_tutorials,},
-                )
+    return render(
+        request,
+        "home/edit_booking.html",
+        {
+            "booking": booking,
+            "tutorial_list": tutorial_list,
+            "tutorial_form": tutorial_form,
+            "available_tutorials": available_tutorials,
+            "other_tutorials": other_tutorials,
+        },
+    )
 
 
-# This part of code was appropriated from the Code Institute's 
+# This part of code was appropriated from the Code Institute's
 # blog walkthrough
 @login_required
 def delete_booking(request, booking_id):
     """
     Function that deletes the tutorial booking.
     """
-    
+
     booking = get_object_or_404(Booking, pk=booking_id)
-    if booking.user == request.user: 
+    if booking.user == request.user:
         booking.delete()
-        messages.add_message(request, messages.SUCCESS, 'Booking deleted')
+        messages.add_message(
+            request,
+            messages.SUCCESS,
+            'Booking deleted')
         return redirect('my_tutorials')
     else:
-        messages.add_message(request, messages.ERROR,
-                             'You can only delete your own bookings.')
+        messages.add_message(
+            request,
+            messages.ERROR,
+            'You can only delete your own bookings.'
+        )
         return redirect('my_tutorials')
-    
