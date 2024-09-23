@@ -171,11 +171,13 @@ def edit_booking(request, booking_id):
     
     # Filter available TutorialDates by this tutorial,
     # bookings and future dates
-    all_tutorials = TutorialDate.objects.filter(
-        # tutorial=tutorial,
+    other_tutorials = TutorialDate.objects.filter(
         booking__isnull=True,
         tutorial_date__gte=date_now
-        )
+        ).exclude(tutorial=tutorial)
+    
+    print(f"Available tutorials for this tutorial: {available_tutorials}")
+    print(f"All available tutorials: {other_tutorials}")
 
     # generate a form based on the booking instance
     tutorial_form = BookingForm(instance=booking)
@@ -201,12 +203,15 @@ def edit_booking(request, booking_id):
     
     # Based on the number of available bookings for this or other tutorials are 0
     # show appropriate message
-    if len(available_tutorials) == 0 and len(all_tutorials) == 0:
+    if len(available_tutorials) == 0 and len(other_tutorials) == 0:
         messages.error(request, "No available dates for all tutorials. Come back later to check.")
     elif len(available_tutorials) == 0:
         messages.error(request,
         "No other available dates for this tutorial."
         " Feel free to choose another though!")
+    elif len(available_tutorials) > 0 and len(other_tutorials) == 0:
+        messages.error(request,
+        "Choose another date for your tutorial.")    
     else:
         messages.error(request,
         "Pick another date or choose a different tutorial.")
@@ -217,7 +222,7 @@ def edit_booking(request, booking_id):
                 "tutorial_list": tutorial_list,
                 "tutorial_form":tutorial_form,
                 "available_tutorials": available_tutorials,
-                "all_tutorials": all_tutorials,},
+                "other_tutorials": other_tutorials,},
                 )
 
 
