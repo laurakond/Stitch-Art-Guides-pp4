@@ -5,53 +5,86 @@
 <h1>My Tutorial list</h1>
 <h2>Upcoming Tutorials:</h2>
 {% if user.is_authenticated %}
-    {% if upcoming_sessions %}
-        {% for session in upcoming_sessions %}
-            <p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
-                {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} </p>
-                <a href="{% url 'edit_booking' session.id %}" class="btn btn-primary" >Edit booking</a>
+{% if upcoming_sessions %}
+{% for session in upcoming_sessions %}
+<p>
+    Title: {{session.tutorial_date.tutorial.title}} 
+    <br>
+    Date: {{session.tutorial_date.tutorial_date}} 
+    <br>
+    Time:
+    {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}}
+</p>
+<a href="{% url 'edit_booking' session.id %}" class="btn btn-primary">
+    Edit booking
+</a>
 
-                <button type="button" class="deleteButton btn btn-danger" data-booking_id="{{ session.id }}">Delete your booking</button>
+<button type="button" class="deleteButton btn btn-danger" data-booking_id="{{ session.id }}">
+    Cancel your booking
+</button>
 
-                <!-- Delete Booking prompt Modal starts here -->
-                <form action="" method="POST">
-                    <div class="modal" tabindex="-1" id="deletebookingModal-{{ session.id }}" aria-labelledby="deletebookingModalLabel"
-                        aria-hidden="true" data-bs-target="">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="deletebookingModalLabel">{{session.tutorial_date.tutorial.title}}</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <p>are you sure you want to delete {{session.tutorial_date.tutorial.title}} on {{session.tutorial_date.tutorial_date}} at {{session.tutorial_date.start_time}}? </p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    {% csrf_token %}
-                                    <a id="deleteConfirm-{{ session.id }}" href="#" class="btn btn-danger">Delete booking</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <!-- Delete Booking prompt Modal ends here -->
+<!-- Delete Booking prompt Modal starts here -->
+<form action="" method="POST">
+    <div class="modal" tabindex="-1" id="deletebookingModal-{{ session.id }}" aria-labelledby="deletebookingModalLabel"
+        aria-hidden="true" data-bs-target="">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deletebookingModalLabel">
+                        {{session.tutorial_date.tutorial.title}}
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        are you sure you want to delete {{session.tutorial_date.tutorial.title}} on
+                        {{session.tutorial_date.tutorial_date}} at {{session.tutorial_date.start_time}}?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    {% csrf_token %}
+                    <a id="deleteConfirm-{{ session.id }}" href="#" class="btn btn-danger">
+                        Cancel booking
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Delete Booking prompt Modal ends here -->
 
-        {% endfor %}
-    {% else %}
-        <p>You have no upcoming tutorials.</p>
-        <a href="{% url 'tutorial_list' %}">Discover tutorials</a>
-        <a href="{% url 'book_a_tutorial' %}">Book tutorial</a>
-    {% endif %}
+{% endfor %}
+{% else %}
+<p>
+    You have no upcoming tutorials
+</p>
+<a href="{% url 'tutorial_list' %}">
+    Discover tutorials
+</a>
+<a href="{% url 'book_a_tutorial' %}">
+    Book tutorial
+</a>
+{% endif %}
 
-    <h2>Past Tutorials:</h2>
-    {% if past_sessions %}
-        {% for session in past_sessions %}
-            <p>Title: {{session.tutorial_date.tutorial.title}} <br> Date: {{session.tutorial_date.tutorial_date}} <br> Time:
-            {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} </p>
-        {% endfor %}
-    {% else %}
-        <p>You have no past tutorials.</p>
-    {% endif %}
+<h2>Past Tutorials:</h2>
+{% if past_sessions %}
+{% for session in past_sessions %}
+<p>
+    Title: {{session.tutorial_date.tutorial.title}} 
+    <br>
+    Date: {{session.tutorial_date.tutorial_date}} 
+    <br>
+    Time:
+    {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}} 
+</p>
+{% endfor %}
+{% else %}
+<p>
+    You have no past tutorials
+</p>
+{% endif %}
 {% endif %}
 
 {% endblock %}
