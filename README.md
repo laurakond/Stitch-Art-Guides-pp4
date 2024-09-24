@@ -354,17 +354,45 @@ To deploy to the Heroku website, follow the steps below:
 ### Refactoring
 
 ### General resources:
-Whilst working on this project I relied on Django documentation and other resources to deepen my knowledge and gain a better understanding how to build a full-stack website.
+Whilst working on this project I relied on Django documentation and other resources to deepen my knowledge and gain a better understanding how to build a full-stack website. 
 
 - ERD & flowcharts:
-    - [Lucid flowcharts youtube video](https://www.youtube.com/watch?v=hktyW5Lp0Vo)
+    - [Lucid flowcharts Youtube video](https://www.youtube.com/watch?v=hktyW5Lp0Vo)
     - [Lucid Software database tutorial for beginners](https://www.youtube.com/watch?v=wR0jg0eQsZA)
     - [Decomplexify](https://www.youtube.com/watch?v=GFQaEYEc8_8)
+    - [Decomplexify Learn Database normalisation Youtube video](https://www.youtube.com/watch?v=GFQaEYEc8_8)
 - Models:
     - [Geeks for Geeks: Django models](https://www.geeksforgeeks.org/django-models/)
     - [MDN web docs: Using models](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models) 
     - [W3Schools Django update model](https://www.w3schools.com/django/django_update_model.php)
- 
+    - [Django forum - how do I load multiple models items into a single view](https://forum.djangoproject.com/t/how-do-i-load-multiple-models-items-into-a-single-view/919/2)
+- User flows:
+    - [Figma user flow kit](https://www.figma.com/community/file/830510773896272856/user-flow-kit)
+    - [Creatly common mistales to avoid when creating user flow diagrams](https://creately.com/guides/user-flow-diagram/#common-mistakes-to-avoid-when-creating-user-flow-diagrams)
+- I looked at a few resources for calendar view implementation. 
+
+- Restricting authorised access
+    - The following chat threads on Stackoverflow were very useful when trying to determine which login restrictions to use for defensive programming:
+    - [@login_required and is_authenticated() -- When to use which in Django?](https://stackoverflow.com/questions/22488601/login-required-and-is-authenticated-when-to-use-which-in-django#:~:text=login_required%20is%20applied%20on%20a,is%20logged%20in%20or%20not)
+    - [Using the Django authentication system](https://docs.djangoproject.com/en/5.1/topics/auth/default/) was also really helpful for determining what aspects were useful for restricting access. 
+- Implementing calendar view for tutorial display:
+    - [Real Python: The Python calendar module](https://realpython.com/python-calendar-module/)
+    - [Python documentation: calendar](https://docs.python.org/3/library/calendar.html)
+    - [Geeks for Geeks Python calendar module](https://www.geeksforgeeks.org/python-calendar-module/)
+    - [Codemy Django Wednesdays Youtube tutorial](https://www.youtube.com/watch?v=4EJlrweJE-M)
+
+- Python datetime:
+    -  [Python documentation datetime - basic date and time](https://docs.python.org/3/library/datetime.html#format-codes)
+    - [Geeks for Geeks Isoformat() method](https://www.geeksforgeeks.org/isoformat-method-of-datetime-class-in-python/)
+
+- Creating Django error pages:
+    - [Geek for geeks: Django creating a 404 error page](https://www.geeksforgeeks.org/django-creating-a-404-error-page/?ref=oin_asr1)
+    - [Geeks for geeks: handling custom error page](https://www.geeksforgeeks.org/python-django-handling-custom-error-page/)
+
+- Queryset.exists():
+    - [Dev community: queryset.exists() more efficient than queryset.count()](https://dev.to/codereviewdoctor/why-queryset-exists-is-more-efficient-than-queryset-count-2f3h)
+    - [Django documentation: check if record exists in model](https://forum.djangoproject.com/t/check-if-record-exists-in-model/10712/5)
+    - [Reddit: Checking a place is already booked or not based on time](https://www.reddit.com/r/django/comments/1bb6zin/checking_a_place_is_already_booked_or_not_based/)
 
 ### Acknowledgments
 
