@@ -1,5 +1,4 @@
 from . import views
-# from .views import AddTutorial, AddTutorialDate
 from django.urls import path
 
 
