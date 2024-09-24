@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <div>
     <h1>{{event_slot.tutorial.title}}</h1>
     <div>
@@ -18,6 +19,8 @@
         {% endif %}
     </div>
 </div>
+{% endif %}
+
 <!-- Booking prompt Modal starts here -->
 {% if not is_booked %}
 <form action="" method="POST">
