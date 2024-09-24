@@ -98,7 +98,7 @@ There are several user inputs throughout the application, therefore, validating 
 
 ## Bugs
 
-**To Note**: The below mentioned bugs occured early in the development stage before refactoring was done. Therefore, some of the function names and provided images do not correspond to the final code.
+**To Note**: The below mentioned bugs occured early in the development stage before refactoring was done. Therefore, some of the function names and provided images may not correspond to the final code.
 
 ### Fixed bugs
 **Gunicorn and pyca/cryptography warnings in Github**
@@ -199,7 +199,7 @@ TEMPLATES = [
     - [United Events](https://github.com/hannahro15/July24Hackathon-United-Events/blob/main/united/settings.py) project
 
 **Delete booking button not working**
-The delete button of the CRUD part of the website did not submit the user request when the button was being clicked. 
+- The delete button of the CRUD part of the website did not submit the user request when the button was being clicked. 
 - I managed to resolve this by removing ```request.method == "POST"``` from the if statement and altering the code to the following:
     ```
     @login_required
@@ -276,12 +276,37 @@ The code that was throwing an error was this:
         tutorial_date__gte=date_now
         ).exclude(tutorial=tutorial)```
 
+**Error messages for unauthorised access not displaying**
+- When testing defensive programming, some of the error messages were not showing up where expected and were only redirecting to an appropriate page. 
+
+    - I resolved this by removing @login_required decorator and applying user.is_authenticated to allow the messages appear where required.
+- Once that was resolved, I noticed that some of the error messages were appearing where they were not meant to. 
+    - To solve this, I moved the authentication code up within the view functions in order to ensure that the check is carried out first thing when the view loads.
+    
+    ![Incorrect error rendering]()
+
+    ![fixed code placement image]()
+
 ### Unfixed bugs
 **Back button in the browser**
 - Upon booking the tutorial slot the user is redirected to another page with a confirmation message showing up confirming the booking has been made.
 - However,if the user clicks the backwards browser button, they are taken back to the tutorial booking page where they can click on the book button again. The functionality is in place to prevent making a repeat booking, but the page information indicating that the tutorial has been booked already only renders after the modal window is closed. 
     -  This is to be addressed at the next development stage.
 
+**Cut off Tutorial title in the Calendar view**
+- I noticed that the tutorial title is cutting off in the Calendar view if it is over a certain lenght.
+    - After searching for a solution I was able to make the event title show in a second row. The code used for this was found on [Stackoverflow](https://stackoverflow.com/questions/33406697/fullcalendar-v2-event-title-cut-off-in-month-view):
+    ```
+    .fc-daygrid-event .fc-event-title {
+        white-space: normal;
+        text-overflow: ellipsis;
+        max-height:20px;
+  }
+  .fc-daygrid-event:hover .fc-event-title {
+        max-height:none !important;
+  }
+    ```
+    - However, this makes the whole calendar view jump. This will be addressed at the next development stage.
 
 [Return to Table of Contents](#contents)
 
