@@ -36,7 +36,7 @@ def book_a_tutorial(request):
             'You do not have access to this content.'
         )
         return redirect('account_login')
-    
+
     tutorials = TutorialDate.objects.all()
     events = []
     for tutorial in tutorials:
@@ -69,11 +69,11 @@ def tutorial_session(request, slug, pk):
     event_slot = get_object_or_404(TutorialDate, pk=pk, tutorial__slug=slug)
 
     if not request.user.is_authenticated:
-            messages.error(
-                request,
-                'Please log in to access the details.'
+        messages.error(
+            request,
+            'Please log in to access the details.'
             )
-            return redirect('account_login')
+        return redirect('account_login')
 
     # verify if the event date is the same as the current date
     current_datetime = datetime.now()
@@ -120,12 +120,19 @@ def tutorial_session(request, slug, pk):
         )
 
 
-@login_required
+# @login_required
 def my_tutorials(request):
     """
     Function that displays past and future tutorial bookings
     and renders My Bookings page.
     """
+    if not request.user.is_authenticated:
+        messages.error(
+            request,
+            'You do not have access to this content. Please sign up or login.'
+            )
+        return redirect('account_login')
+
     bookings = Booking.objects.filter(user=request.user.id)
     current_datetime = datetime.now()
     past_sessions = []
@@ -133,7 +140,7 @@ def my_tutorials(request):
 
     # loops through each booking and checks if each
     # booking date is before or after the current date.
-    
+
     for booking in bookings:
         event_datetime = datetime.combine(
             booking.tutorial_date.tutorial_date,
@@ -154,11 +161,19 @@ def my_tutorials(request):
         )
 
 
-@login_required
+# @login_required
 def edit_booking(request, booking_id):
     """
     Function that edits the tutorial booking.
     """
+
+    if not request.user.is_authenticated:
+        messages.error(
+            request,
+            'You do not have access to this content. Please sign up or login.'
+            )
+        return redirect('account_login')
+
     # Fetch each booking instance for the logged in user
     booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
 
