@@ -1,8 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from django.views import generic
 from django.contrib import messages
-from django.http import HttpResponseRedirect
 from datetime import datetime
 from tutorial.models import Booking, TutorialDate, Tutorial
 from .forms import BookingForm
