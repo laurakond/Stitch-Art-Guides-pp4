@@ -2,10 +2,11 @@
 {% load static %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <!-- book_tutorial.html code starts here -->
 <!-- FullCalendar widget -->
 <div id="tutorial-calendar"></div>
-
+{% endif %}
 <!-- Expired Modal starts here -->
 <div class="modal" tabindex="-1" id="expiredModal" aria-labelledby="expiredModalLabel" aria-hidden="true">
     <div class="modal-dialog">
