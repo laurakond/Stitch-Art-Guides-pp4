@@ -30,6 +30,13 @@ def book_a_tutorial(request):
     """
     Function that displays calendar for booking a tutorial.
     """
+    if not request.user.is_authenticated:
+        messages.error(
+            request,
+            'You do not have access to this content.'
+        )
+        return redirect('account_login')
+    
     tutorials = TutorialDate.objects.all()
     events = []
     for tutorial in tutorials:
@@ -51,7 +58,7 @@ def book_a_tutorial(request):
     )
 
 
-@login_required
+# @login_required
 def tutorial_session(request, slug, pk):
     """
     Function that captures the Tutorial Date primary key
@@ -60,6 +67,13 @@ def tutorial_session(request, slug, pk):
     # tutorial__slug captures the slug from the Tutorial Model.
     # Full reference noted in the README.md.
     event_slot = get_object_or_404(TutorialDate, pk=pk, tutorial__slug=slug)
+
+    if not request.user.is_authenticated:
+            messages.error(
+                request,
+                'Please log in to access the details.'
+            )
+            return redirect('account_login')
 
     # verify if the event date is the same as the current date
     current_datetime = datetime.now()
@@ -70,17 +84,11 @@ def tutorial_session(request, slug, pk):
     # compare the current date to the event date and raise
     # an appropriate message
     if event_datetime < current_datetime:
-        if not request.user.is_authenticated:
-            messages.error(
-                request,
-                'Please log in to access the details.'
-            )
-            return redirect('login')
-        else:
-            messages.error(
-                request,
-                'This event has now passed and cannot be accessed.')
-            return redirect('book_a_tutorial')
+        messages.error(
+            request,
+            'This event has now passed and cannot be accessed.'
+        )
+        return redirect('book_a_tutorial')
 
     # checks if a tutorial is already booked, generates
     # appropriate message & redirects to the calendar view
@@ -90,7 +98,7 @@ def tutorial_session(request, slug, pk):
             request,
             'This tutorial is already booked. Choose another date.'
         )
-        return redirect('calendar')
+        return redirect('book_a_tutorial')
 
     # requesting a booking for the tutorial slot
     if request.method == "POST" and not is_booked:
@@ -125,6 +133,7 @@ def my_tutorials(request):
 
     # loops through each booking and checks if each
     # booking date is before or after the current date.
+    
     for booking in bookings:
         event_datetime = datetime.combine(
             booking.tutorial_date.tutorial_date,
