@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
 <h1 class="text-center">Change your {{ booking.tutorial_date.tutorial.title }} tutorial date & time</h1>
 
 {% if not available_tutorials and not other_tutorials %}
@@ -29,6 +29,6 @@
         </div>
     </form>
 </div>
-
+{% endif %}
 
 {% endblock %}
