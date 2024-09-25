@@ -3,12 +3,14 @@
 
 {% block content %}
 <!-- Index.html code starts here -->
-<div>
-    <h1>Stitch Art Guides</h1>
-    <p>brief blurb</p>
-    <!-- make the <a> tag button like -->
-    <a href="{% url 'tutorial_list' %}">Discover tutorials</a>
+<div class="d-flex container-fluid justify-content-center align-items-center vh-100 intro-tag">
+    <div class="blurb justify-content-center align-items-center my-auto">
+        <div class="intro text-center">
+            <h1 class="mx-auto my-0 text-uppercase">Stitch Art Guides</h1>
+            <h2 class="text-dark-50 mx-auto mt-5 mb-5">A place where you can learn the art of cross-stitch.</h2>
+            <a class="btn btn-primary" href="{% url 'tutorial_list' %}">Discover tutorials</a>
+        </div>
+    </div>
 </div>
-
 <!-- Index.html code ends here -->
 {% endblock %}
