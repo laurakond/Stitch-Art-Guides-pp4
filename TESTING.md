@@ -287,6 +287,124 @@ The code that was throwing an error was this:
 
     ![fixed code placement image]()
 
+**Favicon not rendering**
+- Upon upload of all files, the favicon was not properly rendering when the the website was loaded. 
+    - I resolved this issue by removing the type attribute from the tags. I found the solution on [Stack Overflow](https://stackoverflow.com/questions/66918079/favicon-not-loading-in-django#:~:text=I%20had%20the%20same%20problem.,tags%2C%20the%20favicon%20started%20working) channel.
+
+**Comparing the current time to event time**
+- I wanted to compare the user’s current time and date with the tutorial’s set time and date. My initial code was only comparing the dates excluding the hours. Therefore, any tutorial that was clicked on on the current day, even when the time of the tutorial has passed, it would not prompt the expired event modal
+    - I managed to resolve this by removing the `today.setHours(0, 0, 0, 0);` from the eventClick function, the code directly compared the current date and time with the event’s date and time. 
+
+    <details>
+    <summary>I found the following resources helpful to accomplish this:</summary>
+    
+    - [Freecodecamp: javascript date comparison](https://www.freecodecamp.org/news/javascript-date-comparison-how-to-compare-dates-in-js/)
+    - [MDN web docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+    - [Geek for Geeks JavaScript Date comparison](https://www.geeksforgeeks.org/compare-two-dates-using-javascript/)
+    - [Freecodecamp: compare two dates in javascript](https://www.freecodecamp.org/news/compare-two-dates-in-javascript/#:~:text=In%20JavaScript%2C%20you%20can%20use%20comparison%20operators%20like,to%20their%20respective%20corresponding%20timestamps)
+    - [StackOverflow: compare string with todays date in javascript](https://stackoverflow.com/questions/15063670/compare-string-with-todays-date-in-javascript)
+    ![username-validation]()
+    </details>
+
+        
+
+**Field ‘id’ expected a number but got SimpleLazyObject**
+
+- I received this error when trying to check if /my-tutorials/ url path was accessible to annonymous users. Upon quick research, I realised that I needed to alter my request in views.py by adding a user specific id, and also apply @login_required above the my_tutorials function.
+    - This seems to have worked.
+
+    ![id expected a number error image]()
+    <details>
+        <summary>I found the following resources useful:</summary>
+        
+    - [Stackoverflow: typerror field id expected a number but got django contrib auth](https://stackoverflow.com/questions/62966136/typeerror-field-id-expected-a-number-but-got-django-contrib-auth-models-anon)
+    
+    </details>
+    
+**Empty Past Tutorials list in My Bookings page:**
+- When working on My Bookings page, I noticed that the template was not rendering appropriate information where needed. I tried checking if the upcoming_sessions and past_sessions lists were coming back with correct information.
+- After running the print statements (code1) I realised that past_sessions list was not being populated. 
+    <details>
+            <summary>Error code</summary>
+
+        @login_required
+        def my_tutorials(request):
+            """
+            Function that displays booked tutorial page.
+            """
+            bookings = Booking.objects.filter(user=request.user.id)
+            current_datetime = datetime.now()
+            past_sessions = []
+            upcoming_sessions = []
+
+            for booking in bookings:
+                event_datetime = datetime.combine(
+                    booking.tutorial_date.tutorial_date, 
+                    booking.tutorial_date.start_time
+                    )
+                print(f"Booking: {booking.tutorial_date.tutorial.title} - Event Date: {event_datetime} - Current Date: {current_datetime}")
+            if event_datetime > current_datetime:
+                upcoming_sessions.append(booking)
+            elif event_datetime < current_datetime:
+                past_sessions.append(booking)
+                
+                
+            print("Upcoming Sessions:", upcoming_sessions)
+            print("Past Sessions:", past_sessions)
+
+            return render(
+                request,
+                'home/my_tutorials.html',
+                {"past_sessions": past_sessions,
+                "upcoming_sessions": upcoming_sessions,
+                }
+                )    
+
+    </details>
+
+- Going through the code, I noticed that I was appending to appropriate list outside of the for statement. I moved the if statement inside the for statement and the issue was resolved.
+
+    <details>
+            <summary>Fixed code</summary>
+
+
+        @login_required
+        def my_tutorials(request):
+            """
+            Function that displays booked tutorial page.
+            """
+            bookings = Booking.objects.filter(user=request.user.id)
+            current_datetime = datetime.now()
+            past_sessions = []
+            upcoming_sessions = []
+
+            for booking in bookings:
+                event_datetime = datetime.combine(
+                    booking.tutorial_date.tutorial_date, 
+                    booking.tutorial_date.start_time
+                    )
+                print(f"Booking: {booking.tutorial_date.tutorial.title} - Event Date: {event_datetime} - Current Date: {current_datetime}")
+                if event_datetime > current_datetime:
+                    upcoming_sessions.append(booking)
+                elif event_datetime < current_datetime:
+                    past_sessions.append(booking)
+                
+                
+            print("Upcoming Sessions:", upcoming_sessions)
+            print("Past Sessions:", past_sessions)
+
+            return render(
+                request,
+                'home/my_tutorials.html',
+                {"past_sessions": past_sessions,
+                "upcoming_sessions": upcoming_sessions,
+                }
+                )   
+
+    </details>
+
+
+
 ### Unfixed bugs
 **Back button in the browser**
 - Upon booking the tutorial slot the user is redirected to another page with a confirmation message showing up confirming the booking has been made.
