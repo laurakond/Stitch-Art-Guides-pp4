@@ -28,9 +28,11 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 - [Existing Features](#existing-features)
 - [Features Left to Implement](#features-left-to-implement)
 
-[Tools and Technologies](#tools-and-technologies)
-- [Languages Used](#languages-used)
-- [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
+[Technologies used](#technologies-used)
+- [Languages](#languages)
+- [Frameworks and Libraries](#frameworks-and-libraries)
+- [Databases](#databases)
+- [Other Tools](#other-tools)
 
 [Testing](#testing)
 
@@ -297,22 +299,25 @@ The following palette was used to ensure the contrast is achieved between main p
 
 [Return to Table of Contents](#table-of-contents)
 
-## Tools and Technologies
-### Languages Used
+## Technologies used
+### Languages
 
-- This project was created using full stack approach, including Python, Django, HTML, and CSS.
-- Markdown language was used for creating the README and TESTING files.
+- Python 3.12.5: the primary language used to develop the server-side of the website.
+- JavaScript: the primary language used to develop interactive components of the website.
+- HTML: the markup language used to create the website.
+- CSS: the styling language used to style the website.
+- Markdown: the markup language to create the README and TESTING files.
 
-### Frameworks, Libraries and Programs Used
+### Frameworks and Libraries
+- [Django](https://www.djangoproject.com/) Python framework for the overall project logic implementation.
 
-The following resources were used to help implement the website:
 - [Lucidchart](https://lucid.app/) for creating flowchart of the game.
 - [GitHub](https://github.com/) for creating and storing files and folders of the website.
 - **Git** was used for version control.
 - **VScode** editor for writing the code.
 - [CI Python Linter](https://pep8ci.herokuapp.com/#) for validating and checking my code for best code practices.
 - [Heroku](https://www.heroku.com) for accessing and storing my application game.
-- [Django](https://www.djangoproject.com/) Python framework for the overall project implementation.
+
 - [Bootstrap](https://getbootstrap.com/) CSS framework that allowed to implement various styled elements, including modals. It was also used for quick and easy styling of the overall website.
 - [Whitenoise](https://whitenoise.readthedocs.io/en/stable/index.html) Python library used for handling static files.
 - [Django allauth](https://allauth.org/) authentication solution for Django framework used for allowing users to register and login.
@@ -323,6 +328,9 @@ The following resources were used to help implement the website:
 
 Other libraries and dependencies can be seen in the requirements.txt file. 
 
+### Databases
+
+### Other tools
 
  [Return to Table of Contents](#table-of-contents)
 
