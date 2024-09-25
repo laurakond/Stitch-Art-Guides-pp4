@@ -62,11 +62,60 @@ No background, geographical location or income has been specified for the target
 
 ### User Stories
 
-As a first time user:
+**As a developer:**
+| Issue ID | User Story                                                                                                                                          |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [#1](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/1)        | As a developer I can set up a new workspace and a project board so that I can start working on my project.                                          |
+| [#17](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/17)       | As a developer I can set up required apps and a database so that I can manage data and start building the application.                              |
+| [#18](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/18)       | As a developer I can deploy the project to Heroku so that it is accessible online.                                                               |
+| [#19](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/19)       | As a developer I can add a favicon so that the website renders appropriate image in the browser.                                                     |
+| [#20](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/20)       | As a developer I can apply design of choice so that the website is visually appealing and represents the purpose.|
+| [#25](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/25)       | As a developer, I can validate each page and app so that I know that the code adheres to best practices.                                            |
+| [#26](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/26)       | As a developer, I can perform automated and manual tests so that I know all functionalities of the website are working.                             |
+| [#27](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/27)       | As a developer, I can carry out user stories testing so that I know all main user criteria and MVP are met.                                         |
+| [#28](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/28)       | As a developer, I can fix the bugs so that I can ensure any issues are handled before the initial project release.                                  |
+| [#29](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/29)       | As a developer, I can carry out website design improvement so that I know the project adhers to the principles of UX/UI design.                      |
+| [#30](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/30)       | As a developer, I can note the website progression in the README so that anyone can see the steps and actions taken for the release of the website. |
+| [#31](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/31)       | As a developer I can add main website keywords and description so that the website gains higher searchability in the search engines.                 |
 
 <br>
 
-As a user:
+**As a first time user**
+| Issue ID | User Story                                                                                      |
+| -------- | ----------------------------------------------------------------------------------------------- |
+| [#8](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/8)        | As a first time user I can create an account so that I can sign in and access members features. |
+
+<br>
+
+**As a site user**
+| Issue ID | User Story                                                                                                                |
+| -------- | ------------------------------------------------------------------------------------------------------------------------- |
+| [#3](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/3)        | As a site user I can view the home page of the website so that I can understand and see the purpose of it.                |
+| [#4](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/4)        | As a site user I can click on the About page so that I can read more about the website’s owner.                           |
+| [#5](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/5)        | As a site user I can see the header so that I can access different pages from one place.                                  |
+| [#6](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/6)        | As a site user I can see the footer so that I can access the social media and contact information.                        |
+| [#7](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/7)        | As a site user I can see a list of tutorials so that I can choose which one is suitable for me.                                     |
+| [#9](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/9)        | As a site user I can login to & logout of the website so that I can access and manage my content.                         |
+| [#10](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/10)       | As a site user I can click on each tutorial listing so that I can read more information about the tutorial.                                  |
+| [#11](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/11)       | As a site user I can book a tutorial so that I can attend it.                                                             |
+| [#12](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/12)       | As a site user I can go to Tutorials page so that I can manage them.                                                    |
+| [#13](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/13)       | As a site user I can edit my booking so that I can adjust the details if I change my mind.                                |
+| [#14](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/14)       | As a site user I can submit a request for a customised tutorial so that I can have a lesson based on my individual needs. |
+| [#15](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/15)       | As a site user I can comment on the tutorial so that I can share my feedback.                                              |
+| [#16](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/16)       | As a site user I can can upload my projects so that I can share my progress.                                              |
+| [#21](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/21)       | As a site user I can cancel my booking so that I can adjust the details if I change my mind.                              |
+
+<br>
+
+**As a site admin**
+| Issue ID | User Story                                                                                                            |
+| -------- | --------------------------------------------------------------------------------------------------------------------- |
+| [#2](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/2)        | As a site admin I can access the admin site so that I can manage the bookings and edit tutorial information.          |
+| [#22](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/22)       | As a site admin I can access the front end admin site so that I can access content available for site admin only.     |
+| [#23](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/23)       | As a site admin I can create new Tutorials and tutorial dates & times so that I can offer the user different content. |
+| [#24](https://github.com/laurakond/Stitch-Art-Guides-pp4/issues/24)       | As a site admin I can delete Tutorials, tutorial dates/times and bookings so that I can update the content.           |
+
+<br>
 
 ### Flowcharts
 I used [Lucidchart](https://lucid.app/) for creating the logic and structure of the game. The flowchart of the project has had to be split into two flowcharts (minimum viable product & future feature) due to limited use of blocks per one chart. Chapter 3 is a future feature. 
