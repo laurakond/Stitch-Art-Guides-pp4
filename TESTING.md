@@ -297,7 +297,7 @@ The code that was throwing an error was this:
 
     <details>
     <summary>I found the following resources helpful to accomplish this:</summary>
-    
+
     - [Freecodecamp: javascript date comparison](https://www.freecodecamp.org/news/javascript-date-comparison-how-to-compare-dates-in-js/)
     - [MDN web docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
     - [Geek for Geeks JavaScript Date comparison](https://www.geeksforgeeks.org/compare-two-dates-using-javascript/)
@@ -403,6 +403,32 @@ The code that was throwing an error was this:
 
     </details>
 
+**Cannot book booked events(book_a_tutorial) - calendar view:**
+- I was trying to implement functionality for the already booked events to not be accessible/not to be bookable. 
+- I managed to make the “already booked” modal appear by adjusting the JS code in book_tutorial.html, but the modal was popping up for all future events despite them being booked or not. I realised that I was not displaying/applying the logic of a booked event correctly.
+- I finally managed to resolve this by applying django translator yesno string literals passed to tags and filters. The following resources helped to understand and make the code work:
+    - [Stackoverflow: django template boolean variable](https://stackoverflow.com/questions/12395579/my-django-template-boolean-variable-isnt-working-as-expected-in-javascript)
+    - [Django docs - translators](https://docs.djangoproject.com/en/dev/ref/templates/builtins/#yesno)
+
+**Filter Tutorial dates that are not booked by anyone**
+- I realised that the code was showing future tuturials that have been booked by other users. If the user where to select the already booked tutorial from the drop down, then there would be a double booking from two different users. I amended the code by applying __isnull=False for filtering future_tutorials.
+- Instead of looking at excluding the logged in user’s booking, this way I looked for any Tutorial dates that have a booking and excluded them from the filtered result. Thus only Tutorial dates that don’t have a booking related to them were given back in the form drop down.
+
+code filtering all future tutorials:
+
+```
+future_tutorials = TutorialDate.objects.filter(
+            tutorial_date__gte=current_date
+            ).exclude(booking__user=self.user)
+```
+
+code filtering future tutorials that are available/not booked:
+
+```
+future_tutorials = TutorialDate.objects.filter(
+            tutorial_date__gte=current_date
+            ).exclude(booking__isnull=False)
+```
 
 
 ### Unfixed bugs
