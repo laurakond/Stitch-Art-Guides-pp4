@@ -1,9 +1,12 @@
 {% load static %}
 
-<header>
+<header id="header" class="d-flex">
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light">
-        <div class="container px-4 px-lg-5">
+    <!-- The navbar style and code was appropriated from the StartBootsrap's
+    Grayscale template and Code Institute's I blog walkthrough project
+    (noted in Readme) -->
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container px-3 px-lg-5">
             <!-- Brand/Logo -->
             <a class="navbar-brand" href="{% url 'home' %}" aria-label="Go to Home page">Stitch Art Guides</a>
             <!-- Toggler Button for Mobile View -->
@@ -27,7 +30,7 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == about_url %}active{% endif %}" aria-current="page"
                             href="{% url 'about' %}" aria-label="Go to About page">
-                            About                        
+                            About
                         </a>
                     </li>
                     <!-- Tutorial List Link -->
@@ -39,46 +42,47 @@
                     </li>
                     <!-- Authentication Links -->
                     {% if user.is_authenticated %}
-                        <!-- Booking a Tutorial calendar Link -->
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == book_a_tutorial_url %}active{% endif %}"
-                                aria-current="page" href="{% url 'book_a_tutorial' %}" aria-label="Go to Book a Tutorial page">
-                                Book Tutorial
-                            </a>
-                        </li>
-                        <!-- My tutorials link -->
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == my_tutorials_url %}active{% endif %}"
-                                aria-current="page" href="{% url 'my_tutorials' %}" aria-label="Go to My Tutorials page">
-                                My Tutorials
-                            </a>
-                        </li>
-                        <!-- User Information -->
-                        <li class="navbar-text text-muted">
-                            Hi, {{ user }}!
-                        </li>
-                        <!-- Logout Link -->
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_logout' %}" aria-label="Logout">
-                                Logout
-                            </a>
-                        </li>
+                    <!-- Booking a Tutorial calendar Link -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == book_a_tutorial_url %}active{% endif %}"
+                            aria-current="page" href="{% url 'book_a_tutorial' %}"
+                            aria-label="Go to Book a Tutorial page">
+                            Book Tutorial
+                        </a>
+                    </li>
+                    <!-- My tutorials link -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == my_tutorials_url %}active{% endif %}"
+                            aria-current="page" href="{% url 'my_tutorials' %}" aria-label="Go to My Tutorials page">
+                            My Tutorials
+                        </a>
+                    </li>
+                    <!-- User Information -->
+                    <li class="navbar-text text-muted">
+                        Hi, {{ user }}!
+                    </li>
+                    <!-- Logout Link -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}" aria-label="Logout">
+                            Logout
+                        </a>
+                    </li>
                     {% else %}
-                        <!-- Register Link -->
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_signup' %}" aria-label="Sign Up">
-                                Register
-                            </a>
-                        </li>
-                        <!-- Login Link -->
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_login' %}" aria-label="Login">
-                                Login
-                            </a>
-                        </li>
+                    <!-- Register Link -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_signup' %}" aria-label="Sign Up">
+                            Register
+                        </a>
+                    </li>
+                    <!-- Login Link -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_login' %}" aria-label="Login">
+                            Login
+                        </a>
+                    </li>
                     {% endif %}
                 </ul>
             </div>
