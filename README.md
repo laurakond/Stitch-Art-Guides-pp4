@@ -43,6 +43,7 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 [Credits](#credits)
 - [Content](#content)
 - [Refactoring](#refactoring)
+- [Used code](#used-code)
 - [General resources](#general-resources)
 - [Acknowledgments](#acknowledgments)
 - [Code inspiration](#code-inspiration)
@@ -353,6 +354,13 @@ To deploy to the Heroku website, follow the steps below:
 
 ### Refactoring
 
+### Used code
+- I used the following Bootstrap templates from StartBootstrap for styling my website:
+    - Footer: [Stylish portfolio](https://startbootstrap.com/theme/stylish-portfolio)
+    - Header: [Grayscale](https://startbootstrap.com/theme/grayscale) and Code Institute's I blog walkthrough project
+    - Notification messages: Code Institute's I blog walkthrough project
+
+
 ### General resources:
 Whilst working on this project I relied on Django documentation and other resources to deepen my knowledge and gain a better understanding how to build a full-stack website. 
 
@@ -369,7 +377,6 @@ Whilst working on this project I relied on Django documentation and other resour
 - User flows:
     - [Figma user flow kit](https://www.figma.com/community/file/830510773896272856/user-flow-kit)
     - [Creatly common mistales to avoid when creating user flow diagrams](https://creately.com/guides/user-flow-diagram/#common-mistakes-to-avoid-when-creating-user-flow-diagrams)
-- I looked at a few resources for calendar view implementation. 
 
 - Restricting authorised access
     - The following chat threads on Stackoverflow were very useful when trying to determine which login restrictions to use for defensive programming:
@@ -394,12 +401,62 @@ Whilst working on this project I relied on Django documentation and other resour
     - [Django documentation: check if record exists in model](https://forum.djangoproject.com/t/check-if-record-exists-in-model/10712/5)
     - [Reddit: Checking a place is already booked or not based on time](https://www.reddit.com/r/django/comments/1bb6zin/checking_a_place_is_already_booked_or_not_based/)
 
+
+- I used the following resources to familiarise myself with how to center a div:
+    - [How to center a div](https://www.geeksforgeeks.org/how-to-center-a-div-with-the-mx-auto-class-in-bootstrap-5/)
+    - [A Designer who codes - three ways to center content](https://www.youtube.com/watch?v=nx8jyWLy0e0)
+    - [Geek for Geeks: how to set a vertical alignment in Bootstrap](https://www.geeksforgeeks.org/how-to-set-vertical-alignment-in-bootstrap/) Youtube tutorial
+    - [How to vertical align a div in Bootstrap](https://www.tutorialrepublic.com/faq/how-to-vertical-align-a-div-in-bootstrap.php)
+    - [StackOverflow: centering elements vertically and horizontally](https://stackoverflow.com/questions/42388989/bootstrap-centering-elements-vertically-and-horizontally) 
+    - [StackOverflow: how to align header in top footer](https://stackoverflow.com/questions/76053250/how-align-header-in-top-footer-in-bottom-of-the-page-and-main-between-them-in-b)
+
+- Securing Django views from unauthorised access:
+    - [Daisy McGirr's article](https://www.codu.co/articles/securing-django-views-from-unauthorized-access-npyb3to_)
+    - [Allauth templates](https://docs.allauth.org/en/latest/common/templates.html)
+
+- Creating event bookings:
+    - [Geek for Geeks: model objects create](https://www.geeksforgeeks.org/understanding-django-model-vs-modelobjectscreate/)
+    - [Stackoverflow: django model vs model objects create](https://stackoverflow.com/questions/26672077/django-model-vs-model-objects-create)
+    - [Stackoverflow: difference beween object create and object save](https://stackoverflow.com/questions/23926385/difference-between-objects-create-and-object-save-in-django-orm#:~:text=save()%20perform%20internally%20as,only%20INSERT%20object%20to%20db.&text=INSERT%20%E2%86%92%20If%20the%20object's,t%20exist%20in%20the%20database)
+    - [Reddit: how to handle a post request without a form](https://www.reddit.com/r/django/comments/qadv5m/how_to_handle_a_post_request_without_a_form/)
+
+- Disable clickdate:
+    - [Stackoverflow: disable past date in Full Calendar](https://stackoverflow.com/questions/72622009/disable-past-date-in-fullcalendar-for-dateclick)
+    - [MDM Web docs: date setHours()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours)
+    - [Full Calendar: dateclick](https://fullcalendar.io/docs/dateClick)
+
+- Comparing event date to current date & redirecting/alerting the user to appropriate page:
+    - [Pyhton documentation: datetime](https://docs.python.org/3/library/datetime.html)
+    - [StackOverflow: easiest way to combine date and time strings](https://stackoverflow.com/questions/9578906/easiest-way-to-combine-date-and-time-strings-to-single-datetime-object-using-pyt)
+    - [Stackoverflow: how can I check if date is passed from Django model](https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model)
+
+- Filtering the form to fetch future tutorials:
+    - Django documentation including [form fields](https://docs.djangoproject.com/en/dev/ref/forms/fields/#modelchoicefield) 
+    - [Stackoverflow: filter foreing key choices](https://stackoverflow.com/questions/291945/how-do-i-filter-foreignkey-choices-in-a-django-modelform/291968#291968)
+    - [Django project forum](https://forum.djangoproject.com/t/queryset-difference/15716)
+    - [Stackoverflow: modelform with conditions](https://stackoverflow.com/questions/43001425/django-modelform-with-conditions)
+    - [Stackoverflow: super().__init__(**kwargs)](https://stackoverflow.com/questions/50550153/calling-super-init-kwargs-and-multiple-inheritance)
+    - [exclude() method](https://docs.djangoproject.com/en/5.1/ref/models/querysets/#:~:text=exclude()%20%C2%B6&text=Returns%20a%20new%20QuerySet%20containing%20objects%20that%20do%20not%20match,enclosed%20in%20a%20NOT()%20)
+    - [Queryset filter not equal](https://sentry.io/answers/django-queryset-filter-not-equal/#:~:text=The%20exclude()%20method%20from,excluded%20from%20the%20returned%20QuerySet)
+
+- Forms - date & time fields:
+    - [Stackoverflow: form date input](https://stackoverflow.com/questions/61076688/django-form-dateinput-with-widget-in-update-loosing-the-initial-value)
+    - [datefield setting default date](https://forum.djangoproject.com/t/datefield-setting-default-date/28029)
+    - [show dd-mm-yy in input type date field](https://forum.djangoproject.com/t/show-dd-mm-yy-in-input-type-date-field/31765)
+
+- is_null property:
+    - [Filter for empty or null values](https://www.atlassian.com/data/databases/how-to-filter-for-empty-or-null-values-in-a-django-queryset)
+    - [How to filter for not exists](https://stackoverflow.com/questions/14831327/in-a-django-queryset-how-to-filter-for-not-exists-in-a-many-to-one-relationsh)
+    - [Filter empty or null names](https://sentry.io/answers/how-do-you-filter-empty-or-null-names-in-a-queryset/)
+    - [What is exclude in Django](https://djangowebdevelopers.quora.com/What-is-exclude-in-Django#:~:text=Exclude())
+
+
 ### Acknowledgments
 
 My thanks go to: 
 - My mentors: 
     - [Martina Terlevic](https://github.com/SephTheOverwitch) for helping to come up with initial project idea, giving suggestions for troubleshooting, and providing reassurance when my confidence stumbled (which has happened many a time).
-    - [Iuliia Konovalova](https://github.com/IuliiaKonovalova) for helping to find a solution on how to implement parts of CRUD functionality.
+    - [Iuliia Konovalova](https://github.com/IuliiaKonovalova) for helping to find a solution on how to implement parts of CRUD functionality and further advice on project development.
 - My fellow student, [Vernell Clark](https://github.com/VCGithubCode) for troubleshoot and providing a shoulder to cry on when things got really rough.
 - [Tim Nelson](https://github.com/TravelTimN) for the advice on the intricacies of JavaScript Full Calendar & general advice.
 - Another fellow student [Declan](https://github.com/Declan444) for helping to understand models and overall morale boost when it was needed.
