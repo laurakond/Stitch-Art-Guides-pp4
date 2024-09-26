@@ -45,13 +45,12 @@
     <title>Stitch Art Guides</title>
 </head>
 
-<body class="d-flex flex-column vh-100">
-    <div class="d-flex flex-column wrapper">
+<body class="d-flex flex-column">
         <!-- Header -->
         {% include 'includes/header.html' %}
 
         <!-- Message code block was appropriated from Code Institute's I blog walkthrough. -->
-        <!-- Displaying Django messages -->
+        <!-- Django messages -->
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -66,7 +65,7 @@
         </div>
 
         <!-- Main content -->
-        <main class="d-flex flex-grow-1">
+        <main class="flex-grow-1">
             {% block content %}
             <!-- Content for each page goes here -->
             {% endblock %}
@@ -85,6 +84,5 @@
         <!-- JS block -->
         {% block js %}
         {% endblock %}
-    </div>
 </body>
 </html>
