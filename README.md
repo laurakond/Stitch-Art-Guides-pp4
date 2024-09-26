@@ -208,94 +208,165 @@ The following palette was used to ensure the contrast is achieved between main p
 ![landing page]()
 
 - The Landing page greets the user with a simple design, a brief blurb indicating the purpose of the website, and the main call to action button that leads the user to the Tutorial List page. 
+- The hero image set in the background further emphasises the website's purpose.
 
 **About page**
 
 ![about page]()
 
-- The About page displayes a profile picture of the instructor and provides a brief introduction. A further call to action button is used allowing the user to explore different tutorials that are being offered. 
+- The About page displays a profile picture of the instructor and provides a brief introduction. A further call to action button is used allowing the user to explore different tutorials that are being offered. 
 
 
 **Tutorial list**
-- If the user chooses to leave the game after reading the instructions, the screen displays "Thank you for playing! see you next time." 
-    - The user needs to click on the "Run program" button at the top if they wish to reload the program.
+- A list of currently offered tutorials is presented in a card format which displays the tutorial holding image, the title and the excerpt for each tutorial. Each has a call to action button inviting the user to read more. 
 
 ![tutorial list]()
+
+**Individual Tutorial page**
+- Once inside each tutorial the user is presented with a full tutorial description and the tutor name.
+    -  A call to action button invites the user to either Book a tutorial if the user is logged in or Register to proceed with the booking.
+    - If the user is not logged in or registered, they will be redirected to either the Login or Register pages. 
+    - Upon Registration or login they are redirected to the home page.
 
 **User authentication**
 
  <details>
-    **<summary>Register</summary>**
+    <summary>Register</summary>
 
+- The Register form allows the user to create an account in order to access additional content: Book Tutorial page, and My Tutorials page.
+    - Upon successfull registration, a confirmation message is displayed at the top of the page and the user is redirected to the home page.
+    - The user's name is also visible at the top of the navigation bar "Hi, name!".
+    
     ![register]()
 </details>
 
  <details>
-    **<summary>Login</summary>**
+    <summary>Login</summary>
+- The Login form allows the user to access their account and manage their bookings.
+    - Upon successfull login, a confirmation message is displayed at the top of the page and the user is redirected to the home page.
+    - The user's name is also visible at the top of the navigation bar "Hi, name!".
 
-    ![login]()
+![login]()
+
 </details>
 
  <details>
-    **<summary>Logout</summary>**
+    <summary>Logout</summary>
+- When the user wishes to leave the account the logout button enables a confirmation page ensuring that the user is informed of their actions.
+    - Upon successfull logout, a confirmation message is displayed at the top of the page.
 
-    ![logout]()
+![logout]()
 </details>
 
- <details>
-    **<summary>Admin panel</summary>**
-
-    ![admin panel]()
-</details>
-
-
-**Tutorial Calendar**
-- Once the user data is captured, the screen clears the previous content, and loads the main logo together with the beginning of the story. 
-    - The user will see that their provided username is generated within the storyline at the end of the first introduction paragraph. 
+**Book Tutorial page**
+- Once the user is Registered/Logged in, they can access Book Tutorial page that displays a montly calendar with available tutorial slots. 
+- Upon clicking on the tutorial event, they are provided with three options:
+    - If the tutorial slot is scheduled in the past, a modal appears indicating that hte tutorial time has ceased and they are prompted to select another available slot.
+    - If the tutorial is already booked, a modal appears indicating that the tutorial is already booked.
+    - If the tuturial is available, the user is redirected to a booking page.
 
 ![calendar]()
 
-**My Tutorials page**
-- Chapter 1 section loads straight after the story introduction. 
-- The logo provides a clear indication which area within the game play the user is at. 
-- Here the user is prompted to choose between two possible outcomes to proceed with the gameplay. 
+**Tutorial slot booking page**
+- Once inside each tutorial slot, the user is given reinforcing information about the tutorial and a "Book tutorial" button.
+    - Upon clicking the button, a modal pops up asking the user to confirm their booking.
+    - Once they have booked the tutorial slot, they are redirected to My Tutorials page and a confirmation message is displayed at the top of the page. 
 
-![my tutorials]()
+**My Tutorials page**
+- The user can access their booked tutorial information in their My Tutorials page. There they can see past and upcoming bookings, and if they do not have any current bookings, "Discover tutorials" or "Book tutorial" buttons are displayed that would take the user to appropriate pages. 
+- Each upcoming tutorial has two buttons: "Edit booking" and "Cancel booking".
+    - If the user wants to delete the booking, a modal pops up asking the user to confirm the cancellation.
+        - Upon successfull cancelation, a confirmation message is displayed at the top of the page and the user is redirected to My Tutorials page.
+    - If the user wants to edit the booking, they are redirected to an individual page.
+
+**Edit booking page**
+- Once inside the Edit Booking page, the user is presented with a drop down form which displays four options:
+    1. If there are no future tutorial slots available the "No available dates for all tutorials. Come back later to check." message is displayed above the drop down.
+        - ![no tutorials]()
+    2. If there are no slots available for that specific tutorial, the "No other available dates for 'tutorial title' tutorial. Feel free to choose another though!" message is displayed.
+        - The drop down list generates other available tutorials that the user can choose from.
+        - Upon selection, the user can click "Update booking" button.
+        - If the booking is sucessful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
+        - ![other tutorials]()
+    3. If there are available slots for that specific tutorial and no other tutorials, the "Choose another date for your tutorial." message is displayed.
+        - The drop down list generates all available tutorial dates that the user can choose from.
+        - Upon selection, the user can click "Update booking" button.
+        - If the booking is sucessful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
+        - ![this tutorial]()
+    4. If the same tutorial slots and other tutorial slots are available, the "Pick another date or choose a different tutorial." message is displayed.
+        - The drop down list generates all available tutorial dates that the user can choose from.
+        - Upon selection, the user can click "Update booking" button.
+        - If the booking is sucessful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
+        - ![all tutorials]()
+
+![edit tutorial]()
 
 **Error pages**
-
-<details>
-    **<summary>400 error page</summary>**
+- The following error pages have been added to troubleshoot appropriate server response to user requests:
+    <details>
+        **<summary>400 error page</summary>**
 
     ![400 error page]()
-</details>
+    </details>
 
-<details>
-    **<summary>403 error page</summary>**
+    <details>
+        **<summary>403 error page</summary>**
 
     ![403 error page]()
-</details>
+    </details>
 
-<details>
-    **<summary>404 error page</summary>**
+    <details>
+        **<summary>404 error page</summary>**
 
     ![404 error page]()
-</details>
+    </details>
 
-<details>
-    **<summary>500 error page</summary>**
+    <details>
+        **<summary>500 error page</summary>**
 
     ![500 error page]()
+    </details>
+
+**Notification messages**
+<details>
+    <summary>User registration/access</summary>
+
+![Successful login]()
+![Successful registration]()
+![Successful logout]()
 </details>
 
+ <details>
+    <summary>Tutorial booking confirmation</summary>
+
+![Successful booking confirmation]()
+</details>
+
+ <details>
+    <summary>Modals</summary>
+
+![Tutorial Date Expired]()
+![Tutorial booking is not available]()
+![Tutorial booking confirmation]()
+![Canceling tutorial]()
+</details>
+
+ <details>
+    <summary>Confirmation messages </summary>
+
+![Successful booking]()
+![Successful booking cancellation]()
+</details>
 
 
 ### Features Left to Implement
-
 - Allow the user to submit a customised tutorial request form. This would allow to address any individual needs of a crafter.  
 - Implement comment and review features for each tutorial.
-- Develop an in depth user participation and use of the website by providing an ability to share or sell their own craft projects. This includes allowing the user to submit their project photos, titles, author’s name, and so on.
+- Develop an in depth user participation by providing an ability to share or sell their own craft projects. This includes allowing the user to submit their project photos, titles, author’s name, and so on.
 - Filter tutorial drop down menu in the edit tutorial page in order to show just that tutorial's future dates for picking from. Currently this feature is being handled by applying different notificaitons to to the user once they enter edit booking page.
+- Create a site admin front end access allowing the site administrator to create, edit and delete existing and future tutorials.
+    - This would also involve notifying the users of any changes to their booked tutorials. 
+- Any unresolved bug fixes and further website performance enhancements.
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -355,7 +426,7 @@ This website was deployed using GitHub pages and Heroku website. To deploy the p
 
 It might take a few minutes to generate the "live" website link.
 
-The live link to the game can be found [repository name]().
+The live link to the website [Stitch Art Guides](https://stitch-art-guides-pp4-5a679feed1e1.herokuapp.com/).
 
 #### How to Fork
 To fork the repository in Github:
