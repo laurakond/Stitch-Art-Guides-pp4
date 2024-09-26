@@ -374,34 +374,48 @@ The following palette was used to ensure the contrast is achieved between main p
 ### Languages
 
 - Python 3.12.5: the primary language used to develop the server-side of the website.
-- JavaScript: the primary language used to develop interactive components of the website.
+- JavaScript: the primary language used to develop interactive components of the website and handle click events.
 - HTML: the markup language used to create the website.
 - CSS: the styling language used to style the website.
 - Markdown: the markup language to create the README and TESTING files.
 
 ### Frameworks and Libraries
 - [Django](https://www.djangoproject.com/) Python framework for the overall project logic implementation.
-
-- [Lucidchart](https://lucid.app/) for creating flowchart of the game.
-- [GitHub](https://github.com/) for creating and storing files and folders of the website.
-- **Git** was used for version control.
-- **VScode** editor for writing the code.
-- [CI Python Linter](https://pep8ci.herokuapp.com/#) for validating and checking my code for best code practices.
-- [Heroku](https://www.heroku.com) for accessing and storing my application game.
-
 - [Bootstrap](https://getbootstrap.com/) CSS framework that allowed to implement various styled elements, including modals. It was also used for quick and easy styling of the overall website.
-- [Whitenoise](https://whitenoise.readthedocs.io/en/stable/index.html) Python library used for handling static files.
-- [Django allauth](https://allauth.org/) authentication solution for Django framework used for allowing users to register and login.
-- [Django summernote](https://summernote.org/) Javascript library used for providing useful editing tools for Django admin site. 
-- I used the following libraries for the project:
-    - **Full Calendar** JavaScript calendar open source that allowed to display available tutorial bookings in a calendar view.  
-    - **os** library system method allowed to clear the screen for better user experience when displaying the game.
-
-Other libraries and dependencies can be seen in the requirements.txt file. 
+- [Full Calendar](https://fullcalendar.io/) JavaScript calendar open source that allowed to display available tutorial bookings in a calendar view. 
 
 ### Databases
+- PostgreSQL: the database used to store all the data.
 
 ### Other tools
+- [Whitenoise](https://whitenoise.readthedocs.io/en/stable/index.html) was Python library used for handling static files.
+- [Django allauth](https://allauth.org/) authentication library was used for allowing users to register and login.
+- [Django crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) was used for allowing to render user POST requests.
+- [Django summernote](https://summernote.org/) was used for providing useful editing tools for Django admin site. 
+- [GitHub](https://github.com/) was used for creating and storing files and folders of the website.
+- [Heroku](https://www.heroku.com) was used for accessing and storing my application game.
+- **Git** was used for version control.
+- **Pip** was used to install required dependencies.
+- **VScode** editor was used for writing the code.
+- **Gunicorn** webserver used to run the website.
+- [CI Python Linter](https://pep8ci.herokuapp.com/#) was used for validating and checking my code for best code practices.
+- [JS Hint](https://jshint.com/) was used for validating Javascript code.
+- [W3C Markdown](https://validator.w3.org/) was used for validating html files.
+- [W3C CSS](https://jigsaw.w3.org/css-validator/) was used for validating css files.
+- [Lucidchart](https://lucid.app/) was used for creating the website flowcharts.
+- [Balsamiq](https://balsamiq.com/) used for creating wireframes.
+- [Google Fonts](https://fonts.google.com/) for choosing appropriate fonts
+- [Favicon](https://favicon.io/) for generating a favicon
+- Google Chrome DevTools for testing, troubleshooting and brainstorming code solutions
+- [Am I Responsive?](https://ui.dev/amiresponsive) website for showing the website's responsiveness on different devices
+- [Responsive Design Checker](https://responsivedesignchecker.com/) website for checking responsiveness on different devices
+- [Pixelied](https://pixelied.com/) and Gimp, for resizing, compressing and editing images
+- [Coolors](https://coolors.co/) for generating the color palette
+- WCAG color contrast checker for website accessibilty
+- Wave evaluation tool for giving visual feedback about the accessibility of the website
+- [Contrast Grid](https://contrast-grid.eightshapes.com/) to test chosen color palette
+
+Full list of dependencies used for the project can be found in the requirements.txt file. 
 
  [Return to Table of Contents](#table-of-contents)
 
