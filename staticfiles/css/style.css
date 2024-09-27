@@ -41,13 +41,17 @@ body {
 
 /* Index page */
 main {
-  padding-top: 56px;
-  padding-bottom: 80px;
+  padding-top: 64px;
+  /* padding-bottom: 80px; */
 }
 
 #index-container {
-  min-height: calc(100vh - 225px);
+  min-height: calc(100vh - 226px);
   overflow: visible;
+}
+
+#about-container {
+  min-height: calc(100vh - 245px);
 }
 
 .index-image {
@@ -65,8 +69,14 @@ main {
 }
 /* End of Index page */
 
+/* About page */
+.profile-image {
+  width: 75%;
+}
+
 /* Footer styles*/
 footer {
+  width: 100%;
   align-items: center;
   justify-content: center;
   background-color: beige;
@@ -114,6 +124,17 @@ footer.footer .social-link {
 /* End of Footer */
 
 /* Media queries */
+
+@media (min-width: 767px) {
+
+  #about-container {
+    min-height: auto;
+  }
+
+  #about-heading {
+    margin-top: 1rem;
+  }
+}
 
 @media (min-width: 992px) {
 
