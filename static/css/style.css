@@ -41,18 +41,18 @@ body {
 
 /* Index page */
 main {
-  padding-top: 64px;
+  padding-top: 55px;
   /* padding-bottom: 80px; */
 }
 
 #index-container {
-  min-height: calc(100vh - 237px);
+  min-height: calc(100vh - 228px);
   overflow: visible;
 }
 
-#about-container {
+/* #about-container {
   min-height: calc(100vh - 245px);
-}
+} */
 
 .index-image {
   background: linear-gradient(180deg, #ddd8d888, #ddd8d888), url(../images/white-hoop.webp) no-repeat center;
@@ -71,7 +71,7 @@ main {
 
 /* About page */
 .profile-image {
-  width: 75%;
+  width: 50%;
 }
 
 /* Footer styles*/
@@ -126,10 +126,6 @@ footer.footer .social-link {
 /* Media queries */
 
 @media (min-width: 767px) {
-
-  #about-container {
-    min-height: auto;
-  }
 
   #about-heading {
     margin-top: 1rem;
