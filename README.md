@@ -533,6 +533,8 @@ Whilst working on this project I relied on Django documentation and other resour
 - Python datetime:
     -  [Python documentation datetime - basic date and time](https://docs.python.org/3/library/datetime.html#format-codes)
     - [Geeks for Geeks Isoformat() method](https://www.geeksforgeeks.org/isoformat-method-of-datetime-class-in-python/)
+    - [Python strftime cheatsheet](https://strftime.org/)
+    - [Django docs querysets](https://docs.djangoproject.com/en/5.1/ref/models/querysets/#icontains)
 
 - Creating Django error pages:
     - [Geek for geeks: Django creating a 404 error page](https://www.geeksforgeeks.org/django-creating-a-404-error-page/?ref=oin_asr1)
@@ -581,10 +583,12 @@ Whilst working on this project I relied on Django documentation and other resour
     - [exclude() method](https://docs.djangoproject.com/en/5.1/ref/models/querysets/#:~:text=exclude()%20%C2%B6&text=Returns%20a%20new%20QuerySet%20containing%20objects%20that%20do%20not%20match,enclosed%20in%20a%20NOT()%20)
     - [Queryset filter not equal](https://sentry.io/answers/django-queryset-filter-not-equal/#:~:text=The%20exclude()%20method%20from,excluded%20from%20the%20returned%20QuerySet)
 
-- Forms - date & time fields:
+- Forms:
     - [Stackoverflow: form date input](https://stackoverflow.com/questions/61076688/django-form-dateinput-with-widget-in-update-loosing-the-initial-value)
     - [datefield setting default date](https://forum.djangoproject.com/t/datefield-setting-default-date/28029)
     - [show dd-mm-yy in input type date field](https://forum.djangoproject.com/t/show-dd-mm-yy-in-input-type-date-field/31765)
+    - [Real Python social forms](https://realpython.com/django-social-forms-4/)
+    - [Geeks for Geeks Django forms](https://www.geeksforgeeks.org/django-forms/)
 
 - is_null property:
     - [Filter for empty or null values](https://www.atlassian.com/data/databases/how-to-filter-for-empty-or-null-values-in-a-django-queryset)
@@ -599,9 +603,9 @@ My thanks go to:
 - My mentors: 
     - [Martina Terlevic](https://github.com/SephTheOverwitch) for helping to come up with initial project idea, giving suggestions for troubleshooting, and providing reassurance when my confidence stumbled (which has happened many a time).
     - [Iuliia Konovalova](https://github.com/IuliiaKonovalova) for helping to find a solution on how to implement parts of CRUD functionality and further advice on project development.
-- My fellow student, [Vernell Clark](https://github.com/VCGithubCode) for troubleshoot and providing a shoulder to cry on when things got really rough.
+- My fellow student, [Vernell Clark](https://github.com/VCGithubCode), for troubleshooting problematic parts of code and providing a shoulder to cry on when things got really rough.
 - [Tim Nelson](https://github.com/TravelTimN) for the advice on the intricacies of JavaScript Full Calendar & general advice.
-- Another fellow student [Declan](https://github.com/Declan444) for helping to understand models and overall morale boost when it was needed.
+- Another fellow student, [Declan](https://github.com/Declan444), for helping to understand models and overall morale boost when it was needed.
 - Tutor support team for helping out with project set up and other quirky bits. A big shout out goes to:
     - John for assisting to address Gunicorn and pyca/cryptography warnings on Github [more details noted in fixed bugs section in TESTING.md](TESTING.md). 
     - Holly for providing guidance and advice on Whitenoise and staticfiles inner workings.
