@@ -46,7 +46,7 @@ main {
 }
 
 #index-container {
-  min-height: calc(100vh - 226px);
+  min-height: calc(100vh - 237px);
   overflow: visible;
 }
 
