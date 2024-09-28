@@ -430,6 +430,9 @@ future_tutorials = TutorialDate.objects.filter(
             ).exclude(booking__isnull=False)
 ```
 
+**Reappearing horizontal scroll bar**
+- When creating the About page, I noticed that the page sometimes has a horizontal scroll bar. After having numerous attempts at altering the style, I realised that the body was set to width: 100dvw.
+    - I fixed the issue by changing the width to 100%.
 
 ### Unfixed bugs
 **Back button in the browser**
