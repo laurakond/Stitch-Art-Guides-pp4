@@ -580,6 +580,7 @@ Whilst working on this project I relied on Django documentation and other resour
     - [Django project forum](https://forum.djangoproject.com/t/queryset-difference/15716)
     - [Stackoverflow: modelform with conditions](https://stackoverflow.com/questions/43001425/django-modelform-with-conditions)
     - [Stackoverflow: super().__init__(**kwargs)](https://stackoverflow.com/questions/50550153/calling-super-init-kwargs-and-multiple-inheritance)
+    - [Stackoverflow def __init__(self, *args, **kwargs) initialization of class in python](https://stackoverflow.com/questions/23027846/def-init-self-args-kwargs-initialization-of-class-in-python)
     - [exclude() method](https://docs.djangoproject.com/en/5.1/ref/models/querysets/#:~:text=exclude()%20%C2%B6&text=Returns%20a%20new%20QuerySet%20containing%20objects%20that%20do%20not%20match,enclosed%20in%20a%20NOT()%20)
     - [Queryset filter not equal](https://sentry.io/answers/django-queryset-filter-not-equal/#:~:text=The%20exclude()%20method%20from,excluded%20from%20the%20returned%20QuerySet)
 
@@ -595,6 +596,17 @@ Whilst working on this project I relied on Django documentation and other resour
     - [How to filter for not exists](https://stackoverflow.com/questions/14831327/in-a-django-queryset-how-to-filter-for-not-exists-in-a-many-to-one-relationsh)
     - [Filter empty or null names](https://sentry.io/answers/how-do-you-filter-empty-or-null-names-in-a-queryset/)
     - [What is exclude in Django](https://djangowebdevelopers.quora.com/What-is-exclude-in-Django#:~:text=Exclude())
+
+- Website design and layout
+    - [Bootstrap 5 documentation](https://getbootstrap.com/docs/5.0)
+    - [Geek for Geeks Bootstrap card sizing](https://www.geeksforgeeks.org/bootstrap-5-cards-sizing/)
+    - [Stackoverflow Bootstrap cards height](https://stackoverflow.com/questions/35868756/how-to-make-bootstrap-cards-the-same-height-in-card-columns)
+    - [Geek for Geeks responsive divs](https://www.geeksforgeeks.org/how-to-create-responsive-divs-in-bootstrap/)
+    - [mdn web docs linear gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient)
+    - [mdn web docs calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
+    - [Geek for Geeks How to Center a Div](https://www.geeksforgeeks.org/how-to-center-a-div-with-the-mx-auto-class-in-bootstrap-5/)
+    - [Stackoverflow Bootstrap: Centering Elements Vertically and Horizontally](https://stackoverflow.com/questions/42388989/bootstrap-centering-elements-vertically-and-horizontally)
+
 
 
 ### Acknowledgments
@@ -615,7 +627,8 @@ My thanks go to:
 ### Code Inspiration
 - The project was inspired and based on some parts of Code Institute's I think therefore I blog walkthrough project. 
     -  Credits are also noted within the code.
-- The calendar display was inspired by United Events team's [project](https://github.com/hannahro15/July24Hackathon-United-Events) that featured in Code Institute's July hackathon. 
+- The calendar display and website layout were inspired by United Events team's [project](https://github.com/hannahro15/July24Hackathon-United-Events) that featured in Code Institute's July hackathon.
+- The layout and ideas for the website design came from Prideful programmers [project](https://github.com/VCGithubCode/prideful-programmers), which featured in Code Institute's July 2024 Hackathon.
 
 
 [Return to Table of Contents](#table-of-contents)
