@@ -22,13 +22,15 @@ in 2024 -->
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="card h-100 shadow">
                         {% if "placeholder" in tutorial.image.url %}
-                        <img class="card-img-top" src="{% static 'images/default.webp' %}" alt="placeholder image">
+                        <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
                         {% else %}
-                        <img class="card-img-top" src="{{ tutorial.image.url }}" alt="{{ tutorial.title }}">
+                        <img class="card-img-top tutorial-image" src="{{ tutorial.image.url }}" alt="{{ tutorial.title }}">
                         {% endif %}
                         <div class="card-body">
                             <h2 class="card-title">{{ tutorial.title }}</h2>
                             <p class="card-text">{{ tutorial.excerpt }}</p>
+                        </div>
+                        <div class="card-footer border-top-0 bg-transparent">
                             <a href="{% url 'tutorial_detail' tutorial.slug %}" class="btn btn-primary" aria-label="View tutorial">Read more</a>
                         </div>
                     </div>
