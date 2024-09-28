@@ -153,9 +153,32 @@ footer.footer .social-link {
     padding-left: 0;
     padding-left: 0;
   }
+
+  /* My Tutorials page */
+
+  .my-tutorial-button {
+    margin-bottom: 1rem;
+  }
 }
 
-@media (min-width: 767px) {
+
+@media (min-width: 342px) {
+    /* My Tutorials page */
+
+    .my-tutorial-button {
+      margin-bottom: 0;
+    }
+
+  /* My Tutorials page */
+  .no-tutorials-spacing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
   /* About page */
   #about-heading {
     margin-top: 1rem;
