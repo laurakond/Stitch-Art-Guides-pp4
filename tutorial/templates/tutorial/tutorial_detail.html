@@ -27,7 +27,7 @@
                         <p class="card-text"><strong>Tutor:</strong> {{ tutorial.tutor_name }}</p>
                         
                     </div>
-                    <div class="card-footer border-top-0 bg-transparent">
+                    <div class="card-footer about-card-footer border-top-0 bg-transparent">
                         {% if user.is_authenticated %}
                             <a href="{% url 'book_a_tutorial' %}" class="btn btn-primary" aria-label="Book tutorial">Book tutorial</a>
                         {% else %}
