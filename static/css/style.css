@@ -41,12 +41,12 @@ body {
 
 /* Index page */
 main {
-  padding-top: 55px;
+  padding-top: 54px;
   /* padding-bottom: 80px; */
 }
 
 #index-container {
-  min-height: calc(100vh - 228px);
+  min-height: calc(100vh - 227px);
   overflow: visible;
 }
 
@@ -73,6 +73,12 @@ main {
 .profile-image {
   width: 50%;
 }
+
+/* Tutorial List page */
+
+/* .image-container {
+  position: relative;
+} */
 
 /* Footer styles*/
 footer {
