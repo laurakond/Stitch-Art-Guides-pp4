@@ -13,10 +13,9 @@
     <div class="container mt-4">
         <div class="row g-0">
             <div class="col-12 col-md-4 text-center">
-                <img src="{% static 'images/profile-image.webp' %}" class="profile-image" alt="placeholder image">
+                <img src="{% static 'images/profile-image.webp' %}" class="profile-image" alt="profile image">
             </div>
             <div class="col-12 col-md-8">
-
                 <h3 class="mt-3 mb-4 text-center" id="about-heading">Welcome to my website!</h3>
                 <p>
                     I first encountered cross-stitching while at school during my home economics class and have
@@ -29,7 +28,7 @@
                 <p class="mb-4">I am eager to share my passion with you, and I hope I can help you to discover your way
                     into the world of
                     cross-stitch!</p>
-                <a class="btn btn-primary" href="{% url 'tutorial_list' %}">Discover tutorials</a>
+                <a class="btn btn-primary" href="{% url 'tutorial_list' %}" aria-label="Discover Tutorial">Discover tutorials</a>
             </div>
         </div>
     </div>
