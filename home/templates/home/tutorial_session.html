@@ -3,20 +3,49 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<div>
-    <h1>{{event_slot.tutorial.title}}</h1>
+<div class="d-flex justify-content-center flex-column align-items-center pb-5">
     <div>
-        <p>{{event_slot.tutorial.excerpt}}</p>
-        <p>{{event_slot.tutorial_date}}</p>
-        <p>{{event_slot.start_time}} to {{event_slot.end_time}}</p>
-        {% if user.is_authenticated %}
-            {% if is_booked %}
-                <p>This tutorial is already booked. Please see other available times.</p>
-                <a href="{url 'calendar'}">Return to Book Tutorial page.</a>
-            {% else %}
-                <button type="button" id="bookButton">Book this tutorial</button>
-            {% endif %}
-        {% endif %}
+        <div class="container py-5 d-flex justify-content-center align-items-center">
+            <div>
+                <h1>
+                    Book {{ event_slot.tutorial.title }}
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="container-margin">
+        <div class="row g-0">
+            <div class="col-12 col-md-4 text-center">
+                {% if "placeholder" in tutorial.image.url %}
+                <img class="tutorial-detail-image" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                {% else %}
+                <img class="tutorial-detail-image" src="{{ event_slot.tutorial.image.url }}" alt="{{ tutorial.title }}">
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-8 custom-padding">
+                <div class="card h-100 border-0">
+                    <div class="card-body custom-card-body">
+                        <p class="card-text">
+                            {{ event_slot.tutorial.description | safe }}
+                        </p>
+                        <p class="card-text">
+                            <strong>Tutorial date:</strong> {{event_slot.tutorial_date}}
+                            <br>
+                            <strong>Tutorial time:</strong> {{event_slot.start_time}} - {{event_slot.end_time}}
+                        </p>
+                        <p class="card-text">
+                            <strong>Tutor:</strong> {{ event_slot.tutorial.tutor_name }}
+                        </p>
+
+                    </div>
+                    <div class="card-footer about-card-footer border-top-0 bg-transparent">
+                        <button type="button" id="bookButton" class="btn btn-primary">
+                            Book tutorial
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endif %}
@@ -24,23 +53,33 @@
 <!-- Booking prompt Modal starts here -->
 {% if not is_booked %}
 <form action="" method="POST">
+    <div class="modal-dialog modal-dialog-centered">
     <div class="modal" tabindex="-1" id="bookingModal" aria-labelledby="bookingModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="bookingModalLabel">{{event_slot.tutorial.title}}</h5>
+                    <h5 class="modal-title" id="bookingModalLabel">
+                        Book {{event_slot.tutorial.title}}
+                    </h5>
                 </div>
                 <div class="modal-body">
-                    <p>Ready to book your tutorial with {{event_slot.tutorial.tutor_name}}? </p>
+                    <p>
+                        Ready to book your place with {{event_slot.tutorial.tutor_name}}?
+                    </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-primary">Book Tutorial</button>
+                    <button type="submit" class="btn btn-primary">
+                        Book Tutorial
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </form>
 {% endif %}
 <!-- Booking prompt Modal ends here -->
