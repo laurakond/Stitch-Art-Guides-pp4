@@ -1,48 +1,42 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial list</title>
-</head>
-
-<body>
-    {% block content %}
-    <!-- tutorial list starts here -->
-    <h3>Post list to test:</h3>
-
-   <div class="container">
-    <div class="row row-cols-3">
-        {% for tutorial in tutorial_list %}
-        <!-- Individual Tutorial card -->
-        <div class="card" style="width: 18rem;">
-            <!-- Image section -->
-            <div class="image-container">
-                {% if "placeholder" in tutorial.image.url %}
-                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
-                {% else %}
-                <img class="card-img-top" src="{{ tutorial.image.url }}" alt="{{ tutorial.title }}">
-                {% endif %}
-            </div>
-            <!-- Image section ends here-->
-            <!-- <img src="{% static 'images/default.jpg' %}" class="card-img-top" alt="placeholder"> -->
-            <div class="card-body">
-                <h5 class="card-title">{{ tutorial.title }}</h5>
-                <p class="card-text">{{ tutorial.excerpt }}</p>
-                <!-- <p class="card-text">{{ tutorial.description }}</p> -->
-                <p class="card-text">Tutor: {{ tutorial.tutor_name }}</p>
-                <a href="{% url 'tutorial_detail' tutorial.slug %}" class="btn btn-primary">Read more</a>
+{% block content %}
+<!-- tutorial list starts here -->
+<!-- The code for displaying cards has been appropriated from Prideful
+Programmers project which featured at the Code Institute's July Hackathon
+in 2024 -->
+<div class="container mt-3 min-vh-100" id="venues-page">
+    <div>
+        <div class="container py-5 d-flex justify-content-center align-items-center">
+            <div>
+                <h1>Tutorial List</h1>
             </div>
         </div>
-        {% endfor %}
+    </div>
+
+    <div class="tab-content">
+        <div class="container mt-3 p-2">
+            <div class="row gx-4 gx-lg-5">
+                {% for tutorial in tutorial_list %}
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100 shadow">
+                        {% if "placeholder" in tutorial.image.url %}
+                        <img class="card-img-top" src="{% static 'images/default.webp' %}" alt="placeholder image">
+                        {% else %}
+                        <img class="card-img-top" src="{{ tutorial.image.url }}" alt="{{ tutorial.title }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h2 class="card-title">{{ tutorial.title }}</h2>
+                            <p class="card-text">{{ tutorial.excerpt }}</p>
+                            <a href="{% url 'tutorial_detail' tutorial.slug %}" class="btn btn-primary">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 </div>
-    <!-- tutorial list ends here -->
-    {% endblock %}
-</body>
-
-</html>
+<!-- tutorial list ends here -->
+{% endblock %}
