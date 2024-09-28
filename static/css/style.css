@@ -70,15 +70,23 @@ main {
 /* End of Index page */
 
 /* About page */
-.profile-image {
+.profile-image, .tutorial-image {
   width: 50%;
 }
 
 /* Tutorial List page */
+.card-footer{
+  background-color: none;
+  border-top: none;
+  padding-bottom: 16px;
+}
 
-/* .image-container {
-  position: relative;
-} */
+/* Tutorial List & Tutorial detail pages */
+.tutorial-image, .tutorial-detail-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
 
 /* Footer styles*/
 footer {
@@ -126,19 +134,36 @@ footer.footer .social-link {
 .mb-5 {
   margin-bottom: 3rem !important;
 }
-
 /* End of Footer */
 
 /* Media queries */
 
 @media (min-width: 767px) {
-
+  /* About page */
   #about-heading {
     margin-top: 1rem;
+  }
+
+  /* Tutorial detail page */
+  #container-margin {
+    margin-top: 1.5rem;
+  }
+
+  .custom-card-body {
+    padding-top: 0;
+  }
+
+  .custom-padding{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
 @media (min-width: 992px) {
+  /* Tutorial detail page */
+  .tutorial-detail-image {
+    height: 220px;
+  }
 
   /* Footer */
   .px-lg-5 {
