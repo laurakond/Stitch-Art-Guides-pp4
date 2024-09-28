@@ -35,6 +35,7 @@ body {
 .navbar-brand {
   margin-right: 0;
 }
+
 /* End of Header */
 
 /* Main */
@@ -67,25 +68,28 @@ main {
   padding: 16px;
   /* opacity: 0.5; */
 }
+
 /* End of Index page */
 
 /* About page */
-.profile-image, .tutorial-image {
+.profile-image,
+.tutorial-image {
   width: 50%;
 }
 
 /* Tutorial List page */
-.card-footer{
+.card-footer {
   background-color: none;
   border-top: none;
   padding-bottom: 16px;
 }
 
 /* Tutorial List & Tutorial detail pages */
-.tutorial-image, .tutorial-detail-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.tutorial-image,
+.tutorial-detail-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 /* Footer styles*/
@@ -134,9 +138,22 @@ footer.footer .social-link {
 .mb-5 {
   margin-bottom: 3rem !important;
 }
+
 /* End of Footer */
 
 /* Media queries */
+@media (min-width: 270px) {
+  /* About page */
+  .custom-card-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .card-footer {
+    padding-left: 0;
+    padding-left: 0;
+  }
+}
 
 @media (min-width: 767px) {
   /* About page */
@@ -150,12 +167,17 @@ footer.footer .social-link {
   }
 
   .custom-card-body {
-    padding-top: 0;
+    padding: 0 1rem 1rem;
   }
 
-  .custom-padding{
+  .custom-padding {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .card-footer {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
