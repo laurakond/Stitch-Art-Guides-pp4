@@ -3,7 +3,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<div class="container mt-3 min-vh-100" id="venues-page">
+<div class="container mt-3 " id="venues-page">
     <div>
         <div class="container py-5 d-flex justify-content-center align-items-center">
             <div>
@@ -32,15 +32,18 @@
                         {% endif %}
                         <div class="card-body">
                             <h2 class="card-title">{{session.tutorial_date.tutorial.title}}</h2>
-                            <p class="card-text">Date: {{session.tutorial_date.tutorial_date}}</p>
-                            <p class="card-text">Time:
-                                {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}}</p>
+                            <p class="card-text"><strong> Date: </strong> {{session.tutorial_date.tutorial_date}} <br>
+                                <strong> Time: </strong>
+                                {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}}
+                            </p>
                         </div>
+                            
+                            
                         <div class="card-footer border-top-0 bg-transparent">
                             <a href="{% url 'edit_booking' session.id %}" class="btn btn-primary" aria-label="Edit Booking">
                                 Edit
                             </a>
-                            <button type="button" class="deleteButton btn btn-danger" data-booking_id="{{ session.id }}">
+                            <button type="button" class="deleteButton btn btn-danger" data-booking_id="{{ session.id }}" data-bs-target="#staticBackdrop">
                                 Cancel 
                             </button>
                         </div>
@@ -49,9 +52,8 @@
                 <!-- Individual booked tutorial card ends here -->
 
                 <!-- Delete Booking prompt Modal starts here -->
-                <form action="" method="POST">
-                    <div class="modal" tabindex="-1" id="deletebookingModal-{{ session.id }}" aria-labelledby="deletebookingModalLabel"
-                        aria-hidden="true" data-bs-target="">
+                    <div class="modal fade" tabindex="-1" id="deletebookingModal-{{ session.id }}" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="deletebookingModalLabel"
+                        aria-hidden="true" >
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -69,14 +71,13 @@
                                         Close
                                     </button>
                                     {% csrf_token %}
-                                    <a id="deleteConfirm-{{ session.id }}" href="#" class="btn btn-danger">
+                                    <a id="deleteConfirm-{{ session.id }}" href="#" class="btn btn-danger" aria-label="Delete booking">
                                         Cancel booking
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </form>
                 <!-- Delete Booking prompt Modal ends here -->
                 {% endfor %}
             </div>
