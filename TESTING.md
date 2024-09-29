@@ -434,6 +434,23 @@ future_tutorials = TutorialDate.objects.filter(
 - When creating the About page, I noticed that the page sometimes has a horizontal scroll bar. After having numerous attempts at altering the style, I realised that the body was set to width: 100dvw.
     - I fixed the issue by changing the width to 100%.
 
+**Grid layout error**
+- I noticed the grid layout for upcoming tutorials in My Bookings page was not working properly. 
+    <details>
+    <summary>delete booking modal error image</summary>
+
+    ![delete booking modal error](documentation/images/error_images/my-tutorials-error.png)
+    </details>
+
+    - I realised that the layout was being affected by the modal which was nested inside the for loop. 
+    - After isolating elements one by one, I realised that the issue was caused by the form tag surrounding the modal, I have removed. 
+    <details>
+    <summary>delete booking modal fixed image</summary>
+
+    ![fixed delete booking modal](documentation/images/error_images/my-tutorials-fixed.png)
+    </details>
+
+
 ### Unfixed bugs
 **Back button in the browser**
 - Upon booking the tutorial slot the user is redirected to another page with a confirmation message showing up confirming the booking has been made.
