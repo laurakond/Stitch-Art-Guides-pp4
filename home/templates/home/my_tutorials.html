@@ -17,7 +17,6 @@
         </h2>
     </div>
     {% if upcoming_sessions %}
-    
     <div class="tab-content">
         <div class="container mt-3 p-2">
             <div class="row gx-4 gx-lg-5">
@@ -37,8 +36,6 @@
                                 {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}}
                             </p>
                         </div>
-                            
-                            
                         <div class="card-footer border-top-0 bg-transparent">
                             <a href="{% url 'edit_booking' session.id %}" class="btn btn-primary" aria-label="Edit Booking">
                                 Edit
@@ -50,14 +47,13 @@
                     </div>
                 </div>
                 <!-- Individual booked tutorial card ends here -->
-
                 <!-- Delete Booking prompt Modal starts here -->
-                    <div class="modal fade" tabindex="-1" id="deletebookingModal-{{ session.id }}" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="deletebookingModalLabel"
+                    <div class="modal fade" tabindex="-1" id="deletebookingModal-{{ session.id }}" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="deletebookingModalLabel-{{ session.id }}"
                         aria-hidden="true" >
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="deletebookingModalLabel">
+                                    <h5 class="modal-title" id="deletebookingModalLabel-{{ session.id }}">
                                         Canceling {{session.tutorial_date.tutorial.title}}
                                     </h5>
                                 </div>
@@ -83,7 +79,6 @@
             </div>
         </div>
     </div>
-    
     {% else %}
 
 <!-- No future booked tutorials -->
