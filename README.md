@@ -502,6 +502,16 @@ To deploy to the Heroku website, follow the steps below:
     - Header: [Grayscale](https://startbootstrap.com/theme/grayscale) and Code Institute's I blog walkthrough project
     - Notification messages: Code Institute's I blog walkthrough project
 
+- To render the different calendar view based on the screen sizes, I had to specify device sizes and apply windowResize from the Full Calendar. I used the following [Stackoverflow thread](https://stackoverflow.com/questions/73820957/fullcalendar-change-calendar-view-based-on-screen-size) to implement the code:
+    ```
+    $(document).ready(function () {
+    let FC = FullCalendar.Calendar({
+        defaultView: $(window).width() < 765 ? 'basicDay':'agendaWeek',
+        windowResize: (arg) => { FC.changeView($(window).width() < 765 ? 'basicDay':'agendaWeek') },
+    });
+    $('#calendar') = FC;
+    };
+    ```
 
 ### General resources:
 Whilst working on this project I relied on Django documentation and other resources to deepen my knowledge and gain a better understanding how to build a full-stack website. 
@@ -607,7 +617,8 @@ Whilst working on this project I relied on Django documentation and other resour
     - [Geek for Geeks How to Center a Div](https://www.geeksforgeeks.org/how-to-center-a-div-with-the-mx-auto-class-in-bootstrap-5/)
     - [Stackoverflow Bootstrap: Centering Elements Vertically and Horizontally](https://stackoverflow.com/questions/42388989/bootstrap-centering-elements-vertically-and-horizontally)
 
-
+- Window innerwidth property:
+    - [mdn web docs Window: innerWidth property](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth)
 
 ### Acknowledgments
 
