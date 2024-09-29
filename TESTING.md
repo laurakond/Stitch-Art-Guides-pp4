@@ -450,6 +450,9 @@ future_tutorials = TutorialDate.objects.filter(
     ![fixed delete booking modal](documentation/images/error_images/my-tutorials-fixed.png)
     </details>
 
+**Django alert messages rendering without colour**
+- Upon testing the functionality of the colours I noticed that they are not displaying any color.
+    - I solved the problem by including `alert-{{ message.tags }}` to the code. I found the solution on [Stackoverflow](https://stackoverflow.com/questions/55202684/does-bootstrap-django-error-message-has-no-red-color).
 
 ### Unfixed bugs
 **Back button in the browser**
