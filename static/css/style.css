@@ -79,6 +79,16 @@ body {
   object-fit: cover;
 }
 
+/* Book a tutorial/calendar page line81*/
+.fc-daygrid-event .fc-event-title {
+  white-space: normal;
+  text-overflow: ellipsis;
+  max-height:20px;
+}
+.fc-daygrid-event:hover .fc-event-title {
+  max-height:none !important;
+}
+
 /* Footer styles*/
 footer {
   width: 100%;
