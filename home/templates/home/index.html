@@ -3,14 +3,17 @@
 
 {% block content %}
 <!-- Index.html code starts here -->
-<div class="d-flex index-image justify-content-center align-items-center" id="index-container">
-<div class="d-flex container justify-content-center align-items-center">
-        <div class="col-lg-8 text-center index-card card-body">
-            <h1 class="mx-auto my-0 text-uppercase">Stitch Art Guides</h1>
-            <p class="text-dark-50 mx-auto mt-5 mb-5">A place where you can learn the art of cross-stitch.</p>
-            <a class="btn btn-primary" href="{% url 'tutorial_list' %}" aria-label="Discover tutorials">Discover tutorials</a>
+<div class="d-flex container-fluid align-items-center index-image">
+    <div class="d-flex container justify-content-center">
+        <div class="card index-card">
+            <div class="card-body text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Stitch Art Guides</h1>
+                <p class="text-dark-50 mx-auto mt-5 mb-5">A place where you can learn the art of cross-stitch.</p>
+                <a class="btn btn-primary" href="{% url 'tutorial_list' %}" aria-label="Discover tutorials">Discover
+                    tutorials</a>
+            </div>
         </div>
-</div>
+    </div>
 </div>
 <!-- Index.html code ends here -->
 {% endblock %}
