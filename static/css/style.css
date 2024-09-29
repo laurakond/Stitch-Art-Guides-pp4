@@ -198,6 +198,11 @@ footer.footer .social-link {
     padding-left: 16px;
     padding-right: 16px;
   }
+
+  /* Edit booking page */
+  .form-width{
+    max-width: 600px;
+  }
 }
 
 @media (min-width: 992px) {
