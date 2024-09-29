@@ -26,9 +26,8 @@ body {
 /* REMEMBER TO CHECK THE BACKGROUND COLOUR FOR THE DROP DOWN MENU IN THE SMALLER THAN 992PX VIEW */
 /* GRAYSCALE TEMPLATE's css code */
 .navbar-nav {
-  /* z-index: 1999; */
   position: relative;
-  background: white;
+  background: bisque;
   margin-top: 8px;
 }
 
@@ -38,23 +37,13 @@ body {
 
 /* End of Header */
 
+/* Message */
+.custom-message-margin {
+  margin-bottom: 0;
+}
+
 /* Main */
-
 /* Index page */
-main {
-  padding-top: 54px;
-  /* padding-bottom: 80px; */
-}
-
-#index-container {
-  min-height: calc(100vh - 227px);
-  overflow: visible;
-}
-
-/* #about-container {
-  min-height: calc(100vh - 245px);
-} */
-
 .index-image {
   background: linear-gradient(180deg, #ddd8d888, #ddd8d888), url(../images/white-hoop.webp) no-repeat center;
   background-size: cover;
@@ -65,8 +54,6 @@ main {
   max-width: 600px;
   background-color: goldenrod;
   border-radius: 10px;
-  padding: 16px;
-  /* opacity: 0.5; */
 }
 
 /* End of Index page */
@@ -102,7 +89,7 @@ footer {
 
 footer.footer {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 /* STYLISH TEMPLATE's CODE*/
@@ -169,7 +156,6 @@ footer.footer .social-link {
       margin-bottom: 0;
     }
 
-  /* My Tutorials page */
   .no-tutorials-spacing{
     display: flex;
     justify-content: center;
