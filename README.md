@@ -23,6 +23,7 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 - [Fonts styles](#font-styles)
 
 [Agile Methodology](#agile-methodology)
+- [GitHub Project Management](#github-project-management)
 
 [Features](#features)
 - [Existing Features](#existing-features)
@@ -131,26 +132,9 @@ I used [Lucidchart](https://lucid.app/) for creating the logic and structure of 
 ![flowchart-mvp]()
 
 ### Wireframes
-The following wireframes show the initial idea of how the website would look on three different devices: mobile, tablet/iPad and laptop/desktops. 
+The following wireframes show the initial idea of how the website would look on different devices: mobiles, tablets/iPads and laptops/desktops. 
 
-They also convey an idea of how the user  navigate between different pages of the website.
-
-<details>
-    <summary>Mobile view</summary>
-
-    ![mobile view]()
-</details>
-<details>
-    <summary>Tablet view</summary>
-
-    ![tablet view]()
-</details>
-<details>
-    <summary>Desktop/Laptop view</summary>
-
-    ![desktop view]()
-</details>
-
+[Stitch Art Guides wireframes](documentation/design/wireframes.pdf)
 
 ### Color palette
 The following palette was used to ensure the contrast is achieved between main parts of the website:
@@ -169,6 +153,15 @@ The following palette was used to ensure the contrast is achieved between main p
 
 
 ## Agile Methodology
+
+### GitHub Project Management
+
+  ![GitHub Project Management](documentation/images/agile/project-board.jpeg)
+
+- GitHub Project board was used to manage the progress and development of this project.
+- It allowed me to scope the project and keep track of progress, sometimes revising estimated dates and tasks that were needed to be done by a certain point. 
+
+![GitHub Project Management](documentation/agile/kanban.png)
 
 [Return to Table of Contents](#table-of-contents)
 
