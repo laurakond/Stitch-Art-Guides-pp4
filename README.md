@@ -503,8 +503,15 @@ To deploy to the Heroku website, follow the steps below:
         windowResize: (arg) => { FC.changeView($(window).width() < 765 ? 'basicDay':'agendaWeek') },
     });
     $('#calendar') = FC;
-    };
+    });
     ```
+
+     <details>
+    <summary>Calendar view images</summary>
+
+    ![Calendar view](documentation/images/error_images/calendar-view.png)
+    ![Calendar view updated](documentation/images/error_images/fixed-calendar-view.png)
+</details>
 
 ### General resources:
 Whilst working on this project I relied on Django documentation and other resources to deepen my knowledge and gain a better understanding how to build a full-stack website. 
