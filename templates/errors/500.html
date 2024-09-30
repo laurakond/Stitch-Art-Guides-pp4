@@ -2,22 +2,18 @@
 {% load static %}
 
 {% block content %}
-
-<h1>&#8203;</h1>
-<h2>Oops..Internal server Error!</h2>
-<small>ERROR: 500</small>
-<br>
-<p>
-    Seems like the page just crashed on you.
-    <br><br>
-    Try a different route!
-    <br><br>
-    If the issue persists, please contact for assistance.
-    <br><br>
-</p>
-<p>
-    <a href="{% url 'home' %}">Home</a>
-</p>
-<p>
-
+<div class="d-flex container-fluid align-items-center index-image">
+    <div class="d-flex container justify-content-center">
+        <div class="card index-card">
+            <div class="card-body text-center">
+                <!-- <h1>&#8203;</h1> -->
+                <h1 class="mx-auto my-0 ">Oops..Internal server Error!</h1>
+                <small> <strong> ERROR: 500 </strong></small>
+                <p class="text-dark-50 mx-auto mt-5">Seems like the page just crashed on you.</p>
+                <p class="text-dark-50 mx-auto mb-4">Try a different route!</p>
+                <a class="btn btn-primary mb-2" href="{% url 'home' %}" aria-label="Home">Return to Home page</a>
+            </div>
+        </div>
+    </div>
+</div>
     {% endblock %}
