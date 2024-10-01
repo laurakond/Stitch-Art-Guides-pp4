@@ -28,6 +28,28 @@ body {
   color: var(--dark-text);
 }
 
+.btn,
+.btn-primary {
+  background-color: var(--main-button-color) !important;
+  border-color: var(--main-button-color) !important;
+  color: var(--dark-text);
+}
+
+.btn:hover,
+.btn-primary:hover {
+  background-color: var(--hover-button-color);
+  border-color: var(--hover-button-color);
+  color: var(--background-color);
+}
+
+.btn:focus,
+.btn-primary:focus,
+.btn:focus-visible,
+.btn:active:focus-visible,
+.btn-primary:active:focus {
+  box-shadow: 0 0 0 .25rem rgba(235, 148, 134, .5);
+}
+
 /* Header styles */
 #mainNav {
   background-color: bisque;
