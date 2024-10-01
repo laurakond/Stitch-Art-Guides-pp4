@@ -101,7 +101,7 @@ body {
 }
 
 .index-image {
-  background: linear-gradient(180deg, #ddd8d888, #ddd8d888), url(../images/white-hoop.webp) no-repeat center;
+  background: linear-gradient(180deg, #64a19d30, #64a19d30), url(../images/white-hoop.webp) no-repeat center;
   background-size: cover;
   width: 100%;
 }
