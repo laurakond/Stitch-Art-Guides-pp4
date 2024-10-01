@@ -30,8 +30,8 @@ body {
 
 .btn,
 .btn-primary {
-  background-color: var(--main-button-color) !important;
-  border-color: var(--main-button-color) !important;
+  background-color: var(--main-button-color);
+  border-color: var(--main-button-color);
   color: var(--dark-text);
 }
 
