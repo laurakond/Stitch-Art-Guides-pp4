@@ -143,11 +143,10 @@ The following palette was used to ensure the contrast is achieved between main p
 
 ### Font styles
 [Google fonts](https://fonts.google.com/) was used to source the fonts for the website. These are:
+- Poppins, system-ui - was used for the logo and accent text.
+- Raleway, sans-serif - was used for the the main text.
 
-- font1 - was used as the main content font.
-- font2 - was used for the logo and provide accent pieces to the website.
-
-![font screenshots]()
+![font screenshots](documentation\design\fonts.jpeg)
 
 [Return to Table of Contents](#table-of-contents)
 
