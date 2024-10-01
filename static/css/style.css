@@ -1,3 +1,19 @@
+/* Global CSS variables */
+:root {
+  --main-button-color: #EB9486;
+  --hover-button-color: #E26350;
+  --background-color: #FAF9F6;
+  --dark-text: #131200;
+  --light-text: #FAF9F6;
+  --header-footer: #F5F9E9;
+  --navigation: #64A19D;
+
+  /* Fonts */
+  --primary-font: "Poppins", system-ui;
+  --secondary-font: "Raleway", sans-serif;
+}
+
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +43,6 @@ body {
 /* GRAYSCALE TEMPLATE's css code */
 .navbar-nav {
   position: relative;
-  background: bisque;
   margin-top: 8px;
 }
 
@@ -83,10 +98,11 @@ body {
 .fc-daygrid-event .fc-event-title {
   white-space: normal;
   text-overflow: ellipsis;
-  max-height:20px;
+  max-height: 20px;
 }
+
 .fc-daygrid-event:hover .fc-event-title {
-  max-height:none !important;
+  max-height: none !important;
 }
 
 /* Footer styles*/
@@ -160,13 +176,13 @@ footer.footer .social-link {
 
 
 @media (min-width: 342px) {
-    /* My Tutorials page */
+  /* My Tutorials page */
 
-    .my-tutorial-button {
-      margin-bottom: 0;
-    }
+  .my-tutorial-button {
+    margin-bottom: 0;
+  }
 
-  .no-tutorials-spacing{
+  .no-tutorials-spacing {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,9 +216,10 @@ footer.footer .social-link {
   }
 
   /* Edit booking page */
-  .form-width{
+  .form-width {
     max-width: 600px;
   }
+
 }
 
 @media (min-width: 992px) {
