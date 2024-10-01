@@ -251,11 +251,13 @@ The following palette was used to ensure the contrast is achieved between main p
 </details>
 
 **Book Tutorial page**
-- Once the user is Registered/Logged in, they can access Book Tutorial page that displays a montly calendar with available tutorial slots. 
+- Once the user is Registered/Logged in, they can access Book Tutorial page that displays a calendar with available tutorial slots. 
 - Upon clicking on the tutorial event, they are provided with three options:
     - If the tutorial slot is scheduled in the past, a modal appears indicating that hte tutorial time has ceased and they are prompted to select another available slot.
     - If the tutorial is already booked, a modal appears indicating that the tutorial is already booked.
     - If the tuturial is available, the user is redirected to a booking page.
+- I have chosen to display the calendar as a daily view for screens smaller than 768px in order to display full tutorial title without it being cut off by the Full Calendar configurations. 
+- The screens over 768px display a montly view. If the tutorial title is longer, it expands upon hovering over it. 
 
 ![calendar]()
 
