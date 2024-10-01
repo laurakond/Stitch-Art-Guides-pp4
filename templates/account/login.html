@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign In" %}</h3>
@@ -29,5 +29,30 @@
             </form>
         </div>
     </div>
+</div> -->
+
+<div class="d-flex container-fluid align-items-center index-image">
+    <div class="d-flex container justify-content-center">
+        <div class="card index-card shadow">
+            <div class="card-body text-center">
+                <h1 class="mx-auto my-0 card-logo">{% trans "Sign In" %}</h1>
+                <p class="text-dark-50 mx-auto mt-5 mb-5">{% blocktrans %}Welcome back to the Stitch Art Guides. Please
+                    log in to book a tutorial. <br>If you have not created an account yet, then <a class="link"
+                        href="{{ signup_url }}" aria-label="Sign up">sign up</a>
+                    first.{% endblocktrans %}</p>
+
+                <form class="login" method="POST" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button class="btn btn-signup btn-primary" type="submit">{% trans "Sign In" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 {% endblock %}
