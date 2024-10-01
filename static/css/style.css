@@ -61,6 +61,10 @@ body {
 
 /* Main */
 /* Index page */
+.card-logo {
+  font-family: var(--primary-font);
+}
+
 .index-image {
   background: linear-gradient(180deg, #ddd8d888, #ddd8d888), url(../images/white-hoop.webp) no-repeat center;
   background-size: cover;
@@ -69,8 +73,12 @@ body {
 
 .index-card {
   max-width: 600px;
-  background-color: goldenrod;
+  background-color: var(--header-footer);
   border-radius: 10px;
+}
+
+.index-card a {
+  margin-bottom: 8px;
 }
 
 /* End of Index page */
