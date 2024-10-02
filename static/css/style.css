@@ -36,7 +36,11 @@ body {
 }
 
 .btn:hover,
-.btn-primary:hover {
+.btn-primary:hover,
+.btn:active,
+.btn:active:focus,
+.btn-primary:active,
+:not(.btn-check) + .btn:active {
   background-color: var(--hover-button-color);
   border-color: var(--hover-button-color);
   color: var(--background-color);
