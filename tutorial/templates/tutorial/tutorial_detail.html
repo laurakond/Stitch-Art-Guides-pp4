@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="d-flex justify-content-center flex-column align-items-center pb-5 mx-auto">
+<div class="container pb-5 mx-auto">
     <div>
         <div class="container py-5 d-flex justify-content-center align-items-center">
             <div>
@@ -12,26 +12,28 @@
         </div>
     </div>
     <div class="container" id="container-margin">
-        <div class="row g-0">
+        <div class="row g-4">
             <div class="col-12 col-md-4 text-center">
                 {% if "placeholder" in tutorial.image.url %}
-                    <img class="tutorial-detail-image" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                <img class="tutorial-detail-image" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                 {% else %}
-                    <img class="tutorial-detail-image" src="{{ tutorial.image.url }}" alt="{{ tutorial.title }}">
+                <img class="tutorial-detail-image" src="{{ tutorial.image.url }}" alt="{{ tutorial.title }}">
                 {% endif %}
             </div>
             <div class="col-12 col-md-8 custom-padding">
-                <div class="card h-100 border-0">
+                <div class="card h-100 border-0 px-3">
                     <div class="card-body custom-card-body">
                         <p class="card-text">{{ tutorial.description | safe }}</p>
                         <p class="card-text"><strong>Tutor:</strong> {{ tutorial.tutor_name }}</p>
-                        
+
                     </div>
                     <div class="card-footer about-card-footer border-top-0 bg-transparent">
                         {% if user.is_authenticated %}
-                            <a href="{% url 'book_a_tutorial' %}" class="btn btn-primary" aria-label="Book tutorial">Book tutorial</a>
+                        <a href="{% url 'book_a_tutorial' %}" class="btn btn-primary" aria-label="Book tutorial">Book
+                            tutorial</a>
                         {% else %}
-                            <a href="{% url 'account_signup'  %}" class="btn btn-primary" aria-label="Login or Register to book">Register/Login to book</a>
+                        <a href="{% url 'account_signup'  %}" class="btn btn-primary"
+                            aria-label="Login or Register to book">Register/Login to book</a>
                         {% endif %}
                     </div>
                 </div>
@@ -39,4 +41,4 @@
         </div>
     </div>
 </div>
-{% endblock %}
+    {% endblock %}
