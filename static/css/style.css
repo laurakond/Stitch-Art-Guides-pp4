@@ -107,8 +107,8 @@ body {
   margin-right: 0;
 }
 
-.nav-item>a,
-.nav-user {
+nav.navbar .navbar-nav .nav-link,
+.navbar .navbar-text {
   color: #131200;
 }
 
