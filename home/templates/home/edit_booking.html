@@ -4,7 +4,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<div class="container pb-5 mx-auto">
+<div class="container-fluid pb-5 mx-auto index-image">
     <div class="container py-5 p-3">
         <div class="row">
             <div class="col-12 mx-auto text-center">
@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <div class="container bg-light bg-opacity-75 rounded shadow mb-5 p-3 form-width border custom-form">
+    <div class="container bg-light rounded shadow mb-5 p-3 form-width border custom-form">
         <h2 class="text-center mb-4">{{ booking.tutorial_date.tutorial.title }}</h2>
         {% if not available_tutorials and not other_tutorials %}
         <p class="text-center">No available dates for all tutorials. Come back later to check.</p>
