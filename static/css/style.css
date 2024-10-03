@@ -86,6 +86,12 @@ main{
   box-shadow: 0 0 0 .25rem var(--success-button-border-color);
 }
 
+/* Modal styles */
+.modal-header,
+.modal-footer {
+  background-color: var(--header-footer);
+}
+
 /* Shared image styles */
 
 .profile-image,
