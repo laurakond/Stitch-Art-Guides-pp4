@@ -58,12 +58,12 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="bookingModalLabel">
-                            Book {{event_slot.tutorial.title}}
+                            {{event_slot.tutorial.title}}
                         </h5>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body bg-light">
                         <p>
-                            Ready to book your place with {{event_slot.tutorial.tutor_name}}?
+                            Ready to book {{event_slot.tutorial.title}} tutorial?
                         </p>
                     </div>
                     <div class="modal-footer">
@@ -71,7 +71,7 @@
                             Close
                         </button>
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-success">
+                        <button type="submit" class="btn custom-btn-success">
                             Book Tutorial
                         </button>
                     </div>
