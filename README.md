@@ -641,6 +641,14 @@ Whilst working on this project I relied on Django documentation and other resour
 - Window innerwidth property:
     - [mdn web docs Window: innerWidth property](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth)
 
+- Bootstrap Tooltip customisation:
+    - [Stackoverflow arrow on bootstrap](https://stackoverflow.com/questions/15383440/styling-the-arrow-on-bootstrap-tooltips#:~:text=For%20styling%20each%20directional%20arrows,and%20then%20style%20them%20individually.)
+        - [JS fiddle code](https://jsfiddle.net/nvishnu/rc8kncjn/33/)
+    - [Stackoverflow changing bootstrap tooltip styles](https://stackoverflow.com/questions/65016703/changing-bootstrap-tooltip-styles-using-css)
+    - [Changing Bootstrap tooltip styles using CSS](https://stackoverflow.com/questions/65016703/changing-bootstrap-tooltip-styles-using-css)
+    - [Using Bootstrap 5 to create custom tooltips](https://stackoverflow.com/questions/66236686/using-bootstrap-5-to-create-custom-tooltips)
+    - [Tooltips not working in fullcalendar when i use bootstrap css](https://stackoverflow.com/questions/56866108/tooltips-not-working-in-fullcalendar-when-i-use-bootstrap-css)
+
 ### Acknowledgments
 
 My thanks go to: 
