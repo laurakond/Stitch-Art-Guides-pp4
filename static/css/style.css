@@ -157,6 +157,11 @@ nav.navbar .navbar-nav .nav-link,
   padding-bottom: 16px;
 }
 
+/* About page, Tutorial detail & Tutorial session */
+.custom-card-background {
+  background-color: var(--background-color);
+}
+
 /* Book a tutorial/calendar page line81*/
 /* The following two rules were appropriated from Stackoverflow discussion board.
 Full code noted in the README.md */
@@ -232,9 +237,10 @@ footer.footer .social-link {
   .custom-card-body {
     padding-left: 0;
     padding-right: 0;
+    background-color: var(--background-color);
   }
 
-  .about-card-footer {
+  .custom-card-footer {
     padding-left: 0;
     padding-left: 0;
   }
@@ -278,8 +284,8 @@ footer.footer .social-link {
     padding-right: 2rem;
   }
 
-  .about-card-footer {
-    padding-left: 16px;
+  .custom-card-footer {
+    padding-left: 0;
     padding-right: 16px;
   }
 
