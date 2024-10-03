@@ -1,7 +1,11 @@
 /* Global CSS variables */
 :root {
   --main-button-color: #EB9486;
+  --main-button-border-color: rgba(235, 148, 134, .5);
   --hover-button-color: #E26350;
+  --success-button-color: #64A19D;
+  --success-hover-button-color: #4E7E7C;
+  --success-button-border-color: rgba(78, 126, 124, .5);
   --background-color: #FAF9F6;
   --dark-text: #131200;
   --light-text: #FAF9F6;
@@ -34,34 +38,52 @@ main{
 }
 
 /* Button styles */
-.btn,
-.btn-primary {
+.custom-btn {
   background-color: var(--main-button-color);
   border-color: var(--main-button-color);
   color: var(--dark-text);
 }
 
-.btn:hover,
-.btn-primary:hover,
-.btn:active,
-.btn:active:focus,
-.btn-primary:active,
-.btn:focus-visible,
-.btn-primary:focus,
-.btn:first-child:active,
-:not(.btn-check)+.btn:active {
+.custom-btn:hover,
+.custom-btn:active,
+.custom-btn:active:focus,
+.custom-btn:focus-visible,
+.custom-btn:first-child:active,
+:not(.custom-btn-check)+.custom-btn:active {
   background-color: var(--hover-button-color);
   border-color: var(--hover-button-color);
-  color: var(--background-color);
+  color: var(--light-text);
 }
 
-.btn:focus,
-.btn-primary:focus,
-.btn:focus-visible,
-.btn:active:focus-visible,
-:not(.btn-check)+.btn:active:focus-visible,
-.btn-primary:active:focus {
-  box-shadow: 0 0 0 .25rem rgba(235, 148, 134, .5);
+.custom-btn:focus,
+.custom-btn:focus-visible,
+.custom-btn:active:focus-visible,
+:not(.custom-btn-check)+.custom-btn:active:focus-visible {
+  box-shadow: 0 0 0 .25rem var(--main-button-border-color);
+}
+
+.custom-btn-success {
+  background-color: var(--success-button-color);
+  border-color: var(--success-button-color);
+  color: var(--light-text);
+}
+
+.custom-btn-success:hover,
+.custom-btn-success:active,
+.custom-btn-success:active:focus,
+.custom-btn-success:focus-visible,
+.custom-btn-success:first-child:active,
+:not(.custom-btn-success-check)+.custom-btn-success:active {
+  background-color: var(--success-hover-button-color);
+  border-color: var(--success-hover-button-color);
+  color: var(--light-text);
+}
+
+.custom-btn-success:focus,
+.custom-btn-success:focus-visible,
+.custom-btn-success:active:focus-visible,
+:not(.custom-btn-success-check)+.custom-btn-success:active:focus-visible {
+  box-shadow: 0 0 0 .25rem var(--success-button-border-color);
 }
 
 /* Shared image styles */
