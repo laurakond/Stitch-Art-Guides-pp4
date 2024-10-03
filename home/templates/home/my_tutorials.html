@@ -39,10 +39,10 @@
                             </p>
                         </div>
                         <div class="card-footer border-top-0 bg-transparent">
-                            <a href="{% url 'edit_booking' session.id %}" class="btn btn-primary" aria-label="Edit Booking">
+                            <a href="{% url 'edit_booking' session.id %}" class="btn custom-btn-success" aria-label="Edit Booking">
                                 Edit
                             </a>
-                            <button type="button" class="deleteButton btn btn-danger" data-booking_id="{{ session.id }}" data-bs-target="#staticBackdrop">
+                            <button type="button" class="deleteButton btn btn-danger mx-2" data-booking_id="{{ session.id }}" data-bs-target="#staticBackdrop">
                                 Cancel 
                             </button>
                         </div>
