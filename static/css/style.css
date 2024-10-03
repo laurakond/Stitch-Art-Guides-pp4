@@ -170,6 +170,11 @@ Full code noted in the README.md */
   max-height: none !important;
 }
 
+/* Edit booking form page */
+.custom-form{
+  background-color: var(--header-footer);
+}
+
 /* Footer styles*/
 footer {
   width: 100%;
