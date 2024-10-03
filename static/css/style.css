@@ -13,7 +13,7 @@
   --navigation: #64A19D;
   --gradient-color: #daeae9b8;
   --past-event-background: #DFE0E2;
-  --past-event-text:#A9ACB1;
+  --past-event-text: #A9ACB1;
 
   /* Fonts */
   --primary-font: "Poppins", system-ui;
@@ -232,6 +232,7 @@ a.fc-col-header-cell-cushion,
 .fc-daygrid-event:hover .fc-event-time {
   cursor: pointer;
 }
+
 /* Day view */
 a.fc-event.fc-event-start.fc-event-end.fc-event-past.fc-timegrid-event.fc-v-event {
   background: var(--past-event-background);
@@ -257,11 +258,6 @@ a.fc-event.fc-event-start.fc-event-end.fc-event-future.fc-daygrid-event.fc-daygr
   background: var(--main-button-border-color);
   color: var(--dark-text);
   padding-right: 0.25rem;
-}
-
-/* Edit booking form page */
-.custom-form {
-  background-color: var(--header-footer);
 }
 
 /* Footer styles*/
