@@ -19,7 +19,7 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 - [User Stories](#user-stories)
 - [Flowcharts](#flowcharts)
 - [Wireframes](#wireframes)
-- [Colour palette](#colour-palette)
+- [Color palette](#color-palette)
 - [Fonts styles](#font-styles)
 
 [Agile Methodology](#agile-methodology)
@@ -139,10 +139,31 @@ The following wireframes show the initial idea of how the website would look on 
 ### Color palette
 The following palette was used to ensure the contrast is achieved between main parts of the website:
 
-![color-palette]()
+<details>
+    <summary>Color palette images</summary>
+
+![Color palette](documentation/design/color-palette.jpeg)
+![Color palette2](documentation/design/color-palette2.jpeg)
+</details>
+
+<br>
+
+- #EB9486 - Coral Pink - used for main navigation button
+- #FAF9F6 - Baby Powder - used for majority of the background color & light text
+- #F5F9E9 - Ivory - used for header & footer backgrounds including modals
+- #131200 - Smoky Black - used for dark text
+- #64A19D - Verdigris - used for social media icons and menu bar
+- #E26350 - Tomato - used for main button hover effect
+- #4E7E7C - Myrtle Green - used for custom success button hover effect
+- #DFE0E2 - Platinum - used to style past events in the calendar
+- #A9ACB1 - French gray - used to style past events in the calendar
+- rgba(235, 148, 134, .5) - used for the main button hover border and future events background color in the calendar
+- rgba(78, 126, 124, .5) - used for the success button hover border and calendar styling
+- #daeae9b8 - used for adding gradient over the hero image
+
 
 ### Font styles
-[Google fonts](https://fonts.google.com/) was used to source the fonts for the website. These are:
+I used [Google fonts](https://fonts.google.com/) to source the fonts for the website. These are:
 - Poppins, system-ui - was used for the logo and accent text.
 - Raleway, sans-serif - was used for the the main text.
 
@@ -167,8 +188,6 @@ The following palette was used to ensure the contrast is achieved between main p
 
 ## Features
 ### Existing Features
-
-**Landing page**
 
 **The Header**
 
@@ -222,7 +241,7 @@ The following palette was used to ensure the contrast is achieved between main p
 
 **User authentication**
 
- <details>
+<details>
     <summary>Register</summary>
 
 - The Register form allows the user to create an account in order to access additional content: Book Tutorial page, and My Tutorials page.
@@ -232,7 +251,7 @@ The following palette was used to ensure the contrast is achieved between main p
     ![register]()
 </details>
 
- <details>
+<details>
     <summary>Login</summary>
 - The Login form allows the user to access their account and manage their bookings.
     - Upon successfull login, a confirmation message is displayed at the top of the page and the user is redirected to the home page.
@@ -537,140 +556,197 @@ To deploy to the Heroku website, follow the steps below:
 ### General resources:
 Whilst working on this project I relied on Django documentation and other resources to deepen my knowledge and gain a better understanding how to build a full-stack website. 
 
-- ERD & flowcharts:
-    - [Lucid flowcharts Youtube video](https://www.youtube.com/watch?v=hktyW5Lp0Vo)
-    - [Lucid Software database tutorial for beginners](https://www.youtube.com/watch?v=wR0jg0eQsZA)
-    - [Decomplexify](https://www.youtube.com/watch?v=GFQaEYEc8_8)
-    - [Decomplexify Learn Database normalisation Youtube video](https://www.youtube.com/watch?v=GFQaEYEc8_8)
-- Models:
-    - [Geeks for Geeks: Django models](https://www.geeksforgeeks.org/django-models/)
-    - [MDN web docs: Using models](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models) 
-    - [W3Schools Django update model](https://www.w3schools.com/django/django_update_model.php)
-    - [Django forum - how do I load multiple models items into a single view](https://forum.djangoproject.com/t/how-do-i-load-multiple-models-items-into-a-single-view/919/2)
-    - [Best method to store alt tags in Django](https://stackoverflow.com/questions/65415221/best-method-to-store-alt-tags-in-django)
-    - [Verbose field names](https://docs.djangoproject.com/en/5.1/topics/db/models/#verbose-field-names)
-- User flows:
-    - [Figma user flow kit](https://www.figma.com/community/file/830510773896272856/user-flow-kit)
-    - [Creatly common mistales to avoid when creating user flow diagrams](https://creately.com/guides/user-flow-diagram/#common-mistakes-to-avoid-when-creating-user-flow-diagrams)
+<details>
+<summary>ERD & flowcharts</summary>
 
-- Restricting authorised access
-    - The following chat threads on Stackoverflow were very useful when trying to determine which login restrictions to use for defensive programming:
+- [Lucid flowcharts Youtube video](https://www.youtube.com/watch?v=hktyW5Lp0Vo)
+- [Lucid Software database tutorial for beginners](https://www.youtube.com/watch?v=wR0jg0eQsZA)
+- [Decomplexify](https://www.youtube.com/watch?v=GFQaEYEc8_8)
+- [Decomplexify Learn Database normalisation Youtube video](https://www.youtube.com/watch?v=GFQaEYEc8_8)
+</details>
+
+<details>
+<summary>Models</summary>
+
+- [Geeks for Geeks: Django models](https://www.geeksforgeeks.org/django-models/)
+- [MDN web docs: Using models](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models) 
+- [W3Schools Django update model](https://www.w3schools.com/django/django_update_model.php)
+- [Django forum - how do I load multiple models items into a single view](https://forum.djangoproject.com/t/how-do-i-load-multiple-models-items-into-a-single-view/919/2)
+- [Best method to store alt tags in Django](https://stackoverflow.com/questions/65415221/best-method-to-store-alt-tags-in-django)
+- [Verbose field names](https://docs.djangoproject.com/en/5.1/topics/db/models/#verbose-field-names)
+</details>
+
+<details>
+<summary>User flows:</summary>
+
+- [Figma user flow kit](https://www.figma.com/community/file/830510773896272856/user-flow-kit)
+- [Creatly common mistales to avoid when creating user flow diagrams](https://creately.com/guides/user-flow-diagram/#common-mistakes-to-avoid-when-creating-user-flow-diagrams)
+</details>
+
+<details>
+<summary>Restricting authorised access:</summary>
+
+- The following chat threads on Stackoverflow were very useful when trying to determine which login restrictions to use for defensive programming:
     - [@login_required and is_authenticated() -- When to use which in Django?](https://stackoverflow.com/questions/22488601/login-required-and-is-authenticated-when-to-use-which-in-django#:~:text=login_required%20is%20applied%20on%20a,is%20logged%20in%20or%20not)
     - [Using the Django authentication system](https://docs.djangoproject.com/en/5.1/topics/auth/default/) was also really helpful for determining what aspects were useful for restricting access. 
+</details>
 
-- Implementing calendar view for tutorial display:
-    - [Real Python: The Python calendar module](https://realpython.com/python-calendar-module/)
-    - [Python documentation: calendar](https://docs.python.org/3/library/calendar.html)
-    - [Geeks for Geeks Python calendar module](https://www.geeksforgeeks.org/python-calendar-module/)
-    - [Codemy Django Wednesdays Youtube tutorial](https://www.youtube.com/watch?v=4EJlrweJE-M)
+<details>
+<summary>Implementing calendar view for tutorial display:</summary>
 
-- Python datetime:
-    -  [Python documentation datetime - basic date and time](https://docs.python.org/3/library/datetime.html#format-codes)
-    - [Geeks for Geeks Isoformat() method](https://www.geeksforgeeks.org/isoformat-method-of-datetime-class-in-python/)
-    - [Python strftime cheatsheet](https://strftime.org/)
-    - [Django docs querysets](https://docs.djangoproject.com/en/5.1/ref/models/querysets/#icontains)
-    - [Function of pub_date__gte=datetime.now](https://stackoverflow.com/questions/18706979/function-of-pub-date-gte-datetime-now)
+- [Real Python: The Python calendar module](https://realpython.com/python-calendar-module/)
+- [Python documentation: calendar](https://docs.python.org/3/library/calendar.html)
+- [Geeks for Geeks Python calendar module](https://www.geeksforgeeks.org/python-calendar-module/)
+- [Codemy Django Wednesdays Youtube tutorial](https://www.youtube.com/watch?v=4EJlrweJE-M)
+</details>
 
-- Creating Django error pages:
-    - [Geek for geeks: Django creating a 404 error page](https://www.geeksforgeeks.org/django-creating-a-404-error-page/?ref=oin_asr1)
-    - [Geeks for geeks: handling custom error page](https://www.geeksforgeeks.org/python-django-handling-custom-error-page/)
+<details>
+<summary>Python datetime:</summary>
 
-- Queryset.exists():
-    - [Dev community: queryset.exists() more efficient than queryset.count()](https://dev.to/codereviewdoctor/why-queryset-exists-is-more-efficient-than-queryset-count-2f3h)
-    - [Django documentation: check if record exists in model](https://forum.djangoproject.com/t/check-if-record-exists-in-model/10712/5)
-    - [Reddit: Checking a place is already booked or not based on time](https://www.reddit.com/r/django/comments/1bb6zin/checking_a_place_is_already_booked_or_not_based/)
+-  [Python documentation datetime - basic date and time](https://docs.python.org/3/library/datetime.html#format-codes)
+- [Geeks for Geeks Isoformat() method](https://www.geeksforgeeks.org/isoformat-method-of-datetime-class-in-python/)
+- [Python strftime cheatsheet](https://strftime.org/)
+- [Django docs querysets](https://docs.djangoproject.com/en/5.1/ref/models/querysets/#icontains)
+- [Function of pub_date__gte=datetime.now](https://stackoverflow.com/questions/18706979/function-of-pub-date-gte-datetime-now)
+</details>
+
+<details>
+<summary>Creating Django error pages:</summary>
+
+- [Geek for geeks: Django creating a 404 error page](https://www.geeksforgeeks.org/django-creating-a-404-error-page/?ref=oin_asr1)
+- [Geeks for geeks: handling custom error page](https://www.geeksforgeeks.org/python-django-handling-custom-error-page/)
+</details>
+
+<details>
+<summary>Queryset.exists():</summary>
+
+- [Dev community: queryset.exists() more efficient than queryset.count()](https://dev.to/codereviewdoctor/why-queryset-exists-is-more-efficient-than-queryset-count-2f3h)
+- [Django documentation: check if record exists in model](https://forum.djangoproject.com/t/check-if-record-exists-in-model/10712/5)
+- [Reddit: Checking a place is already booked or not based on time](https://www.reddit.com/r/django/comments/1bb6zin/checking_a_place_is_already_booked_or_not_based/)
+</details>
+
+<details>
+<summary>I used the following resources to familiarise myself with how to center a div:</summary>
+
+- [How to center a div](https://www.geeksforgeeks.org/how-to-center-a-div-with-the-mx-auto-class-in-bootstrap-5/)
+- [A Designer who codes - three ways to center content](https://www.youtube.com/watch?v=nx8jyWLy0e0)
+- [Geek for Geeks: how to set a vertical alignment in Bootstrap](https://www.geeksforgeeks.org/how-to-set-vertical-alignment-in-bootstrap/) Youtube tutorial
+- [How to vertical align a div in Bootstrap](https://www.tutorialrepublic.com/faq/how-to-vertical-align-a-div-in-bootstrap.php)
+- [StackOverflow: centering elements vertically and horizontally](https://stackoverflow.com/questions/42388989/bootstrap-centering-elements-vertically-and-horizontally) 
+- [StackOverflow: how to align header in top footer](https://stackoverflow.com/questions/76053250/how-align-header-in-top-footer-in-bottom-of-the-page-and-main-between-them-in-b)
+</details>
+
+<details>
+<summary>Securing Django views from unauthorised access:</summary>
+
+- [Daisy McGirr's article](https://www.codu.co/articles/securing-django-views-from-unauthorized-access-npyb3to_)
+- [Allauth templates](https://docs.allauth.org/en/latest/common/templates.html)
+</details>
+
+<details>
+<summary>Creating event bookings:</summary>
+
+- [Geek for Geeks: model objects create](https://www.geeksforgeeks.org/understanding-django-model-vs-modelobjectscreate/)
+- [Stackoverflow: django model vs model objects create](https://stackoverflow.com/questions/26672077/django-model-vs-model-objects-create)
+- [Stackoverflow: difference beween object create and object save](https://stackoverflow.com/questions/23926385/difference-between-objects-create-and-object-save-in-django-orm#:~:text=save()%20perform%20internally%20as,only%20INSERT%20object%20to%20db.&text=INSERT%20%E2%86%92%20If%20the%20object's,t%20exist%20in%20the%20database)
+- [Reddit: how to handle a post request without a form](https://www.reddit.com/r/django/comments/qadv5m/how_to_handle_a_post_request_without_a_form/)
+</details>
+
+<details>
+<summary>Disable clickdate:</summary>
+
+- [Stackoverflow: disable past date in Full Calendar](https://stackoverflow.com/questions/72622009/disable-past-date-in-fullcalendar-for-dateclick)
+- [MDM Web docs: date setHours()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours)
+- [Full Calendar: dateclick](https://fullcalendar.io/docs/dateClick)
+</details>
+
+<details>
+<summary>Comparing event date to current date & redirecting/alerting the user to appropriate page:</summary>
+
+- [Pyhton documentation: datetime](https://docs.python.org/3/library/datetime.html)
+- [StackOverflow: easiest way to combine date and time strings](https://stackoverflow.com/questions/9578906/easiest-way-to-combine-date-and-time-strings-to-single-datetime-object-using-pyt)
+- [Stackoverflow: how can I check if date is passed from Django model](https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model)
+</details>
+
+<details>
+<summary>Forms & filtering the form to fetch future tutorials:</summary>
+
+- Django documentation including [form fields](https://docs.djangoproject.com/en/dev/ref/forms/fields/#modelchoicefield) 
+- [Stackoverflow: filter foreing key choices](https://stackoverflow.com/questions/291945/how-do-i-filter-foreignkey-choices-in-a-django-modelform/291968#291968)
+- [Django project forum](https://forum.djangoproject.com/t/queryset-difference/15716)
+- [Stackoverflow: modelform with conditions](https://stackoverflow.com/questions/43001425/django-modelform-with-conditions)
+- [Stackoverflow: super().__init__(**kwargs)](https://stackoverflow.com/questions/50550153/calling-super-init-kwargs-and-multiple-inheritance)
+- [Stackoverflow def __init__(self, *args, **kwargs) initialization of class in python](https://stackoverflow.com/questions/23027846/def-init-self-args-kwargs-initialization-of-class-in-python)
+- [exclude() method](https://docs.djangoproject.com/en/5.1/ref/models/querysets/#:~:text=exclude()%20%C2%B6&text=Returns%20a%20new%20QuerySet%20containing%20objects%20that%20do%20not%20match,enclosed%20in%20a%20NOT()%20)
+- [Queryset filter not equal](https://sentry.io/answers/django-queryset-filter-not-equal/#:~:text=The%20exclude()%20method%20from,excluded%20from%20the%20returned%20QuerySet)
+- [Queryset difference](https://forum.djangoproject.com/t/queryset-difference/15716)
+- [Calling super().__init__(**kwargs), and multiple inheritance?](https://stackoverflow.com/questions/50550153/calling-super-init-kwargs-and-multiple-inheritance)
+- [request.user in Django Form](https://stackoverflow.com/questions/8357607/request-user-in-django-form)
+- [Django ModelForms __init__ kwargs create and update](https://stackoverflow.com/questions/21119494/django-modelforms-init-kwargs-create-and-update)
+- [Stackoverflow: form date input](https://stackoverflow.com/questions/61076688/django-form-dateinput-with-widget-in-update-loosing-the-initial-value)
+- [datefield setting default date](https://forum.djangoproject.com/t/datefield-setting-default-date/28029)
+- [show dd-mm-yy in input type date field](https://forum.djangoproject.com/t/show-dd-mm-yy-in-input-type-date-field/31765)
+- [Real Python social forms](https://realpython.com/django-social-forms-4/)
+- [Geeks for Geeks Django forms](https://www.geeksforgeeks.org/django-forms/)
+- [Django form, request.post and initial](https://stackoverflow.com/questions/8994619/django-form-request-post-and-initial)
+- [Django form __init__() got multiple values for keyword argument](https://stackoverflow.com/questions/14322185/django-form-init-got-multiple-values-for-keyword-argument)
+- [Passing **kwargs to Django Form](https://stackoverflow.com/questions/1993014/passing-kwargs-to-django-form)
+- [Using request.user in Forms.py](https://forum.djangoproject.com/t/using-request-user-in-forms-py/19184/5)
+- [django custom form - removing fields based on user](https://forum.djangoproject.com/t/django-custom-form-removing-fields-based-on-user/4291)
+- [request.user in Django Form](https://stackoverflow.com/questions/8357607/request-user-in-django-form)
+- [Django : ModelForm with conditions](https://stackoverflow.com/questions/43001425/django-modelform-with-conditions)
+- [Filtering choices in a form based on previous field selection - Django](https://stackoverflow.com/questions/55572315/filtering-choices-in-a-form-based-on-previous-field-selection-django)
+- [Django ModelChoiceField: filtering query set and setting default value as an object](https://stackoverflow.com/questions/5329586/django-modelchoicefield-filtering-query-set-and-setting-default-value-as-an-obj/5329761#5329761)
+- [How do I filter values in a Django form using ModelForm?](https://stackoverflow.com/questions/3010489/how-do-i-filter-values-in-a-django-form-using-modelform)
+</details>
+
+<details>
+<summary>is_null property:</summary>
+
+- [Filter for empty or null values](https://www.atlassian.com/data/databases/how-to-filter-for-empty-or-null-values-in-a-django-queryset)
+- [How to filter for not exists](https://stackoverflow.com/questions/14831327/in-a-django-queryset-how-to-filter-for-not-exists-in-a-many-to-one-relationsh)
+- [Filter empty or null names](https://sentry.io/answers/how-do-you-filter-empty-or-null-names-in-a-queryset/)
+- [What is exclude in Django](https://djangowebdevelopers.quora.com/What-is-exclude-in-Django#:~:text=Exclude())
+</details>
+
+<details>
+<summary>Website design and layout:</summary>
+
+- [Bootstrap 5 documentation](https://getbootstrap.com/docs/5.0)
+- [Geek for Geeks Bootstrap card sizing](https://www.geeksforgeeks.org/bootstrap-5-cards-sizing/)
+- [Stackoverflow Bootstrap cards height](https://stackoverflow.com/questions/35868756/how-to-make-bootstrap-cards-the-same-height-in-card-columns)
+- [Geek for Geeks responsive divs](https://www.geeksforgeeks.org/how-to-create-responsive-divs-in-bootstrap/)
+- [mdn web docs linear gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient)
+- [mdn web docs calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
+- [Geek for Geeks How to Center a Div](https://www.geeksforgeeks.org/how-to-center-a-div-with-the-mx-auto-class-in-bootstrap-5/)
+- [Stackoverflow Bootstrap: Centering Elements Vertically and Horizontally](https://stackoverflow.com/questions/42388989/bootstrap-centering-elements-vertically-and-horizontally)
+</details>
+
+<details>
+<summary>Window innerwidth property:</summary>
+
+- [mdn web docs Window: innerWidth property](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth)
+- [FullCalendar - Change View for Mobile Devices](https://stackoverflow.com/questions/41908295/fullcalendar-change-view-for-mobile-devices)
+- [Usage of eventMouseEnter in V4 of fullcalendar](https://stackoverflow.com/questions/56472588/usage-of-eventmouseenter-in-v4-of-fullcalendar)
+- [See the full content on hover over in fullcalendar3](https://stackoverflow.com/questions/70269140/see-the-full-content-on-hover-over-in-fullcalendar3)
+</details>
+
+<details>
+<summary>Bootstrap Tooltip customisation:</summary>
+
+- [Stackoverflow arrow on bootstrap](https://stackoverflow.com/questions/15383440/styling-the-arrow-on-bootstrap-tooltips#:~:text=For%20styling%20each%20directional%20arrows,and%20then%20style%20them%20individually.)
+    - [JS fiddle code](https://jsfiddle.net/nvishnu/rc8kncjn/33/)
+- [Stackoverflow changing bootstrap tooltip styles](https://stackoverflow.com/questions/65016703/changing-bootstrap-tooltip-styles-using-css)
+- [Changing Bootstrap tooltip styles using CSS](https://stackoverflow.com/questions/65016703/changing-bootstrap-tooltip-styles-using-css)
+- [Using Bootstrap 5 to create custom tooltips](https://stackoverflow.com/questions/66236686/using-bootstrap-5-to-create-custom-tooltips)
+- [Tooltips not working in fullcalendar when i use bootstrap css](https://stackoverflow.com/questions/56866108/tooltips-not-working-in-fullcalendar-when-i-use-bootstrap-css)
+</details>
+
+<details>
+<summary>Creating Django error pages:</summary>
 
 
-- I used the following resources to familiarise myself with how to center a div:
-    - [How to center a div](https://www.geeksforgeeks.org/how-to-center-a-div-with-the-mx-auto-class-in-bootstrap-5/)
-    - [A Designer who codes - three ways to center content](https://www.youtube.com/watch?v=nx8jyWLy0e0)
-    - [Geek for Geeks: how to set a vertical alignment in Bootstrap](https://www.geeksforgeeks.org/how-to-set-vertical-alignment-in-bootstrap/) Youtube tutorial
-    - [How to vertical align a div in Bootstrap](https://www.tutorialrepublic.com/faq/how-to-vertical-align-a-div-in-bootstrap.php)
-    - [StackOverflow: centering elements vertically and horizontally](https://stackoverflow.com/questions/42388989/bootstrap-centering-elements-vertically-and-horizontally) 
-    - [StackOverflow: how to align header in top footer](https://stackoverflow.com/questions/76053250/how-align-header-in-top-footer-in-bottom-of-the-page-and-main-between-them-in-b)
-
-- Securing Django views from unauthorised access:
-    - [Daisy McGirr's article](https://www.codu.co/articles/securing-django-views-from-unauthorized-access-npyb3to_)
-    - [Allauth templates](https://docs.allauth.org/en/latest/common/templates.html)
-
-- Creating event bookings:
-    - [Geek for Geeks: model objects create](https://www.geeksforgeeks.org/understanding-django-model-vs-modelobjectscreate/)
-    - [Stackoverflow: django model vs model objects create](https://stackoverflow.com/questions/26672077/django-model-vs-model-objects-create)
-    - [Stackoverflow: difference beween object create and object save](https://stackoverflow.com/questions/23926385/difference-between-objects-create-and-object-save-in-django-orm#:~:text=save()%20perform%20internally%20as,only%20INSERT%20object%20to%20db.&text=INSERT%20%E2%86%92%20If%20the%20object's,t%20exist%20in%20the%20database)
-    - [Reddit: how to handle a post request without a form](https://www.reddit.com/r/django/comments/qadv5m/how_to_handle_a_post_request_without_a_form/)
-
-- Disable clickdate:
-    - [Stackoverflow: disable past date in Full Calendar](https://stackoverflow.com/questions/72622009/disable-past-date-in-fullcalendar-for-dateclick)
-    - [MDM Web docs: date setHours()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours)
-    - [Full Calendar: dateclick](https://fullcalendar.io/docs/dateClick)
-
-- Comparing event date to current date & redirecting/alerting the user to appropriate page:
-    - [Pyhton documentation: datetime](https://docs.python.org/3/library/datetime.html)
-    - [StackOverflow: easiest way to combine date and time strings](https://stackoverflow.com/questions/9578906/easiest-way-to-combine-date-and-time-strings-to-single-datetime-object-using-pyt)
-    - [Stackoverflow: how can I check if date is passed from Django model](https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model)
-
-- Forms & filtering the form to fetch future tutorials:
-    - Django documentation including [form fields](https://docs.djangoproject.com/en/dev/ref/forms/fields/#modelchoicefield) 
-    - [Stackoverflow: filter foreing key choices](https://stackoverflow.com/questions/291945/how-do-i-filter-foreignkey-choices-in-a-django-modelform/291968#291968)
-    - [Django project forum](https://forum.djangoproject.com/t/queryset-difference/15716)
-    - [Stackoverflow: modelform with conditions](https://stackoverflow.com/questions/43001425/django-modelform-with-conditions)
-    - [Stackoverflow: super().__init__(**kwargs)](https://stackoverflow.com/questions/50550153/calling-super-init-kwargs-and-multiple-inheritance)
-    - [Stackoverflow def __init__(self, *args, **kwargs) initialization of class in python](https://stackoverflow.com/questions/23027846/def-init-self-args-kwargs-initialization-of-class-in-python)
-    - [exclude() method](https://docs.djangoproject.com/en/5.1/ref/models/querysets/#:~:text=exclude()%20%C2%B6&text=Returns%20a%20new%20QuerySet%20containing%20objects%20that%20do%20not%20match,enclosed%20in%20a%20NOT()%20)
-    - [Queryset filter not equal](https://sentry.io/answers/django-queryset-filter-not-equal/#:~:text=The%20exclude()%20method%20from,excluded%20from%20the%20returned%20QuerySet)
-    - [Queryset difference](https://forum.djangoproject.com/t/queryset-difference/15716)
-    - [Calling super().__init__(**kwargs), and multiple inheritance?](https://stackoverflow.com/questions/50550153/calling-super-init-kwargs-and-multiple-inheritance)
-    - [request.user in Django Form](https://stackoverflow.com/questions/8357607/request-user-in-django-form)
-    - [Django ModelForms __init__ kwargs create and update](https://stackoverflow.com/questions/21119494/django-modelforms-init-kwargs-create-and-update)
-    - [Stackoverflow: form date input](https://stackoverflow.com/questions/61076688/django-form-dateinput-with-widget-in-update-loosing-the-initial-value)
-    - [datefield setting default date](https://forum.djangoproject.com/t/datefield-setting-default-date/28029)
-    - [show dd-mm-yy in input type date field](https://forum.djangoproject.com/t/show-dd-mm-yy-in-input-type-date-field/31765)
-    - [Real Python social forms](https://realpython.com/django-social-forms-4/)
-    - [Geeks for Geeks Django forms](https://www.geeksforgeeks.org/django-forms/)
-    - [Django form, request.post and initial](https://stackoverflow.com/questions/8994619/django-form-request-post-and-initial)
-    - [Django form __init__() got multiple values for keyword argument](https://stackoverflow.com/questions/14322185/django-form-init-got-multiple-values-for-keyword-argument)
-    - [Passing **kwargs to Django Form](https://stackoverflow.com/questions/1993014/passing-kwargs-to-django-form)
-    - [Using request.user in Forms.py](https://forum.djangoproject.com/t/using-request-user-in-forms-py/19184/5)
-    - [django custom form - removing fields based on user](https://forum.djangoproject.com/t/django-custom-form-removing-fields-based-on-user/4291)
-    - [request.user in Django Form](https://stackoverflow.com/questions/8357607/request-user-in-django-form)
-    - [Django : ModelForm with conditions](https://stackoverflow.com/questions/43001425/django-modelform-with-conditions)
-    - [Filtering choices in a form based on previous field selection - Django](https://stackoverflow.com/questions/55572315/filtering-choices-in-a-form-based-on-previous-field-selection-django)
-    - [Django ModelChoiceField: filtering query set and setting default value as an object](https://stackoverflow.com/questions/5329586/django-modelchoicefield-filtering-query-set-and-setting-default-value-as-an-obj/5329761#5329761)
-    - [How do I filter values in a Django form using ModelForm?](https://stackoverflow.com/questions/3010489/how-do-i-filter-values-in-a-django-form-using-modelform)
-
-- is_null property:
-    - [Filter for empty or null values](https://www.atlassian.com/data/databases/how-to-filter-for-empty-or-null-values-in-a-django-queryset)
-    - [How to filter for not exists](https://stackoverflow.com/questions/14831327/in-a-django-queryset-how-to-filter-for-not-exists-in-a-many-to-one-relationsh)
-    - [Filter empty or null names](https://sentry.io/answers/how-do-you-filter-empty-or-null-names-in-a-queryset/)
-    - [What is exclude in Django](https://djangowebdevelopers.quora.com/What-is-exclude-in-Django#:~:text=Exclude())
-
-- Website design and layout
-    - [Bootstrap 5 documentation](https://getbootstrap.com/docs/5.0)
-    - [Geek for Geeks Bootstrap card sizing](https://www.geeksforgeeks.org/bootstrap-5-cards-sizing/)
-    - [Stackoverflow Bootstrap cards height](https://stackoverflow.com/questions/35868756/how-to-make-bootstrap-cards-the-same-height-in-card-columns)
-    - [Geek for Geeks responsive divs](https://www.geeksforgeeks.org/how-to-create-responsive-divs-in-bootstrap/)
-    - [mdn web docs linear gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient)
-    - [mdn web docs calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
-    - [Geek for Geeks How to Center a Div](https://www.geeksforgeeks.org/how-to-center-a-div-with-the-mx-auto-class-in-bootstrap-5/)
-    - [Stackoverflow Bootstrap: Centering Elements Vertically and Horizontally](https://stackoverflow.com/questions/42388989/bootstrap-centering-elements-vertically-and-horizontally)
-    
-
-- Window innerwidth property:
-    - [mdn web docs Window: innerWidth property](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth)
-    - [FullCalendar - Change View for Mobile Devices](https://stackoverflow.com/questions/41908295/fullcalendar-change-view-for-mobile-devices)
-    - [Usage of eventMouseEnter in V4 of fullcalendar](https://stackoverflow.com/questions/56472588/usage-of-eventmouseenter-in-v4-of-fullcalendar)
-    - [See the full content on hover over in fullcalendar3](https://stackoverflow.com/questions/70269140/see-the-full-content-on-hover-over-in-fullcalendar3)
-
-- Bootstrap Tooltip customisation:
-    - [Stackoverflow arrow on bootstrap](https://stackoverflow.com/questions/15383440/styling-the-arrow-on-bootstrap-tooltips#:~:text=For%20styling%20each%20directional%20arrows,and%20then%20style%20them%20individually.)
-        - [JS fiddle code](https://jsfiddle.net/nvishnu/rc8kncjn/33/)
-    - [Stackoverflow changing bootstrap tooltip styles](https://stackoverflow.com/questions/65016703/changing-bootstrap-tooltip-styles-using-css)
-    - [Changing Bootstrap tooltip styles using CSS](https://stackoverflow.com/questions/65016703/changing-bootstrap-tooltip-styles-using-css)
-    - [Using Bootstrap 5 to create custom tooltips](https://stackoverflow.com/questions/66236686/using-bootstrap-5-to-create-custom-tooltips)
-    - [Tooltips not working in fullcalendar when i use bootstrap css](https://stackoverflow.com/questions/56866108/tooltips-not-working-in-fullcalendar-when-i-use-bootstrap-css)
-
-- Field lookups:
-    - [Django doc Field lookups](https://docs.djangoproject.com/en/dev/ref/models/querysets/#field-lookups)
+</details>
 
 ### Acknowledgments
 
