@@ -259,7 +259,7 @@ The following palette was used to ensure the contrast is achieved between main p
 - I have chosen to display the calendar as a daily view for screens smaller than 768px in order to display full tutorial title without it being cut off by the Full Calendar configurations. 
 - The screens over 768px display a montly view. If the tutorial title is longer, it expands upon hovering over it. 
 
-![calendar]()
+    ![calendar]()
 
 **Tutorial slot booking page**
 - Once inside each tutorial slot, the user is given reinforcing information about the tutorial and a "Book tutorial" button.
@@ -512,6 +512,26 @@ To deploy to the Heroku website, follow the steps below:
 
     ![Calendar view](documentation/images/error_images/calendar-view.png)
     ![Calendar view updated](documentation/images/error_images/fixed-calendar-view.png)
+</details>
+
+- To make the tutorial titles become visible in the calendar month view, I used Bootstrap tooltip plugin and Full Calendar's code to implement the functionality. The below code is taken from [Codepen](https://codepen.io/pen?&editors=001)
+    ```
+    eventDidMount: function(info) {
+      var tooltip = new Bootstrap.Tooltip(info.el, {
+        title: info.event.extendedProps.description,
+        placement: 'top',
+        trigger: 'hover',
+        container: 'body'
+      });
+    },
+    ```
+    - I found the following resources useful and informative:
+    <details>
+    <summary>Tooltip resources</summary>
+
+    - [Full Calendar event display](https://fullcalendar.io/docs/event-display)
+    - [Full Calendar css customization](https://fullcalendar.io/docs/css-customization)
+    - [Bootstrap tooltips](https://getbootstrap.com/docs/5.0/components/tooltips/)
 </details>
 
 ### General resources:
