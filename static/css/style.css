@@ -135,7 +135,7 @@ nav.navbar .navbar-nav .nav-link,
 }
 
 .index-image {
-  background: linear-gradient(180deg, #64a19d30, #64a19d30), url(../images/white-hoop.webp) no-repeat center;
+  background: linear-gradient(180deg, #daeae9b8, #daeae9b8), url(../images/white-hoop.webp) no-repeat center;
   background-size: cover;
   width: 100%;
 }
