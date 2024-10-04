@@ -5,9 +5,9 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<div class="d-flex container-fluid align-items-center index-image p-2">
+<div class="d-flex container-fluid content-container align-items-center index-image py-5">
     <div class="d-flex container justify-content-center">
-        <div class="card index-card shadow">
+        <div class="card index-card shadow bg-light">
             <div class="card-body text-center">
                 <h1 class="mx-auto my-0 card-logo">{% trans "Sign Out" %}</h1>
                 <p class="text-dark-50 mx-auto mt-5 mb-5">{% trans 'Are you sure you want to sign out?' %}</p>
@@ -17,7 +17,7 @@
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    <button class="btn btn-signup btn-primary" type="submit">{% trans 'Sign Out' %}</button>
+                    <button class="btn btn-signup custom-btn" type="submit">{% trans 'Sign Out' %}</button>
                 </form>
             </div>
         </div>
