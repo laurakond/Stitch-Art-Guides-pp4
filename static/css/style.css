@@ -45,6 +45,34 @@ main {
   background-color: var(--background-color);
 }
 
+/* Django Messages styles */
+.alert {
+  border-radius: 0.25rem;
+  width: auto;
+  max-width: 90vw;
+  height: auto;
+}
+
+.alert-success,
+.alert-error {
+  margin-top: 72px;
+}
+
+.alert-success {
+  background-color: var(--gradient-color);
+}
+
+.alert-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Container styles */
+.content-container {
+  margin-top: 56px;
+}
+
 /* Button styles */
 .custom-btn {
   background-color: var(--main-button-color);
@@ -68,11 +96,6 @@ main {
 .custom-btn:active:focus-visible,
 :not(.custom-btn-check)+.custom-btn:active:focus-visible {
   box-shadow: 0 0 0 .25rem var(--main-button-border-color);
-}
-
-/* Container styles */
-.content-container {
-  margin-top: 56px;
 }
 
 .custom-btn-success {
