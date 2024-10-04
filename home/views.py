@@ -6,7 +6,6 @@ from tutorial.models import Booking, TutorialDate, Tutorial
 from .forms import BookingForm
 
 
-# Create your views here.
 def index(request):
     """
     Function that displays the home page.
@@ -159,25 +158,35 @@ def my_tutorials(request):
         )
 
 
-# @login_required
+@login_required
 def edit_booking(request, booking_id):
     """
     Function that edits the tutorial booking.
     """
 
-    if not request.user.is_authenticated:
-        messages.error(
+    # Fetch each booking instance for the logged in user & check if it is for
+    # that specific user
+    try:
+        booking = Booking.objects.get(pk=booking_id)
+    except Booking.DoesNotExist:
+        messages.add_message(
             request,
-            'You do not have access to this content. Please sign up or login.'
-            )
-        return redirect('account_login')
-
-    # Fetch each booking instance for the logged in user
-    booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
+            messages.ERROR,
+            "Booking does not exist."
+        )
+        return redirect('my_tutorials')
+    
+    if booking.user != request.user:
+        messages.add_message(
+            request,
+            messages.ERROR,
+            'You do not have permission to access this booking.'
+        )
+        return redirect('my_tutorials')
 
     # message filtering functionality based on booked tutorials has been
     # implemented with guidance from Sarah, Code Institute's
-    # Tutor support team (lines 152-178 & 204-212).
+    # Tutor support team.
 
     # Fetch the tutorial the user has booked
     tutorial_date = get_object_or_404(
