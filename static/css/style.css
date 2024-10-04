@@ -70,6 +70,11 @@ main {
   box-shadow: 0 0 0 .25rem var(--main-button-border-color);
 }
 
+/* Container styles */
+.content-container {
+  margin-top: 56px;
+}
+
 .custom-btn-success {
   background-color: var(--success-button-color);
   border-color: var(--success-button-color);
