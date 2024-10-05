@@ -454,14 +454,11 @@ future_tutorials = TutorialDate.objects.filter(
 - Upon testing the functionality of the colours I noticed that they are not displaying any color.
     - I solved the problem by including `alert-{{ message.tags }}` to the code. I found the solution on [Stackoverflow](https://stackoverflow.com/questions/55202684/does-bootstrap-django-error-message-has-no-red-color).
 
-### Unfixed bugs
-**Back button in the browser**
-- Upon booking the tutorial slot the user is redirected to another page with a confirmation message showing up confirming the booking has been made.
-- However,if the user clicks the backwards browser button, they are taken back to the tutorial booking page where they can click on the book button again. The functionality is in place to prevent making a repeat booking, but the page information indicating that the tutorial has been booked already only renders after the modal window is closed. 
-    -  This is to be addressed at the next development stage.
-
 **Cut off Tutorial title in the Calendar view**
-- I noticed that the tutorial title is cutting off in the Calendar view if it is over a certain lenght.
+
+**To note**: this has since been resolved and replaced with Bootstrap tooltips.
+
+- I noticed that the tutorial title was cutting off in the Calendar view if it is over a certain lenght.
     - After searching for a solution I was able to make the event title show in a second row. The code used for this was found on [Stackoverflow](https://stackoverflow.com/questions/33406697/fullcalendar-v2-event-title-cut-off-in-month-view):
     ```
     .fc-daygrid-event .fc-event-title {
@@ -473,7 +470,35 @@ future_tutorials = TutorialDate.objects.filter(
         max-height:none !important;
   }
     ```
-    - However, this makes the whole calendar view jump. This will be addressed at the next development stage.
+    - However, this makes the whole calendar view jump.
+    - To avoid the jumping of the calendar, I decided to used Bootstrap Tooltips as it was one of the options noted in the Full Calendar documentation. 
+
+**Alert error messages**
+- When testing the application, I noticed that error alerts does not have any styling to them. I found a useful [Stackoverflow thread](https://stackoverflow.com/questions/52565366/messages-error-not-formatting-correctly-but-success-does) that explained why it was not styled. 
+    - I have taken the suggested styling options from there to start with:
+    ```
+    .alert-error {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+}
+    ```
+
+### Unfixed bugs
+**Back button in the browser**
+- Upon booking the tutorial slot the user is redirected to another page with a confirmation message showing up confirming the booking has been made.
+- However,if the user clicks the backwards browser button, they are taken back to the tutorial booking page where they can click on the book button again. The functionality is in place to prevent making a repeat booking, but the page information indicating that the tutorial has been booked already only renders after the modal window is closed. 
+    -  This is to be addressed at the next development stage.
+
+**Tooltip css customisation**
+- After applying the tooltips for displaying a full tutorial title in the calendar view, I could not find a way how to target the tooltips in order to apply cutom styles.
+    - I consulted multipple resources(noted in the general resources section in the README.md), but could not resolve it at this development stage. 
+    - This will be addressed at the next development stage.
+
+**Past events in Calendar day view**
+- When customising past and future events, I could not find a way how to target past events font so that they would appear greyed out. The full month view past events are displaying as expected.
+    - This will be addressed at the next development stage.
+
 
 [Return to Table of Contents](#contents)
 
