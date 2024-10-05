@@ -91,15 +91,13 @@
                     <div class="card h-100 shadow">
                         <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
                         <div class="card-body">
-                            <h2 class="card-title"></h2>
-                            <p class="card-text">You have no upcoming tutorials</p>
+                            <h2 class="card-title center-card-title">You have no upcoming tutorials.</h2>
                         </div>
                         <div class="card-footer border-top-0 bg-transparent no-tutorials-spacing">
-                            <a href="{% url 'tutorial_list' %}" class="btn btn-primary my-tutorial-button" aria-label="Discover tutorial">
+                            <a href="{% url 'tutorial_list' %}" class="btn custom-btn my-tutorial-button" aria-label="Discover tutorial">
                                 Discover tutorials
                             </a>
-                            
-                            <a href="{% url 'book_a_tutorial' %}" class="btn btn-primary" aria-label="Book tutorial">
+                            <a href="{% url 'book_a_tutorial' %}" class="btn custom-btn" aria-label="Book tutorial">
                                 Book tutorial
                             </a>
                         </div>
@@ -154,8 +152,7 @@
                     <div class="card h-100 shadow">
                         <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
                         <div class="card-body">
-                            <h2 class="card-title"></h2>
-                            <p class="card-text">You have no past tutorials</p>
+                            <h2 class="card-title">You have no past tutorials</h2>
                         </div>
                     </div>
                 </div>
