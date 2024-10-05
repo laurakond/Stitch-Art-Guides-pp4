@@ -189,6 +189,11 @@ nav.navbar .navbar-nav .nav-link,
 
 /* End of Header */
 
+/* Account & index pages */
+.signup-card-body {
+  padding: 2rem;
+}
+
 /* Main */
 /* Index page */
 .card-logo {
