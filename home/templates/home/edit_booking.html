@@ -17,15 +17,14 @@
     <div class="container bg-light rounded shadow mb-5 p-3 form-width border">
         <h2 class="text-center mb-4">{{ booking.tutorial_date.tutorial.title }}</h2>
         {% if not available_tutorials and not other_tutorials %}
-        <p class="text-center">No available dates for all tutorials. Come back later to check.</p>
+        <p class="text-center">There are no tutorial sessions available. Come back later to check.</p>
         {% elif not available_tutorials %}
-        <p class="text-center">No other available dates for {{ booking.tutorial_date.tutorial.title }} tutorial. Feel
-            free to
-            choose another though!</p>
+        <p class="text-center">There are no other dates available for this tutorial. Feel
+            free to choose another though!</p>
         {% elif available_tutorials|length > 0 and not other_tutorials %}
         <p class="text-center">Choose another date for your tutorial.</p>
         {% else %}
-        <p class="text-center">Pick another date or choose a different tutorial.
+        <p class="text-center">Pick another date for your tutorial or choose a different tutorial.
         </p>
         {% endif %}
 
