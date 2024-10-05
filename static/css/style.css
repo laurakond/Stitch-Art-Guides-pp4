@@ -368,6 +368,10 @@ footer.footer .social-link {
     align-items: center;
     gap: 0.5rem;
   }
+
+  .center-card-title {
+    text-align: center;
+  }
 }
 
 @media (min-width: 768px) {
