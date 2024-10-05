@@ -30,6 +30,13 @@
 
         <!-- Form -->
         <div class="container">
+            {% if not available_tutorials and not other_tutorials %}
+                <div class="text-center">
+                    <a href="{% url 'my_tutorials' %}" class="btn custom-btn" aria-label="Book tutorial">
+                        Return to My Tutorials
+                    </a>
+                </div>
+                {% else %}
             <form method="POST" class="p-2 form">
                 {% csrf_token %}
                 {{ tutorial_form|crispy }}
@@ -37,6 +44,7 @@
                     <button type="submit" class="btn custom-btn-success mt-2">Update booking</button>
                 </div>
             </form>
+            {% endif %}
         </div>
         {% endif %}
     </div>
