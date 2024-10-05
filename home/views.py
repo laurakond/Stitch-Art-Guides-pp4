@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from django.contrib import messages
 from datetime import datetime
 from tutorial.models import Booking, TutorialDate, Tutorial
@@ -158,7 +159,6 @@ def my_tutorials(request):
         )
 
 
-@login_required
 def edit_booking(request, booking_id):
     """
     Function that edits the tutorial booking.
@@ -166,6 +166,14 @@ def edit_booking(request, booking_id):
 
     # Fetch each booking instance for the logged in user & check if it is for
     # that specific user
+    
+    if not request.user.is_authenticated:
+        messages.error(
+            request,
+            'You do not have access to this content. Please sign up or login.'
+            )
+        return redirect(f"{reverse('account_login')}?next={request.path}")
+    
     try:
         booking = Booking.objects.get(pk=booking_id)
     except Booking.DoesNotExist:
