@@ -31,9 +31,9 @@ def book_a_tutorial(request):
     if not request.user.is_authenticated:
         messages.error(
             request,
-            'You do not have access to this content.'
+            'You do not have access to this content. Please sign up or login.'
         )
-        return redirect('account_login')
+        return redirect(f"{reverse('account_login')}?next={request.path}")
 
     tutorials = TutorialDate.objects.all()
     events = []
@@ -56,7 +56,6 @@ def book_a_tutorial(request):
     )
 
 
-# @login_required
 def tutorial_session(request, slug, pk):
     """
     Function that captures the Tutorial Date primary key
@@ -69,9 +68,9 @@ def tutorial_session(request, slug, pk):
     if not request.user.is_authenticated:
         messages.error(
             request,
-            'Please log in to access the details.'
+            'You do not have access to this content. Please sign up or login.'
             )
-        return redirect('account_login')
+        return redirect(f"{reverse('account_login')}?next={request.path}")
 
     # verify if the event date is the same as the current date
     current_datetime = datetime.now()
@@ -118,7 +117,6 @@ def tutorial_session(request, slug, pk):
         )
 
 
-# @login_required
 def my_tutorials(request):
     """
     Function that displays past and future tutorial bookings
@@ -129,7 +127,7 @@ def my_tutorials(request):
             request,
             'You do not have access to this content. Please sign up or login.'
             )
-        return redirect('account_login')
+        return redirect(f"{reverse('account_login')}?next={request.path}")
 
     bookings = Booking.objects.filter(user=request.user.id)
     current_datetime = datetime.now()
@@ -164,9 +162,7 @@ def edit_booking(request, booking_id):
     Function that edits the tutorial booking.
     """
 
-    # Fetch each booking instance for the logged in user & check if it is for
-    # that specific user
-    
+    # Check if the user is logged in, and if not, redirect to the login page.   
     if not request.user.is_authenticated:
         messages.error(
             request,
@@ -174,6 +170,8 @@ def edit_booking(request, booking_id):
             )
         return redirect(f"{reverse('account_login')}?next={request.path}")
     
+    # Fetch if each booking instance exists & if it doesn't return an alert
+    # message
     try:
         booking = Booking.objects.get(pk=booking_id)
     except Booking.DoesNotExist:
@@ -184,6 +182,8 @@ def edit_booking(request, booking_id):
         )
         return redirect('my_tutorials')
     
+    # Check if the user accessing the information is the correct user and return
+    # approapriate message if not
     if booking.user != request.user:
         messages.add_message(
             request,
