@@ -160,6 +160,7 @@ The following palette was used to ensure the contrast is achieved between main p
 - rgba(235, 148, 134, .5) - used for the main button hover border and future events background color in the calendar
 - rgba(78, 126, 124, .5) - used for the success button hover border and calendar styling
 - #daeae9b8 - used for adding gradient over the hero image
+- bg-light Bootstrap class - used for applying background color to Bootstrap cards and other containers where needed to balance out the colors.
 
 
 ### Font styles
@@ -443,17 +444,21 @@ The game application went through extensive testing during the development and d
 ## Deployment
 This website was deployed using GitHub pages and Heroku website. To deploy the project, follow the steps below:
 
-### Github
+### Creating a repository on Github
+
 1. Login to GitHub and navigate to the main repository page.
-2.  Click on the chosen repository [repository-name]().
+2. Create a new repository 
+
+**Publish the website on Github**
+1. Login to GitHub and navigate to the main repository page.
+2.  Click on the chosen repository,for example [Stitch Art Guides](https://github.com/laurakond/Stitch-Art-Guides-pp4).
 3. Once inside the repository, click on the "Settings" tab above the repository title displayed around the middle of the page.
 4. Select "Pages" tab on the left side navigation menu.
-5. In the "Source" section (middle of the screen), select "main" or "master" branch, then "root" folder and click "save" button.
+5. Select "main" or "master" branch under "Build and Deployment", then "root" folder and click "save" button.
 6. The GitHub page site will be deployed.
+    - It might take a few minutes to generate the "live" website link.
 
-It might take a few minutes to generate the "live" website link.
-
-The live link to the website [Stitch Art Guides](https://stitch-art-guides-pp4-5a679feed1e1.herokuapp.com/).
+The live link to the website can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokuapp.com/).
 
 #### How to Fork
 To fork the repository in Github:
