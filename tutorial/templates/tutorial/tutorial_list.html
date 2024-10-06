@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-<!-- tutorial list starts here -->
 <!-- The code for displaying cards has been appropriated from Prideful
 Programmers project which featured at the Code Institute's July Hackathon
 in 2024 -->
@@ -16,7 +15,6 @@ in 2024 -->
             </div>
         </div>
     </div>
-
     <div class="tab-content">
         <div class="container mt-3 p-2">
             <div class="row gx-4 gx-lg-5">
@@ -24,16 +22,25 @@ in 2024 -->
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="card h-100 shadow bg-light">
                         {% if "placeholder" in tutorial.image.url %}
-                        <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
+                            <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}"
+                            alt="placeholder image">
                         {% else %}
-                        <img class="card-img-top tutorial-image" src="{{ tutorial.image.url }}" alt="{{ tutorial.title }}">
+                            <img class="card-img-top tutorial-image" src="{{ tutorial.image.url }}"
+                            alt="{{ tutorial.title }}">
                         {% endif %}
                         <div class="card-body">
-                            <h2 class="card-title">{{ tutorial.title }}</h2>
-                            <p class="card-text">{{ tutorial.excerpt }}</p>
+                            <h2 class="card-title">
+                                {{ tutorial.title }}
+                            </h2>
+                            <p class="card-text">
+                                {{ tutorial.excerpt }}
+                            </p>
                         </div>
                         <div class="card-footer border-top-0 bg-transparent">
-                            <a href="{% url 'tutorial_detail' tutorial.slug %}" class="btn custom-btn" aria-label="View tutorial">Read more</a>
+                            <a href="{% url 'tutorial_detail' tutorial.slug %}" class="btn custom-btn"
+                                aria-label="View tutorial">
+                                Read more
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -42,5 +49,4 @@ in 2024 -->
         </div>
     </div>
 </div>
-<!-- tutorial list ends here -->
 {% endblock %}
