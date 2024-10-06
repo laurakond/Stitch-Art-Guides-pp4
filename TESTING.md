@@ -124,8 +124,8 @@ There are several user inputs throughout the application, therefore, validating 
 ![add image here]()
 
 **url path <slug:slug>/<int:id> not rendering**
-<details>
-<summary></summary>
+    <details>
+    <summary></summary>
 
 ![username-validation]()
 </details>
@@ -664,6 +664,27 @@ Website performance, accessibility, best practices and SEO were tested using Lig
 [Return to Table of Contents](#contents)
 
 ### User stories testing
+| User Story                                                                                                                | Requirement met | Image                | Comments                                                       |
+| ------------------------------------------------------------------------------------------------------------------------- | --------------- | -------------------- | -------------------------------------------------------------- |
+| As a first time user I can create an account so that I can sign in and access members features.                           | Yes             | ![Signup page](documentation/images/features/signup-page.png)     |                                                                |
+| As a site user I can click on the About page so that I can read more about the website’s owner.                           | Yes             | ![About page](documentation/images/features/about-page.jpg)      |                                                                |
+| As a site user I can see the header so that I can access different pages from one place.                                  | Yes             | ![Header](documentation/images/features/navigation.jpg)          |                                                                |
+| As a site user I can see the footer so that I can access the social media and contact information.                        | Yes             | ![Footer](documentation/images/features/footer.jpg)          |                                                                |
+| As a site user I can see a list of tutorials so that I can choose which one is suitable for me.                           | Yes             | ![Tutorial list](documentation/images/features/tutorial-list-page.jpg)   |                                                                |
+| As a site user I can login to & logout of the website so that I can access and manage my content.                         | Yes             | ![Login](documentation/images/features/login-page.jpg)           |                                                                |
+| As a site user I can click on each tutorial listing so that I can read more information about the tutorial.               | Yes             | ![Tutorial detail](documentation/images/features/tutorial-detail-page2.png)  |                                                                |
+| As a site user I can book a tutorial so that I can attend it.                                                             | Yes             | ![Calendar](documentation/images/features/book-tutorial-page.png)        |                                                                |
+| As a site user I can go to Tutorials page so that I can manage them.                                                      | Yes             | ![My tutorials](documentation/images/features/my-tutorials-page.png)    |                                                                |
+| As a site user I can edit my booking so that I can adjust the details if I change my mind.                                | Yes             | ![Edit booking](documentation/images/features/edit-booking-page.png)    |                                                                |
+| As a site user I can submit a request for a customised tutorial so that I can have a lesson based on my individual needs. | Future feature  |                      | This feature will be looked into at the next development stage |
+| As a site user I can comment on the tutorial so that I can share my feedback.                                             | Future feature  |                      | This feature will be looked into at the next development stage |
+| As a site user I can can upload my projects so that I can share my progress.                                              | Future feature  |                      | This feature will be looked into at the next development stage |
+| As a site user I can cancel my booking so that I can adjust the details if I change my mind.                              | Future feature  |                      | This feature will be looked into at the next development stage |
+|                                                                                                                           |                 |                      |                                                                |
+| As a site admin I can access the admin site so that I can manage the bookings and edit tutorial information.              | Yes               | ![Admin site](documentation/images/features/admin-site.png)                     |                                                                |
+| As a site admin I can access the front end admin site so that I can access content available for site admin only.         | Future feature  |                      | This feature has been pushed to the next development stage     |
+| As a site admin I can create new Tutorials and tutorial dates & times so that I can offer the user different content.     | Future feature  |                      | This feature has been pushed to the next development stage     |
+| As a site admin I can delete Tutorials, tutorial dates/times and bookings so that I can update the content.               | Future feature  |                      | This feature has been pushed to the next development stage     |
 
 [Return to Table of Contents](#contents)
 
@@ -686,7 +707,76 @@ Website performance, accessibility, best practices and SEO were tested using Lig
 
 ### Manual testing
 After the development stage of the application, I went through each feature ensuring that the website is working as intended.
-
+| Page                                               | User Actions                                         | Expected Results                                                                      | Y/N | Comments |
+| -------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------- | --- | -------- |
+| General Navigation bar                             |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on the Logo "Stitch Art Guides"                | Redirects to the home page                                                            | Y   |          |
+| 2                                                  | Click on the Home button                             | Redirects to the home page                                                            | Y   |          |
+| 3                                                  | Click on the About button                            | Redirects to About page                                                               | Y   |          |
+| 4                                                  | Click on the Tutorial List button                    | Redirects to Tutorial List page                                                       | Y   |          |
+| 5                                                  | Click on the Sign Up button                          | Redirects to Sign Up page                                                             | Y   |          |
+| 6                                                  | Click on the Sign In button                          | Redirects to Sign In page                                                             | Y   |          |
+| Sign Up page                                       |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on the Sign In button                          | Redirects to Sign In page                                                             | Y   |          |
+| 2                                                  | Enter valid username                                 | Will only accept one same username                                                    | Y   |          |
+| 3                                                  | Enter valid email (optional)                         | Field is allowed to be left blank                                                     | Y   |          |
+| 4                                                  | Enter valid password 2 times                         | Field will only accept password format                                                | Y   |          |
+| 5                                                  | Click on Sign Up button                              | Redirects to the home page and a login confirmation message appears                   | Y   |          |
+| Sign In                                             |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on Sign In button in the Navigation bar        | Redirects to Sign In page                                                             | Y   |          |
+| 2                                                  | Click on the Sign Up button in the form              | Redirects to Sign Up page                                                             | Y   |          |
+| 3                                                  | Enter valid username                                 | Accepts existing username                                                             | Y   |          |
+| 4                                                  | Enter valid password                                 | Field only accepts password format                                                    | Y   |          |
+| 5                                                  | Click on Log In button                               | Redirects user to Home page and a login confirmation message appears                  | Y   |          |
+| 6                                                  | Click Sign Out button                                | Redirects user to Sign Out page                                                       | Y   |          |
+| 7                                                  | Click on Sign Out button                             | Redirects to the Home page and a logout confirmation message appears                  | Y   |          |
+| Registered user's Navigation bar                   |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on the Logo "Stitch Art Guides"                | Redirects to the home page                                                            | Y   |          |
+| 2                                                  | Click on the Home button                             | Redirects to the home page                                                            | Y   |          |
+| 3                                                  | Click on the About button                            | Redirects to About page                                                               | Y   |          |
+| 4                                                  | Click on the Tutorial List button                    | Redirects to Tutorial List page                                                       | Y   |          |
+| 5                                                  | Click on Book Tutorial  button                       | Redirects to Tutorial calendar view page                                              | Y   |          |
+| 6                                                  | Click on the My Tutorials button                     | Redirects to My Tutorials page                                                        | Y   |          |
+| 7                                                  | Hi "username"! Message is seen in the navigation bar | Displays the user's name and indicates that the user is logged in                     | Y   |          |
+| 8                                                  | Click on the Sign Out button                         | Redirects to Sign Out page                                                            | Y   |          |
+| Footer                                             |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on the LinkedIn icon in the footer             | Redirects to the developer's LinkedIn page                                            | Y   |          |
+| 2                                                  | Click on the Intagram icon in the footer             | Redirects to the developer's Instagram page                                           | Y   |          |
+| 3                                                  | Click on the Github icon in the footer               | Redirects to the developer's Github page                                              | Y   |          |
+| Home Page                                          |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on the "Discover Tutorials" button             | Redirects to the Tutorial List page and the page is highlighted in the navigation bar | Y   |          |
+| Tutorial List Page                                 |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on any Tutorial card displayed                 | Redirects to the Tutorial detail page                                                 | Y   |          |
+| Tutorial Detail Page                               |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on the Book Tutorial button                    | Redirects to the Book Tutorial page and the page is highlighted in the navigation bar | Y   |          |
+| If the user is not logged in                       |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on the Register/Login button                   | Redirects to the Sign Up page                                                         | Y   |          |
+| Book Tutorial Page                                 |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on a greyed out event                          | Prompts a Tutorial Expired modal.                                                     | Y   |          |
+| 2                                                  | Click on the Close button                            | Closes the modal                                                                      | Y   |          |
+| 3                                                  | Click on a pink event                                | (if booked) prompts a Tutorial Booking is not available modal.                        | Y   |          |
+| 4                                                  | Click on the Close button                            | Closes the modal                                                                      | Y   |          |
+| 5                                                  | Click on a pink event                                | (if not booked) redirects to Tutorial session page                                    | Y   |          |
+| Tutorial session page                              |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on the Book Tutorial button                    | Prompts the booking confirmation modal                                                  | Y   |          |
+| 2                                                  | Click on the Close button                            | Closes the modal                                                                      | Y   |          |
+| 3                                                  | Click on the Book Tutorial button                    | Redirects to My Tutorials page and displays a successful booking message              | Y   |          |
+| 4                                                  | Click on the X button within the message             | Closes the alert message                                                              | Y   |          |
+| My Tutorials page                                  |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on Cancel button                               | Prompts the cancel the booking modal                                                    | Y   |          |
+| 2                                                  | Click on the Close button                            | Closes the modal                                                                      | Y   |          |
+| 3                                                  | Click on the Cancel Booking button                   | Redirects to My Tutorials page and displays a successful booking cancelation message  | Y   |          |
+| 4                                                  | Click on the X button within the message             | Closes the alert message                                                              | Y   |          |
+| 5                                                  | Click on the Edit button                             | Redirects to Edit Booking page                                                        | Y   |          |
+| No booked tutorials in My Tutorials page           |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on Discover Tutorials button                   | Redirects to Tutorial List page                                                       | Y   |          |
+| 2                                                  | Click on Book Tutorial button                        | Redirects to Book Tutorial page                                                       | Y   |          |
+| Edit booking page                                  |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on drop down arrow                             | Displays other available bookings                                                     | Y   |          |
+| 2                                                  | Select one option from drop down list                | Dsplays selected booking in the field form                                            | Y   |          |
+| 3                                                  | Click Update booking button                          | Redirects to My Tutorials page and displays a successful booking message              | Y   |          |
+| If no tutorials available in the Edit booking page |                                                      |                                                                                       |     |          |
+| 1                                                  | Click on Return to My Tutorials button               | Redirects to My Tutorials page                                                        | Y   |          |
 
 
 [Return to Table of Contents](#contents)
