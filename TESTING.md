@@ -23,43 +23,58 @@ By Laura Kondrataite
 ## Testing
 
 ### W3C Validator Testing
-All files were put through W3C Markup Validation Service & W3C CSS Valisation Service. Images as per below:
-- **W3C Markup**:
-    <details>
-    <summary></summary>
+All files were put through the official [W3C Markup Validation](https://validator.w3.org/) & [W3C Css Validation](https://jigsaw.w3.org/css-validator/) services. The Initial check has returned a few errors and warnings that were corrected and taken note of. Images of errors enclosed below.
 
-    ![username-validation]()
-    </details>
+<details>
+    <summary>W3C Markup errors</summary>
 
-    <details>
-    <summary></summary>
+- Book a tutorial calendar template:
+    - a warning of lacking headings for the section element. I replaced the section elements to the div elements.
+    - an error of duplicate IDs in the modals.
+    - [Book tutorial validation errors](documentation/validation/errors/book-tutorial-errors.jpg)
+- My Tutorials template: 
+    - a warning about an empty h2 element.
+    - [My tutorials validation errors](documentation/validation/errors/my-tutorials-error.jpg)
+- Edit booking template:
+    - Bad value for action attribute in the form element.
+    - [Edit booking validation errors](documentation/validation/errors/edit-booking-error.jpg)
+- Signup template:
+    - Errors using the {{form_asp}} format. I fixed it by applying crispy forms tag to the page.
+    - [Signup validation errors](documentation/validation/errors/signup-validation-errors.jpg)
+</details>
 
-    ![username-validation]()
-    </details>
+**W3C Markup**:
+- [Index page validation](documentation/validation/index-validation.pdf)
+- [About page validation](documentation/images/validation_images/about-validation.jpg)
+- [Tutorial list validation](documentation/validation/tutorial-list-validation.pdf)
+- [Tutorial detail validation](documentation/validation/tutorial-detail-validation.pdf)
+- [Tutorial session validation](documentation/validation/tutorial-session-validation.pdf)
+- [Book tutorial validation](documentation/validation/book-tutorial-validation.pdf)
+- [My tutorials validation](documentation/validation/my-tutorials-validation.pdf)
+- [Edit booking validation](documentation/validation/edit-booking-validation.pdf)
+- [Login validation](documentation/validation/login-validation.pdf)
+- [Logout validation](documentation/validation/logout-validation.pdf)
+- [Signup validation](documentation/validation/signup-validation.pdf)
 
-    <details>
-    <summary></summary>
-
-    ![username-validation]()
-    </details>
-
-    <details>
-    <summary></summary>
-
-    ![username-validation]()
-    </details>
-
-- **W3C CSS**:
-    <details>
-    <summary></summary>
-
-    ![username-validation]()
-    </details>
+**W3C CSS**:
+- CSS validation returned with several warnings regarding buttons' styling. In order to apply the color palette throughout the project, I had to override Bootstrap's default colors for hover/active button features. 
+- [CSS validation](documentation/validation/css-validation.pdf)
+- [CSS validation warnings](documentation/validation/errors/css-warnings.jpg)
 
 ### JS Hint Testing
+- No errors were found when passing through the official [JSHint](https://www.jshint.com/) validator. 
+- [Javascript validation](documentation/validation/js-validation.pdf)
 
 ### PEP8 Linter validation
-The code was run past CI Python Linter program throughout the development stage of the application and once the code was finalised. The final results for all python files returned without any errors as per images below:
+- No errors were found when passing through the official [CI Python Linter](https://pep8ci.herokuapp.com/#) validation tool. Screenshots of the tests included below.
+- [Home/forms validation](documentation/validation/home-forms.pdf)
+- [Home/urls validation](documentation/validation/home-urls.pdf)
+- [Home/views validation](documentation/validation/home-views.pdf)
+- [Tutorial/admin validation](documentation/validation/tutorial-admin.pdf)
+- [Tutorial/apps validation](documentation/validation/tutorial-apps.pdf)
+- [Tutorial/models validation](documentation/validation/tutorial-models.pdf)
+- [Tutorial/urls validation](documentation/validation/tutorial-urls.pdf)
+- [Tutorial/views validation](documentation/validation/tutorial-views.pdf)
 
 [Return to Table of Contents](#contents)
 
@@ -278,7 +293,6 @@ The code that was throwing an error was this:
 
 **Error messages for unauthorised access not displaying**
 - When testing defensive programming, some of the error messages were not showing up where expected and were only redirecting to an appropriate page. 
-
     - I resolved this by removing @login_required decorator and applying user.is_authenticated to allow the messages appear where required.
 - Once that was resolved, I noticed that some of the error messages were appearing where they were not meant to. 
     - To solve this, I moved the authentication code up within the view functions in order to ensure that the check is carried out first thing when the view loads.
@@ -453,6 +467,7 @@ future_tutorials = TutorialDate.objects.filter(
 **Django alert messages rendering without colour**
 - Upon testing the functionality of the colours I noticed that they are not displaying any color.
     - I solved the problem by including `alert-{{ message.tags }}` to the code. I found the solution on [Stackoverflow](https://stackoverflow.com/questions/55202684/does-bootstrap-django-error-message-has-no-red-color).
+- The above mentioned approach was reversed and changed with adding message configurations to the settings.py file. The appropriate style rules have also been removed as they became redundant. 
 
 **Cut off Tutorial title in the Calendar view**
 
