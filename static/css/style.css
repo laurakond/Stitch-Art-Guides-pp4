@@ -130,7 +130,6 @@ main {
 }
 
 /* Shared image styles */
-
 .profile-image,
 .tutorial-image {
   width: 50%;
@@ -166,8 +165,7 @@ main {
   border: 1px solid var(--navigation);
 }
 
-/* REMEMBER TO CHECK THE BACKGROUND COLOUR FOR THE DROP DOWN MENU IN THE SMALLER THAN 992PX VIEW */
-/* GRAYSCALE TEMPLATE's css code */
+/* GRAYSCALE Template's footer css code */
 .navbar {
   position: fixed;
   width: 100%;
