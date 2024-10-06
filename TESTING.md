@@ -495,9 +495,7 @@ future_tutorials = TutorialDate.objects.filter(
     .alert-error {
         color: #721c24;
         background-color: #f8d7da;
-        border-color: #f5c6cb;
-}
-    ```
+        border-color: #f5c6cb;}```
 
 ### Unfixed bugs
 **Back button in the browser**
@@ -518,6 +516,150 @@ future_tutorials = TutorialDate.objects.filter(
 [Return to Table of Contents](#contents)
 
 ### Lighthouse testing
+Website performance, accessibility, best practices and SEO were tested using Lighthouse web performance testing tool. The tests were carried out using Google Chrome.
+
+<details>
+<summary>Index page</summary>
+
+**Desktop**
+
+![Index desktop report](documentation/validation/lighthouse/index-desktop-lighthouse.jpeg)
+
+**Mobile**
+
+![Index mobile report](documentation/validation/lighthouse/index-mobile-lighthouse.jpeg)
+
+</details>
+
+<details>
+<summary>About page</summary>
+
+**Desktop**
+
+![About desktop report](documentation/validation/lighthouse/about-desktop-lighthouse.jpg)
+
+**Mobile**
+
+![About mobile report](documentation/validation/lighthouse/about-mobile-lighthouse.jpg)
+
+</details>
+
+<details>
+<summary>Tutorial list page</summary>
+
+**Desktop**
+
+![Tutorial list desktop report](documentation/validation/lighthouse/tutorial-list-desktop-lighthouse.jpg)
+
+**Mobile**
+
+![Tutorial list mobile report](documentation/validation/lighthouse/tutorial-list-mobile-lighthouse.jpg)
+
+</details>
+
+<details>
+<summary>Tutorial detail page</summary>
+
+**Desktop**
+
+![Tutorial detail desktop report](documentation/validation/lighthouse/tutorial-detail-desktop-lighthouse.jpg)
+
+**Mobile**
+
+![Tutorial detail mobile report](documentation/validation/lighthouse/tutorial-detail-mobile-lighthouse.jpg)
+
+</details>
+
+<details>
+<summary>Book Tutorial page</summary>
+
+**Desktop**
+
+![Book Tutorial desktop report](documentation/validation/lighthouse/calendar-desktop-lighthouse.jpg)
+
+**Mobile**
+
+![Book Tutorial mobile report](documentation/validation/lighthouse/calendar-mobile-lighthouse.jpg)
+
+</details>
+
+<details>
+<summary>Tutorial session page</summary>
+
+**Desktop**
+
+![Tutorial session desktop report](documentation/validation/lighthouse/tutorial-session-desktop-lighthouse.jpg)
+
+**Mobile**
+
+![Tutorial session mobile report](documentation/validation/lighthouse/tutorial-session-mobile-lighthouse.jpg)
+
+</details>
+
+<details>
+<summary>My Tutorials page</summary>
+
+**Desktop**
+
+![My Tutorials desktop report](documentation/validation/lighthouse/my-tutorials-desktop-lighthouse.jpg)
+
+**Mobile**
+
+![My Tutorials mobile report](documentation/validation/lighthouse/my-tutorials-mobile-lighthouse.jpg)
+
+</details>
+
+<details>
+<summary>Edit Tutorial page</summary>
+
+**Desktop**
+
+![Edit Tutorial desktop report](documentation/validation/lighthouse/edit-booking-desktop-lighthouse.jpg)
+
+**Mobile**
+
+![Edit Tutorial mobile report](documentation/validation/lighthouse/edit-booking-mobile-lighthouse.jpg)
+
+</details>
+
+<details>
+<summary>Sign up page</summary>
+
+**Desktop**
+
+![Sign up desktop report](documentation/validation/lighthouse/signup-desktop-lighthouse.jpeg)
+
+**Mobile**
+
+![Sign up mobile report](documentation/validation/lighthouse/signup-mobile-lighthouse.jpeg)
+
+</details>
+
+<details>
+<summary>Sign in page</summary>
+
+**Desktop**
+
+![Sign in desktop report](documentation/validation/lighthouse/signin-desktop-lighthouse.jpeg)
+
+**Mobile**
+
+![Sign in mobile report](documentation/validation/lighthouse/signin-mobile-lighthouse.jpeg)
+
+</details>
+
+<details>
+<summary>Sign out page</summary>
+
+**Desktop**
+
+![Sign out desktop report](documentation/validation/lighthouse/logout-desktop-lighthouse.jpeg)
+
+**Mobile**
+
+![Sign out mobile report](documentation/validation/lighthouse/logout-mobile-lighthouse.jpeg)
+
+</details>
 
 [Return to Table of Contents](#contents)
 
