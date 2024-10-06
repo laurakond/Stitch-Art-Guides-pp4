@@ -1,6 +1,7 @@
+from pathlib import Path
 import os
 import sys
-from pathlib import Path
+from django.contrib.messages import constants as messages
 import dj_database_url
 
 if os.path.isfile('env.py'):
@@ -9,9 +10,6 @@ if os.path.isfile('env.py'):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # Secret key
 SECRET_KEY = os.environ.get("SECRET_KEY")
@@ -90,7 +88,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'stitchartguides.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -147,18 +144,21 @@ USE_I18N = True
 
 USE_TZ = True
 
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'alert-success',
+    messages.ERROR: 'alert-danger',
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
 if "DEVELOPMENT" in os.environ:
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
