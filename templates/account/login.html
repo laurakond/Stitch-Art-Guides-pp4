@@ -11,24 +11,31 @@
     <div class="d-flex container justify-content-center">
         <div class="card index-card shadow bg-light">
             <div class="card-body text-center signup-card-body">
-                <h1 class="mx-auto my-0 card-logo">{% trans "Sign In" %}</h1>
-                <p class="text-dark-50 mx-auto mt-5 mb-5">{% blocktrans %}Welcome back to the Stitch Art Guides. Please
-                    log in to book a tutorial. <br>If you have not created an account yet, then <a class="link btn custom-btn"
-                        href="{{ signup_url }}" aria-label="Sign up">Sign up</a>
-                    first.{% endblocktrans %}</p>
-
+                <h1 class="mx-auto my-0 card-logo">
+                    {% trans "Sign In" %}
+                </h1>
+                <p class="text-dark-50 mx-auto mt-5 mb-5">
+                    {% blocktrans %}Welcome back to the Stitch Art Guides. Please
+                    log in to book a tutorial.
+                    <br>
+                    If you have not created an account yet, then <a class="link btn custom-btn" href="{{ signup_url }}"
+                        aria-label="Sign up">
+                        Sign up
+                    </a>
+                    first.{% endblocktrans %}
+                </p>
                 <form class="login" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
                     {{ form | crispy }}
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    <button class="btn btn-signup custom-btn" type="submit">{% trans "Sign In" %}</button>
+                    <button class="btn btn-signup custom-btn" type="submit">
+                        {% trans "Sign In" %}
+                    </button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-
 {% endblock %}
