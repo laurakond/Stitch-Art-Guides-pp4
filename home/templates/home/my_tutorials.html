@@ -31,7 +31,7 @@
                             alt="placeholder image">
                         {% else %}
                             <img class="card-img-top tutorial-image" src="{{ session.tutorial_date.tutorial.image.url }}"
-                            alt="{{ tutorial.alt_text }}">
+                            alt="{{ session.tutorial_date.tutorial.alt_text }}">
                         {% endif %}
                         <div class="card-body">
                             <h2 class="card-title">
@@ -141,7 +141,7 @@
                             alt="placeholder image">
                         {% else %}
                             <img class="card-img-top tutorial-image" src="{{ session.tutorial_date.tutorial.image.url }}"
-                            alt="{{ tutorial.title }}">
+                            alt="{{ session.tutorial_date.tutorial.alt_text }}">
                         {% endif %}
                         <div class="card-body">
                             <h2 class="card-title">
