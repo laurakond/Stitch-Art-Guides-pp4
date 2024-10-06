@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    /* Booking modal for booking a tutorial functionality on book_a_tutorial.html */
+    /* Function that calls Book tutorial modal */
     function showBookingModal() {
         let bookingEvent = new bootstrap.Modal(document.getElementById('bookingModal'));
         bookingEvent.show();
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showBookingModal();
         });
     }
-    /* Code for Edit button functionality in booked_tutorials.html */
+    /* Function to render individual booking instance */
     const editButtons = document.getElementsByClassName("editButton");
     for (let button of editButtons) {
         button.addEventListener("click", (e) => {
@@ -21,11 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
             this.location.href = `edit_booking/${bookingId}`;
         });
     }
-    /* This part of the code was adjusted with the help of Tutor support from Code Institute.
-     Code for Delete booking Modal functionality in booked_tutorials.html. */
-    // Get all delete buttons on booked_tutorials template
+
+    /* Function to render individual delete booking instances for booked tutorials.
+    * This part of the code was adjusted with the help of Tutor support from
+    * Code Institute.
+    */
     const deleteButtons = document.getElementsByClassName("deleteButton");
-    // Iterate through all delete buttons on template
     for (let button of deleteButtons) {
         button.addEventListener("click", (e) => {
             // Get associated booking ID
@@ -40,5 +41,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
-
