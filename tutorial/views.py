@@ -4,8 +4,12 @@ from .models import Tutorial, TutorialDate
 
 
 class TutorialList(generic.ListView):
-    """
-    Class that displays all tutorials in one page.
+    """Class that displays all tutorials in one page.
+    **Context**
+    ``queryset``
+        All displayed instances of :model:`tutorial.Tutorial`
+    **Template:**
+    :template:`tutorial/tutorial_list.html`
     """
     queryset = Tutorial.objects.all()
     template_name = "tutorial/tutorial_list.html"
@@ -14,8 +18,14 @@ class TutorialList(generic.ListView):
 # the below code was appropriated from Code
 # Institute's Blog walkthrough
 def tutorial_detail(request, slug):
-    """
-    Function that displays individual tutorial's details.
+    """Function that displays individual tutorial's details.
+    **Context**
+    ``tutorial``
+        An individual tutorial of :model:`tutorial.Tutorial`
+    ``tutorial_date``
+        An individual tutorial of :model:`tutorial.TutorialDate`
+    **Template:**
+        :template:`tutorial/tutorial_detail.html`
     """
 
     queryset = Tutorial.objects.all()
@@ -27,7 +37,6 @@ def tutorial_detail(request, slug):
         "tutorial/tutorial_detail.html",
         {
             "tutorial": tutorial,
-            "coach": "Laura K",
             "tutorial_date": tutorial_date,
         },
     )

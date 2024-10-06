@@ -5,7 +5,7 @@ from cloudinary.models import CloudinaryField
 
 class Tutorial(models.Model):
     """
-    A model that provides information about tutorial
+    Stores information related to an individual Tutorial entry.
     """
     title = models.CharField(
         max_length=150,
@@ -43,7 +43,8 @@ class Tutorial(models.Model):
 
 class TutorialDate(models.Model):
     """
-    A model that sets up the time and date for the tutorials.
+    A model that sets up the time and date for each tutorial :model:
+    `tutorial.Tutorial`.
     """
     tutorial_date = models.DateField()
     start_time = models.TimeField()
@@ -60,7 +61,8 @@ class TutorialDate(models.Model):
 
 class Booking(models.Model):
     """
-    A model that manages the booking.
+    A model that manages the booking :model:`auth.User` and
+    :model:`tutorial.TutorialDate`.
     """
     tutorial_date = models.ForeignKey(TutorialDate, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
