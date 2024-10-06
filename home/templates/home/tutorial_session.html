@@ -19,7 +19,7 @@
                 {% if "placeholder" in tutorial.image.url %}
                     <img class="tutorial-detail-image" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                 {% else %}
-                    <img class="tutorial-detail-image" src="{{ event_slot.tutorial.image.url }}" alt="{{ tutorial.title }}">
+                    <img class="tutorial-detail-image" src="{{ event_slot.tutorial.image.url }}" alt="{{ event_slot.tutorial.alt_text }}">
                 {% endif %}
             </div>
             <div class="col-12 col-md-8 custom-padding">
