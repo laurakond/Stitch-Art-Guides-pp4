@@ -51,22 +51,12 @@ main {
   width: auto;
   max-width: 600px;
   height: auto;
+  margin-top: 5rem;
 }
 
 .alert-success,
 .alert-error {
   margin-top: 72px;
-}
-
-.alert-success {
-  background-color: var(--gradient-color);
-}
-
-/* alert-error style taken from Stackoverflow thread (noted in the Testing.md */
-.alert-error {
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
 }
 
 /* Container styles */
