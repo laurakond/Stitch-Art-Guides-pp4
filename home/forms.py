@@ -1,12 +1,10 @@
+from datetime import datetime
 from django import forms
 from tutorial.models import Booking, TutorialDate
-from datetime import datetime
 
 
 class BookingForm(forms.ModelForm):
-    """
-    Form to create a Booking.
-    """
+    """Form to create a Booking."""
 
     def __init__(self, *args, **kwargs):
         current_date = datetime.now()
