@@ -2,18 +2,21 @@
 {% load static %}
 
 {% block content %}
-<!-- Index.html code starts here -->
 <div class="d-flex container-fluid content-container align-items-center index-image py-5">
     <div class="d-flex container justify-content-center">
         <div class="card index-card shadow bg-light">
             <div class="card-body text-center signup-card-body">
-                <h1 class="mx-auto my-0 card-logo">Stitch Art Guides</h1>
-                <p class="text-dark-50 mx-auto mt-5 mb-5">A place where you can learn the art of cross-stitch.</p>
-                <a class="btn custom-btn" href="{% url 'tutorial_list' %}" aria-label="Discover tutorials">Discover
-                    tutorials</a>
+                <h1 class="mx-auto my-0 card-logo">
+                    Stitch Art Guides
+                </h1>
+                <p class="text-dark-50 mx-auto mt-5 mb-5">
+                    A place where you can learn the art of cross-stitch.
+                </p>
+                <a class="btn custom-btn" href="{% url 'tutorial_list' %}" aria-label="Discover tutorials">
+                    Discover tutorials
+                </a>
             </div>
         </div>
     </div>
 </div>
-<!-- Index.html code ends here -->
 {% endblock %}

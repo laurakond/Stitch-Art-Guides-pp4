@@ -27,55 +27,65 @@
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="card h-100 shadow">
                         {% if "placeholder" in tutorial.image.url %}
-                        <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
+                            <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}"
+                            alt="placeholder image">
                         {% else %}
-                        <img class="card-img-top tutorial-image" src="{{ session.tutorial_date.tutorial.image.url }}" alt="{{ tutorial.title }}">
+                            <img class="card-img-top tutorial-image" src="{{ session.tutorial_date.tutorial.image.url }}"
+                            alt="{{ tutorial.title }}">
                         {% endif %}
                         <div class="card-body">
-                            <h2 class="card-title">{{session.tutorial_date.tutorial.title}}</h2>
-                            <p class="card-text"><strong> Date: </strong> {{session.tutorial_date.tutorial_date}} <br>
+                            <h2 class="card-title">
+                                {{session.tutorial_date.tutorial.title}}
+                            </h2>
+                            <p class="card-text">
+                                <strong> Date: </strong> {{session.tutorial_date.tutorial_date}}
+                                <br>
                                 <strong> Time: </strong>
                                 {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}}
                             </p>
                         </div>
                         <div class="card-footer border-top-0 bg-transparent">
-                            <a href="{% url 'edit_booking' session.id %}" class="btn custom-btn-success" aria-label="Edit Booking">
+                            <a href="{% url 'edit_booking' session.id %}" class="btn custom-btn-success"
+                                aria-label="Edit Booking">
                                 Edit
                             </a>
-                            <button type="button" class="deleteButton btn btn-danger mx-2" data-booking_id="{{ session.id }}" data-bs-target="#staticBackdrop">
-                                Cancel 
+                            <button type="button" class="deleteButton btn btn-danger mx-2"
+                                data-booking_id="{{ session.id }}" data-bs-target="#staticBackdrop">
+                                Cancel
                             </button>
                         </div>
                     </div>
                 </div>
                 <!-- Individual booked tutorial card ends here -->
                 <!-- Delete Booking prompt Modal starts here -->
-                    <div class="modal fade" tabindex="-1" id="deletebookingModal-{{ session.id }}" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="deletebookingModalLabel-{{ session.id }}"
-                        aria-hidden="true" >
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="deletebookingModalLabel-{{ session.id }}">
-                                        Canceling {{session.tutorial_date.tutorial.title}}
-                                    </h5>
-                                </div>
-                                <div class="modal-body bg-light">
-                                    <p>
-                                        Are you sure you want to cancel your booking?
-                                    </p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                        Close
-                                    </button>
-                                    {% csrf_token %}
-                                    <a id="deleteConfirm-{{ session.id }}" href="#" class="btn btn-danger" aria-label="Delete booking">
-                                        Cancel booking
-                                    </a>
-                                </div>
+                <div class="modal fade" tabindex="-1" id="deletebookingModal-{{ session.id }}" data-bs-backdrop="static"
+                    data-bs-keyboard="false" aria-labelledby="deletebookingModalLabel-{{ session.id }}"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deletebookingModalLabel-{{ session.id }}">
+                                    Canceling {{session.tutorial_date.tutorial.title}}
+                                </h5>
+                            </div>
+                            <div class="modal-body bg-light">
+                                <p>
+                                    Are you sure you want to cancel your booking?
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+                                {% csrf_token %}
+                                <a id="deleteConfirm-{{ session.id }}" href="#" class="btn btn-danger"
+                                    aria-label="Delete booking">
+                                    Cancel booking
+                                </a>
                             </div>
                         </div>
                     </div>
+                </div>
                 <!-- Delete Booking prompt Modal ends here -->
                 {% endfor %}
             </div>
@@ -83,18 +93,22 @@
     </div>
     {% else %}
 
-<!-- No future booked tutorials -->
+    <!-- No future booked tutorials -->
     <div class="tab-content">
         <div class="container mt-3 p-2">
             <div class="d-flex justify-content-center align-items-center gx-lg-5">
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="card h-100 shadow">
-                        <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
+                        <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}"
+                            alt="placeholder image">
                         <div class="card-body">
-                            <h2 class="card-title center-card-title">You have no upcoming tutorials.</h2>
+                            <h2 class="card-title center-card-title">
+                                You have no upcoming tutorials.
+                            </h2>
                         </div>
                         <div class="card-footer border-top-0 bg-transparent no-tutorials-spacing">
-                            <a href="{% url 'tutorial_list' %}" class="btn custom-btn my-tutorial-button" aria-label="Discover tutorial">
+                            <a href="{% url 'tutorial_list' %}" class="btn custom-btn my-tutorial-button"
+                                aria-label="Discover tutorial">
                                 Discover tutorials
                             </a>
                             <a href="{% url 'book_a_tutorial' %}" class="btn custom-btn" aria-label="Book tutorial">
@@ -103,7 +117,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -124,18 +137,23 @@
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="card h-100 shadow">
                         {% if "placeholder" in tutorial.image.url %}
-                        <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
+                            <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}"
+                            alt="placeholder image">
                         {% else %}
-                        <img class="card-img-top tutorial-image" src="{{ session.tutorial_date.tutorial.image.url }}" alt="{{ tutorial.title }}">
+                            <img class="card-img-top tutorial-image" src="{{ session.tutorial_date.tutorial.image.url }}"
+                            alt="{{ tutorial.title }}">
                         {% endif %}
                         <div class="card-body">
-                            <h2 class="card-title">{{session.tutorial_date.tutorial.title}}</h2>
-                            <p class="card-text"><strong> Date: </strong> {{session.tutorial_date.tutorial_date}} <br>
+                            <h2 class="card-title">
+                                {{session.tutorial_date.tutorial.title}}
+                            </h2>
+                            <p class="card-text">
+                                <strong> Date: </strong> {{session.tutorial_date.tutorial_date}}
+                                <br>
                                 <strong> Time: </strong>
                                 {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}}
                             </p>
                         </div>
-                        
                     </div>
                 </div>
                 <!-- Individual past tutorial card ends here -->
@@ -150,18 +168,21 @@
             <div class="d-flex justify-content-center align-items-center gx-lg-5">
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="card h-100 shadow">
-                        <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
+                        <img class="card-img-top tutorial-image" src="{% static 'images/default.webp' %}"
+                            alt="placeholder image">
                         <div class="card-body">
-                            <h2 class="card-title">You have no past tutorials</h2>
+                            <h2 class="card-title">
+                                You have no past tutorials
+                            </h2>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
     <!-- No past tutorials end here-->
     {% endif %}
-{% endif %}
+    {% endif %}
 </div>
 {% endblock %}
