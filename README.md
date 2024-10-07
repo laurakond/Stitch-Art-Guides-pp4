@@ -192,7 +192,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
 **The Header**
 
-![header]()
+![header](documentation/images/features/navigation.jpg)
 
 - Featured across all the pages, the Header is fully responsive and presents the user with main pages that are required. To the left of the header you find:
     - The Logo
@@ -211,20 +211,20 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
 **The Footer**
 
-![footer]()
+![footer](documentation/images/features/footer.jpg)
 
 - The Footer features social media links for that are related to the website and provides a copyright line indicating that this website was created for educational purposes only. 
 
 **The Landing Page**
 
-![landing page]()
+![landing page](documentation/images/features/index-page.png)
 
 - The Landing page greets the user with a simple design, a brief blurb indicating the purpose of the website, and the main call to action button that leads the user to the Tutorial List page. 
 - The hero image set in the background further emphasises the website's purpose.
 
 **About page**
 
-![about page]()
+![about page](documentation/images/features/about-page.jpg)
 
 - The About page displays a profile picture of the instructor and provides a brief introduction. A further call to action button is used allowing the user to explore different tutorials that are being offered. 
 
@@ -232,7 +232,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 **Tutorial list**
 - A list of currently offered tutorials is presented in a card format which displays the tutorial holding image, the title and the excerpt for each tutorial. Each has a call to action button inviting the user to read more. 
 
-![tutorial list]()
+![tutorial list](documentation/images/features/tutorial-list-page.jpg)
 
 **Individual Tutorial page**
 - Once inside each tutorial the user is presented with a full tutorial description and the tutor name.
@@ -240,80 +240,124 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     - If the user is not logged in or registered, they will be redirected to either the Login or Register pages. 
     - Upon Registration or login they are redirected to the home page.
 
-**User authentication**
+![Tutorial detail page](documentation/images/features/tutorial-detail-page.png)
 
-<details>
-    <summary>Register</summary>
-
-- The Register form allows the user to create an account in order to access additional content: Book Tutorial page, and My Tutorials page.
-    - Upon successfull registration, a confirmation message is displayed at the top of the page and the user is redirected to the home page.
-    - The user's name is also visible at the top of the navigation bar "Hi, name!".
-    
-    ![register]()
-</details>
-
-<details>
-    <summary>Login</summary>
-- The Login form allows the user to access their account and manage their bookings.
-    - Upon successfull login, a confirmation message is displayed at the top of the page and the user is redirected to the home page.
-    - The user's name is also visible at the top of the navigation bar "Hi, name!".
-
-![login]()
-
-</details>
-
- <details>
-    <summary>Logout</summary>
-- When the user wishes to leave the account the logout button enables a confirmation page ensuring that the user is informed of their actions.
-    - Upon successfull logout, a confirmation message is displayed at the top of the page.
-
-![logout]()
-</details>
-
-**Book Tutorial page**
-- Once the user is Registered/Logged in, they can access Book Tutorial page that displays a calendar with available tutorial slots. 
+**Book Tutorial page (restricted access)**
+- Once the user is Registered/Logged in, they can access Book Tutorial page that displays a calendar with available tutorial slots (month view for large screens and day view for smaller screens). 
 - Upon clicking on the tutorial event, they are provided with three options:
-    - If the tutorial slot is scheduled in the past, a modal appears indicating that hte tutorial time has ceased and they are prompted to select another available slot.
+    - If the tutorial slot is scheduled in the past, a modal appears indicating that the tutorial time has ceased and they are prompted to select another available slot.
     - If the tutorial is already booked, a modal appears indicating that the tutorial is already booked.
     - If the tuturial is available, the user is redirected to a booking page.
 - I have chosen to display the calendar as a daily view for screens smaller than 768px in order to display full tutorial title without it being cut off by the Full Calendar configurations. 
-- The screens over 768px display a montly view. If the tutorial title is longer, it expands upon hovering over it. 
+- The screens over 768px display a montly view. If the tutorial title is longer, a title pop up appears upon hovering over it. 
 
-    ![calendar]()
+    ![calendar month view](documentation/images/features/book-tutorial-page.png)
+    ![calendar day view](documentation/images/features/day-view-calendar.png)
+    ![booking unavailable modal](documentation/images/features/tutorial-booking-unavailable-modal.png)
+    ![tutorial date expired modal](documentation/images/features/tutorial-date-expired-modal.png)
+    ![title hover over effect](documentation/images/features/title-hover-over.jpg)
 
-**Tutorial slot booking page**
+**Tutorial slot booking page (restricted access)**
 - Once inside each tutorial slot, the user is given reinforcing information about the tutorial and a "Book tutorial" button.
     - Upon clicking the button, a modal pops up asking the user to confirm their booking.
-    - Once they have booked the tutorial slot, they are redirected to My Tutorials page and a confirmation message is displayed at the top of the page. 
+    - Once they have booked the tutorial slot, they are redirected to My Tutorials page and a confirmation message is displayed at the top of the page.
 
-**My Tutorials page**
+![Tutorial session](documentation/images/features/tutorial-session-page.png)
+![Book Tutorial modal](documentation/images/features/book-tutorial-modal.png)
+
+**My Tutorials page (restricted access)**
 - The user can access their booked tutorial information in their My Tutorials page. There they can see past and upcoming bookings, and if they do not have any current bookings, "Discover tutorials" or "Book tutorial" buttons are displayed that would take the user to appropriate pages. 
-- Each upcoming tutorial has two buttons: "Edit booking" and "Cancel booking".
-    - If the user wants to delete the booking, a modal pops up asking the user to confirm the cancellation.
+- Each upcoming tutorial has two buttons: "Edit" and "Cancel".
+    - If the user wants to cancel the booking, the modal pops up asking the user to confirm the cancellation.
         - Upon successfull cancelation, a confirmation message is displayed at the top of the page and the user is redirected to My Tutorials page.
-    - If the user wants to edit the booking, they are redirected to an individual page.
+    - If the user wants to edit the booking, they are redirected to an individual edit booking page.
 
-**Edit booking page**
+    ![My Tutorials page](documentation/images/features/my-tutorials-page.png)
+    ![My Tutorials page](documentation/images/features/no-tutorials-my-tutorials-page.png)
+
+**Edit booking page (restricted access)**
+    
+
+
 - Once inside the Edit Booking page, the user is presented with a drop down form which displays four options:
-    1. If there are no future tutorial slots available the "No available dates for all tutorials. Come back later to check." message is displayed above the drop down.
-        - ![no tutorials]()
-    2. If there are no slots available for that specific tutorial, the "No other available dates for 'tutorial title' tutorial. Feel free to choose another though!" message is displayed.
+   ![Edit Booking page](documentation/images/features/edit-booking-page.png)
+    1. If there are no future tutorial slots available the "No available dates for all tutorials. Come back later to check." message is displayed above the drop down list and a My Tutorials button is shown that redirects the user back to the My Tutorials page.
+     ![no tutorials](documentation/images/features/no-sessions-available.png)
+    2. If there are no slots available for that specific tutorial, the "No other available dates for this tutorial. Feel free to choose another though!" message is displayed.
         - The drop down list generates other available tutorials that the user can choose from.
         - Upon selection, the user can click "Update booking" button.
         - If the booking is sucessful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
-        - ![other tutorials]()
+     ![other tutorials](documentation/images/features/another-tutorial-choice.png)
     3. If there are available slots for that specific tutorial and no other tutorials, the "Choose another date for your tutorial." message is displayed.
         - The drop down list generates all available tutorial dates that the user can choose from.
         - Upon selection, the user can click "Update booking" button.
         - If the booking is sucessful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
-        - ![this tutorial]()
+        - ![same tutorial](documentation/images/features/same-tutorial-different-date.png)
     4. If the same tutorial slots and other tutorial slots are available, the "Pick another date or choose a different tutorial." message is displayed.
         - The drop down list generates all available tutorial dates that the user can choose from.
         - Upon selection, the user can click "Update booking" button.
         - If the booking is sucessful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
-        - ![all tutorials]()
+        - ![all tutorials](documentation/images/features/various-tutorials-choice.png)
 
-![edit tutorial]()
+**Cancel booking**
+- The user can cancel their tutorial booking through My Tutorials page. Upon clicking on the Cancel button:
+    - A cancel booking modal appears asking for confirmation of the action.
+    - The user can cancel the process and return to the My Tutorials page or click on the "cancel booking" button.
+        - Upon cancelation a message appears notifying the user that the booking has been successfully canceled.
+
+        ![Cancel booking modal](documentation/images/features/delete-booking-modal.png)
+
+
+**User authentication**
+
+<details>
+<summary>Sign Up</summary>
+
+- The Sign Up form allows the user to create an account in order to access additional content: Book Tutorial page, and My Tutorials page.
+    - Upon successfull registration, a confirmation message is displayed at the top of the page and the user is redirected to the home page.
+    - The user's name is also visible at the top of the navigation bar "Hi, name!".
+    
+    ![Sign Up](documentation/images/features/signup-page.png)
+</details>
+
+<details>
+<summary>Sign In</summary>
+
+- The Login form allows the user to access their account and manage their bookings.
+    - Upon successfull login, a confirmation message is displayed at the top of the page and the user is redirected to the home page.
+    - The user's name is also visible at the top of the navigation bar "Hi, name!".
+
+    ![login](documentation/images/features/login-page.jpg)
+
+</details>
+
+ <details>
+    <summary>Sign Out</summary>
+
+- When the user wishes to leave the account the logout button enables a confirmation page ensuring that the user is informed of their actions.
+    - Upon successfull logout, a confirmation message is displayed at the top of the page.
+
+    ![logout](documentation\images\features\logout-page.jpg)
+</details>
+
+**Restricted access**
+- I have applied defensive programming to several pages & content features that are only accessible to users who have created an account. These are:
+    - Book Tutorial page
+    - Tutorial session page
+    - My Tutorials page
+    - Edit Tutorial page
+    - Cancel booking prompt
+- Upon an attempt to access any of these the following alert messages will be activated:
+    - If the user attempts to access any of the restricted pages by typing in the url link to the browser, the following message will appear and the user will be automatically redirected to the Sign up page:
+        ![No access to this content](documentation\images\features\no-access-to-content.JPG)
+        - Upon successful signup, the user will be redirected to the page they have attempted to access.
+    - If the content that the user attempted to access belongs to another user, for example, editing the tutorial booking, the following alert message will appear:
+        ![No permission to access this booking](documentation/images/features/alert-others-booking.JPG)
+    - If the user is trying to access the record of a cancelled booking, the following message will appear:
+        ![Booking doesn't exist](documentation/images/features/booking-doesnt-exist.JPG)
+        - This alert message will be displayed to the booking's owner and the user that the booking did not belong to. 
+    - If the user by accident tries to edit someone else's booking, the following message will appear:
+        ![You can only edit your own booking](documentation/images/features/edit-your-own-booking-message1.png)
 
 **Error pages**
 - The following error pages have been added to troubleshoot appropriate server response to user requests:
@@ -359,19 +403,21 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
  <details>
     <summary>Modals</summary>
 
-![Tutorial Date Expired]()
-![Tutorial booking is not available]()
-![Tutorial booking confirmation]()
-![Canceling tutorial]()
+![Tutorial Date Expired](documentation/images/features/tutorial-date-expired-modal.png)
+![Tutorial booking is not available](documentation/images/features/tutorial-booking-unavailable-modal.png)
+![Tutorial booking confirmation](documentation/images/features/book-tutorial-modal.png)
+![Canceling tutorial](documentation/images/features/delete-booking-modal.png)
 </details>
 
  <details>
     <summary>Confirmation messages </summary>
 
-![Successful booking]()
-![Successful booking cancellation]()
+![Successful booking](documentation/images/features/tutorial-booked-message.png)
+![Successful booking cancellation](documentation/images/features/booking-deleted-message.png)
+![Successful booking update](documentation/images/features/booking-updated-message.png)
+![Successful sign in](documentation/images/features/successful-signin.JPG)
+![Successful sign out](documentation/images/features/singed-out-message.jpg)
 </details>
-
 
 ### Features Left to Implement
 - Allow the user to submit a customised tutorial request form. This would allow to address any individual needs of a crafter.  
@@ -593,7 +639,9 @@ Whilst working on this project I relied on Django documentation and other resour
 
 - The following chat threads on Stackoverflow were very useful when trying to determine which login restrictions to use for defensive programming:
     - [@login_required and is_authenticated() -- When to use which in Django?](https://stackoverflow.com/questions/22488601/login-required-and-is-authenticated-when-to-use-which-in-django#:~:text=login_required%20is%20applied%20on%20a,is%20logged%20in%20or%20not)
-    - [Using the Django authentication system](https://docs.djangoproject.com/en/5.1/topics/auth/default/) was also really helpful for determining what aspects were useful for restricting access. 
+    - [Using the Django authentication system](https://docs.djangoproject.com/en/5.1/topics/auth/default/) was also really helpful for determining what aspects were useful for restricting access.
+    - [Django docs limiting access to logged in users](https://docs.djangoproject.com/en/5.1/topics/auth/default/#limiting-access-to-logged-in-users)
+    - [Django DoesNotExist](https://stackoverflow.com/questions/16181188/django-doesnotexist)
 </details>
 
 <details>
@@ -725,6 +773,7 @@ Whilst working on this project I relied on Django documentation and other resour
 - [mdn web docs calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
 - [Geek for Geeks How to Center a Div](https://www.geeksforgeeks.org/how-to-center-a-div-with-the-mx-auto-class-in-bootstrap-5/)
 - [Stackoverflow Bootstrap: Centering Elements Vertically and Horizontally](https://stackoverflow.com/questions/42388989/bootstrap-centering-elements-vertically-and-horizontally)
+- [Sticky Footer, Five Ways](https://css-tricks.com/couple-takes-sticky-footer/)
 </details>
 
 <details>
@@ -748,10 +797,26 @@ Whilst working on this project I relied on Django documentation and other resour
 </details>
 
 <details>
-<summary>Creating Django error pages:</summary>
+<summary>Exceptions:</summary>
 
+- [Stackoverflow Django object.doesnotexist](https://stackoverflow.com/questions/16181188/django-doesnotexist)
+- [Django Exceptions](https://docs.djangoproject.com/en/5.1/ref/exceptions/)
+- [django.urls utility functions](https://docs.djangoproject.com/en/5.1/ref/urlresolvers/#reverse)
 
 </details>
+
+<details>
+<summary>Redirection:</summary>
+
+- [?next=/url-path/ does not redirect to the specified path after login](https://forum.djangoproject.com/t/next-url-path-does-not-redirect-to-the-specified-path-after-login/20806)
+- [Over-riding Django-allauth login](https://stackoverflow.com/questions/38126241/over-riding-django-allauth-login-registration-urls-with-custom-url-pages)
+- [Issue with Django redirect to previously visited page](https://stackoverflow.com/questions/71645575/issue-with-django-redirect-to-previously-visited-page)
+- [Redirection to previous page after login using LoginRequiredMiddleware](https://stackoverflow.com/questions/74511980/redirection-to-previous-page-after-login-using-loginrequiredmiddleware)
+- [Django: Redirect to Previous Page After Login](https://www.geeksforgeeks.org/django-redirect-to-previous-page-after-login/)
+- [Net Ninja - Django Tutorial #25 - Redirecting After Login](https://www.youtube.com/watch?v=ekyCxgtW3Js) Youtube tutorial
+
+</details>
+
 
 ### Acknowledgments
 
