@@ -19,6 +19,7 @@ By Laura Kondrataite
 - [Responsiveness testing](#responsiveness-testing)
 - [User testing](#user-testing)
 - [Manual testing](#manual-testing)
+- [Restricted access testing](#restricted-access-testing)
 
 ## Testing
 
@@ -674,7 +675,7 @@ Website performance, accessibility, best practices and SEO were tested using Lig
 | As a site user I can login to & logout of the website so that I can access and manage my content.                         | Yes             | ![Login](documentation/images/features/login-page.jpg)           |                                                                |
 | As a site user I can click on each tutorial listing so that I can read more information about the tutorial.               | Yes             | ![Tutorial detail](documentation/images/features/tutorial-detail-page2.png)  |                                                                |
 | As a site user I can book a tutorial so that I can attend it.                                                             | Yes             | ![Calendar](documentation/images/features/book-tutorial-page.png)        |                                                                |
-| As a site user I can go to Tutorials page so that I can manage them.                                                      | Yes             | ![My tutorials](documentation/images/features/my-tutorials-page.png)    |                                                                |
+| As a site user I can go to Tutorials page so that I can manage them.                                                      | Yes             | ![My tutorials](documentation/images/features/my-tutorials-page.png) ![Delete booking](documentation/images/features/delete-booking-modal.png)    |                                                                |
 | As a site user I can edit my booking so that I can adjust the details if I change my mind.                                | Yes             | ![Edit booking](documentation/images/features/edit-booking-page.png)    |                                                                |
 | As a site user I can submit a request for a customised tutorial so that I can have a lesson based on my individual needs. | Future feature  |                      | This feature will be looked into at the next development stage |
 | As a site user I can comment on the tutorial so that I can share my feedback.                                             | Future feature  |                      | This feature will be looked into at the next development stage |
@@ -778,6 +779,18 @@ After the development stage of the application, I went through each feature ensu
 | If no tutorials available in the Edit booking page |                                                      |                                                                                       |     |          |
 | 1                                                  | Click on Return to My Tutorials button               | Redirects to My Tutorials page                                                        | Y   |          |
 
+
+[Return to Table of Contents](#contents)
+
+### Restricted access testing
+I have implemented restricted access to specific content that is only allowed to the users who have a registered account.
+
+| Page              | User action                                                                                     | Expected Results                                                | Y/N | Comments |
+| ----------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | --- | -------- |
+| Home page         | Type in the url address for My tutorials, Book Tutorial, Tutorial session or Edit booking pages | Redirects to the Sign Up page and an alert message is shown     | Y   |          |
+| Sign Up page      | Create an account                                                                               | Redirects back to the initial page the user attempted to access | Y   |          |
+| Edit Booking page | Types in the booking that does not belong to the user                                           | Redirects to the My Tutorial page and an alert message is shown | Y   |          |
+| Edit Booking page | Types in canceled booking's url                                                                 | Redirects to the My Tutorial page and an alert message is shown | Y   |          |
 
 [Return to Table of Contents](#contents)
 
