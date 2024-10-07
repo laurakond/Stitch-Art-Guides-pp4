@@ -168,7 +168,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 - Poppins, system-ui - was used for the logo and accent text.
 - Raleway, sans-serif - was used for the the main text.
 
-![font screenshots](documentation\design\fonts.jpeg)
+![font screenshots](documentation/design/fonts.jpeg)
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -337,7 +337,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 - When the user wishes to leave the account the logout button enables a confirmation page ensuring that the user is informed of their actions.
     - Upon successfull logout, a confirmation message is displayed at the top of the page.
 
-    ![logout](documentation\images\features\logout-page.jpg)
+    ![logout](documentation/images/features/logout-page.jpg)
 </details>
 
 **Restricted access**
@@ -349,12 +349,12 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     - Cancel booking prompt
 - Upon an attempt to access any of these the following alert messages will be activated:
     - If the user attempts to access any of the restricted pages by typing in the url link to the browser, the following message will appear and the user will be automatically redirected to the Sign up page:
-        ![No access to this content](documentation\images\features\no-access-to-content.JPG)
+        ![No access to this content](documentation/images/features/no-access-to-content.jpg)
         - Upon successful signup, the user will be redirected to the page they have attempted to access.
     - If the content that the user attempted to access belongs to another user, for example, editing the tutorial booking, the following alert message will appear:
-        ![No permission to access this booking](documentation/images/features/alert-others-booking.JPG)
+        ![No permission to access this booking](documentation/images/features/alert-others-booking.jpg)
     - If the user is trying to access the record of a cancelled booking, the following message will appear:
-        ![Booking doesn't exist](documentation/images/features/booking-doesnt-exist.JPG)
+        ![Booking doesn't exist](documentation/images/features/booking-doesnt-exist.jpg)
         - This alert message will be displayed to the booking's owner and the user that the booking did not belong to. 
     - If the user by accident tries to edit someone else's booking, the following message will appear:
         ![You can only edit your own booking](documentation/images/features/edit-your-own-booking-message1.png)
@@ -415,7 +415,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 ![Successful booking](documentation/images/features/tutorial-booked-message.png)
 ![Successful booking cancellation](documentation/images/features/booking-deleted-message.png)
 ![Successful booking update](documentation/images/features/booking-updated-message.png)
-![Successful sign in](documentation/images/features/successful-signin.JPG)
+![Successful sign in](documentation/images/features/successful-signin.jpg)
 ![Successful sign out](documentation/images/features/singed-out-message.jpg)
 </details>
 
