@@ -46,7 +46,7 @@ def book_a_tutorial(request):
     if not request.user.is_authenticated:
         messages.error(
             request,
-            'You do not have access to this content. Please sign up or login.'
+            'You do not have access to this content. Please sign up or sign in.'
         )
         return redirect(f"{reverse('account_login')}?next={request.path}")
 
@@ -92,7 +92,7 @@ def tutorial_session(request, slug, pk):
     if not request.user.is_authenticated:
         messages.error(
             request,
-            'You do not have access to this content. Please sign up or login.'
+            'You do not have access to this content. Please sign up or sign in.'
             )
         return redirect(f"{reverse('account_login')}?next={request.path}")
 
@@ -160,7 +160,7 @@ def my_tutorials(request):
     if not request.user.is_authenticated:
         messages.error(
             request,
-            'You do not have access to this content. Please sign up or login.'
+            'You do not have access to this content. Please sign up or sign in.'
             )
         return redirect(f"{reverse('account_login')}?next={request.path}")
 
@@ -220,7 +220,7 @@ def edit_booking(request, booking_id):
     if not request.user.is_authenticated:
         messages.error(
             request,
-            'You do not have access to this content. Please sign up or login.'
+            'You do not have access to this content. Please sign up or sign in.'
             )
         return redirect(f"{reverse('account_login')}?next={request.path}")
 
