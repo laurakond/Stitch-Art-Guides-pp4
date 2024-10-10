@@ -542,7 +542,9 @@ To deploy to the Heroku website, follow the steps below:
 ## Credits
 
 ### Content
-
+The content for the website has been written primarily by me. The content for tutorial descriptions were taken from the following soureces:
+- [Lord libidan](https://lordlibidan.com/how-to-cross-stitch-faster/#:~:text=Traditionally%20there%20are%20two%20ways,back%20with%20the%20other%20direction)
+- [Crafty kid company](https://www.craftykitcompany.co.uk/blogs/get-crafty-with-us/a-beginners-guide-to-cross-stitch#:~:text=Cross%20stitch%20is%20made%20up,smaller%20the%20stitches%20will%20be)
 ### Refactoring
 
 ### Used code
