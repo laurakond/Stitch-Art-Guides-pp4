@@ -662,6 +662,19 @@ Website performance, accessibility, best practices and SEO were tested using Lig
 
 </details>
 
+<details>
+<summary>404 page</summary>
+
+**Desktop**
+
+![404 desktop report](documentation/images/features/404-desktop-lighthouse.JPG)
+
+**Mobile**
+
+![404 mobile report](documentation/images/features/404-mobile-lighthouse.JPG)
+
+</details>
+
 [Return to Table of Contents](#contents)
 
 ### User stories testing
