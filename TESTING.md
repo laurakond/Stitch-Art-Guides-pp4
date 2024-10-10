@@ -22,7 +22,7 @@ By Laura Kondrataite
 ## Testing
 
 ### W3C Validator Testing
-All files were put through the official [W3C Markup Validation](https://validator.w3.org/) & [W3C Css Validation](https://jigsaw.w3.org/css-validator/) services. The Initial check has returned a few errors and warnings that were corrected and taken note of. Images of errors enclosed below.
+All files were put through the official [W3C Markup Validation](https://validator.w3.org/) & [W3C Css Validation](https://jigsaw.w3.org/css-validator/) services. The initial check returned a few errors and warnings that were corrected and taken note of. Images of errors are enclosed below.
 
 <details>
     <summary>W3C Markup errors</summary>
@@ -79,7 +79,7 @@ All files were put through the official [W3C Markup Validation](https://validato
 
 ## Bugs
 
-**To Note**: The below mentioned bugs occured early in the development stage before refactoring was done. Therefore, some of the function names and provided images may not correspond to the final code.
+**To Note**: The below mentioned bugs occurred early in the development stage before refactoring was done. Therefore, some of the function names and provided images may not correspond to the final code.
 
 ### Fixed bugs
 **Gunicorn and pyca/cryptography warnings in Github**
@@ -98,7 +98,7 @@ All files were put through the official [W3C Markup Validation](https://validato
 
 - I received the above error when trying to render a url path for each individual tutorial booking.
 - This part of the code proved tricky as I was not familiar with JavaSript's Full Calendar functionality. 
-    -  I had help from Tim Nelson (mentioned in the acknowledgements) on how to make the code work as majority of the resources that I found were using jQuery syntax.
+    -  I had help from Tim Nelson (mentioned in the acknowledgments) on how to make the code work as the majority of the resources that I found were using jQuery syntax.
     - I managed to make the path work by implementing Full Calendar's extendedProps property. This allowed me to access deeper dependencies within my set models. 
 
 <details>
@@ -114,7 +114,7 @@ location.href = eventUrl;
 </details>
 
 **Rendering User specific bookings**
-- Upon initial set up of My bookings page, when trying to render user specific tutorial bookings, I received the following error:
+- Upon initial set up of My bookings page, when trying to render user-specific tutorial bookings, I received the following error:
 
 ```
 MultipleObjectsReturned at /booked_tutorials/
@@ -137,7 +137,7 @@ def my_tutorials(request):
          )
 ```
 
-- Upon reading Django documentation on user, I realised that I needed to target each user information through user authentication. The below code has fixed the issue:
+- Upon reading Django documentation on user, I realised that I needed to target each user's information through user authentication. The code below has fixed the issue:
 
 ```
 def my_tutorials(request):
@@ -176,7 +176,7 @@ TEMPLATES = [
         ...
         }]
 ```
-- I references a couple of Code Institute July 2024 Hackathon projects in order to make the code work. Notably: 
+- The latter I appropriated from one of the Code Institute's July 2024 Hackathon projects: 
     - [United Events](https://github.com/hannahro15/July24Hackathon-United-Events/blob/main/united/settings.py) project
 
 **Delete booking button not working**
@@ -249,7 +249,7 @@ The code that was throwing an error was this:
     ![correct booking instance]()
 
 **Conditional message filtering**
-- When testing different message prompts based on booked tutorials when editing the booking, a wrong message was appearing when only the same tutorial title booking was available. The message that was being prompted was “Pick another date or choose a different tutorial.”
+- When testing different message prompts based on booked tutorials when editing the booking, a wrong message appeared when only the same tutorial title booking was available. The message that was being prompted was “Pick another date or choose a different tutorial.”
 - This happened because there was an error in filtering other_tutorials query set. I was getting the test tutorial query set inside other_tutorials when I shouldn’t have.
 - To fix it I added exclude() method to other_tutorials queryset:
     ```other_tutorials = TutorialDate.objects.filter(
@@ -272,7 +272,7 @@ The code that was throwing an error was this:
     - I resolved this issue by removing the type attribute from the tags. I found the solution on [Stack Overflow](https://stackoverflow.com/questions/66918079/favicon-not-loading-in-django#:~:text=I%20had%20the%20same%20problem.,tags%2C%20the%20favicon%20started%20working) channel.
 
 **Comparing the current time to event time**
-- I wanted to compare the user’s current time and date with the tutorial’s set time and date. My initial code was only comparing the dates excluding the hours. Therefore, any tutorial that was clicked on on the current day, even when the time of the tutorial has passed, it would not prompt the expired event modal
+- I wanted to compare the user’s current time and date with the tutorial’s set time and date. My initial code was only comparing the dates excluding the hours. Therefore, any tutorial that was clicked on the current day, even when the time of the tutorial has passed, it would not prompt the expired event modal
     - I managed to resolve this by removing the `today.setHours(0, 0, 0, 0);` from the eventClick function, the code directly compared the current date and time with the event’s date and time. 
 
     <details>
@@ -290,7 +290,7 @@ The code that was throwing an error was this:
 
 **Field ‘id’ expected a number but got SimpleLazyObject**
 
-- I received this error when trying to check if /my-tutorials/ url path was accessible to annonymous users. Upon quick research, I realised that I needed to alter my request in views.py by adding a user specific id, and also apply @login_required above the my_tutorials function.
+- I received this error when trying to check if /my-tutorials/ url path was accessible to anonymous users. Upon quick research, I realised that I needed to alter my request in views.py by adding a user specific id, and also apply @login_required above the my_tutorials function.
     - This seems to have worked.
 
     ![id expected a number error image]()
@@ -342,7 +342,7 @@ The code that was throwing an error was this:
 
     </details>
 
-- Going through the code, I noticed that I was appending to appropriate list outside of the for statement. I moved the if statement inside the for statement and the issue was resolved.
+- Going through the code, I noticed that I was appending to the appropriate list outside the for statement. I moved the if statement inside the for statement and the issue was resolved.
 
     <details>
             <summary>Fixed code</summary>
@@ -391,8 +391,8 @@ The code that was throwing an error was this:
     - [Django docs - translators](https://docs.djangoproject.com/en/dev/ref/templates/builtins/#yesno)
 
 **Filter Tutorial dates that are not booked by anyone**
-- I realised that the code was showing future tuturials that have been booked by other users. If the user where to select the already booked tutorial from the drop down, then there would be a double booking from two different users. I amended the code by applying __isnull=False for filtering future_tutorials.
-- Instead of looking at excluding the logged in user’s booking, this way I looked for any Tutorial dates that have a booking and excluded them from the filtered result. Thus only Tutorial dates that don’t have a booking related to them were given back in the form drop down.
+- I realised that the code was showing future tutorials that have been booked by other users. If the user were to select the already booked tutorial from the drop-down, then there would be a double booking from two different users. I amended the code by applying __isnull=False for filtering future_tutorials.
+- Instead of looking at excluding the logged in user’s booking, this way I looked for any Tutorial dates that have a booking and excluded them from the filtered result. Thus, only Tutorial dates that don’t have a booking related to them were given back in the form drop down.
 
 code filtering all future tutorials:
 
@@ -431,16 +431,16 @@ future_tutorials = TutorialDate.objects.filter(
     </details>
 
 **Django alert messages rendering without colour**
-- Upon testing the functionality of the colours I noticed that they are not displaying any color.
+- Upon testing the functionality of the colors I noticed that they are not displaying any color.
     - I solved the problem by including `alert-{{ message.tags }}` to the code. I found the solution on [Stackoverflow](https://stackoverflow.com/questions/55202684/does-bootstrap-django-error-message-has-no-red-color).
-- The above mentioned approach was reversed and changed with adding message configurations to the settings.py file. The appropriate style rules have also been removed as they became redundant. 
+- The above-mentioned approach was reversed and changed with adding message configurations to the settings.py file. The appropriate style rules have also been removed as they became redundant. 
 
 **Cut off Tutorial title in the Calendar view**
 
 **To note**: this has since been resolved and replaced with Bootstrap tooltips.
 
-- I noticed that the tutorial title was cutting off in the Calendar view if it is over a certain lenght.
-    - After searching for a solution I was able to make the event title show in a second row. The code used for this was found on [Stackoverflow](https://stackoverflow.com/questions/33406697/fullcalendar-v2-event-title-cut-off-in-month-view):
+- I noticed that the tutorial title was cutting off in the Calendar view if it is over a certain length.
+    - After searching for a solution, I was able to make the event title show in the second row. The code used for this was found on [Stackoverflow](https://stackoverflow.com/questions/33406697/fullcalendar-v2-event-title-cut-off-in-month-view):
     ```
     .fc-daygrid-event .fc-event-title {
         white-space: normal;
@@ -452,10 +452,10 @@ future_tutorials = TutorialDate.objects.filter(
   }
     ```
     - However, this makes the whole calendar view jump.
-    - To avoid the jumping of the calendar, I decided to used Bootstrap Tooltips as it was one of the options noted in the Full Calendar documentation. 
+    - To avoid the jumping of the calendar, I decided to use Bootstrap Tooltips as it was one of the options noted in the Full Calendar documentation. 
 
 **Alert error messages**
-- When testing the application, I noticed that error alerts does not have any styling to them. I found a useful [Stackoverflow thread](https://stackoverflow.com/questions/52565366/messages-error-not-formatting-correctly-but-success-does) that explained why it was not styled. 
+- When testing the application, I noticed that error alerts do not have any styling to them. I found a useful [Stackoverflow thread](https://stackoverflow.com/questions/52565366/messages-error-not-formatting-correctly-but-success-does) that explained why it was not styled. 
     - I have taken the suggested styling options from there to start with:
     ```
     .alert-error {
@@ -465,17 +465,17 @@ future_tutorials = TutorialDate.objects.filter(
 
 ### Unfixed bugs
 **Back button in the browser**
-- Upon booking the tutorial slot the user is redirected to another page with a confirmation message showing up confirming the booking has been made.
+- Upon booking the tutorial slot, the user is redirected to another page with a confirmation message showing up confirming the booking has been made.
 - However,if the user clicks the backwards browser button, they are taken back to the tutorial booking page where they can click on the book button again. The functionality is in place to prevent making a repeat booking, but the page information indicating that the tutorial has been booked already only renders after the modal window is closed. 
     -  This is to be addressed at the next development stage.
 
 **Tooltip css customisation**
-- After applying the tooltips for displaying a full tutorial title in the calendar view, I could not find a way how to target the tooltips in order to apply cutom styles.
-    - I consulted multipple resources(noted in the general resources section in the README.md), but could not resolve it at this development stage. 
+- After applying the tooltips for displaying a full tutorial title in the calendar view, I could not find a way how to target the tooltips in order to apply cutsom styles.
+    - I consulted multiple resources(noted in the general resources section in the README.md), but could not resolve it at this development stage. 
     - This will be addressed at the next development stage.
 
 **Past events in Calendar day view**
-- When customising past and future events, I could not find a way how to target past events font so that they would appear greyed out. The full month view past events are displaying as expected.
+- When customising past and future events, I could not find a way to target past events font so that they would appear grayed out. The full month view of past events are displaying as expected.
     - This will be addressed at the next development stage.
 
 
@@ -687,12 +687,12 @@ The project was tested against the following devices and browsers:
 [Return to Table of Contents](#contents)
 
 ### User testing
-The application was tested during the development and post development stages. I have asked my friends and peers to notify me of any issues that might appear. No issues were reported/noted during the development and post development.
+The application was tested during the development and post-development stages. I have asked my friends and peers to notify me of any issues that might appear. No issues were reported/noted during the development and post-development.
 
 [Return to Table of Contents](#contents)
 
 ### Manual testing
-After the development stage of the application, I went through each feature ensuring that the website is working as intended.
+After the development stage of the application, I went through each feature, ensuring that the website is working as intended.
 | Page                                               | User Actions                                         | Expected Results                                                                      | Y/N | Comments |
 | -------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------- | --- | -------- |
 | General Navigation bar                             |                                                      |                                                                                       |     |          |
