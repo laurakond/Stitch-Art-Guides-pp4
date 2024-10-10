@@ -8,7 +8,6 @@ By Laura Kondrataite
 - [W3C Validator testing](#w3c-validator-testing)
 - [JS Hint testing](#js-hint-testing)
 - [PEP8 Linter validation](#pep8-linter-validation)
-- [User input validation](#user-input-validation)
 - [Bugs](#bugs)
 	- [Fixed bugs](#fixed-bugs)
 	- [Unfixed bugs](#unfixed-bugs)
@@ -76,39 +75,6 @@ All files were put through the official [W3C Markup Validation](https://validato
 - [Tutorial/models validation](documentation/validation/tutorial-models.pdf)
 - [Tutorial/urls validation](documentation/validation/tutorial-urls.pdf)
 - [Tutorial/views validation](documentation/validation/tutorial-views.pdf)
-
-[Return to Table of Contents](#contents)
-
-
-### User input validation
-
-There are several user inputs throughout the application, therefore, validating data was crucial for the functionality of the application. 
-- Each part of user input was tested during and after the development stage.
-- The below screenshots display all viable entries and responses to incorrect data.
-
-    <details>
-    <summary></summary>
-
-    ![username-validation]()
-    </details>
-
-    <details>
-    <summary></summary>
-
-    ![username-validation]()
-    </details>
-
-    <details>
-    <summary></summary>
-
-    ![username-validation]()
-    </details>
-
-    <details>
-    <summary></summary>
-
-    ![username-validation]()
-    </details>
 
 [Return to Table of Contents](#contents)
 
@@ -707,6 +673,15 @@ Website performance, accessibility, best practices and SEO were tested using Lig
 [Return to Table of Contents](#contents)
 
 ### Browser testing
+The project was tested against the following devices and browsers:
+- Google Chrome
+- Google Chrome Dev
+- Firefox
+- Explorer
+- Google Pixel 7
+- Galaxy s10
+- Galaxy Tab A
+- iPhone 7
 
 [Return to Table of Contents](#contents)
 
