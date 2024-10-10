@@ -45,7 +45,6 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 
 [Credits](#credits)
 - [Content](#content)
-- [Refactoring](#refactoring)
 - [Used code](#used-code)
 - [General resources](#general-resources)
 - [Acknowledgments](#acknowledgments)
@@ -121,15 +120,13 @@ No background, geographical location or income has been specified for the target
 <br>
 
 ### Flowcharts
-I used [Lucidchart](https://lucid.app/) for creating the logic and structure of the game. The flowchart of the project has had to be split into two flowcharts (minimum viable product & future feature) due to limited use of blocks per one chart. Chapter 3 is a future feature. 
+I used [Lucidchart](https://lucid.app/) for creating the ERD for the models and [Exslidraw](https://excalidraw.com/) for creating site navigation.
+
+- ERD:
+    ![Project Models](documentation/images/entity_relational_diagram/model-chart.png)
 
 - MVP flowchart:
-
-![flowchart-mvp]()
-
-- Future feature flowchart (Chapter 3):
-
-![flowchart-mvp]()
+    ![flowchart-mvp](documentation/images/entity_relational_diagram/site-navigation.png)
 
 ### Wireframes
 The following wireframes show the initial idea of how the website would look on different devices: mobiles, tablets/iPads and laptops/desktops. 
@@ -161,7 +158,7 @@ The following palette was used to ensure the contrast is achieved between main p
 - rgba(78, 126, 124, .5) - used for the success button hover border and calendar styling
 - #daeae9b8 - used for adding gradient over the hero image
 - bg-light Bootstrap class - used for applying background color to Bootstrap cards and other containers where needed to balance out the colors.
-
+- Bootstrap danger button
 
 ### Font styles
 I used [Google fonts](https://fonts.google.com/) to source the fonts for the website. These are:
@@ -276,8 +273,6 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     ![My Tutorials page](documentation/images/features/no-tutorials-my-tutorials-page.png)
 
 **Edit booking page (restricted access)**
-    
-
 
 - Once inside the Edit Booking page, the user is presented with a drop down form which displays four options:
    ![Edit Booking page](documentation/images/features/edit-booking-page.png)
@@ -328,7 +323,6 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     - The user's name is also visible at the top of the navigation bar "Hi, name!".
 
     ![login](documentation/images/features/login-page.jpg)
-
 </details>
 
  <details>
@@ -367,8 +361,6 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
     ![404 error page](documentation/images/features/404-page.png)
     </details>
-
-
 
 **Notification messages**
 <details>
@@ -475,11 +467,6 @@ The game application went through extensive testing during the development and d
 ## Deployment
 This website was deployed using GitHub pages and Heroku website. To deploy the project, follow the steps below:
 
-### Creating a repository on Github
-
-1. Login to GitHub and navigate to the main repository page.
-2. Create a new repository 
-
 **Publish the website on Github**
 1. Login to GitHub and navigate to the main repository page.
 2.  Click on the chosen repository,for example [Stitch Art Guides](https://github.com/laurakond/Stitch-Art-Guides-pp4).
@@ -499,13 +486,35 @@ To fork the repository in Github:
 #### How to Clone
 To clone the repository in Github:
 1.  Follow steps 1 & 2 as in the deployment section above.
-2.  Click on the "Code" button (often a bright color that stands out) in the top right corner just above the "commits" history. 
+2.  Click on the "Code" button (often a bright color that stands out) at the top right corner just above the "commits" history. 
     - Select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 3.  Open the terminal in your chosen code editor and change the current working directory to the location you want to use for the cloned directory.
-4.  Type 'git clone' into the terminal and then paste the copied link and press enter.
+    - Type 'git clone' into the terminal and then paste the copied link and press enter.
+    - OR, if working with VSCode, select "Clone Git Repository" and save the file on your device as prompted.
+4. If you are working on a local IDE such as VS code, you need to create a virtual environment:
+    - in the terminal write the command `python -m venv [directory-name]`
+    - To activate the virtual environment write `[directory-name]/Scripts/Activate`
+    - If you need to deactivate it, type `deactivate` in the terminal
+    - remember to include this to the .gitignore file
+5. Next, create an env.py file where you will keep your key data and make sure it is included in the .gitignore file. Key data can include:
+    - DATABASE_URL
+    - SECRET_KEY
+    - CLOUDINARY_URL
+    - SITE_OWNER_EMAIL
+    - SITE_OWNER_PASSWORD
+6. Import all the dependencies required for the project to run. You can do so by entering `pip install -r requirements.txt` for the VSCode or `pip3 install -r requirements.txt` for Gitpod IDE.
+7. Set up a database using postgreSQL.
 
 ### Heroku
 To deploy to the Heroku website, follow the steps below:
+Inside your project:
+ - install the latest gunicorn to your virtual environment
+ - install the latest whitenoise version
+ - add both dependencies to the requirements.txt
+ - Create a Procfile declaring the web process `web: ` followed by a command to execute the project, for example `python3 manage.py runserver`if using Gitpod as your IDE.
+ - Create a runtime.txt and note the closest version of Python to the one you use.
+ - Make sure your DEBUG in settings.py is set to False
+
 1. Navigate to https://www.heroku.com platform website.
 2. Create or log in to your account.
 3. Once on your dashboard:
@@ -513,27 +522,20 @@ To deploy to the Heroku website, follow the steps below:
     2) if you have some projects already, click on the "New" tab on the top right corner of the screen just below the profile bauble. 
 4.  Enter a unique application name for your project and select the region you are based in. Click "create app".
 5. Once insde the app, select "Settings" button from the menu in the middle. It's important to edit the "Settings" tab before deploying the project: 
-    1. Click on "Reveal Config Vars" and enter the following:
-        
-        1) if you are using any APIs you will need to copy paste your creds.json details:
-            - in the "key" box type "CREDS". 
-            - in the "value" box copy the contents of your creds.json file: 
-            - click "Add".
-
-        2) type in PORT to the "key" box, and 8000 to the "value" box:
-            - click "Add".
+    1. Click on "Reveal Config Vars" to add any keys that the application requires. For this project I included teh following:
+        - DISABLE_COLLECTSTATIC: 1 
+        - DATABASE_URL
+        - SECRET_KEY
+        - CLOUDINARY_URL
 
     2. Add Buildpacks below Config Vars. Click on "Add buildpack":
+        - First, select Python and click "Add buildpack".
 
-        1) First, select Python and click "Add buildpack".
-        2) Second, select node.js and click "Add buildpack".
-        
-        **Note:** Python has to be listed first (at the top) of the two packs.
 6. Once step 5 is done, navigate to the "Deploy" tab a the top of the screen to the left of where the Settings tab is located.
 7. Click on "Github" icon under "Deployment method", and connect Heroku to your Github account. 
 8. Once the accounts are connected you can choose between automatic or manual deployment:
 
-    1) Automatic deplyoment will automatically update your app once you use "git push" command in  your IDE. 
+    1) Automatic deplyoment will automatically update your app once you use "git push" command in your IDE. 
 
     2) Manual deployment will require you to manually "push" the changes you made in the IDE to the Heroku system.
 
@@ -545,7 +547,6 @@ To deploy to the Heroku website, follow the steps below:
 The content for the website has been written primarily by me. The content for tutorial descriptions were taken from the following soureces:
 - [Lord libidan](https://lordlibidan.com/how-to-cross-stitch-faster/#:~:text=Traditionally%20there%20are%20two%20ways,back%20with%20the%20other%20direction)
 - [Crafty kid company](https://www.craftykitcompany.co.uk/blogs/get-crafty-with-us/a-beginners-guide-to-cross-stitch#:~:text=Cross%20stitch%20is%20made%20up,smaller%20the%20stitches%20will%20be)
-### Refactoring
 
 ### Used code
 - I used the following Bootstrap templates from StartBootstrap for styling my website:
