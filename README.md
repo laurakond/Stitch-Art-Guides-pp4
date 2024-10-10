@@ -4,9 +4,9 @@
 
 (By Laura Kondrataite)
 
-Are you practicing crafts or simply interested in dipping your toes in the vast world of modern embroidery? Then look no further. Enter the Stitch Art Guides! This website is created with avid stitchers and wondering newbies in mind. 
+Are you practicing crafts or simply interested in dipping your toes in the vast world of modern embroidery? Then look no further. Enter the Stitch Art Guides! This website was created with avid stitchers and wondering newbies in mind. 
 
-Art Stich Guides provides a number of various tutorials on how to set up and get started with your first project whether it is a simple cross stitch sampler or a more advanced project. 
+Art Stitch Guides provides a number of various tutorials on how to set up and get started with your first project, whether it is a simple cross stitch sampler or a more advanced project.
 
 All are welcome.
 
@@ -134,7 +134,7 @@ The following wireframes show the initial idea of how the website would look on 
 [Stitch Art Guides wireframes](documentation/design/wireframes.pdf)
 
 ### Color palette
-The following palette was used to ensure the contrast is achieved between main parts of the website:
+The following palette was used to ensure the contrast is achieved between the main parts of the website:
 
 <details>
     <summary>Color palette images</summary>
@@ -146,7 +146,7 @@ The following palette was used to ensure the contrast is achieved between main p
 <br>
 
 - #EB9486 - Coral Pink - used for main navigation button
-- #FAF9F6 - Baby Powder - used for majority of the background color & light text
+- #FAF9F6 - Baby Powder - used for the majority of the background color & light text
 - #F5F9E9 - Ivory - used for header & footer backgrounds including modals
 - #131200 - Smoky Black - used for dark text
 - #64A19D - Verdigris - used for social media icons and menu bar
@@ -191,7 +191,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
 ![header](documentation/images/features/navigation.jpg)
 
-- Featured across all the pages, the Header is fully responsive and presents the user with main pages that are required. To the left of the header you find:
+- Featured across all the pages, the Header is fully responsive and presents the user with the main pages that are required. To the left of the header you find:
     - The Logo
 
 - To the right of the header the remainder of the pages:
@@ -210,30 +210,30 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
 ![footer](documentation/images/features/footer.jpg)
 
-- The Footer features social media links for that are related to the website and provides a copyright line indicating that this website was created for educational purposes only. 
+- The Footer features social media links that are related to the website and provides a copyright line indicating that this website was created for educational purposes only. 
 
 **The Landing Page**
 
 ![landing page](documentation/images/features/index-page.png)
 
-- The Landing page greets the user with a simple design, a brief blurb indicating the purpose of the website, and the main call to action button that leads the user to the Tutorial List page. 
+- The Landing page greets the user with a simple design, a brief blurb indicating the purpose of the website, and the main call-to-action button that leads the user to the Tutorial List page. 
 - The hero image set in the background further emphasises the website's purpose.
 
 **About page**
 
 ![about page](documentation/images/features/about-page.jpg)
 
-- The About page displays a profile picture of the instructor and provides a brief introduction. A further call to action button is used allowing the user to explore different tutorials that are being offered. 
+- The About page displays a profile picture of the instructor and provides a brief introduction. A further call-to-action button is used, allowing the user to explore different tutorials that are being offered. 
 
 
 **Tutorial list**
-- A list of currently offered tutorials is presented in a card format which displays the tutorial holding image, the title and the excerpt for each tutorial. Each has a call to action button inviting the user to read more. 
+- A list of currently offered tutorials is presented in a card format which displays the tutorial holding an image, the title and the excerpt for each tutorial. Each has a call-to-action button inviting the user to read more. 
 
 ![tutorial list](documentation/images/features/tutorial-list-page.jpg)
 
 **Individual Tutorial page**
-- Once inside each tutorial the user is presented with a full tutorial description and the tutor name.
-    -  A call to action button invites the user to either Book a tutorial if the user is logged in or Register to proceed with the booking.
+- Once inside each tutorial, the user is presented with a full tutorial description and the tutor's name.
+    -  A call-to-action button invites the user to either Book a tutorial if the user is logged in, or Register to proceed with the booking.
     - If the user is not logged in or registered, they will be redirected to either the Login or Register pages. 
     - Upon Registration or login they are redirected to the home page.
 
@@ -244,7 +244,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 - Upon clicking on the tutorial event, they are provided with three options:
     - If the tutorial slot is scheduled in the past, a modal appears indicating that the tutorial time has ceased and they are prompted to select another available slot.
     - If the tutorial is already booked, a modal appears indicating that the tutorial is already booked.
-    - If the tuturial is available, the user is redirected to a booking page.
+    - If the tutorial is available, the user is redirected to a booking page.
 - I have chosen to display the calendar as a daily view for screens smaller than 768px in order to display full tutorial title without it being cut off by the Full Calendar configurations. 
 - The screens over 768px display a montly view. If the tutorial title is longer, a title pop up appears upon hovering over it. 
 
@@ -263,10 +263,10 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 ![Book Tutorial modal](documentation/images/features/book-tutorial-modal.png)
 
 **My Tutorials page (restricted access)**
-- The user can access their booked tutorial information in their My Tutorials page. There they can see past and upcoming bookings, and if they do not have any current bookings, "Discover tutorials" or "Book tutorial" buttons are displayed that would take the user to appropriate pages. 
+- The user can access their booked tutorial information in the My Tutorials page. There they can see past and upcoming bookings, and if they do not have any current bookings, "Discover tutorials" or "Book tutorial" buttons are displayed that will take the user to appropriate pages. 
 - Each upcoming tutorial has two buttons: "Edit" and "Cancel".
-    - If the user wants to cancel the booking, the modal pops up asking the user to confirm the cancellation.
-        - Upon successfull cancelation, a confirmation message is displayed at the top of the page and the user is redirected to My Tutorials page.
+    - If the user wants to cancel the booking, the modal pops up asking the user to confirm the cancelation.
+        - Upon successful cancelation, a confirmation message is displayed at the top of the page and the user is redirected to My Tutorials page.
     - If the user wants to edit the booking, they are redirected to an individual edit booking page.
 
     ![My Tutorials page](documentation/images/features/my-tutorials-page.png)
@@ -276,29 +276,29 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
 - Once inside the Edit Booking page, the user is presented with a drop down form which displays four options:
    ![Edit Booking page](documentation/images/features/edit-booking-page.png)
-    1. If there are no future tutorial slots available the "No available dates for all tutorials. Come back later to check." message is displayed above the drop down list and a My Tutorials button is shown that redirects the user back to the My Tutorials page.
+    1. If there are no future tutorial slots available, the "No available dates for all tutorials. Come back later to check." message is displayed above the drop-down list and a My Tutorials button is shown that redirects the user back to the My Tutorials page.
      ![no tutorials](documentation/images/features/no-sessions-available.png)
-    2. If there are no slots available for that specific tutorial, the "No other available dates for this tutorial. Feel free to choose another though!" message is displayed.
-        - The drop down list generates other available tutorials that the user can choose from.
+    2. If there are no slots available for that specific tutorial, "No other available dates for this tutorial. Feel free to choose another though!" message is displayed.
+        - The drop-down list generates other available tutorials that the user can choose from.
         - Upon selection, the user can click "Update booking" button.
-        - If the booking is sucessful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
+        - If the booking is successful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
      ![other tutorials](documentation/images/features/another-tutorial-choice.png)
     3. If there are available slots for that specific tutorial and no other tutorials, the "Choose another date for your tutorial." message is displayed.
-        - The drop down list generates all available tutorial dates that the user can choose from.
+        - The drop-down list generates all available tutorial dates that the user can choose from.
         - Upon selection, the user can click "Update booking" button.
         - If the booking is sucessful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
         - ![same tutorial](documentation/images/features/same-tutorial-different-date.png)
     4. If the same tutorial slots and other tutorial slots are available, the "Pick another date or choose a different tutorial." message is displayed.
-        - The drop down list generates all available tutorial dates that the user can choose from.
+        - The drop-down list generates all available tutorial dates that the user can choose from.
         - Upon selection, the user can click "Update booking" button.
-        - If the booking is sucessful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
+        - If the booking is successful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
         - ![all tutorials](documentation/images/features/various-tutorials-choice.png)
 
 **Cancel booking**
 - The user can cancel their tutorial booking through My Tutorials page. Upon clicking on the Cancel button:
     - A cancel booking modal appears asking for confirmation of the action.
     - The user can cancel the process and return to the My Tutorials page or click on the "cancel booking" button.
-        - Upon cancelation a message appears notifying the user that the booking has been successfully canceled.
+        - Upon cancelation, a message appears notifying the user that the booking has been successfully canceled.
 
         ![Cancel booking modal](documentation/images/features/delete-booking-modal.png)
 
@@ -309,7 +309,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 <summary>Sign Up</summary>
 
 - The Sign Up form allows the user to create an account in order to access additional content: Book Tutorial page, and My Tutorials page.
-    - Upon successfull registration, a confirmation message is displayed at the top of the page and the user is redirected to the home page.
+    - Upon successful registration, a confirmation message is displayed at the top of the page and the user is redirected to the home page.
     - The user's name is also visible at the top of the navigation bar "Hi, name!".
     
     ![Sign Up](documentation/images/features/signup-page.png)
@@ -329,7 +329,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     <summary>Sign Out</summary>
 
 - When the user wishes to leave the account the logout button enables a confirmation page ensuring that the user is informed of their actions.
-    - Upon successfull logout, a confirmation message is displayed at the top of the page.
+    - Upon successful logout, a confirmation message is displayed at the top of the page.
 
     ![logout](documentation/images/features/logout-page.jpg)
 </details>
@@ -344,17 +344,17 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 - Upon an attempt to access any of these the following alert messages will be activated:
     - If the user attempts to access any of the restricted pages by typing in the url link to the browser, the following message will appear and the user will be automatically redirected to the Sign up page:
         ![No access to this content](documentation/images/features/no-access-to-content.jpg)
-        - Upon successful signup, the user will be redirected to the page they have attempted to access.
+        - Upon successful sign up, the user will be redirected to the page they have attempted to access.
     - If the content that the user attempted to access belongs to another user, for example, editing the tutorial booking, the following alert message will appear:
         ![No permission to access this booking](documentation/images/features/alert-others-booking.jpg)
-    - If the user is trying to access the record of a cancelled booking, the following message will appear:
+    - If the user is trying to access the record of a canceled booking, the following message will appear:
         ![Booking doesn't exist](documentation/images/features/booking-doesnt-exist.jpg)
         - This alert message will be displayed to the booking's owner and the user that the booking did not belong to. 
     - If the user by accident tries to edit someone else's booking, the following message will appear:
         ![You can only edit your own booking](documentation/images/features/edit-your-own-booking-message1.png)
 
 **Error pages**
-- Error pages have been added to troubleshoot appropriate server response to user requests - 400, 403, 404, 500. The below 404 page showcases the desing applied throughout.:
+- Error pages have been added to troubleshoot appropriate server response to user requests - 400, 403, 404, 500. The below 404 page showcases the design applied throughout:
   
     <details>
         **<summary>404 error page</summary>**
@@ -399,9 +399,9 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 ### Features Left to Implement
 - Allow the user to submit a customised tutorial request form. This would allow to address any individual needs of a crafter.  
 - Implement comment and review features for each tutorial.
-- Develop an in depth user participation by providing an ability to share or sell their own craft projects. This includes allowing the user to submit their project photos, titles, author’s name, and so on.
-- Filter tutorial drop down menu in the edit tutorial page in order to show just that tutorial's future dates for picking from. Currently this feature is being handled by applying different notificaitons to to the user once they enter edit booking page.
-- Create a site admin front end access allowing the site administrator to create, edit and delete existing and future tutorials.
+- Develop in-depth user participation by providing an ability to share or sell their own craft projects. This includes allowing the user to submit their project photos, titles, author’s name, and so on.
+- Filter tutorial drop-down menu on the edit tutorial page in order to show just that tutorial's future dates for picking from. Currently, this feature is being handled by applying different notifications to the user once they enter the Edit booking page.
+- Create a site admin front end access, allowing the site administrator to create, edit and delete existing and future tutorials.
     - This would also involve notifying the users of any changes to their booked tutorials. 
 - Any unresolved bug fixes and further website performance enhancements.
 
@@ -419,7 +419,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 ### Frameworks and Libraries
 - [Django](https://www.djangoproject.com/) Python framework for the overall project logic implementation.
 - [Bootstrap](https://getbootstrap.com/) CSS framework that allowed to implement various styled elements, including modals. It was also used for quick and easy styling of the overall website.
-- [Full Calendar](https://fullcalendar.io/) JavaScript calendar open source that allowed to display available tutorial bookings in a calendar view. 
+- [Full Calendar](https://fullcalendar.io/) JavaScript calendar open source that allows to display available tutorial bookings in a calendar view. 
 
 ### Databases
 - PostgreSQL: the database used to store all the data.
@@ -458,7 +458,7 @@ Full list of dependencies used for the project can be found in the requirements.
 
 ## Testing
 
-The game application went through extensive testing during the development and deployement stages. 
+The website went through extensive testing during the development and deployment stages. 
 - See [TESTING.md](TESTING.md) file for full testing and validation information.
 
 [Return to Table of Contents](#table-of-contents)
@@ -513,7 +513,7 @@ Inside your project:
  - add both dependencies to the requirements.txt
  - Create a Procfile declaring the web process `web: ` followed by a command to execute the project, for example `python3 manage.py runserver` if using Gitpod as your IDE.
  - Create a runtime.txt and note the closest version of Python to the one you use.
- - Make sure your DEBUG in settings.py is set to False
+ - Make sure your DEBUG in settings.py is set to False.
 
 1. Navigate to https://www.heroku.com platform website.
 2. Create or log in to your account.
@@ -533,9 +533,9 @@ Inside your project:
 
 6. Once step 5 is done, navigate to the "Deploy" tab a the top of the screen to the left of where the Settings tab is located.
 7. Click on "Github" icon under "Deployment method", and connect Heroku to your Github account. 
-8. Once the accounts are connected you can choose between automatic or manual deployment:
+8. Once the accounts are connected, you can choose between automatic or manual deployment:
 
-    1) Automatic deplyoment will automatically update your app once you use "git push" command in your IDE. 
+    1) Automatic deployment will automatically update your app once you use "git push" command in your IDE. 
 
     2) Manual deployment will require you to manually "push" the changes you made in the IDE to the Heroku system.
 
@@ -544,7 +544,7 @@ Inside your project:
 ## Credits
 
 ### Content
-The content for the website has been written primarily by me. The content for tutorial descriptions were taken from the following soureces:
+The content for the website has been written primarily by me. The content for tutorial descriptions were taken from the following sources:
 - [Lord libidan](https://lordlibidan.com/how-to-cross-stitch-faster/#:~:text=Traditionally%20there%20are%20two%20ways,back%20with%20the%20other%20direction)
 - [Crafty kid company](https://www.craftykitcompany.co.uk/blogs/get-crafty-with-us/a-beginners-guide-to-cross-stitch#:~:text=Cross%20stitch%20is%20made%20up,smaller%20the%20stitches%20will%20be)
 
@@ -593,7 +593,7 @@ The content for the website has been written primarily by me. The content for tu
 </details>
 
 ### General resources:
-Whilst working on this project I relied on Django documentation and other resources to deepen my knowledge and gain a better understanding how to build a full-stack website. 
+Whilst working on this project, I relied on Django documentation and other resources to deepen my knowledge and gain a better understanding of how to build a full-stack website. 
 
 <details>
 <summary>ERD & flowcharts</summary>
