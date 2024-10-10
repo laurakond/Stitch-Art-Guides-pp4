@@ -1,6 +1,6 @@
 # Stitch Art Guides
 
-![main-image]()
+![main-image](documentation/images/features/am-i-responsive.jpeg)
 
 (By Laura Kondrataite)
 
@@ -360,38 +360,23 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
         ![You can only edit your own booking](documentation/images/features/edit-your-own-booking-message1.png)
 
 **Error pages**
-- The following error pages have been added to troubleshoot appropriate server response to user requests:
-    <details>
-        **<summary>400 error page</summary>**
-
-    ![400 error page]()
-    </details>
-
-    <details>
-        **<summary>403 error page</summary>**
-
-    ![403 error page]()
-    </details>
-
+- Error pages have been added to troubleshoot appropriate server response to user requests - 400, 403, 404, 500. The below 404 page showcases the desing applied throughout.:
+  
     <details>
         **<summary>404 error page</summary>**
 
-    ![404 error page]()
+    ![404 error page](documentation/images/features/404-page.png)
     </details>
 
-    <details>
-        **<summary>500 error page</summary>**
 
-    ![500 error page]()
-    </details>
 
 **Notification messages**
 <details>
     <summary>User registration/access</summary>
 
-![Successful login]()
-![Successful registration]()
-![Successful logout]()
+![Successful sign in](documentation/images/features/successful-signin.jpg)
+![Successful registration](documentation/images/features/signup-message.png)
+![Successful logout](documentation/images/features/singed-out-message.jpg)
 </details>
 
  <details>
