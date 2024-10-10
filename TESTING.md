@@ -14,7 +14,7 @@ By Laura Kondrataite
 - [Lighthouse](#lighthouse-testing)
 - [User stories testing](#user-stories-testing)
 - [Accessibility](#accessibility)
-- [Browser testing](#browser-testing)
+- [Device testing](#device-testing)
 - [Responsiveness testing](#responsiveness-testing)
 - [User testing](#user-testing)
 - [Manual testing](#manual-testing)
@@ -672,7 +672,7 @@ Website performance, accessibility, best practices and SEO were tested using Lig
 
 [Return to Table of Contents](#contents)
 
-### Browser testing
+### Device testing
 The project was tested against the following devices and browsers:
 - Google Chrome
 - Google Chrome Dev
@@ -690,7 +690,7 @@ The project was tested against the following devices and browsers:
 [Return to Table of Contents](#contents)
 
 ### User testing
-
+The application was tested during the development and post development stages. I have asked my friends and peers to notify me of any issues that might appear. No issues were reported/noted during the development and post development.
 
 [Return to Table of Contents](#contents)
 
