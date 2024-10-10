@@ -15,7 +15,6 @@ By Laura Kondrataite
 - [User stories testing](#user-stories-testing)
 - [Accessibility](#accessibility)
 - [Device testing](#device-testing)
-- [Responsiveness testing](#responsiveness-testing)
 - [User testing](#user-testing)
 - [Manual testing](#manual-testing)
 - [Restricted access testing](#restricted-access-testing)
@@ -669,6 +668,8 @@ Website performance, accessibility, best practices and SEO were tested using Lig
 [Return to Table of Contents](#contents)
 
 ### Accessibility
+The project was run through Wave evaluation tool and WCAG Colour contrast checker. 
+- No errors were detected when passing through Wave evaluation tool. 
 
 [Return to Table of Contents](#contents)
 
@@ -682,10 +683,6 @@ The project was tested against the following devices and browsers:
 - Galaxy s10
 - Galaxy Tab A
 - iPhone 7
-
-[Return to Table of Contents](#contents)
-
-### Responsiveness testing
 
 [Return to Table of Contents](#contents)
 
