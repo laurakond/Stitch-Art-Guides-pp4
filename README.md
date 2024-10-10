@@ -511,7 +511,7 @@ Inside your project:
  - install the latest gunicorn to your virtual environment
  - install the latest whitenoise version
  - add both dependencies to the requirements.txt
- - Create a Procfile declaring the web process `web: ` followed by a command to execute the project, for example `python3 manage.py runserver`if using Gitpod as your IDE.
+ - Create a Procfile declaring the web process `web: ` followed by a command to execute the project, for example `python3 manage.py runserver` if using Gitpod as your IDE.
  - Create a runtime.txt and note the closest version of Python to the one you use.
  - Make sure your DEBUG in settings.py is set to False
 
