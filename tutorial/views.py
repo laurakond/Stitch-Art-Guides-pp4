@@ -4,7 +4,8 @@ from .models import Tutorial, TutorialDate
 
 
 class TutorialList(generic.ListView):
-    """Class that displays all tutorials in one page.
+    """
+    Class that displays all tutorials in one page.
     **Context**
     ``queryset``
         All displayed instances of :model:`tutorial.Tutorial`
@@ -18,7 +19,8 @@ class TutorialList(generic.ListView):
 # the below code was appropriated from Code
 # Institute's Blog walkthrough
 def tutorial_detail(request, slug):
-    """Function that displays individual tutorial's details.
+    """
+    Function that displays individual tutorial's details.
     **Context**
     ``tutorial``
         An individual tutorial of :model:`tutorial.Tutorial`

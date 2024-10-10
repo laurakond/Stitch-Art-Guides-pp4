@@ -4,9 +4,7 @@ from cloudinary.models import CloudinaryField
 
 
 class Tutorial(models.Model):
-    """
-    Stores information related to an individual Tutorial entry.
-    """
+    """Stores information related to an individual Tutorial entry."""
     title = models.CharField(
         max_length=150,
         unique=True,
