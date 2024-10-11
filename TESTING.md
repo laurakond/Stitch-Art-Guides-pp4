@@ -87,13 +87,13 @@ All files were put through the official [W3C Markup Validation](https://validato
 - After receiving the second warning I managed to get John from Tutor support to help me out. 
 - With his encouragement, I uninstalled and re-installed the two dependencies and ensured that the changes have not affected the functionality of the website in the locally and once deployed.
 
-![add image here]()
+![gunicorn-error](documentation/images/error_images/gunicorn-warning.png)
 
 **url path <slug:slug>/<int:id> not rendering**
     <details>
-    <summary></summary>
+    <summary>Error image</summary>
 
-![username-validation]()
+![slug-slug-not-rendering](documentation/images/error_images/slug-tutorialdate-not-rendering.png)
 </details>
 
 - I received the above error when trying to render a url path for each individual tutorial booking.
@@ -203,7 +203,7 @@ TEMPLATES = [
 **Uncaught TypeError: cannot read properties of null**
 I was getting the following error when on the My Tutorials page. 
 
-![properties of null]()
+![properties of null](documentation/images/error_images/null-properties-error.png)
 The code that was throwing an error was this:
 ```
     /* Functionality for Booking modal on book_a_tutorial.html */
@@ -241,12 +241,12 @@ The code that was throwing an error was this:
 
 - I noticed that when hovering over each delete button inside the Delete Modal, the instance url was displaying ‘#’ instead of the id number:
 
-![booked_tutorials/#]()
+    ![booked_tutorials/#](documentation/images/error_images/delete-booking-id.png)
 - I adjusted the anchor tag’s id with a `session.id` in my_tutorials.html:
     - ``` <a id="deleteConfirm-{{ session.id }}" href="#" class="btn btn-danger">Delete booking</a> ```
 - Inside script.js, I adapted the syntax of the `deleteBookingEvent` element to the `const deleteConfirm = document.getElementById(deleteConfirm-${bookingId});`:
     - This ensured that the server was showing the individual tutorial booking instance.
-    ![correct booking instance]()
+    ![correct booking instance](documentation/images/error_images/delete-booking-id-fixed.png)
 
 **Conditional message filtering**
 - When testing different message prompts based on booked tutorials when editing the booking, a wrong message appeared when only the same tutorial title booking was available. The message that was being prompted was “Pick another date or choose a different tutorial.”
@@ -263,9 +263,9 @@ The code that was throwing an error was this:
 - Once that was resolved, I noticed that some of the error messages were appearing where they were not meant to. 
     - To solve this, I moved the authentication code up within the view functions in order to ensure that the check is carried out first thing when the view loads.
     
-    ![Incorrect error rendering]()
+    ![Incorrect error rendering](documentation/images/error_images/unauthorised-access-alert-message.png)
 
-    ![fixed code placement image]()
+    ![fixed code image](documentation/images/error_images/unauthorised-access-alert-message.png)
 
 **Favicon not rendering**
 - Upon upload of all files, the favicon was not properly rendering when the the website was loaded. 
@@ -283,7 +283,6 @@ The code that was throwing an error was this:
     - [Geek for Geeks JavaScript Date comparison](https://www.geeksforgeeks.org/compare-two-dates-using-javascript/)
     - [Freecodecamp: compare two dates in javascript](https://www.freecodecamp.org/news/compare-two-dates-in-javascript/#:~:text=In%20JavaScript%2C%20you%20can%20use%20comparison%20operators%20like,to%20their%20respective%20corresponding%20timestamps)
     - [StackOverflow: compare string with todays date in javascript](https://stackoverflow.com/questions/15063670/compare-string-with-todays-date-in-javascript)
-    ![username-validation]()
     </details>
 
         
@@ -293,19 +292,18 @@ The code that was throwing an error was this:
 - I received this error when trying to check if /my-tutorials/ url path was accessible to anonymous users. Upon quick research, I realised that I needed to alter my request in views.py by adding a user specific id, and also apply @login_required above the my_tutorials function.
     - This seems to have worked.
 
-    ![id expected a number error image]()
+    ![id expected a number error image](documentation/images/error_images/lazyobject-error.png)
     <details>
         <summary>I found the following resources useful:</summary>
         
     - [Stackoverflow: typerror field id expected a number but got django contrib auth](https://stackoverflow.com/questions/62966136/typeerror-field-id-expected-a-number-but-got-django-contrib-auth-models-anon)
-    
     </details>
     
 **Empty Past Tutorials list in My Bookings page:**
 - When working on My Bookings page, I noticed that the template was not rendering appropriate information where needed. I tried checking if the upcoming_sessions and past_sessions lists were coming back with correct information.
 - After running the print statements (code1) I realised that past_sessions list was not being populated. 
     <details>
-            <summary>Error code</summary>
+    <summary>Error code</summary>
 
         @login_required
         def my_tutorials(request):
@@ -345,7 +343,7 @@ The code that was throwing an error was this:
 - Going through the code, I noticed that I was appending to the appropriate list outside the for statement. I moved the if statement inside the for statement and the issue was resolved.
 
     <details>
-            <summary>Fixed code</summary>
+    <summary>Fixed code</summary>
 
 
         @login_required
