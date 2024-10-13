@@ -1,5 +1,5 @@
-from django.db import IntegrityError
 from django.contrib.auth.models import User
+from django.db import IntegrityError
 from django.test import TestCase
 from .models import Tutorial, TutorialDate, Booking
 
@@ -37,7 +37,7 @@ class TestTutorialModel(TestCase):
             another_tutorial.save()
 
     def test_tutorial_title_is_unique(self):
-        """Checks that tutorial slug is unique"""
+        """Checks that tutorial title is unique"""
         another_tutorial = Tutorial(
             title="Tutorial title",
             slug="tutorial-title2",
@@ -121,4 +121,3 @@ class TestBookingModel(TestCase):
             )
         self.assertEqual(self.booking.user, self.user)
         self.assertTrue(isinstance(self.booking, Booking))
- 
