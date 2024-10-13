@@ -808,13 +808,26 @@ Whilst working on this project, I relied on Django documentation and other resou
 <details>
 <summary>Automated Testing:</summary>
 
+- Automated testing resources:
+    - [Unit tests python](https://www.dataquest.io/blog/unit-tests-python/)
+    - [unittest — Unit testing framework](https://docs.python.org/3/library/unittest.html)
+    - [Testing in Django (Part 1) – Best Practices and Examples](https://realpython.com/testing-in-django-part-1-best-practices-and-examples/#testing-models)
+    - [Legion Script - Mastering Django Unit Testing: An In-Depth Introduction and Tutorial](https://www.youtube.com/watch?app=desktop&v=N_HLNV2UQjg)
+        - [Github source code](https://github.com/legionscript/inventory_management/blob/unit_tests/inventory_management/inventory/tests.py)
+    - [mdn Django Tutorial Part 10: Testing a Django web application](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Testing)
+
 - selfassertRaises(Exception):
-    - https://stackoverflow.com/questions/58622995/how-to-use-assertraises-to-rise-an-error
-    - https://stackoverflow.com/questions/129507/how-do-you-test-that-a-python-function-throws-an-exception
-    - https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaises
-    - https://www.geeksforgeeks.org/test-if-a-function-throws-an-exception-in-python/
-    - https://stackoverflow.com/questions/55745592/name-integrityerror-is-not-defined-why-cant-i-used-except-integrityerror
-    - https://docs.djangoproject.com/en/5.1/ref/models/fields/
+    - [How to use assertraises](https://stackoverflow.com/questions/58622995/how-to-use-assertraises-to-rise-an-error)
+    - [Test Python function that throws an error](https://stackoverflow.com/questions/129507/how-do-you-test-that-a-python-function-throws-an-exception)
+    - [Testcase assertRaises](https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaises)
+    - [Geeks for geeks function throws an exception in Python](https://www.geeksforgeeks.org/test-if-a-function-throws-an-exception-in-python/)
+    - [Stackoverflow Integrity error](https://stackoverflow.com/questions/55745592/name-integrityerror-is-not-defined-why-cant-i-used-except-integrityerror)
+    - [Django docs model field reference](https://docs.djangoproject.com/en/5.1/ref/models/fields/)
+
+- Testing forms:
+    - [Testing forms and lookups](https://django-selectable.readthedocs.io/en/latest/testing.html)
+    - [Test Django form with choice field](https://stackoverflow.com/questions/21034938/how-to-test-a-django-form-with-a-modelchoicefield-using-test-client-and-post-met)
+    - [Pytest and pytest-django ends up with assert error](https://stackoverflow.com/questions/75935842/pytest-and-pytest-django-ends-up-with-assert-error)
 
 </details>
 
