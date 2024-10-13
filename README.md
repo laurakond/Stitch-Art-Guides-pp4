@@ -237,7 +237,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     - If the user is not logged in or registered, they will be redirected to either the Login or Register pages. 
     - Upon Registration or login they are redirected to the home page.
 
-![Tutorial detail page](documentation/images/features/tutorial-detail-page.png)
+    ![Tutorial detail page](documentation/images/features/tutorial-detail-page.png)
 
 **Book Tutorial page (restricted access)**
 - Once the user is Registered/Logged in, they can access Book Tutorial page that displays a calendar with available tutorial slots (month view for large screens and day view for smaller screens). 
@@ -805,6 +805,18 @@ Whilst working on this project, I relied on Django documentation and other resou
 
 </details>
 
+<details>
+<summary>Automated Testing:</summary>
+
+- selfassertRaises(Exception):
+    - https://stackoverflow.com/questions/58622995/how-to-use-assertraises-to-rise-an-error
+    - https://stackoverflow.com/questions/129507/how-do-you-test-that-a-python-function-throws-an-exception
+    - https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaises
+    - https://www.geeksforgeeks.org/test-if-a-function-throws-an-exception-in-python/
+    - https://stackoverflow.com/questions/55745592/name-integrityerror-is-not-defined-why-cant-i-used-except-integrityerror
+    - https://docs.djangoproject.com/en/5.1/ref/models/fields/
+
+</details>
 
 ### Acknowledgments
 
