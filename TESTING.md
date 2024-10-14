@@ -285,8 +285,6 @@ The code that was throwing an error was this:
     - [StackOverflow: compare string with todays date in javascript](https://stackoverflow.com/questions/15063670/compare-string-with-todays-date-in-javascript)
     </details>
 
-        
-
 **Field ‘id’ expected a number but got SimpleLazyObject**
 
 - I received this error when trying to check if /my-tutorials/ url path was accessible to anonymous users. Upon quick research, I realised that I needed to alter my request in views.py by adding a user specific id, and also apply @login_required above the my_tutorials function.
@@ -460,6 +458,10 @@ future_tutorials = TutorialDate.objects.filter(
         color: #721c24;
         background-color: #f8d7da;
         border-color: #f5c6cb;}```
+
+**Filtering available tutorials**
+- When testing edit_booking.html functionality, I noticed that any earlier in the day unbooked tutorials were showing up in the drop down filter. 
+    - For example, if the user has a booking today at 10am, and there is another unbooked tutorial at 8am, it would appear in the drop down menu. This was happening because I filtered tutorials by date and not time. It has been fixed.
 
 ### Unfixed bugs
 **Back button in the browser**
@@ -774,6 +776,16 @@ I have implemented restricted access to specific content that is only allowed to
 | Sign Up page      | Create an account                                                                               | Redirects back to the initial page the user attempted to access | Y   |          |
 | Edit Booking page | Types in the booking that does not belong to the user                                           | Redirects to the My Tutorial page and an alert message is shown | Y   |          |
 | Edit Booking page | Types in canceled booking's url                                                                 | Redirects to the My Tutorial page and an alert message is shown | Y   |          |
+
+
+### Automated Testing
+
+- Automated testing has been implemented for the following:
+    - Tutorial, TutorialDate and Booking models
+    - Tutorial detail template
+    - Booking form
+
+
 
 [Return to Table of Contents](#contents)
 
