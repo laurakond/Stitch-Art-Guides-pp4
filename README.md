@@ -20,7 +20,7 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 - [Flowcharts](#flowcharts)
 - [Wireframes](#wireframes)
 - [Color palette](#color-palette)
-- [Fonts styles](#font-styles)
+- [Font styles](#font-styles)
 
 [Agile Methodology](#agile-methodology)
 - [GitHub Project Management](#github-project-management)
@@ -229,7 +229,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 **Tutorial list**
 - A list of currently offered tutorials is presented in a card format which displays the tutorial holding an image, the title and the excerpt for each tutorial. Each has a call-to-action button inviting the user to read more. 
 
-![tutorial list](documentation/images/features/tutorial-list-page.jpg)
+    ![tutorial list](documentation/images/features/tutorial-list-page.jpg)
 
 **Individual Tutorial page**
 - Once inside each tutorial, the user is presented with a full tutorial description and the tutor's name.
@@ -259,8 +259,8 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     - Upon clicking the button, a modal pops up asking the user to confirm their booking.
     - Once they have booked the tutorial slot, they are redirected to My Tutorials page and a confirmation message is displayed at the top of the page.
 
-![Tutorial session](documentation/images/features/tutorial-session-page.png)
-![Book Tutorial modal](documentation/images/features/book-tutorial-modal.png)
+    ![Tutorial session](documentation/images/features/tutorial-session-page.png)
+    ![Book Tutorial modal](documentation/images/features/book-tutorial-modal.png)
 
 **My Tutorials page (restricted access)**
 - The user can access their booked tutorial information in the My Tutorials page. There they can see past and upcoming bookings, and if they do not have any current bookings, "Discover tutorials" or "Book tutorial" buttons are displayed that will take the user to appropriate pages. 
@@ -357,7 +357,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 - Error pages have been added to troubleshoot appropriate server response to user requests - 400, 403, 404, 500. The below 404 page showcases the design applied throughout:
   
     <details>
-        **<summary>404 error page</summary>**
+    <summary>404 error page</summary>
 
     ![404 error page](documentation/images/features/404-page.png)
     </details>
@@ -369,12 +369,6 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 ![Successful sign in](documentation/images/features/successful-signin.jpg)
 ![Successful registration](documentation/images/features/signup-message.png)
 ![Successful logout](documentation/images/features/singed-out-message.jpg)
-</details>
-
- <details>
-    <summary>Tutorial booking confirmation</summary>
-
-![Successful booking confirmation]()
 </details>
 
  <details>
