@@ -8,11 +8,21 @@ class BookingForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         current_date = datetime.now()
+        current_time = current_date.time()
 
         # filter Tutorial dates/times that do not have a booking created.
-        future_tutorials = TutorialDate.objects.filter(
-            tutorial_date__gte=current_date
+        free_tutorials = TutorialDate.objects.filter(
+            tutorial_date__gt=current_date
             ).exclude(booking__isnull=False)
+
+        # tutorials happening today only
+        free_tutorials_today = TutorialDate.objects.filter(
+            tutorial_date=current_date,
+            start_time__gte=current_time,
+            ).exclude(booking__isnull=False)
+
+        # combine both filters into one
+        future_tutorials = free_tutorials | free_tutorials_today
 
         # Override __init__ function to show results based on
         # applied conditional filtering above. The code was
