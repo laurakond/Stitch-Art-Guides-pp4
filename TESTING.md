@@ -463,6 +463,10 @@ future_tutorials = TutorialDate.objects.filter(
 - When testing edit_booking.html functionality, I noticed that any earlier in the day unbooked tutorials were showing up in the drop down filter. 
     - For example, if the user has a booking today at 10am, and there is another unbooked tutorial at 8am, it would appear in the drop down menu. This was happening because I filtered tutorials by date and not time. It has been fixed.
 
+**Filtering available tutorials**
+- I noticed that an unbooked tutorial scheduled one hour behind was still appearing in the drop down list in the deployed version of the application.
+    - I managed to resolve this by adjusting the timezone in the settings.py to 'Europe/London'.
+
 ### Unfixed bugs
 **Back button in the browser**
 - Upon booking the tutorial slot, the user is redirected to another page with a confirmation message showing up confirming the booking has been made.
@@ -476,8 +480,7 @@ future_tutorials = TutorialDate.objects.filter(
 
 **Past events in Calendar day view**
 - When customising past and future events, I could not find a way to target past events font so that they would appear grayed out. The full month view of past events are displaying as expected.
-    - This will be addressed at the next development stage.
-
+    - This will be addressed at the next development stage.    
 
 [Return to Table of Contents](#contents)
 
