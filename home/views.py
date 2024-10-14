@@ -206,10 +206,10 @@ def edit_booking(request, booking_id):
         `tutorial.TutorialDate`
     ``tutorial``
         An instance of tutorial's booking of :model:`tutorial.Tutorial`
-    ``available_tutorials``
+    ``all_available_tutorials``
         List of all available Tutorial instances of :model:
         `tutorial.TutorialDate`
-    ``other_tutorials``
+    ``all_other_tutorials``
         List of all other Tutorial instances of :model:`tutorial.TutorialDate`
     ``tutorial_form``
         An instance of :form:`home.BookingForm`
@@ -250,7 +250,7 @@ def edit_booking(request, booking_id):
         return redirect('my_tutorials')
 
     # message filtering functionality based on booked tutorials has been
-    # implemented with guidance from Sarah, Code Institute's
+    # implemented with guidance from Sarah & Oisin, the Code Institute's
     # Tutor support team.
 
     # Fetch the tutorial the user has booked
@@ -262,25 +262,45 @@ def edit_booking(request, booking_id):
         Tutorial,
         pk=tutorial_date.tutorial.id
         )
+
     # Get current date for filtering for the future
     date_now = datetime.now()
-
+    current_time = date_now.time()
     # Filter available TutorialDates by this tutorial,
     # bookings and future dates
     available_tutorials = TutorialDate.objects.filter(
         tutorial=tutorial,
         booking__isnull=True,
-        tutorial_date__gte=date_now
+        tutorial_date__gt=date_now
         )
+
+    # Tutorials happening today only.
+    available_tutorials_today = TutorialDate.objects.filter(
+        tutorial=tutorial,
+        tutorial_date=date_now,
+        start_time__gte=current_time,
+        ).exclude(booking__isnull=False)
+
+    # combine both filters into one
+    all_available_tutorials = available_tutorials | available_tutorials_today
 
     # Filter available TutorialDates by this tutorial,
     # bookings and future dates
     other_tutorials = TutorialDate.objects.filter(
         booking__isnull=True,
-        tutorial_date__gte=date_now
+        tutorial_date__gt=date_now,
         ).exclude(tutorial=tutorial)
 
-    # generate a form based on the booking instance
+    other_tutorials_today = TutorialDate.objects.filter(
+        booking__isnull=True,
+        tutorial_date=date_now,
+        start_time__gt=current_time,
+        ).exclude(tutorial=tutorial)
+
+    # Combine both filters into one
+    all_other_tutorials = other_tutorials | other_tutorials_today
+
+    # Generate a form based on the booking instance
     tutorial_form = BookingForm(instance=booking)
     tutorial_list = Booking.objects.all()
 
@@ -310,8 +330,8 @@ def edit_booking(request, booking_id):
             "booking": booking,
             "tutorial_list": tutorial_list,
             "tutorial_form": tutorial_form,
-            "available_tutorials": available_tutorials,
-            "other_tutorials": other_tutorials,
+            "all_available_tutorials": all_available_tutorials,
+            "all_other_tutorials": all_other_tutorials,
         },
     )
 
