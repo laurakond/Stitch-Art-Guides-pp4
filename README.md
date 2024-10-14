@@ -49,6 +49,7 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 - [General resources](#general-resources)
 - [Acknowledgments](#acknowledgments)
 - [Code inspiration](#code-inspiration)
+- [References](#references)
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -179,7 +180,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 - GitHub Project board was used to manage the progress and development of this project.
 - It allowed me to scope the project and keep track of progress, sometimes revising estimated dates and tasks that were needed to be done by a certain point. 
 
-![GitHub Project Management](documentation/agile/kanban.png)
+![GitHub Project Management](documentation/images/agile/finished-board.png)
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -287,19 +288,18 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
         - The drop-down list generates all available tutorial dates that the user can choose from.
         - Upon selection, the user can click "Update booking" button.
         - If the booking is sucessful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
-        - ![same tutorial](documentation/images/features/same-tutorial-different-date.png)
+        ![same tutorial](documentation/images/features/same-tutorial-different-date.png)
     4. If the same tutorial slots and other tutorial slots are available, the "Pick another date or choose a different tutorial." message is displayed.
         - The drop-down list generates all available tutorial dates that the user can choose from.
         - Upon selection, the user can click "Update booking" button.
         - If the booking is successful, the user is redirected to My Tutorials page, and a confirmation message is displayed at the top of the page.
-        - ![all tutorials](documentation/images/features/various-tutorials-choice.png)
+        ![all tutorials](documentation/images/features/various-tutorials-choice.png)
 
 **Cancel booking**
 - The user can cancel their tutorial booking through My Tutorials page. Upon clicking on the Cancel button:
     - A cancel booking modal appears asking for confirmation of the action.
     - The user can cancel the process and return to the My Tutorials page or click on the "cancel booking" button.
         - Upon cancelation, a message appears notifying the user that the booking has been successfully canceled.
-
         ![Cancel booking modal](documentation/images/features/delete-booking-modal.png)
 
 
@@ -846,5 +846,8 @@ My thanks go to:
 - The calendar display and website layout were inspired by United Events team's [project](https://github.com/hannahro15/July24Hackathon-United-Events) that featured in Code Institute's July hackathon.
 - The layout and ideas for the website design came from Prideful programmers [project](https://github.com/VCGithubCode/prideful-programmers), which featured in Code Institute's July 2024 Hackathon.
 
+### References
+- I have referred to the following repository when sourcing guidance, information and inspiration for the project:
+    - Iuliia Konovalova [e-commerce](https://github.com/IuliiaKonovalova/e-commerce/tree/main)
 
 [Return to Table of Contents](#table-of-contents)
