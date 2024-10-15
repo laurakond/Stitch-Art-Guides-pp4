@@ -182,7 +182,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
 ![GitHub Project Management](documentation/images/agile/finished-board.png)
 
-- I chose applied the "trafic-light" color scheme in order to indicate which tasks were a priority (green must-haves) and which ones were not(red won't-haves) for my project board. 
+- I chose the "trafic-light" color scheme for the MoSCoW method in order to indicate which tasks were a priority (green must-haves) and which ones were not(red won't-haves) for my project board. 
     - This provided clarity and better understanding for myself as I was a sole project contributor.
 
 [Return to Table of Contents](#table-of-contents)
@@ -344,8 +344,8 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     - My Tutorials page
     - Edit Tutorial page
     - Cancel booking prompt
-- Upon an attempt to access any of these the following alert messages will be activated:
-    - If the user attempts to access any of the restricted pages by typing in the url link to the browser, the following message will appear and the user will be automatically redirected to the Sign up page:
+- Upon an attempt to access any of these the following alert messages will be displayed:
+    - If an unregistered user attempts to access any of the restricted pages by typing in the url link to the browser, the following message will appear and the user will be automatically redirected to the Sign up page:
         ![No access to this content](documentation/images/features/no-access-to-content.jpg)
         - Upon successful sign up, the user will be redirected to the page they have attempted to access.
     - If the content that the user attempted to access belongs to another user, for example, editing the tutorial booking, the following alert message will appear:
@@ -353,7 +353,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     - If the user is trying to access the record of a canceled booking, the following message will appear:
         ![Booking doesn't exist](documentation/images/features/booking-doesnt-exist.jpg)
         - This alert message will be displayed to the booking's owner and the user that the booking did not belong to. 
-    - If the user by accident tries to edit someone else's booking, the following message will appear:
+    - If the user tries to edit someone else's booking by accident, the following message will appear:
         ![You can only edit your own booking](documentation/images/features/edit-your-own-booking-message1.png)
 
 **Error pages**
@@ -613,14 +613,14 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>User flows:</summary>
+<summary>User flows</summary>
 
 - [Figma user flow kit](https://www.figma.com/community/file/830510773896272856/user-flow-kit)
 - [Creatly common mistales to avoid when creating user flow diagrams](https://creately.com/guides/user-flow-diagram/#common-mistakes-to-avoid-when-creating-user-flow-diagrams)
 </details>
 
 <details>
-<summary>Restricting authorised access:</summary>
+<summary>Restricting authorised access</summary>
 
 - The following chat threads on Stackoverflow were very useful when trying to determine which login restrictions to use for defensive programming:
     - [@login_required and is_authenticated() -- When to use which in Django?](https://stackoverflow.com/questions/22488601/login-required-and-is-authenticated-when-to-use-which-in-django#:~:text=login_required%20is%20applied%20on%20a,is%20logged%20in%20or%20not)
@@ -630,7 +630,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Implementing calendar view for tutorial display:</summary>
+<summary>Implementing calendar view for tutorial display</summary>
 
 - [Real Python: The Python calendar module](https://realpython.com/python-calendar-module/)
 - [Python documentation: calendar](https://docs.python.org/3/library/calendar.html)
@@ -639,7 +639,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Python datetime:</summary>
+<summary>Python datetime</summary>
 
 -  [Python documentation datetime - basic date and time](https://docs.python.org/3/library/datetime.html#format-codes)
 - [Geeks for Geeks Isoformat() method](https://www.geeksforgeeks.org/isoformat-method-of-datetime-class-in-python/)
@@ -649,14 +649,14 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Creating Django error pages:</summary>
+<summary>Creating Django error pages</summary>
 
 - [Geek for geeks: Django creating a 404 error page](https://www.geeksforgeeks.org/django-creating-a-404-error-page/?ref=oin_asr1)
 - [Geeks for geeks: handling custom error page](https://www.geeksforgeeks.org/python-django-handling-custom-error-page/)
 </details>
 
 <details>
-<summary>Queryset.exists():</summary>
+<summary>Queryset.exists()</summary>
 
 - [Dev community: queryset.exists() more efficient than queryset.count()](https://dev.to/codereviewdoctor/why-queryset-exists-is-more-efficient-than-queryset-count-2f3h)
 - [Django documentation: check if record exists in model](https://forum.djangoproject.com/t/check-if-record-exists-in-model/10712/5)
@@ -664,7 +664,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>I used the following resources to familiarise myself with how to center a div:</summary>
+<summary>I used the following resources to familiarise myself with how to center a div</summary>
 
 - [How to center a div](https://www.geeksforgeeks.org/how-to-center-a-div-with-the-mx-auto-class-in-bootstrap-5/)
 - [A Designer who codes - three ways to center content](https://www.youtube.com/watch?v=nx8jyWLy0e0)
@@ -675,14 +675,14 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Securing Django views from unauthorised access:</summary>
+<summary>Securing Django views from unauthorised access</summary>
 
 - [Daisy McGirr's article](https://www.codu.co/articles/securing-django-views-from-unauthorized-access-npyb3to_)
 - [Allauth templates](https://docs.allauth.org/en/latest/common/templates.html)
 </details>
 
 <details>
-<summary>Creating event bookings:</summary>
+<summary>Creating event bookings</summary>
 
 - [Geek for Geeks: model objects create](https://www.geeksforgeeks.org/understanding-django-model-vs-modelobjectscreate/)
 - [Stackoverflow: django model vs model objects create](https://stackoverflow.com/questions/26672077/django-model-vs-model-objects-create)
@@ -691,7 +691,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Disable clickdate:</summary>
+<summary>Disable clickdate</summary>
 
 - [Stackoverflow: disable past date in Full Calendar](https://stackoverflow.com/questions/72622009/disable-past-date-in-fullcalendar-for-dateclick)
 - [MDM Web docs: date setHours()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours)
@@ -699,7 +699,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Comparing event date to current date & redirecting/alerting the user to appropriate page:</summary>
+<summary>Comparing event date to current date & redirecting/alerting the user to appropriate page</summary>
 
 - [Pyhton documentation: datetime](https://docs.python.org/3/library/datetime.html)
 - [StackOverflow: easiest way to combine date and time strings](https://stackoverflow.com/questions/9578906/easiest-way-to-combine-date-and-time-strings-to-single-datetime-object-using-pyt)
@@ -707,7 +707,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Forms & filtering the form to fetch future tutorials:</summary>
+<summary>Forms & filtering the form to fetch future tutorials</summary>
 
 - Django documentation including [form fields](https://docs.djangoproject.com/en/dev/ref/forms/fields/#modelchoicefield) 
 - [Stackoverflow: filter foreing key choices](https://stackoverflow.com/questions/291945/how-do-i-filter-foreignkey-choices-in-a-django-modelform/291968#291968)
@@ -741,7 +741,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>is_null property:</summary>
+<summary>is_null property</summary>
 
 - [Filter for empty or null values](https://www.atlassian.com/data/databases/how-to-filter-for-empty-or-null-values-in-a-django-queryset)
 - [How to filter for not exists](https://stackoverflow.com/questions/14831327/in-a-django-queryset-how-to-filter-for-not-exists-in-a-many-to-one-relationsh)
@@ -750,7 +750,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Website design and layout:</summary>
+<summary>Website design and layout</summary>
 
 - [Bootstrap 5 documentation](https://getbootstrap.com/docs/5.0)
 - [Geek for Geeks Bootstrap card sizing](https://www.geeksforgeeks.org/bootstrap-5-cards-sizing/)
@@ -764,7 +764,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Window innerwidth property:</summary>
+<summary>Window innerwidth property</summary>
 
 - [mdn web docs Window: innerWidth property](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth)
 - [FullCalendar - Change View for Mobile Devices](https://stackoverflow.com/questions/41908295/fullcalendar-change-view-for-mobile-devices)
@@ -773,7 +773,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Bootstrap Tooltip customisation:</summary>
+<summary>Bootstrap Tooltip customisation</summary>
 
 - [Stackoverflow arrow on bootstrap](https://stackoverflow.com/questions/15383440/styling-the-arrow-on-bootstrap-tooltips#:~:text=For%20styling%20each%20directional%20arrows,and%20then%20style%20them%20individually.)
     - [JS fiddle code](https://jsfiddle.net/nvishnu/rc8kncjn/33/)
@@ -784,7 +784,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Exceptions:</summary>
+<summary>Exceptions</summary>
 
 - [Stackoverflow Django object.doesnotexist](https://stackoverflow.com/questions/16181188/django-doesnotexist)
 - [Django Exceptions](https://docs.djangoproject.com/en/5.1/ref/exceptions/)
@@ -793,7 +793,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Redirection:</summary>
+<summary>Redirection</summary>
 
 - [?next=/url-path/ does not redirect to the specified path after login](https://forum.djangoproject.com/t/next-url-path-does-not-redirect-to-the-specified-path-after-login/20806)
 - [Over-riding Django-allauth login](https://stackoverflow.com/questions/38126241/over-riding-django-allauth-login-registration-urls-with-custom-url-pages)
@@ -805,7 +805,7 @@ Whilst working on this project, I relied on Django documentation and other resou
 </details>
 
 <details>
-<summary>Automated Testing:</summary>
+<summary>Automated Testing</summary>
 
 - Automated testing resources:
     - [Unit tests python](https://www.dataquest.io/blog/unit-tests-python/)
@@ -853,6 +853,6 @@ My thanks go to:
 
 ### References
 - I have referred to the following repository when sourcing guidance, information and inspiration for the project:
-    - Iuliia Konovalova [e-commerce](https://github.com/IuliiaKonovalova/e-commerce/tree/main)
+    - Iuliia Konovalova [e-commerce](https://github.com/IuliiaKonovalova/e-commerce/tree/main) project.
 
 [Return to Table of Contents](#table-of-contents)
