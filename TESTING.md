@@ -18,6 +18,7 @@ By Laura Kondrataite
 - [User testing](#user-testing)
 - [Manual testing](#manual-testing)
 - [Restricted access testing](#restricted-access-testing)
+- [Automated testing](#automated-testing)
 
 ## Testing
 
@@ -44,7 +45,7 @@ All files were put through the official [W3C Markup Validation](https://validato
 
 **W3C Markup**:
 - [Index page validation](documentation/validation/index-validation.pdf)
-- [About page validation](documentation/images/validation_images/about-validation.jpg)
+- [About page validation](documentation/validation/about-validation.pdf)
 - [Tutorial list validation](documentation/validation/tutorial-list-validation.pdf)
 - [Tutorial detail validation](documentation/validation/tutorial-detail-validation.pdf)
 - [Tutorial session validation](documentation/validation/tutorial-session-validation.pdf)
@@ -54,6 +55,9 @@ All files were put through the official [W3C Markup Validation](https://validato
 - [Login validation](documentation/validation/login-validation.pdf)
 - [Logout validation](documentation/validation/logout-validation.pdf)
 - [Signup validation](documentation/validation/signup-validation.pdf)
+- [Home/test forms validation](documentation/validation/form-testing.pdf)
+- [Tutorial/test models validation](documentation/validation/models-testing.pdf)
+- [Tutorial/test views validation](documentation/validation/view-testing.pdf)
 
 **W3C CSS**:
 - CSS validation returned with several warnings regarding buttons' styling. In order to apply the color palette throughout the project, I had to override Bootstrap's default colors for hover/active button features. 
@@ -221,7 +225,7 @@ The code that was throwing an error was this:
 - This error was referring to an element that was being used for a differerent button/modal on the book_a_tutorial.html page. 
 
 - I adjusted the code logic by including the if clause as suggested in the Stackoverflow chat thread: [Cannot read property 'addEventListener' of null](https://stackoverflow.com/questions/26107125/cannot-read-property-addeventlistener-of-null).
-    -  This video has was also helpful to refresh my memory on the how/where to place my code so that it is being rendered properly: https://www.youtube.com/watch?v=yCWMRYCfpfE
+    -  This video has was also helpful to refresh my memory on the how/where to place my code so that it is being rendered properly: [Jamis Charles - How to fix "TypeError: Cannot read properties of null (reading addEventListener)"](https://www.youtube.com/watch?v=yCWMRYCfpfE)
 
 ```
  /* Functionality for Booking modal in book_a_tutorial.html */
@@ -294,7 +298,7 @@ The code that was throwing an error was this:
 
     ![id expected a number error image](documentation/images/error_images/lazyobject-error.png)
     <details>
-        <summary>I found the following resources useful:</summary>
+    <summary>I found the following Stackoverflow thread useful:</summary>
         
     - [Stackoverflow: typerror field id expected a number but got django contrib auth](https://stackoverflow.com/questions/62966136/typeerror-field-id-expected-a-number-but-got-django-contrib-auth-models-anon)
     </details>
@@ -431,11 +435,11 @@ future_tutorials = TutorialDate.objects.filter(
 **Django alert messages rendering without colour**
 - Upon testing the functionality of the colors I noticed that they are not displaying any color.
     - I solved the problem by including `alert-{{ message.tags }}` to the code. I found the solution on [Stackoverflow](https://stackoverflow.com/questions/55202684/does-bootstrap-django-error-message-has-no-red-color).
-- The above-mentioned approach was reversed and changed with adding message configurations to the settings.py file. The appropriate style rules have also been removed as they became redundant. 
+- The above-mentioned approach was reversed and changed with adding message configurations to the settings.py file. The style rules have also been removed as they became redundant. 
 
 **Cut off Tutorial title in the Calendar view**
 
-**To note**: this has since been resolved and replaced with Bootstrap tooltips.
+- **To note**: this has since been resolved and replaced with Bootstrap tooltips.
 
 - I noticed that the tutorial title was cutting off in the Calendar view if it is over a certain length.
     - After searching for a solution, I was able to make the event title show in the second row. The code used for this was found on [Stackoverflow](https://stackoverflow.com/questions/33406697/fullcalendar-v2-event-title-cut-off-in-month-view):
@@ -452,22 +456,8 @@ future_tutorials = TutorialDate.objects.filter(
     - However, this makes the whole calendar view jump.
     - To avoid the jumping of the calendar, I decided to use Bootstrap Tooltips as it was one of the options noted in the Full Calendar documentation. 
 
-**Alert error messages**
-- When testing the application, I noticed that error alerts do not have any styling to them. I found a useful [Stackoverflow thread](https://stackoverflow.com/questions/52565366/messages-error-not-formatting-correctly-but-success-does) that explained why it was not styled. 
-    - I have taken the suggested styling options from there to start with:
-    ```
-    .alert-error {
-        color: #721c24;
-        background-color: #f8d7da;
-        border-color: #f5c6cb;}
-    ```
-
 **Filtering available tutorials**
-- When testing edit_booking.html functionality, I noticed that any earlier in the day unbooked tutorials were showing up in the drop down filter. 
-    - For example, if the user has a booking today at 10am, and there is another unbooked tutorial at 8am, it would appear in the drop down menu. This was happening because I filtered tutorials by date and not time. It has been fixed.
-
-**Filtering available tutorials**
-- I noticed that an unbooked tutorial scheduled one hour behind was still appearing in the drop down list in the deployed version of the application.
+- When testing edit_booking.html functionality, I noticed that an unbooked tutorial scheduled one hour behind was still appearing in the drop down list in the deployed version of the application.
     - I managed to resolve this by adjusting the timezone in the settings.py to 'Europe/London'.
     - The project currently does not correspond to timezones. This will be implatemented at the next development stage.
 
@@ -479,7 +469,7 @@ future_tutorials = TutorialDate.objects.filter(
 
 **Tooltip css customisation**
 - After applying the tooltips for displaying a full tutorial title in the calendar view, I could not find a way how to target the tooltips in order to apply cutsom styles.
-    - I consulted multiple resources(noted in the general resources section in the README.md), but could not resolve it at this development stage. 
+    - I consulted multiple resources (noted in the general resources section in the README.md), but could not resolve it at this development stage. 
     - This will be addressed at the next development stage.
 
 **Past events in Calendar day view**
@@ -784,6 +774,7 @@ I have implemented restricted access to specific content that is only allowed to
 | Edit Booking page | Types in the booking that does not belong to the user                                           | Redirects to the My Tutorial page and an alert message is shown | Y   |          |
 | Edit Booking page | Types in canceled booking's url                                                                 | Redirects to the My Tutorial page and an alert message is shown | Y   |          |
 
+[Return to Table of Contents](#contents)
 
 ### Automated Testing
 
