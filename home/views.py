@@ -167,7 +167,10 @@ def my_tutorials(request):
             )
         return redirect(f"{reverse('account_login')}?next={request.path}")
 
-    bookings = Booking.objects.filter(user=request.user.id)
+    bookings = Booking.objects.filter(user=request.user.id).order_by(
+        "tutorial_date",
+        "tutorial_date__start_time"
+    )
     current_datetime = datetime.now()
     past_sessions = []
     upcoming_sessions = []
