@@ -204,6 +204,7 @@ TEMPLATES = [
 I was getting the following error when on the My Tutorials page. 
 
 ![properties of null](documentation/images/error_images/null-properties-error.png)
+
 The code that was throwing an error was this:
 ```
     /* Functionality for Booking modal on book_a_tutorial.html */
@@ -255,7 +256,8 @@ The code that was throwing an error was this:
     ```other_tutorials = TutorialDate.objects.filter(
         booking__isnull=True,
         tutorial_date__gte=date_now
-        ).exclude(tutorial=tutorial)```
+        ).exclude(tutorial=tutorial)
+    ```
 
 **Error messages for unauthorised access not displaying**
 - When testing defensive programming, some of the error messages were not showing up where expected and were only redirecting to an appropriate page. 
@@ -442,10 +444,10 @@ future_tutorials = TutorialDate.objects.filter(
         white-space: normal;
         text-overflow: ellipsis;
         max-height:20px;
-  }
+    }
   .fc-daygrid-event:hover .fc-event-title {
         max-height:none !important;
-  }
+    }
     ```
     - However, this makes the whole calendar view jump.
     - To avoid the jumping of the calendar, I decided to use Bootstrap Tooltips as it was one of the options noted in the Full Calendar documentation. 
@@ -457,7 +459,8 @@ future_tutorials = TutorialDate.objects.filter(
     .alert-error {
         color: #721c24;
         background-color: #f8d7da;
-        border-color: #f5c6cb;}```
+        border-color: #f5c6cb;}
+    ```
 
 **Filtering available tutorials**
 - When testing edit_booking.html functionality, I noticed that any earlier in the day unbooked tutorials were showing up in the drop down filter. 
@@ -466,6 +469,7 @@ future_tutorials = TutorialDate.objects.filter(
 **Filtering available tutorials**
 - I noticed that an unbooked tutorial scheduled one hour behind was still appearing in the drop down list in the deployed version of the application.
     - I managed to resolve this by adjusting the timezone in the settings.py to 'Europe/London'.
+    - The project currently does not correspond to timezones. This will be implatemented at the next development stage.
 
 ### Unfixed bugs
 **Back button in the browser**
