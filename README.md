@@ -436,14 +436,14 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 - [JS Hint](https://jshint.com/) was used for validating Javascript code.
 - [W3C Markdown](https://validator.w3.org/) was used for validating html files.
 - [W3C CSS](https://jigsaw.w3.org/css-validator/) was used for validating css files.
-- [Lucidchart](https://lucid.app/) was used for creating the website flowcharts.
+- [Lucidchart](https://lucid.app/) and [Exslidraw](https://excalidraw.com/) was used for creating the website flowcharts.
 - [Balsamiq](https://balsamiq.com/) used for creating wireframes.
 - [Google Fonts](https://fonts.google.com/) for choosing appropriate fonts
 - [Favicon](https://favicon.io/) for generating a favicon
 - Google Chrome DevTools for testing, troubleshooting and brainstorming code solutions
 - [Am I Responsive?](https://ui.dev/amiresponsive) website for showing the website's responsiveness on different devices
-- [Responsive Design Checker](https://responsivedesignchecker.com/) website for checking responsiveness on different devices
 - [Pixelied](https://pixelied.com/) and Gimp, for resizing, compressing and editing images
+- [Unsplash](https://unsplash.com/s/photos/embroidery) and [Pexels](https://www.pexels.com/) for sourcing images
 - [Coolors](https://coolors.co/) for generating the color palette
 - WCAG color contrast checker for website accessibilty
 - Wave evaluation tool for giving visual feedback about the accessibility of the website
@@ -464,7 +464,7 @@ The website went through extensive testing during the development and deployment
 ## Deployment
 This website was deployed using GitHub pages and Heroku website. To deploy the project, follow the steps below:
 
-**Publish the website on Github**
+### Github
 1. Login to GitHub and navigate to the main repository page.
 2.  Click on the chosen repository,for example [Stitch Art Guides](https://github.com/laurakond/Stitch-Art-Guides-pp4).
 3. Once inside the repository, click on the "Settings" tab above the repository title displayed around the middle of the page.
