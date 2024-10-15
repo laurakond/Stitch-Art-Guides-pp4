@@ -182,6 +182,9 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
 ![GitHub Project Management](documentation/images/agile/finished-board.png)
 
+- I chose applied the "trafic-light" color scheme in order to indicate which tasks were a priority (green must-haves) and which ones were not(red won't-haves) for my project board. 
+    - This provided clarity and better understanding for myself as I was a sole project contributor.
+
 [Return to Table of Contents](#table-of-contents)
 
 
@@ -733,6 +736,8 @@ Whilst working on this project, I relied on Django documentation and other resou
 - [Filtering choices in a form based on previous field selection - Django](https://stackoverflow.com/questions/55572315/filtering-choices-in-a-form-based-on-previous-field-selection-django)
 - [Django ModelChoiceField: filtering query set and setting default value as an object](https://stackoverflow.com/questions/5329586/django-modelchoicefield-filtering-query-set-and-setting-default-value-as-an-obj/5329761#5329761)
 - [How do I filter values in a Django form using ModelForm?](https://stackoverflow.com/questions/3010489/how-do-i-filter-values-in-a-django-form-using-modelform)
+- [Cannot resolve keyword into field](https://stackoverflow.com/questions/73263575/cannot-resolve-keyword-into-field-choices-are-following-in-django)
+    - The above thread allowed me to adjust filtering for displaying booked tutorials by date and time.
 </details>
 
 <details>
