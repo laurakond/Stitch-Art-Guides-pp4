@@ -22,7 +22,10 @@ class BookingForm(forms.ModelForm):
             ).exclude(booking__isnull=False)
 
         # combine both filters into one
-        future_tutorials = free_tutorials | free_tutorials_today
+        future_tutorials = free_tutorials | free_tutorials_today.order_by(
+            "tutorial_date",
+            "start_time"
+        )
 
         # Override __init__ function to show results based on
         # applied conditional filtering above. The code was
