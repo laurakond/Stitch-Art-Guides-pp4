@@ -33,7 +33,7 @@ Live site can be found [here](https://stitch-art-guides-pp4-5a679feed1e1.herokua
 - [Languages](#languages)
 - [Frameworks and Libraries](#frameworks-and-libraries)
 - [Databases](#databases)
-- [Other Tools](#other-tools)
+- [Other Tools, technologies, packages](#other-tools-technologies-packages)
 
 [Testing](#testing)
 
@@ -177,7 +177,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
   ![GitHub Project Management](documentation/images/agile/project-board.jpeg)
 
-- GitHub Project board was used to manage the progress and development of this project.
+- [GitHub Project board](https://github.com/users/laurakond/projects/12) was used to manage the progress and development of this project.
 - It allowed me to scope the project and keep track of progress, sometimes revising estimated dates and tasks that were needed to be done by a certain point. 
 
 ![GitHub Project Management](documentation/images/agile/finished-board.png)
@@ -214,7 +214,8 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
 ![footer](documentation/images/features/footer.jpg)
 
-- The Footer features social media links that are related to the website and provides a copyright line indicating that this website was created for educational purposes only. 
+- The Footer features social media links that are related to the website and provides a copyright line indicating that this website was created for educational purposes only.
+    - The instagram account displayed in the footer refers to the site owner's/my personal instagram account that showcases cross-stitch projects which is related to the aim of the project. It is slightly different to the LinkedIn and Github accounts as it does not relate to my web development journey.
 
 **The Landing Page**
 
@@ -420,8 +421,9 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
 ### Databases
 - PostgreSQL: the database used to store all the data.
+- Sqlite3: the database used for automated testing. 
 
-### Other tools
+### Other tools, technologies, packages
 - [Whitenoise](https://whitenoise.readthedocs.io/en/stable/index.html) was Python library used for handling static files.
 - [Django allauth](https://allauth.org/) authentication library was used for allowing users to register and login.
 - [Django crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) was used for allowing to render user POST requests.
@@ -552,7 +554,7 @@ The content for the website has been written primarily by me. The content for tu
     - Notification messages: Code Institute's I blog walkthrough project
 
 - To render the different calendar view based on the screen sizes, I had to specify device sizes and apply windowResize from the Full Calendar. I used the following [Stackoverflow thread](https://stackoverflow.com/questions/73820957/fullcalendar-change-calendar-view-based-on-screen-size) to implement the code:
-    ```
+    ``` JavaScript
     $(document).ready(function () {
     let FC = FullCalendar.Calendar({
         defaultView: $(window).width() < 765 ? 'basicDay':'agendaWeek',
@@ -570,7 +572,7 @@ The content for the website has been written primarily by me. The content for tu
 </details>
 
 - To make the tutorial titles become visible in the calendar month view, I used Bootstrap tooltip plugin and Full Calendar's code to implement the functionality. The below code is taken from [Codepen](https://codepen.io/pen?&editors=001)
-    ```
+    ``` JavaScript
     eventDidMount: function(info) {
       var tooltip = new Bootstrap.Tooltip(info.el, {
         title: info.event.extendedProps.description,
@@ -846,7 +848,7 @@ My thanks go to:
     - Thomas for giving an idea of how to implement CRUD. 
 
 ### Code Inspiration
-- The project was inspired and based on some parts of Code Institute's I think therefore I blog walkthrough project. 
+- The project was inspired and based on some parts of Code Institute's I think therefore I blog walkthrough [project](https://github.com/Code-Institute-Solutions/blog/tree/main). 
     -  Credits are also noted within the code.
 - The calendar display and website layout were inspired by United Events team's [project](https://github.com/hannahro15/July24Hackathon-United-Events) that featured in Code Institute's July hackathon.
 - The layout and ideas for the website design came from Prideful programmers [project](https://github.com/VCGithubCode/prideful-programmers), which featured in Code Institute's July 2024 Hackathon.
