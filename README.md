@@ -460,6 +460,12 @@ Full list of dependencies used for the project can be found in the requirements.
 The website went through extensive testing during the development and deployment stages. 
 - See [TESTING.md](TESTING.md) file for full testing and validation information.
 
+**Visible sqlite3 file**
+- db.sqlite3 file is exposed within the file structure, which was done unintentionally. I have taken note of best practices going forward and will ensure that any future files are stored in the .gitignore file.
+
+**Camel case in HTML**
+- I have applied Camel case to certain parts of HTML, for example modals, as per I think I blog walkthrough example. I am aware that camel case is not used in HTML, therefore, this will be rectfied where needed.
+
 [Return to Table of Contents](#table-of-contents)
 
 
