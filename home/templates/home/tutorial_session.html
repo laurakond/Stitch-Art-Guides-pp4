@@ -29,12 +29,18 @@
                             {{ event_slot.tutorial.description | safe }}
                         </p>
                         <p class="card-text">
-                            <strong>Tutorial date:</strong> {{event_slot.tutorial_date}}
+                            <strong>
+                                Tutorial date:
+                            </strong> {{event_slot.tutorial_date}}
                             <br>
-                            <strong>Tutorial time:</strong> {{event_slot.start_time}} - {{event_slot.end_time}}
+                            <strong>
+                                Tutorial time:
+                            </strong> {{event_slot.start_time}} - {{event_slot.end_time}}
                         </p>
                         <p class="card-text">
-                            <strong>Tutor:</strong> {{ event_slot.tutorial.tutor_name }}
+                            <strong>
+                                Tutor:
+                            </strong> {{ event_slot.tutorial.tutor_name }}
                         </p>
                     </div>
                     <div class="card-footer custom-card-footer border-top-0 bg-transparent">
@@ -52,7 +58,7 @@
 <!-- Booking prompt Modal starts here -->
 {% if not is_booked %}
 <form method="POST">
-    <div class="modal fade" tabindex="-1" id="bookingModal" data-bs-backdrop="static" data-bs-keyboard="false"
+    <div class="modal fade" tabindex="-1" id="booking-modal" data-bs-backdrop="static" data-bs-keyboard="false"
         aria-labelledby="bookingModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
