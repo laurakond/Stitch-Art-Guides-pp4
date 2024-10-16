@@ -126,7 +126,7 @@ get() returned more than one Booking -- it returned 3!
 ```
 
 - The code that caused the error was:
-```
+``` Python
 def my_tutorials(request):
     """
     function that displays booked tutorial page.
@@ -143,7 +143,7 @@ def my_tutorials(request):
 
 - Upon reading Django documentation on user, I realised that I needed to target each user's information through user authentication. The code below has fixed the issue:
 
-```
+``` Python
 def my_tutorials(request):
     """
     function that displays booked tutorial page.
@@ -160,7 +160,7 @@ def my_tutorials(request):
 **Error pages not rendering**
 - In order to render the error pages, I had to adjust the settings.py code from
 
-```
+``` Python
 TEMPLATES = [
     {'BACKEND': 
     'django.template.backends.django.DjangoTemplates',
@@ -170,7 +170,7 @@ TEMPLATES = [
 ```
 to 
 
-```
+``` Python
 TEMPLATES = [
     {'BACKEND': 'django.template.backends.django.DjangoTemplates',
     'DIRS': [
@@ -186,7 +186,7 @@ TEMPLATES = [
 **Delete booking button not working**
 - The delete button of the CRUD part of the website did not submit the user request when the button was being clicked. 
 - I managed to resolve this by removing ```request.method == "POST"``` from the if statement and altering the code to the following:
-    ```
+    ``` Python
     @login_required
     def delete_booking(request, booking_id):
     """
@@ -210,7 +210,7 @@ I was getting the following error when on the My Tutorials page.
 ![properties of null](documentation/images/error_images/null-properties-error.png)
 
 The code that was throwing an error was this:
-```
+``` JavaScript
     /* Functionality for Booking modal on book_a_tutorial.html */
     function showBookingModal() {
         let bookingEvent = new bootstrap.Modal(document.getElementById('bookingModal'));
@@ -227,7 +227,7 @@ The code that was throwing an error was this:
 - I adjusted the code logic by including the if clause as suggested in the Stackoverflow chat thread: [Cannot read property 'addEventListener' of null](https://stackoverflow.com/questions/26107125/cannot-read-property-addeventlistener-of-null).
     -  This video has was also helpful to refresh my memory on the how/where to place my code so that it is being rendered properly: [Jamis Charles - How to fix "TypeError: Cannot read properties of null (reading addEventListener)"](https://www.youtube.com/watch?v=yCWMRYCfpfE)
 
-```
+``` JavaScript
  /* Functionality for Booking modal in book_a_tutorial.html */
     function showBookingModal() {
         let bookingEvent = new bootstrap.Modal(document.getElementById('bookingModal'));
@@ -248,7 +248,9 @@ The code that was throwing an error was this:
 
     ![booked_tutorials/#](documentation/images/error_images/delete-booking-id.png)
 - I adjusted the anchor tag’s id with a `session.id` in my_tutorials.html:
-    - ``` <a id="deleteConfirm-{{ session.id }}" href="#" class="btn btn-danger">Delete booking</a> ```
+    ```HTML 
+    <a id="deleteConfirm-{{ session.id }}" href="#" class="btn btn-danger">Delete booking</a> 
+    ```
 - Inside script.js, I adapted the syntax of the `deleteBookingEvent` element to the `const deleteConfirm = document.getElementById(deleteConfirm-${bookingId});`:
     - This ensured that the server was showing the individual tutorial booking instance.
     ![correct booking instance](documentation/images/error_images/delete-booking-id-fixed.png)
@@ -257,7 +259,8 @@ The code that was throwing an error was this:
 - When testing different message prompts based on booked tutorials when editing the booking, a wrong message appeared when only the same tutorial title booking was available. The message that was being prompted was “Pick another date or choose a different tutorial.”
 - This happened because there was an error in filtering other_tutorials query set. I was getting the test tutorial query set inside other_tutorials when I shouldn’t have.
 - To fix it I added exclude() method to other_tutorials queryset:
-    ```other_tutorials = TutorialDate.objects.filter(
+    ``` Python
+    other_tutorials = TutorialDate.objects.filter(
         booking__isnull=True,
         tutorial_date__gte=date_now
         ).exclude(tutorial=tutorial)
@@ -309,6 +312,7 @@ The code that was throwing an error was this:
     <details>
     <summary>Error code</summary>
 
+    ``` Python
         @login_required
         def my_tutorials(request):
             """
@@ -340,7 +344,8 @@ The code that was throwing an error was this:
                 {"past_sessions": past_sessions,
                 "upcoming_sessions": upcoming_sessions,
                 }
-                )    
+                )
+    ```    
 
     </details>
 
@@ -349,7 +354,7 @@ The code that was throwing an error was this:
     <details>
     <summary>Fixed code</summary>
 
-
+    ``` Python
         @login_required
         def my_tutorials(request):
             """
@@ -381,8 +386,8 @@ The code that was throwing an error was this:
                 {"past_sessions": past_sessions,
                 "upcoming_sessions": upcoming_sessions,
                 }
-                )   
-
+            )   
+    ```
     </details>
 
 **Cannot book booked events(book_a_tutorial) - calendar view:**
@@ -398,18 +403,20 @@ The code that was throwing an error was this:
 
 code filtering all future tutorials:
 
-```
+
+```Python
 future_tutorials = TutorialDate.objects.filter(
-            tutorial_date__gte=current_date
-            ).exclude(booking__user=self.user)
+    tutorial_date__gte=current_date
+    ).exclude(booking__user=self.user)
 ```
+
 
 code filtering future tutorials that are available/not booked:
 
-```
+```Python
 future_tutorials = TutorialDate.objects.filter(
-            tutorial_date__gte=current_date
-            ).exclude(booking__isnull=False)
+    tutorial_date__gte=current_date
+    ).exclude(booking__isnull=False)
 ```
 
 **Reappearing horizontal scroll bar**
@@ -443,7 +450,7 @@ future_tutorials = TutorialDate.objects.filter(
 
 - I noticed that the tutorial title was cutting off in the Calendar view if it is over a certain length.
     - After searching for a solution, I was able to make the event title show in the second row. The code used for this was found on [Stackoverflow](https://stackoverflow.com/questions/33406697/fullcalendar-v2-event-title-cut-off-in-month-view):
-    ```
+    ```CSS
     .fc-daygrid-event .fc-event-title {
         white-space: normal;
         text-overflow: ellipsis;
@@ -474,7 +481,11 @@ future_tutorials = TutorialDate.objects.filter(
 
 **Past events in Calendar day view**
 - When customising past and future events, I could not find a way to target past events font so that they would appear grayed out. The full month view of past events are displaying as expected.
-    - This will be addressed at the next development stage.    
+    - This will be addressed at the next development stage.
+
+**Django configuration**
+- When testing the application, I noticed that sometimes when a booking has been updated an error message is being thrown " You can only edit your booking".
+    - This is due to the lag caused by Heroku and Django framework when loading pages.      
 
 [Return to Table of Contents](#contents)
 
@@ -783,7 +794,7 @@ I have implemented restricted access to specific content that is only allowed to
     - Tutorial detail template
     - Booking form
 
-
+    ![automated testing](documentation/validation/automated-testing.JPG)
 
 [Return to Table of Contents](#contents)
 
