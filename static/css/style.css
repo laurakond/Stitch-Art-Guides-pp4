@@ -275,6 +275,10 @@ a.fc-event.fc-event-start.fc-event-end.fc-event-past.fc-daygrid-event.fc-daygrid
   color: var(--past-event-text);
 }
 
+a.fc-event.fc-event-start.fc-event-end.fc-event-today.fc-daygrid-event.fc-daygrid-dot-event {
+  background-color: var(--navigation);
+}
+
 a.fc-event.fc-event-start.fc-event-end.fc-event-future.fc-daygrid-event.fc-daygrid-dot-event {
   background: var(--navigation);
   color: var(--dark-text);
