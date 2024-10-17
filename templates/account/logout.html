@@ -16,15 +16,20 @@
                 <p class="text-dark-50 mx-auto mt-5 mb-5">
                     {% trans 'Are you sure you want to sign out?' %}
                 </p>
-                <form method="post" action="{% url 'account_logout' %}">
-                    {% csrf_token %}
-                    {% if redirect_field_value %}
+                <div class="d-flex flex-direction-row justify-content-center gap-3">
+                    <a class="btn custom-btn mb-2" href="{% url 'home' %}" aria-label="Home">
+                        Close
+                    </a>
+                    <form method="post" action="{% url 'account_logout' %}">
+                        {% csrf_token %}
+                        {% if redirect_field_value %}
                         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                    {% endif %}
+                        {% endif %}
                         <button class="btn btn-signup custom-btn" type="submit">
                             {% trans 'Sign Out' %}
                         </button>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
