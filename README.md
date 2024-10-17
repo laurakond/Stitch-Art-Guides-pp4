@@ -846,6 +846,7 @@ My thanks go to:
     - [Iuliia Konovalova](https://github.com/IuliiaKonovalova) for helping to find a solution on how to implement parts of CRUD functionality and further advice on project development for the submission.
 - My fellow student, [Vernell Clark](https://github.com/VCGithubCode), for troubleshooting problematic parts of code and providing a shoulder to cry on when things got really rough.
 - [Tim Nelson](https://github.com/TravelTimN) for the advice on the intricacies of JavaScript Full Calendar, troubleshooting & general advice.
+- [Daisy McGirr](https://github.com/Dee-McG) for the advice on the application set ups and how to configure various aspects of the project.
 - Another fellow student, [Declan](https://github.com/Declan444), for helping to understand models and overall morale boost when it was needed.
 - Tutor support team for helping out with project set up and other quirky bits. A big shout out goes to:
     - John for assisting to address Gunicorn and pyca/cryptography warnings on Github [more details noted in fixed bugs section in TESTING.md](TESTING.md). 
