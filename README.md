@@ -209,6 +209,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     - Book Tutorial Page
     - My Tutorials Page
 
+    ![loggedin header](documentation/images/features/logged-in-navigation.png)
 
 **The Footer**
 
@@ -372,7 +373,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 
 ![Successful sign in](documentation/images/features/successful-signin.jpg)
 ![Successful registration](documentation/images/features/signup-message.png)
-![Successful logout](documentation/images/features/singed-out-message.jpg)
+![Successful signout](documentation/images/features/singed-out-message.jpg)
 </details>
 
  <details>
