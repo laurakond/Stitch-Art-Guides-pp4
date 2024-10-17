@@ -23,7 +23,6 @@ ALLOWED_HOSTS = [
     '.herokuapp.com',
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -99,7 +98,7 @@ WSGI_APPLICATION = 'stitchartguides.wsgi.application'
 #     }
 # }
 
-# Comment out 118-120 to use sqlite3 above. This project is using
+# Comment DATABASES to use sqlite3 above. This project is using
 # production-ready PostfreSQL cloud database
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
