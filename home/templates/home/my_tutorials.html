@@ -48,12 +48,12 @@
                                 {{session.tutorial_date.start_time}} - {{session.tutorial_date.end_time}}
                             </p>
                         </div>
-                        <div class="card-footer border-top-0 bg-transparent">
-                            <a href="{% url 'edit_booking' session.id %}" class="btn custom-btn-success"
+                        <div class="card-footer border-top-0 bg-transparent my-tutorials-spacing">
+                            <a href="{% url 'edit_booking' session.id %}" class="btn custom-btn-success my-tutorial-button"
                                 aria-label="Edit Booking">
                                 Edit booking
                             </a>
-                            <button type="button" class="delete-button btn btn-danger mx-2"
+                            <button type="button" class="delete-button btn btn-danger"
                                 data-booking_id="{{ session.id }}" data-bs-target="#staticBackdrop">
                                 Cancel booking
                             </button>
@@ -110,7 +110,7 @@
                                 You have no upcoming tutorials.
                             </h2>
                         </div>
-                        <div class="card-footer border-top-0 bg-transparent no-tutorials-spacing">
+                        <div class="card-footer border-top-0 bg-transparent my-tutorials-spacing">
                             <a href="{% url 'tutorial_list' %}" class="btn custom-btn my-tutorial-button"
                                 aria-label="Discover tutorial">
                                 Discover tutorials
