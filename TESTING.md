@@ -644,11 +644,11 @@ The scores have been marked down due to the use of external CDNs and Cloudinary 
 
 **Desktop**
 
-![404 desktop report](documentation/images/features/404-desktop-lighthouse.JPG)
+![404 desktop report](documentation/images/features/404-desktop-lighthouse.jpg)
 
 **Mobile**
 
-![404 mobile report](documentation/images/features/404-mobile-lighthouse.JPG)
+![404 mobile report](documentation/images/features/404-mobile-lighthouse.jpg)
 
 </details>
 
@@ -798,7 +798,7 @@ I have implemented restricted access to specific content that is only allowed to
     - Tutorial detail template
     - Booking form
 
-    ![automated testing](documentation/validation/automated-testing.JPG)
+    ![automated testing](documentation/validation/automated-testing.jpg)
 
 [Return to Table of Contents](#contents)
 
