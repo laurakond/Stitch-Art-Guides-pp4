@@ -171,7 +171,7 @@ nav.navbar .navbar-nav .nav-link,
   color: #131200;
 }
 
-a.nav-link:hover{
+a.nav-link:hover {
   font-weight: bold;
 }
 
@@ -353,27 +353,11 @@ a.social-link.rounded-circle:hover {
     padding-left: 0;
     padding-left: 0;
   }
-
-  /* My Tutorials page */
-  .my-tutorial-button {
-    margin-bottom: 1rem;
-  }
 }
 
 @media (min-width: 342px) {
 
   /* My Tutorials page */
-  .my-tutorial-button {
-    margin-bottom: 0;
-  }
-
-  .my-tutorials-spacing {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
   .center-card-title {
     text-align: center;
   }
