@@ -272,8 +272,6 @@ The code that was throwing an error was this:
     
     ![Incorrect error rendering](documentation/images/error_images/unauthorised-access-alert-message.png)
 
-    ![fixed code image](documentation/images/error_images/unauthorised-access-alert-message.png)
-
 **Favicon not rendering**
 - Upon upload of all files, the favicon was not properly rendering when the the website was loaded. 
     - I resolved this issue by removing the type attribute from the tags. I found the solution on [Stack Overflow](https://stackoverflow.com/questions/66918079/favicon-not-loading-in-django#:~:text=I%20had%20the%20same%20problem.,tags%2C%20the%20favicon%20started%20working) channel.
@@ -644,11 +642,11 @@ The scores have been marked down due to the use of external CDNs and Cloudinary 
 
 **Desktop**
 
-![404 desktop report](documentation/images/features/404-desktop-lighthouse.jpg)
+![404 desktop report](documentation/validation/lighthouse/404-desktop-lighthouse.jpg)
 
 **Mobile**
 
-![404 mobile report](documentation/images/features/404-mobile-lighthouse.jpg)
+![404 mobile report](documentation/validation/lighthouse/404-mobile-lighthouse.jpg)
 
 </details>
 
@@ -681,7 +679,8 @@ The scores have been marked down due to the use of external CDNs and Cloudinary 
 
 ### Accessibility
 The project was run through Wave evaluation tool and WCAG Colour contrast checker. 
-- No errors were detected when passing through Wave evaluation tool. 
+- No errors were detected when passing through Wave evaluation tool.
+![color contrast](documentation/design/color-contrast.png)
 
 [Return to Table of Contents](#contents)
 
