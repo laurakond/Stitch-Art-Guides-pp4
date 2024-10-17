@@ -83,8 +83,6 @@ All files were put through the official [W3C Markup Validation](https://validato
 
 ## Bugs
 
-**To Note**: The below mentioned bugs occurred early in the development stage before refactoring was done. Therefore, some of the function names and provided images may not correspond to the final code.
-
 ### Fixed bugs
 **Gunicorn and pyca/cryptography warnings in Github**
 - I received a warning from Github that I have Gunicorn and cryptography vulnerabilities (see image). 
@@ -479,9 +477,13 @@ future_tutorials = TutorialDate.objects.filter(
     - I consulted multiple resources (noted in the general resources section in the README.md), but could not resolve it at this development stage. 
     - This will be addressed at the next development stage.
 
-**Past events in Calendar day view**
-- When customising past and future events, I could not find a way to target past events font so that they would appear grayed out. The full month view of past events are displaying as expected.
+**Past tutorials in Calendar day view**
+- When customising past and future tutorials, I could not find a way to target past tutorials' font so that they would appear grayed out. The full month view of past tutorials is displaying as expected.
     - This will be addressed at the next development stage.
+
+**Today's tutorials in Calendar view**
+- Tutorials that are scheduled for "today" but have lapsed in time, i.e. are at an earlier time than the user is booking, are displayed in green color. I could not find a way how to target the tutorials in order to show them in grayed out color to indicate that they are not available for booking.
+    - This will be addressd at the next development stage.
 
 **Django configuration**
 - When testing the application, I noticed that sometimes when a booking has been updated an error message is being thrown " You can only edit your booking".
