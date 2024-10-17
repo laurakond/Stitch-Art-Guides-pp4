@@ -189,7 +189,7 @@ nav.navbar .navbar-nav .nav-link,
 }
 
 .index-image {
-  background: linear-gradient(180deg, #daeae9b8, #daeae9b8), url(../images/white-hoop.webp) no-repeat center;
+  background: linear-gradient(180deg, #daeae9b8, #daeae9b8), url("../images/white-hoop.webp") no-repeat center;
   background-size: cover;
   width: 100%;
 }
@@ -259,8 +259,8 @@ a.fc-event.fc-event-start.fc-event-end.fc-event-past.fc-timegrid-event.fc-v-even
 }
 
 a.fc-event.fc-event-start.fc-event-end.fc-event-future.fc-timegrid-event.fc-v-event {
-  background: var(--main-button-border-color);
-  border-color: var(--main-button-border-color);
+  background: var(--navigation);
+  border-color: var(--navigation);
   padding-left: 0.5rem;
   padding-top: 0.25rem;
 }
@@ -272,7 +272,7 @@ a.fc-event.fc-event-start.fc-event-end.fc-event-past.fc-daygrid-event.fc-daygrid
 }
 
 a.fc-event.fc-event-start.fc-event-end.fc-event-future.fc-daygrid-event.fc-daygrid-dot-event {
-  background: var(--main-button-border-color);
+  background: var(--navigation);
   color: var(--dark-text);
   padding-right: 0.25rem;
 }
@@ -355,7 +355,7 @@ footer.footer .social-link {
     margin-bottom: 0;
   }
 
-  .no-tutorials-spacing {
+  .my-tutorials-spacing {
     display: flex;
     justify-content: center;
     align-items: center;
