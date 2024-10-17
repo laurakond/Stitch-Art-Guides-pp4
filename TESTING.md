@@ -494,6 +494,8 @@ future_tutorials = TutorialDate.objects.filter(
 ### Lighthouse testing
 Website performance, accessibility, best practices and SEO were tested using Lighthouse web performance testing tool. The tests were carried out using Google Chrome.
 
+The scores have been marked down due to the use of external CDNs and Cloudinary storage. 
+
 <details>
 <summary>Index page</summary>
 
