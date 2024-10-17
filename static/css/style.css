@@ -171,6 +171,10 @@ nav.navbar .navbar-nav .nav-link,
   color: #131200;
 }
 
+a.nav-link:hover{
+  font-weight: bold;
+}
+
 .active {
   font-weight: bold;
 }
@@ -323,6 +327,10 @@ footer.footer .social-link {
 
 .mb-5 {
   margin-bottom: 3rem !important;
+}
+
+a.social-link.rounded-circle:hover {
+  background: #4E7E7C;
 }
 
 /* End of Footer */
