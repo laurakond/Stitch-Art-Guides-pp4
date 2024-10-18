@@ -354,6 +354,8 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
         - This alert message will be displayed to the booking's owner and the user that the booking did not belong to. 
     - If the user tries to edit someone else's booking by accident, the following message will appear:
         ![You can only edit your own booking](documentation/images/features/edit-your-own-booking-message1.png)
+    - If the user clicks on the browser back button after they have booked a tutorial they are taken back to book tutorial page. However, upon clicking the "Book tutorial" button, the user will be taken to the Book Tutorial calendar view page and the following alert will be displayed:
+        ![This tutorial is already booked](documentation/images/features/tutorial-booked-alert.png)
 
 **Error pages**
 - Error pages have been added to troubleshoot appropriate server response to user requests - 400, 403, 404, 500. The below 404 page showcases the design applied throughout:
