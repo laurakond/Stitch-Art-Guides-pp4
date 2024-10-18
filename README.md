@@ -148,20 +148,20 @@ The following palette was used to ensure the contrast is achieved between the ma
 
 <br>
 
-- #EB9486 - Coral Pink - used for main navigation button
+- #EB9486 - Coral Pink - used for the main button
 - #FAF9F6 - Baby Powder - used for the majority of the background color & light text
 - #F5F9E9 - Ivory - used for header & footer backgrounds including modals
 - #131200 - Smoky Black - used for dark text
-- #64A19D - Verdigris - used for social media icons and menu bar
+- #64A19D - Verdigris - used for social media icons, menu bar and future tutorials in the calendar view
 - #E26350 - Tomato - used for main button hover effect
 - #4E7E7C - Myrtle Green - used for custom success button hover effect
 - #DFE0E2 - Platinum - used to style past events in the calendar
 - #A9ACB1 - French gray - used to style past events in the calendar
-- rgba(235, 148, 134, .5) - used for the main button hover border and future events background color in the calendar
+- rgba(235, 148, 134, .5) - used for the main button hover border
 - rgba(78, 126, 124, .5) - used for the success button hover border and calendar styling
 - #daeae9b8 - used for adding gradient over the hero image
 - bg-light Bootstrap class - used for applying background color to Bootstrap cards and other containers where needed to balance out the colors.
-- Bootstrap danger button
+- Bootstrap danger button - used for canceling booking button color.
 
 ### Font styles
 I used [Google fonts](https://fonts.google.com/) to source the fonts for the website. These are:
