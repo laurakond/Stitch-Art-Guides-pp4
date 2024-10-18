@@ -556,7 +556,7 @@ The content for the website has been written primarily by me. The content for tu
 - I used the following Bootstrap templates from StartBootstrap for styling my website:
     - Footer: [Stylish portfolio](https://startbootstrap.com/theme/stylish-portfolio)
     - Header: [Grayscale](https://startbootstrap.com/theme/grayscale) and Code Institute's I blog walkthrough project
-    - Notification messages: Code Institute's I blog walkthrough project
+    - Notification messages: Code Institute's I blog walkthrough [project](https://github.com/Code-Institute-Solutions/blog/tree/main)
 
 - To render the different calendar view based on the screen sizes, I had to specify device sizes and apply windowResize from the Full Calendar. I used the following [Stackoverflow thread](https://stackoverflow.com/questions/73820957/fullcalendar-change-calendar-view-based-on-screen-size) to implement the code:
     ``` JavaScript
