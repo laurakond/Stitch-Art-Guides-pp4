@@ -78,6 +78,9 @@ All files were put through the official [W3C Markup Validation](https://validato
 - [Tutorial/models validation](documentation/validation/tutorial-models.pdf)
 - [Tutorial/urls validation](documentation/validation/tutorial-urls.pdf)
 - [Tutorial/views validation](documentation/validation/tutorial-views.pdf)
+- [Home/form testing validation](documentation/validation/form-testing.pdf)
+- [Tutorial/models testing validation](documentation/validation/models-testing.pdf)
+- [Tutorial/views testing validation](documentation/validation/view-testing.pdf)
 
 [Return to Table of Contents](#contents)
 
@@ -106,7 +109,7 @@ All files were put through the official [W3C Markup Validation](https://validato
 <details>
 <summary>Correct code</summary>
 
-```
+``` JavaScript
 let eventId = info.event.id;
 let eventSlug = info.event.extendedProps.slug;
 let eventUrl = `/book-a-tutorial/${eventSlug}/${eventId}/`;
@@ -476,7 +479,7 @@ future_tutorials = TutorialDate.objects.filter(
     - This will be addressed at the next development stage.
 
 **Past tutorials in Calendar day view**
-- When customising past and future tutorials, I could not find a way to target past tutorials' font so that they would appear grayed out. The full month view of past tutorials is displaying as expected.
+- When customising past and future tutorials, I could not find a way to target past tutorials' font color so that they would appear grayed out. The full month view of past tutorials is displaying as expected.
     - This will be addressed at the next development stage.
 
 **Today's tutorials in Calendar view**
@@ -657,12 +660,12 @@ The scores have been marked down due to the use of external CDNs and Cloudinary 
 | ------------------------------------------------------------------------------------------------------------------------- | --------------- | -------------------- | -------------------------------------------------------------- |
 | As a first time user I can create an account so that I can sign in and access members features.                           | Yes             | ![Signup page](documentation/images/features/signup-page.png)     |                                                                |
 | As a site user I can click on the About page so that I can read more about the website’s owner.                           | Yes             | ![About page](documentation/images/features/about-page.jpg)      |                                                                |
-| As a site user I can see the header so that I can access different pages from one place.                                  | Yes             | ![Header](documentation/images/features/navigation.jpg)          |                                                                |
+| As a site user I can see the header so that I can access different pages from one place.                                  | Yes             | ![Header](documentation/images/features/navigation.jpg) ![signed in header](documentation/images/features/logged-in-navigation.png)          |                                                                |
 | As a site user I can see the footer so that I can access the social media and contact information.                        | Yes             | ![Footer](documentation/images/features/footer.jpg)          |                                                                |
 | As a site user I can see a list of tutorials so that I can choose which one is suitable for me.                           | Yes             | ![Tutorial list](documentation/images/features/tutorial-list-page.jpg)   |                                                                |
 | As a site user I can login to & logout of the website so that I can access and manage my content.                         | Yes             | ![Login](documentation/images/features/login-page.jpg)           |                                                                |
-| As a site user I can click on each tutorial listing so that I can read more information about the tutorial.               | Yes             | ![Tutorial detail](documentation/images/features/tutorial-detail-page2.png)  |                                                                |
-| As a site user I can book a tutorial so that I can attend it.                                                             | Yes             | ![Calendar](documentation/images/features/book-tutorial-page.png)        |                                                                |
+| As a site user I can click on each tutorial listing so that I can read more information about the tutorial.               | Yes             | ![Tutorial detail](documentation/images/features/tutorial-detail-page.png)  |                                                                |
+| As a site user I can book a tutorial so that I can attend it.                                                             | Yes             | ![Calendar](documentation/images/features/book-tutorial-page.png) ![Day view calendar](documentation/images/features/day-view-calendar.png)       |                                                                |
 | As a site user I can go to Tutorials page so that I can manage them.                                                      | Yes             | ![My tutorials](documentation/images/features/my-tutorials-page.png) ![Delete booking](documentation/images/features/delete-booking-modal.png)    |                                                                |
 | As a site user I can edit my booking so that I can adjust the details if I change my mind.                                | Yes             | ![Edit booking](documentation/images/features/edit-booking-page.png)    |                                                                |
 | As a site user I can submit a request for a customised tutorial so that I can have a lesson based on my individual needs. | Future feature  |                      | This feature will be looked into at the next development stage |
@@ -680,7 +683,9 @@ The scores have been marked down due to the use of external CDNs and Cloudinary 
 ### Accessibility
 The project was run through Wave evaluation tool and WCAG Colour contrast checker. 
 - No errors were detected when passing through Wave evaluation tool.
-![color contrast](documentation/design/color-contrast.png)
+- I ensured that sufficient color contrast is provided when choosing the color palette. I used [Contrast Grid tool](https://contrast-grid.eightshapes.com/) to ensure that the colors are well-chosen.
+
+    ![color contrast](documentation/design/color-contrast.png)
 
 [Return to Table of Contents](#contents)
 
