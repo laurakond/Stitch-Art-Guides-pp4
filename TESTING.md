@@ -55,9 +55,6 @@ All files were put through the official [W3C Markup Validation](https://validato
 - [Login validation](documentation/validation/login-validation.pdf)
 - [Logout validation](documentation/validation/logout-validation.pdf)
 - [Signup validation](documentation/validation/signup-validation.pdf)
-- [Home/test forms validation](documentation/validation/form-testing.pdf)
-- [Tutorial/test models validation](documentation/validation/models-testing.pdf)
-- [Tutorial/test views validation](documentation/validation/view-testing.pdf)
 
 **W3C CSS**:
 - CSS validation returned with several warnings regarding buttons' styling. In order to apply the color palette throughout the project, I had to override Bootstrap's default colors for hover/active button features. 
@@ -78,9 +75,9 @@ All files were put through the official [W3C Markup Validation](https://validato
 - [Tutorial/models validation](documentation/validation/tutorial-models.pdf)
 - [Tutorial/urls validation](documentation/validation/tutorial-urls.pdf)
 - [Tutorial/views validation](documentation/validation/tutorial-views.pdf)
-- [Home/form testing validation](documentation/validation/form-testing.pdf)
-- [Tutorial/models testing validation](documentation/validation/models-testing.pdf)
-- [Tutorial/views testing validation](documentation/validation/view-testing.pdf)
+- [Home/test forms validation](documentation/validation/form-testing.pdf)
+- [Tutorial/test models validation](documentation/validation/models-testing.pdf)
+- [Tutorial/test views validation](documentation/validation/view-testing.pdf)
 
 [Return to Table of Contents](#contents)
 
