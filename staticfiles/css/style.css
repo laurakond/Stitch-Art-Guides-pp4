@@ -1,18 +1,150 @@
+/* Global CSS variables */
+:root {
+  --main-button-color: #EB9486;
+  --main-button-border-color: rgba(235, 148, 134, .5);
+  --hover-button-color: #E26350;
+  --success-button-color: #64A19D;
+  --success-hover-button-color: #4E7E7C;
+  --success-button-border-color: rgba(78, 126, 124, .5);
+  --background-color: #FAF9F6;
+  --dark-text: #131200;
+  --light-text: #FAF9F6;
+  --header-footer: #F5F9E9;
+  --navigation: #64A19D;
+  --gradient-color: #daeae9b8;
+  --past-event-background: #DFE0E2;
+  --past-event-text: #A9ACB1;
+
+  /* Fonts */
+  --primary-font: "Poppins", system-ui;
+  --secondary-font: "Raleway", sans-serif;
+
+  /* Full Calendar root styles */
+  --fc-today-bg-color: #F5F9E9;
+}
+
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none !important;
 }
 
 html,
 body {
   height: 100%;
-  width: 100dvw;
+  width: 100%;
+  font-family: var(--secondary-font);
+  color: var(--dark-text);
+  background-color: var(--background-color);
+}
+
+/* General styles */
+main {
+  background-color: var(--background-color);
+}
+
+/* Django Messages styles */
+.alert {
+  border-radius: 0.25rem;
+  width: auto;
+  max-width: 600px;
+  height: auto;
+  margin-top: 5rem;
+}
+
+.alert-success,
+.alert-error {
+  margin-top: 72px;
+}
+
+/* Container styles */
+.content-container {
+  margin-top: 56px;
+}
+
+/* Button styles */
+.custom-btn {
+  background-color: var(--main-button-color);
+  border-color: var(--main-button-color);
+  color: var(--dark-text);
+}
+
+.custom-btn:hover,
+.custom-btn:active,
+.custom-btn:active:focus,
+.custom-btn:focus-visible,
+.custom-btn:first-child:active,
+:not(.custom-btn-check)+.custom-btn:active {
+  background-color: var(--hover-button-color);
+  border-color: var(--hover-button-color);
+  color: var(--light-text);
+}
+
+.custom-btn:focus,
+.custom-btn:focus-visible,
+.custom-btn:active:focus-visible,
+:not(.custom-btn-check)+.custom-btn:active:focus-visible {
+  box-shadow: 0 0 0 .25rem var(--main-button-border-color);
+}
+
+.custom-btn-success {
+  background-color: var(--success-button-color);
+  border-color: var(--success-button-color);
+  color: var(--light-text);
+}
+
+.custom-btn-success:hover,
+.custom-btn-success:active,
+.custom-btn-success:active:focus,
+.custom-btn-success:focus-visible,
+.custom-btn-success:first-child:active,
+:not(.custom-btn-success-check)+.custom-btn-success:active {
+  background-color: var(--success-hover-button-color);
+  border-color: var(--success-hover-button-color);
+  color: var(--light-text);
+}
+
+.custom-btn-success:focus,
+.custom-btn-success:focus-visible,
+.custom-btn-success:active:focus-visible,
+:not(.custom-btn-success-check)+.custom-btn-success:active:focus-visible {
+  box-shadow: 0 0 0 .25rem var(--success-button-border-color);
+}
+
+/* Modal styles */
+.modal-header,
+.modal-footer {
+  background-color: var(--header-footer);
+}
+
+/* Shared image styles */
+.profile-image,
+.tutorial-image {
+  width: 50%;
+}
+
+.profile-image,
+.tutorial-detail-image {
+  border-radius: 0.375rem;
+}
+
+.tutorial-image,
+.tutorial-detail-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 /* Header styles */
+.navbar-brand {
+  font-family: var(--primary-font);
+  font-weight: bold;
+}
+
 #mainNav {
-  background-color: bisque;
+  background-color: var(--header-footer);
 }
 
 /* Appropriated from Grayscale css code (noted in the readme) */
@@ -20,58 +152,137 @@ body {
   font-size: 80%;
   padding: 0.75rem;
   color: #64a19d;
-  border: 1px solid #64a19d;
+  border: 1px solid var(--navigation);
 }
 
-/* REMEMBER TO CHECK THE BACKGROUND COLOUR FOR THE DROP DOWN MENU IN THE SMALLER THAN 992PX VIEW */
-/* GRAYSCALE TEMPLATE's css code */
-.navbar-nav {
-  /* z-index: 1999; */
-  position: relative;
-  background: white;
-  margin-top: 8px;
+/* GRAYSCALE Template's footer css code */
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 
 .navbar-brand {
   margin-right: 0;
 }
+
+nav.navbar .navbar-nav .nav-link,
+.navbar .navbar-text {
+  color: #131200;
+}
+
+a.nav-link:hover {
+  font-weight: bold;
+}
+
+.active {
+  font-weight: bold;
+}
+
 /* End of Header */
 
+/* Account & index pages */
+.signup-card-body {
+  padding: 2rem;
+}
+
 /* Main */
-
 /* Index page */
-main {
-  padding-top: 64px;
-  /* padding-bottom: 80px; */
-}
-
-#index-container {
-  min-height: calc(100vh - 237px);
-  overflow: visible;
-}
-
-#about-container {
-  min-height: calc(100vh - 245px);
+.card-logo {
+  font-family: var(--primary-font);
 }
 
 .index-image {
-  background: linear-gradient(180deg, #ddd8d888, #ddd8d888), url(../images/white-hoop.webp) no-repeat center;
+  background: linear-gradient(180deg, #daeae9b8, #daeae9b8), url("../images/white-hoop.webp") no-repeat center;
   background-size: cover;
   width: 100%;
 }
 
 .index-card {
   max-width: 600px;
-  background-color: goldenrod;
   border-radius: 10px;
-  padding: 16px;
-  /* opacity: 0.5; */
 }
-/* End of Index page */
 
-/* About page */
-.profile-image {
-  width: 75%;
+.index-card a {
+  margin-bottom: 8px;
+}
+
+/* Tutorial List page */
+.card-footer {
+  border-top: none;
+  padding-bottom: 16px;
+}
+
+/* About page, Tutorial detail & Tutorial session */
+.custom-card-background {
+  background-color: var(--background-color);
+}
+
+/* Book a tutorial/calendar page*/
+/* Full Calendar CSS styles */
+.fc-v-event .fc-event-main {
+  color: var(--dark-text);
+}
+
+.fc-toolbar-title {
+  text-align: center;
+}
+
+thead {
+  background: var(--gradient-color);
+}
+
+a.fc-col-header-cell-cushion,
+.fc-daygrid-day-top a,
+.fc-daygrid-event-harness a {
+  color: var(--dark-text);
+}
+
+.fc .fc-daygrid-day-number {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: var(--gradient-color);
+}
+
+.fc-daygrid-event-dot {
+  border: none;
+}
+
+.fc-daygrid-event:hover .fc-event-title,
+.fc-daygrid-event:hover .fc-event-time {
+  cursor: pointer;
+}
+
+/* Day view */
+a.fc-event.fc-event-start.fc-event-end.fc-event-past.fc-timegrid-event.fc-v-event {
+  background: var(--past-event-background);
+  border-color: var(--past-event-background);
+  padding-left: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+a.fc-event.fc-event-start.fc-event-end.fc-event-future.fc-timegrid-event.fc-v-event {
+  background: var(--navigation);
+  border-color: var(--navigation);
+  padding-left: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+/* Month view */
+a.fc-event.fc-event-start.fc-event-end.fc-event-past.fc-daygrid-event.fc-daygrid-dot-event {
+  background: var(--past-event-background);
+  color: var(--past-event-text);
+}
+
+a.fc-event.fc-event-start.fc-event-end.fc-event-today.fc-daygrid-event.fc-daygrid-dot-event {
+  background-color: var(--navigation);
+}
+
+a.fc-event.fc-event-start.fc-event-end.fc-event-future.fc-daygrid-event.fc-daygrid-dot-event {
+  background: var(--navigation);
+  color: var(--dark-text);
+  padding-right: 0.25rem;
 }
 
 /* Footer styles*/
@@ -79,15 +290,16 @@ footer {
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: beige;
+  background-color: var(--header-footer);
+  color: var(--dark-text);
 }
 
 footer.footer {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
-/* STYLISH TEMPLATE's CODE*/
+/* STYLISH TEMPLATE FOOTER CODE*/
 footer.footer .social-link {
   display: block;
   text-decoration: none;
@@ -95,7 +307,7 @@ footer.footer .social-link {
   width: 4rem;
   line-height: 4.3rem;
   font-size: 1.5rem;
-  background-color: #1D809F;
+  background-color: var(--navigation);
   transition: background-color 0.15s ease-in-out;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
@@ -121,22 +333,70 @@ footer.footer .social-link {
   margin-bottom: 3rem !important;
 }
 
+a.social-link.rounded-circle:hover {
+  background: #4E7E7C;
+}
+
 /* End of Footer */
 
 /* Media queries */
+@media (min-width: 270px) {
 
-@media (min-width: 767px) {
-
-  #about-container {
-    min-height: auto;
+  /* About page */
+  .custom-card-body {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: var(--background-color);
   }
 
+  .custom-card-footer {
+    padding-left: 0;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 342px) {
+
+  /* My Tutorials page */
+  .center-card-title {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+
+  /* About page */
   #about-heading {
     margin-top: 1rem;
+  }
+
+  /* Tutorial detail page */
+  #container-margin {
+    margin-top: 1.5rem;
+  }
+
+  .custom-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .custom-card-footer {
+    padding-left: 0;
+    padding-right: 16px;
+  }
+
+  /* Edit booking page */
+  .form-width {
+    max-width: 600px;
   }
 }
 
 @media (min-width: 992px) {
+
+  /* Tutorial detail page */
+  .tutorial-detail-image {
+    height: 220px;
+  }
 
   /* Footer */
   .px-lg-5 {
