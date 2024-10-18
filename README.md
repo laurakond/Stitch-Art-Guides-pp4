@@ -124,9 +124,11 @@ No background, geographical location or income has been specified for the target
 I used [Lucidchart](https://lucid.app/) for creating the ERD for the models and [Exslidraw](https://excalidraw.com/) for creating site navigation.
 
 - ERD:
+
     ![Project Models](documentation/images/entity_relational_diagram/model-chart.png)
 
 - MVP flowchart:
+
     ![flowchart-mvp](documentation/images/entity_relational_diagram/site-navigation.png)
 
 ### Wireframes
@@ -192,9 +194,6 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 ### Existing Features
 
 **The Header**
-
-![header](documentation/images/features/navigation.jpg)
-
 - Featured across all the pages, the Header is fully responsive and presents the user with the main pages that are required. To the left of the header you find:
     - The Logo
 
@@ -205,6 +204,8 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     - Register Page
     - Login Page
 
+    ![header](documentation/images/features/navigation.jpg)
+
 - Upon Registration or Log in, the user's log in name and additional two pages are revealed in the header. This creates a sense of personalisation and indicates additional website functionality for the registered users.
     - Book Tutorial Page
     - My Tutorials Page
@@ -212,25 +213,20 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     ![loggedin header](documentation/images/features/logged-in-navigation.png)
 
 **The Footer**
-
-![footer](documentation/images/features/footer.jpg)
-
 - The Footer features social media links that are related to the website and provides a copyright line indicating that this website was created for educational purposes only.
+    ![footer](documentation/images/features/footer.jpg)
     - The instagram account displayed in the footer refers to the site owner's/my personal instagram account that showcases cross-stitch projects which is related to the aim of the project. It is slightly different to the LinkedIn and Github accounts as it does not relate to my web development journey.
 
 **The Landing Page**
-
-![landing page](documentation/images/features/index-page.png)
-
 - The Landing page greets the user with a simple design, a brief blurb indicating the purpose of the website, and the main call-to-action button that leads the user to the Tutorial List page. 
 - The hero image set in the background further emphasises the website's purpose.
 
+    ![landing page](documentation/images/features/index-page.png)
+
 **About page**
-
-![about page](documentation/images/features/about-page.jpg)
-
 - The About page displays a profile picture of the instructor and provides a brief introduction. A further call-to-action button is used, allowing the user to explore different tutorials that are being offered. 
 
+    ![about page](documentation/images/features/about-page.jpg)
 
 **Tutorial list**
 - A list of currently offered tutorials is presented in a card format which displays the tutorial holding an image, the title and the excerpt for each tutorial. Each has a call-to-action button inviting the user to read more. 
@@ -574,7 +570,7 @@ The content for the website has been written primarily by me. The content for tu
      <details>
     <summary>Calendar view images</summary>
 
-    ![Calendar view](documentation/images/error_images/calendar-view.png)
+    ![Calendar view](documentation/images/error_images/calendar-view-error.png)
     ![Calendar view updated](documentation/images/error_images/fixed-calendar-view.png)
 </details>
 
