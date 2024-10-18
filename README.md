@@ -242,7 +242,8 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     ![Tutorial detail page](documentation/images/features/tutorial-detail-page.png)
 
 **Book Tutorial page (restricted access)**
-- Once the user is Registered/Logged in, they can access Book Tutorial page that displays a calendar with available tutorial slots (month view for large screens and day view for smaller screens). 
+- Once the user is Registered/Logged in, they can access the Book Tutorial page that displays a calendar with available tutorial slots (month view for large screens and day view for smaller screens).
+- A brief sentence above the calendar indicates to the user which tutotials to choose from.
 - Upon clicking on the tutorial event, they are provided with three options:
     - If the tutorial slot is scheduled in the past, a modal appears indicating that the tutorial time has ceased and they are prompted to select another available slot.
     - If the tutorial is already booked, a modal appears indicating that the tutorial is already booked.
@@ -254,7 +255,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
     ![calendar day view](documentation/images/features/day-view-calendar.png)
     ![booking unavailable modal](documentation/images/features/tutorial-booking-unavailable-modal.png)
     ![tutorial date expired modal](documentation/images/features/tutorial-date-expired-modal.png)
-    ![title hover over effect](documentation/images/features/title-hover-over.jpg)
+    ![title hover over effect](documentation/images/features/title-hover-over.png)
 
 **Tutorial slot booking page (restricted access)**
 - Once inside each tutorial slot, the user is given reinforcing information about the tutorial and a "Book tutorial" button.
@@ -332,7 +333,7 @@ I used [Google fonts](https://fonts.google.com/) to source the fonts for the web
 - When the user wishes to leave the account the logout button enables a confirmation page ensuring that the user is informed of their actions.
     - Upon successful logout, a confirmation message is displayed at the top of the page.
 
-    ![logout](documentation/images/features/logout-page.jpg)
+    ![logout](documentation/images/features/logout-page.png)
 </details>
 
 **Restricted access**
