@@ -511,9 +511,9 @@ To clone the repository in Github:
 ### Heroku
 To deploy to the Heroku website, follow the steps below:
 Inside your project:
- - install the latest gunicorn to your virtual environment
- - install the latest whitenoise version
- - add both dependencies to the requirements.txt
+ - Install the latest gunicorn to your virtual environment
+ - Install the latest whitenoise version
+ - Add both dependencies to the requirements.txt
  - Create a Procfile declaring the web process `web: ` followed by a command to execute the project, for example `python3 manage.py runserver` if using Gitpod as your IDE.
  - Create a runtime.txt and note the closest version of Python to the one you use.
  - Make sure your DEBUG in settings.py is set to False.
@@ -525,8 +525,7 @@ Inside your project:
     2) if you have some projects already, click on the "New" tab on the top right corner of the screen just below the profile bauble. 
 4.  Enter a unique application name for your project and select the region you are based in. Click "create app".
 5. Once insde the app, select "Settings" button from the menu in the middle. It's important to edit the "Settings" tab before deploying the project: 
-    1. Click on "Reveal Config Vars" to add any keys that the application requires. For this project I included teh following:
-        - DISABLE_COLLECTSTATIC: 1 
+    1. Click on "Reveal Config Vars" to add any keys that the application requires. For this project I included the following:
         - DATABASE_URL
         - SECRET_KEY
         - CLOUDINARY_URL
